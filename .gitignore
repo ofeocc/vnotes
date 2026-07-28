@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# 虚拟环境
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# 项目产物
+output/
+cache/
+*.log
+server-*.log
+full-transcribe-test.*.log
+*.m4a
+*.mp3
+*.wav
+*.jpg
+*.png
+!output/_self_test/frames/*.jpg
+
+# 密钥
+.env
+*.key
+
+# Whisper 模型
+models/
+vnotes_models/

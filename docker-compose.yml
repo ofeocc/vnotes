@@ -1,0 +1,39 @@
+# vnotes Docker Compose
+# 一键启动：docker compose up -d
+# 查看日志：docker compose logs -f
+# 停止：    docker compose down
+
+services:
+  vnotes:
+    build: .
+    image: vnotes:latest
+    container_name: vnotes
+    restart: unless-stopped
+    ports:
+      - "7458:7458"
+    volumes:
+      # 输出目录（笔记 HTML / 截图 / 切片）
+      - ./output:/app/output
+      # 缓存目录（音频 / 转写 JSON / 帧）
+      - ./cache:/app/cache
+      # 配置文件（只读挂载，含 API Key）
+      - ./.env:/app/.env:ro
+    environment:
+      - VNOTES_SERVER_PORT=7458
+      # 容器内默认 CPU 转写；如需 GPU 请取消下方注释并安装 nvidia-container-toolkit
+      - VNOTES_WHISPER_DEVICE=cpu
+      # - VNOTES_WHISPER_DEVICE=cuda
+    # GPU 支持（需要 nvidia-container-toolkit）
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7458/api/config-status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s

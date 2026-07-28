@@ -1,0 +1,50 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# 虚拟环境
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# 项目产物（容器内用 Volume 挂载，不打包进镜像）
+output/
+cache/
+*.log
+server-*.log
+*.m4a
+*.mp3
+*.wav
+*.jpg
+*.png
+
+# 密钥（通过 Volume 挂载 .env）
+.env
+*.key
+
+# 模型文件（体积大，运行时下载）
+models/
+vnotes_models/
+
+# 文档 / 脚本（不影响运行）
+*.md
+*.bat
+diag_svg.py
+run_cached.py

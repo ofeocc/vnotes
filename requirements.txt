@@ -1,0 +1,29 @@
+# 核心依赖（轻量，TRAE 自带 Python 已含 requests / Pillow）
+requests>=2.28
+Pillow>=9.0
+
+# 截图（Playwright 自带独立 Chromium，不冲突系统浏览器）
+playwright>=1.40
+# 安装后需执行：python -m playwright install chromium
+
+# 转写后端（三选一，默认 faster-whisper）
+# ---
+# 方案 1：faster-whisper（推荐，轻量，不装 torch，~50MB）
+faster-whisper>=1.0
+# 方案 1.5：Vosk（低内存离线兜底，中文小模型需另下）
+vosk>=0.3.45
+#
+# 方案 2：Groq 云端 API（零空间，需 openai 包 + Groq Key）
+openai>=1.0
+#
+# 方案 3：openai-whisper（原方案，需 torch，占空间大）
+# openai-whisper>=20231117
+# （GPU 用户请按 README 选择 CUDA 轮子）
+
+# Web UI
+fastapi>=0.104
+uvicorn[standard]>=0.24
+python-multipart>=0.0.6
+
+# 阿里云 Paraformer 转写（国内直连）
+dashscope>=1.14
