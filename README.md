@@ -1,264 +1,220 @@
-# vnotes — 视频链接 → 离线单页笔记 HTML
+# vnotes
 
-把一条视频链接变成一份可离线打开的结构化笔记：自动抓元数据、下载音频、Whisper 转写、大模型拆章整理、动态生成 SVG 图解、抽真实帧截图，最后输出单页 HTML + 整页 PNG + 切片。
+把一条视频链接变成一份结构化笔记。
+
+粘贴 B 站 / YouTube 链接，自动抓取元数据、下载音频、语音转文字、AI 拆章整理、生成 SVG 图解、抽取关键帧，最终输出一份可离线打开的单页 HTML 笔记——附带整页长图和竖向切片。
+
+## 它解决什么问题
+
+看教学视频时，你想做笔记但不想手动暂停、截图、整理。vnotes 把整个过程自动化：
+
+- **转写**：语音转文字，中文用 turbo 模型，英文自动翻译
+- **拆章**：AI 按内容自然结构分章，提取问题、陷阱、步骤、结论、引用
+- **图解**：每章根据内容类型动态生成 SVG（流程图 / 时间线 / 对比表 / 因果链等）
+- **抽帧**：界面演示类视频自动抽取关键帧截图
+- **排版**：输出 Apple 风格单页 HTML，离线可看，附带时间戳跳转链接
 
 ## 快速开始
 
-```bash
-# 1 安装依赖
-pip install -r requirements.txt
-python -m playwright install chromium
+### 方式一：Docker（推荐服务器部署）
 
-# 2 配置（复制 .env.example → .env，填入 DeepSeek API Key）
+```bash
+git clone https://gitee.com/heng-zhenghao/vnotes.git
+cd vnotes
 cp .env.example .env
 # 编辑 .env，填入 VNOTES_LLM_API_KEY=sk-xxx
-
-# 3 离线自检（验证 渲染→截图→QA→切片 管线，无需网络/Whisper/LLM）
-python run.py --self-test
-
-# 4 检查环境
-python run.py --check
-
-# 5 正式运行
-python run.py "https://www.bilibili.com/video/BVxxxxxxxx"
-python run.py "https://www.bilibili.com/video/BVxxxxxxxx" --part 2
-```
-
-## 流水线
-
-```
-视频链接
-  │
-  ├─ 1. 元数据 ── yt-dlp + cookies → 标题/UP/分P/简介/标签/封面/时长/章节
-  ├─ 2. 音频 ──── 下载最佳音频 → ffprobe 校验时长（偏差>5% 重下）
-  ├─ 3. 转写 ──── Whisper（中文 turbo / 英文 small.en+翻译）→ 末段时长校验
-  ├─ 4. 分析 ──── DeepSeek 按自然结构拆章 → 问题/陷阱/步骤/结论/引用/锚点
-  ├─ 5. SVG ───── 按内容类型动态生成（流程/概念/时间线/对比/风险/数据/因果）
-  ├─ 6. 抽帧 ──── 界面演示类视频：ffmpeg 精确抽帧，信息密度打分选最佳帧
-  ├─ 7. 渲染 ──── 单页 HTML（内联 CSS+SVG，相对路径图片，离线可看）
-  ├─ 8. 截图 ──── Playwright 整页 PNG
-  ├─ 9. QA ────── 逐行墨量分析 → 检测空白带/截断/渲染异常
-  └─ 10. 切片 ─── PIL crop 竖向切片（~1700px/片，100px 重叠，空白处下刀）
-```
-
-## 命令参数
-
-```
-python run.py <URL> [选项]
-
-  URL              视频链接（B站/YouTube 等）
-  --part N         分 P 号（B站）
-  --no-frames      跳过真实帧抽取
-  --no-slice       跳过切片
-  --stub-transcript 用桩转写（不调 Whisper，用于离线测试渲染管线）
-  --self-test      离线自检图像管线
-  --check          仅检查环境与依赖
-  --batch          批量处理多 P 视频并生成 index.html 聚合页
-  --parts 1,3,5    批量模式下指定 P 号（逗号分隔，默认全部）
-```
-
-## Web UI
-
-```bash
-python serve.py
+docker compose up -d --build
 # 浏览器打开 http://localhost:7458
 ```
 
-Web UI 支持：
-- 粘贴链接一键生成笔记
-- 实时进度（SSE 推送 + 流水线阶段可视化）
-- 转写后端在线切换（faster-whisper / 阿里云 Paraformer / Groq / openai-whisper）
-- DeepSeek / Groq / DashScope API Key 在线填写（留空则用 .env 默认值）
-- 批量模式开关（多 P 视频逐 P 生成 + 聚合页）
-- 历史笔记浏览
-
-## 批量模式（多 P 视频）
+### 方式二：Windows 桌面
 
 ```bash
-# 批量处理所有 P
+# 双击 install.bat  安装依赖
+# 双击 start-web.bat 启动
+# 浏览器打开 http://127.0.0.1:7458
+```
+
+### 方式三：手动安装
+
+```bash
+pip install -r requirements.txt
+python -m playwright install chromium
+pip install yt-dlp
+
+cp .env.example .env
+# 编辑 .env，填入 VNOTES_LLM_API_KEY=sk-xxx
+
+python run.py --check       # 检查环境
+python run.py --self-test   # 离线自检（无需网络/API Key）
+python serve.py             # 启动 Web UI
+```
+
+## 使用方式
+
+### Web UI
+
+```bash
+python serve.py
+# http://localhost:7458
+```
+
+支持：粘贴链接一键生成、实时进度推送、转写后端在线切换、API Key 在线填写、批量模式、历史笔记浏览。
+
+### 命令行
+
+```bash
+# 单个视频
+python run.py "https://www.bilibili.com/video/BVxxxxxxxx"
+
+# 指定分 P
+python run.py "https://www.bilibili.com/video/BVxxxxxxxx" --part 2
+
+# 批量处理多 P 视频并生成聚合页
 python run.py "https://www.bilibili.com/video/BVxxxxxxxx" --batch
 
 # 只处理指定 P
 python run.py "https://www.bilibili.com/video/BVxxxxxxxx" --batch --parts 1,3,5
-
-# 或在 Web UI 中勾选「批量模式」
 ```
 
-批量模式会：
-1. 自动检测视频的分 P 列表
-2. 逐 P 生成笔记（每个 P 独立输出目录 P01_xxx/、P02_xxx/…）
-3. 生成 `index.html` 聚合页，汇总所有 P 的标题、章节数、时长、链接
-4. 支持断点续跑：已完成的 P 自动跳过
+### 笔记模式
 
-## 配置（.env）
+| 模式 | 说明 | 适用场景 |
+|------|------|---------|
+| `essence`（默认） | 脉络精华，4-12 章，单帧 | 快速回顾视频要点 |
+| `detailed` | 细致笔记，8-20 章，多帧抽取 | 深度学习，需要关键截图 |
 
-| 变量 | 默认值 | 说明 |
-|------|--------|------|
-| `VNOTES_LLM_BASE_URL` | `https://api.deepseek.com/v1` | LLM API 地址（OpenAI 兼容） |
-| `VNOTES_LLM_API_KEY` | — | API Key（必填） |
-| `VNOTES_LLM_MODEL` | `deepseek-chat` | 模型名 |
-| `VNOTES_COOKIES_BROWSER` | `chrome` | cookies 浏览器（chrome/edge/firefox/brave） |
-| `VNOTES_COOKIES_FILE` | — | Netscape cookies.txt 路径（二选一） |
-| `VNOTES_WHISPER_DEVICE` | `cuda` | Whisper 设备（cuda/cpu） |
-| `VNOTES_WHISPER_MODEL_ZH` | `turbo` | 中文模型 |
-| `VNOTES_WHISPER_MODEL_EN` | `small.en` | 英文模型 |
-| `VNOTES_OUTPUT_DIR` | `./output` | 输出目录 |
-| `VNOTES_CACHE_DIR` | `./cache` | 缓存目录 |
-
-## 依赖说明
-
-### 核心（必装）
-- **Python 3.10+**
-- `requests` — HTTP 请求
-- `Pillow` — 图像处理（QA/切片/帧打分）
-- `playwright` — 整页截图（自带独立 Chromium，不冲突系统浏览器）
-  ```bash
-  pip install playwright
-  python -m playwright install chromium
-  ```
-- `yt-dlp` — 视频元数据与音频下载
-  ```bash
-  pip install yt-dlp
-  ```
-
-### 转写（三选一，用 VNOTES_TRANSCRIBE_BACKEND 切换）
-
-**方案 1：faster-whisper（推荐，轻量）** — 不装 torch，包仅 ~200MB，模型下载到 D 盘
 ```bash
-pip install faster-whisper
-# .env 中设置 VNOTES_TRANSCRIBE_BACKEND=faster-whisper（默认）
-# 模型自动下载到 D:/vnotes_models（可用 VNOTES_WHISPER_MODEL_DIR 改路径）
+python run.py "URL" --mode detailed
+# 或在 Web UI 中切换
 ```
 
-**方案 2：Groq 云端 API（零空间）** — 极快，完全不占本地空间
-```bash
-pip install openai
-# 注册 https://console.groq.com 拿免费 API Key
-# .env 中设置：
-#   VNOTES_TRANSCRIBE_BACKEND=groq
-#   VNOTES_GROQ_API_KEY=gsk-你的key
+## 处理流程
+
+```
+视频链接
+  ├─ 元数据 ── yt-dlp 抓取标题/UP/分P/封面/时长
+  ├─ 音频 ──── 下载 + ffprobe 时长校验
+  ├─ 转写 ──── 语音转文字 + 末段时长校验
+  ├─ 分析 ──── AI 拆章：问题/陷阱/步骤/结论/引用
+  ├─ SVG ───── 按内容类型动态生成图解
+  ├─ 抽帧 ──── ffmpeg 精确抽帧，信息密度打分选最佳帧
+  ├─ 渲染 ──── 单页 HTML（内联 CSS+SVG，离线可看）
+  ├─ 截图 ──── Playwright 整页 PNG
+  ├─ QA ────── 墨量分析检测空白带/截断
+  └─ 切片 ──── 竖向切片（~1700px/片，100px 重叠）
 ```
 
-**方案 3：openai-whisper（原方案，占空间大）** — 需 torch (~2.5GB)
-```bash
-pip install openai-whisper
-# GPU 用户先装 CUDA 版 torch
-# .env 中设置 VNOTES_TRANSCRIBE_BACKEND=openai-whisper
+## 转写后端
+
+通过 `VNOTES_TRANSCRIBE_BACKEND` 切换，适配不同环境：
+
+| 后端 | 占用空间 | 速度 | 成本 | 适合场景 |
+|------|---------|------|------|---------|
+| `faster-whisper` | ~200MB+模型 | 中等 | 免费 | 本地 GPU 机器 |
+| `vosk` | ~50MB | 快 | 免费 | 低内存 CPU 机器 |
+| `paraformer` | 0 | 极快 | 按秒计费 | 阿里云服务器（同区低延迟） |
+| `groq` | 0 | 极快 | 免费额度 | 海外服务器 |
+| `openai-whisper` | ~3GB | 慢 | 免费 | 有 torch 环境的机器 |
+
+服务器部署建议用 `paraformer`（阿里云同区，速度快），本地机器用 `faster-whisper`（有 GPU 时最快）。
+
+## 配置
+
+复制 `.env.example` 为 `.env`，按需填写：
+
+```env
+# LLM（必填，默认 DeepSeek）
+VNOTES_LLM_API_KEY=sk-xxx
+# 也兼容通义千问/OpenAI，改 base_url 和 model 即可
+
+# 转写后端
+VNOTES_TRANSCRIBE_BACKEND=faster-whisper
+
+# 服务端口
+VNOTES_SERVER_PORT=7458
 ```
 
-| 方案 | 占用空间 | 速度 | 成本 | 隐私 |
-|------|---------|------|------|------|
-| faster-whisper | ~200MB(包)+1.5GB(模型→D盘) | 中等 | 免费 | 本地 |
-| Groq API | 0 | 极快 | 免费额度 | 上传音频 |
-| openai-whisper | ~3GB+ | 慢 | 免费 | 本地 |
+完整配置项见 `.env.example`，每项都有注释说明。
 
-### ffmpeg（重要）
-工具需要 ffmpeg 做音频转换和帧抽取。**TRAE 自带的 ffmpeg 是精简版**，不支持音频编码（mp3）和图像编解码（PNG/JPEG）。
+### LLM 选择
 
-- **音频下载**：自动适配 — mp3 转换失败时保留原始格式（m4a/webm）
-- **帧抽取**：需要完整 ffmpeg — [下载地址](https://www.gyan.dev/ffmpeg/builds/)，解压后设置环境变量
-- **Whisper 转写**：Whisper 内部用 ffmpeg 解码音频，也需要完整版
-- **截图/切片**：不依赖 ffmpeg（用 Playwright + PIL）
+默认 DeepSeek（便宜好用）。也兼容任何 OpenAI API 格式：
 
-### LLM
-默认使用 DeepSeek（`deepseek-chat`）。也兼容任何 OpenAI API 格式的服务：
-- 通义千问：`base_url=https://dashscope.aliyuncs.com/compatible-mode/v1` `model=qwen-plus`
-- OpenAI：`base_url=https://api.openai.com/v1` `model=gpt-4o-mini`
+| 服务 | base_url | model |
+|------|----------|-------|
+| DeepSeek | `https://api.deepseek.com/v1` | `deepseek-chat` |
+| 通义千问 | `https://dashscope.aliyuncs.com/compatible-mode/v1` | `qwen-plus` |
+| OpenAI | `https://api.openai.com/v1` | `gpt-4o-mini` |
 
 ## 输出结构
 
 ```
-output/
-  视频标题/
-    notes.html        ← 单页笔记（离线可打开）
-    full.png          ← 整页截图
-    slices/
-      slice_01.png    ← 竖向切片（~1700px/片，100px重叠）
-      slice_02.png
-      ...
-    frames/           ← 真实帧截图（仅界面演示类视频）
-      01_章节名_000030.jpg
-      ...
-    cover.jpg         ← 视频封面
-    notes_data.json   ← 完整数据（元数据+分析+QA结果）
+output/视频标题/
+  notes.html        ← 单页笔记（离线打开，时间戳可跳转原视频）
+  full.png          ← 整页长图
+  slices/           ← 竖向切片（适合手机阅读）
+  frames/           ← 关键帧截图（detailed 模式）
+  cover.jpg         ← 视频封面
+  notes_data.json   ← 结构化数据
 ```
 
-## SVG 动态生成
+## 平台支持
 
-每章根据内容类型自动选择图解形式：
+| 平台 | 链接格式 | 时间戳跳转 |
+|------|---------|-----------|
+| B 站 | `bilibili.com/video/BVxxx` | `?p=N&t=秒` |
+| B 站短链 | `b23.tv/xxx` | `?p=N&t=秒` |
+| YouTube | `youtube.com/watch?v=xxx` | `?t=秒` |
+| YouTube 短链 | `youtu.be/xxx` | `?t=秒` |
+
+支持直接粘贴分享文本（含中文标题），自动提取 URL。
+
+## SVG 图解类型
+
+每章由 AI 根据内容自动选择最合适的图解形式：
 
 | 类型 | 适用场景 | 图形 |
 |------|---------|------|
-| flow | 流程/步骤/路径 | 方框+箭头串联 |
-| concept | 概念关系/分层 | 分层卡片/节点连线 |
+| flow | 流程/步骤 | 方框+箭头串联 |
+| concept | 概念关系 | 分层卡片/节点连线 |
 | timeline | 时间变化 | 横向时间轴 |
 | comparison | 对比 | 矩阵表格 |
 | risk | 风险/误区 | 检查表/决策树 |
 | data | 数据 | 条形/折线简图 |
 | causation | 因果 | 箭头链路 |
 
-每张图由 LLM 根据本章真实内容生成，包含关键词、关系、箭头或标签，禁止装饰图和重复套壳。
+## 依赖
 
-## 自检
+- **Python 3.10+**
+- **ffmpeg**（完整版，音频解码+帧抽取）
+- **yt-dlp**（视频下载）
+- **Playwright Chromium**（整页截图）
 
-```bash
-python run.py --self-test
-```
-
-离线验证完整图像管线（无需网络/Whisper/LLM）：
-1. 生成合成数据（2 章 + 内联 SVG + 占位截图）
-2. 渲染 HTML
-3. Playwright 整页截图
-4. QA 墨量检查
-5. PIL 切片
-
-输出到 `output/_self_test/`。
-
-## Docker 部署
-
-```bash
-# 1 准备配置
-cp .env.example .env
-# 编辑 .env，填入 VNOTES_LLM_API_KEY
-
-# 2 构建并启动
-docker compose up -d --build
-
-# 3 访问
-# http://localhost:7458
-
-# 查看日志 / 停止
-docker compose logs -f
-docker compose down
-```
-
-Docker 镜像内置完整 ffmpeg + Playwright Chromium + 所有 Python 依赖。
-`output/` 和 `cache/` 通过 Volume 挂载持久化，`.env` 只读挂载。
-
-> GPU 转写：取消 `docker-compose.yml` 中 `deploy.resources` 和 `VNOTES_WHISPER_DEVICE=cuda` 的注释，需安装 [nvidia-container-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/)。
+Docker 镜像已内置上述全部依赖。
 
 ## 项目结构
 
 ```
 vnotes/
-  config.py     — 配置（.env + 工具探测）
-  util.py       — 子进程/日志/时间/文件名工具
-  metadata.py   — yt-dlp 元数据抓取
-  audio.py      — 音频下载 + 时长校验（自适应 ffmpeg）
-  transcribe.py — Whisper 转写（faster-whisper / Vosk / Paraformer / Groq）
-  llm.py        — LLM 客户端（OpenAI 兼容）
-  analyze.py    — 内容分析 + 拆章
-  svg.py        — 动态 SVG 生成
-  frames.py     — 真实帧抽取
-  render.py     — HTML 渲染
-  screenshot.py — 整页截图（Playwright 优先）
-  qa.py         — QA 检查（墨量/空白/截断）
-  crop.py       — 切片（PIL crop）
-  batch.py      — 批量多 P 处理 + 聚合页
-  lightbox.py   — 笔记灯箱注入
-  server.py     — FastAPI Web UI 后端 + 嵌入式前端
-run.py          — CLI 入口 + 流水线编排
-serve.py        — Web UI 启动入口
-Dockerfile      — 容器化部署
-docker-compose.yml — 一键编排
+  config.py       配置管理
+  metadata.py     元数据抓取
+  audio.py        音频下载
+  transcribe.py   语音转写（5 种后端）
+  llm.py          LLM 客户端
+  analyze.py      AI 内容分析
+  svg.py          SVG 图解生成
+  frames.py       关键帧抽取
+  render.py       HTML 渲染
+  screenshot.py   整页截图
+  qa.py           质量检查
+  crop.py         图片切片
+  batch.py        批量处理
+  server.py       Web UI
+run.py            CLI 入口
+serve.py          Web 启动
 ```
+
+## License
+
+MIT
