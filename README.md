@@ -8,7 +8,7 @@
 
 看教学视频时，你想做笔记但不想手动暂停、截图、整理。vnotes 把整个过程自动化：
 
-- **转写**：语音转文字，中文用 turbo 模型，英文自动翻译
+- **转写**：语音转文字，支持 5 种后端（Groq / Paraformer / faster-whisper / Vosk / openai-whisper），中英文自动识别
 - **拆章**：AI 按内容自然结构分章，提取问题、陷阱、步骤、结论、引用
 - **图解**：每章根据内容类型动态生成 SVG（流程图 / 时间线 / 对比表 / 因果链等）
 - **抽帧**：界面演示类视频自动抽取关键帧截图
@@ -20,6 +20,7 @@
 
 ```bash
 git clone https://gitee.com/heng-zhenghao/vnotes.git
+# 或 GitHub：git clone https://github.com/ofeocc/vnotes.git
 cd vnotes
 cp .env.example .env
 # 编辑 .env，填入 VNOTES_LLM_API_KEY=sk-xxx
@@ -114,10 +115,10 @@ python run.py "URL" --mode detailed
 | `faster-whisper` | ~200MB+模型 | 中等 | 免费 | 本地 GPU 机器 |
 | `vosk` | ~50MB | 快 | 免费 | 低内存 CPU 机器 |
 | `paraformer` | 0 | 极快 | 按秒计费 | 阿里云服务器（同区低延迟） |
-| `groq` | 0 | 极快 | 免费额度 | 海外服务器 |
+| `groq` | 0 | 极快 | 免费额度 | 国内/海外服务器均可用 |
 | `openai-whisper` | ~3GB | 慢 | 免费 | 有 torch 环境的机器 |
 
-服务器部署建议用 `paraformer`（阿里云同区，速度快），本地机器用 `faster-whisper`（有 GPU 时最快）。
+服务器部署建议用 `groq`（免费额度充足，国内可直连），或 `paraformer`（阿里云同区低延迟）。本地机器用 `faster-whisper`（有 GPU 时最快）。
 
 ## 配置
 
@@ -210,9 +211,12 @@ vnotes/
   qa.py           质量检查
   crop.py         图片切片
   batch.py        批量处理
+  lightbox.py     灯箱预览组件
+  util.py         工具函数
   server.py       Web UI
 run.py            CLI 入口
 serve.py          Web 启动
+download_model.py 模型下载脚本
 ```
 
 ## License
