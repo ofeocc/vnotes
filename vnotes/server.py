@@ -700,7 +700,7 @@ _HTML = r"""<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>vnotes · 视频笔记工作室</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F5C518'/%3E%3Crect x='16' y='12' width='32' height='40' rx='5' fill='%231a1a1a'/%3E%3Crect x='23' y='20' width='18' height='3' rx='1.5' fill='%23F5C518'/%3E%3Crect x='23' y='28' width='18' height='3' rx='1.5' fill='%23fff'/%3E%3Crect x='23' y='36' width='13' height='3' rx='1.5' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fff' stop-opacity='.42'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='.06'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%23F5C518'/%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Cpath d='M11 16 L22 16 L32 40 L42 16 L53 16 L32 50 Z' fill='%23121109'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Yellowtail&family=Great+Vibes&display=swap" rel="stylesheet">
