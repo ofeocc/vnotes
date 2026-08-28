@@ -9,6 +9,7 @@ import asyncio
 import json
 import os
 import queue
+import shutil
 import sys
 import threading
 import time
@@ -635,6 +636,28 @@ async def serve_output(file_path: str):
                 pass
         return FileResponse(full)
     return JSONResponse({"error": "文件不存在"}, status_code=404)
+
+
+@app.delete("/api/note/{name}")
+async def delete_note(name: str):
+    """删除一份已生成的笔记（其输出目录）。"""
+    cfg = Config.load()
+    safe = Path(name).name  # 取末尾一段，防路径穿越
+    full = (cfg.output_dir / safe).resolve()
+    try:
+        full.relative_to(cfg.output_dir.resolve())
+    except ValueError:
+        return JSONResponse({"error": "非法路径"}, status_code=403)
+    if safe.startswith("_"):
+        return JSONResponse({"error": "不允许删除系统目录"}, status_code=403)
+    if not full.is_dir():
+        return JSONResponse({"error": "笔记不存在"}, status_code=404)
+    try:
+        shutil.rmtree(full)
+    except Exception as e:
+        return JSONResponse({"error": f"删除失败: {e}"}, status_code=500)
+    log.info("main", f"已删除笔记目录：{safe}")
+    return {"ok": True, "deleted": safe}
 
 
 # ============================================================
@@ -2269,7 +2292,7 @@ select option{background:var(--surface);color:var(--text)}
   padding:0 14px 14px;
   margin-top:auto;
 }
-.hist-actions a{
+.hist-actions a, .hist-actions button{
   height:34px;
   display:flex;
   align-items:center;
@@ -2280,13 +2303,26 @@ select option{background:var(--surface);color:var(--text)}
   letter-spacing:0;
   white-space:nowrap;
 }
-.hist-actions a:first-child{
+.hist-actions button{
+  border:0;
+  cursor:pointer;
+  font-family:inherit;
+  color:var(--text2);
+}
+.hist-actions a:first-child, .hist-actions button:first-child{
   background:linear-gradient(135deg,#F5C518 0%,#FFD93D 100%);
   color:var(--accent-dk);
 }
-.hist-actions a.secondary{
+.hist-actions a.secondary, .hist-actions button.secondary{
   background:rgba(247,247,247,.82);
+  color:#444;
 }
+.hist-actions button.secondary:hover{background:rgba(232,232,232,.9)}
+.hist-actions button.danger{
+  background:rgba(255,83,72,.14);
+  color:#c0392b;
+}
+.hist-actions button.danger:hover{background:rgba(255,83,72,.24)}
 .hist-empty{
   border:1px dashed rgba(26,26,26,.12);
   border-radius:16px;
@@ -2772,10 +2808,15 @@ html[data-theme="night"] .history-toolbar,
 html[data-theme="night"] .history-control,
 html[data-theme="night"] .history-reset,
 html[data-theme="night"] .hist-actions a.secondary,
+html[data-theme="night"] .hist-actions button.secondary,
 html[data-theme="night"] .batch-toggle{
   background:rgba(35,38,44,.72);
   border-color:rgba(255,255,255,.08);
 }
+html[data-theme="night"] .hist-actions button.secondary{color:var(--text2)}
+html[data-theme="night"] .hist-actions button.secondary:hover{background:rgba(45,49,57,.85)}
+html[data-theme="night"] .hist-actions button.danger{background:rgba(255,83,72,.18);color:#ff8a8a}
+html[data-theme="night"] .hist-actions button.danger:hover{background:rgba(255,83,72,.28)}
 html[data-theme="night"] .settings,
 html[data-theme="night"] .hist-card,
 html[data-theme="night"] .hist-deck:not(.dealt) .hist-card,
@@ -4288,6 +4329,10 @@ function renderHistoryCard(it){
   ];
   if(it.has_full) actions.push('<a href="'+outputHref(it.name, 'full.png')+'" target="_blank" rel="noopener noreferrer" data-open-link="1" class="secondary">长图</a>');
   if(it.has_cover) actions.push('<a href="'+outputHref(it.name, 'cover.jpg')+'" target="_blank" rel="noopener noreferrer" data-open-link="1" class="secondary">封面</a>');
+  if(it.source_url && qualityStatus !== 'ok'){
+    actions.push('<button type="button" class="secondary" data-history-action="regen" data-name="'+escapeHtml(it.name)+'" data-url="'+escapeHtml(it.source_url)+'">重生成</button>');
+  }
+  actions.push('<button type="button" class="danger" data-history-action="del" data-name="'+escapeHtml(it.name)+'">删除</button>');
   return '<article class="hist-card quality-'+qualityStatus+'" role="listitem">' +
     '<a class="hist-main" href="'+noteHref+'" target="_blank" rel="noopener noreferrer" data-open-link="1">' +
       cover +
@@ -4381,6 +4426,23 @@ function bindHistoryControls(){
 
 function bindHistorySearch(){
   bindHistoryControls();
+  bindHistoryActions();
+}
+
+function bindHistoryActions(){
+  const grid = document.getElementById('hist-grid');
+  if(!grid || grid.dataset.actionsBound) return;
+  grid.dataset.actionsBound = '1';
+  grid.addEventListener('click', (ev) => {
+    const t = ev.target.closest && ev.target.closest('[data-history-action]');
+    if(!t) return;
+    ev.preventDefault();
+    ev.stopPropagation();
+    const name = t.dataset.name || '';
+    const url = t.dataset.url || '';
+    if(t.dataset.historyAction === 'regen') regenNote(name, url);
+    else if(t.dataset.historyAction === 'del') deleteNote(name);
+  });
 }
 
 async function loadHistory(){
@@ -4396,6 +4458,59 @@ async function loadHistory(){
     if(deck) deck.innerHTML = '<p class="hist-empty">加载失败</p>';
     const stats = document.getElementById('history-stats');
     if(stats) stats.textContent = '';
+  }
+}
+
+// ---- 历史笔记操作：重生成 / 删除 ----
+async function regenNote(name, url){
+  const noteMode = document.getElementById('note-mode') ? document.getElementById('note-mode').value : '';
+  const backend = document.getElementById('backend') ? document.getElementById('backend').value : '';
+  const llmKey = (document.getElementById('llm-key') || {}).value?.trim() || '';
+  const groqKey = (document.getElementById('groq-key') || {}).value?.trim() || '';
+  const dashscopeKey = (document.getElementById('dashscope-key') || {}).value?.trim() || '';
+  if(!url){ showError('无法重生成：该笔记缺少源链接。'); return; }
+  const preflight = frontendPreflight(backend, groqKey, dashscopeKey, llmKey);
+  if(preflight){ showError(preflight); return; }
+  document.getElementById('processing').style.display = 'block';
+  document.getElementById('result-area').innerHTML = '';
+  document.getElementById('log-box').innerHTML = '';
+  initPipeline();
+  const batchProg = document.getElementById('batch-progress');
+  if(batchProg) batchProg.style.display = 'none';
+  const desc = document.getElementById('stage-desc');
+  if(desc){ desc.textContent = '正在重新生成：' + name; desc.style.color = ''; }
+  setGenerateBusy(true, '重生成中…');
+  document.getElementById('processing').scrollIntoView({behavior:'smooth',block:'start'});
+  try {
+    const resp = await fetch('/api/generate', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ url, note_mode:noteMode, transcribe_backend:backend, llm_api_key:llmKey, groq_api_key:groqKey, dashscope_api_key:dashscopeKey, batch:false }),
+    });
+    const data = await resp.json();
+    if(!resp.ok || data.error || !data.job_id){ throw new Error(data.error || '重生成请求失败。'); }
+    es = new EventSource('/api/stream/'+data.job_id);
+    es.onmessage = (e) => { const ev = JSON.parse(e.data); handleEvent(ev); };
+    es.onerror = () => { es.close(); setGenerateBusy(false); };
+  } catch(err) {
+    addLog('ERROR','','连接失败：'+err.message);
+    showError(err.message);
+    const d = document.getElementById('stage-desc');
+    if(d){ d.textContent = '出了点问题。'; d.style.color = 'var(--error)'; }
+    setGenerateBusy(false);
+  }
+}
+
+async function deleteNote(name){
+  if(!name) return;
+  if(!confirm('删除该笔记「'+name+'」？此操作不可恢复。')) return;
+  try {
+    const resp = await fetch('/api/note/'+encodeURIComponent(name), { method:'DELETE' });
+    const data = await resp.json();
+    if(!resp.ok) throw new Error(data.error || '删除失败');
+    if(Array.isArray(historyItems)) historyItems = historyItems.filter(it => it.name !== name);
+    renderHistory();
+  } catch(err) {
+    alert('删除失败：' + err.message);
   }
 }
 
