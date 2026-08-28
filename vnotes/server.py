@@ -670,6 +670,7 @@ _HTML = r"""<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>vnotes · 视频笔记工作室</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F5C518'/%3E%3Crect x='16' y='12' width='32' height='40' rx='5' fill='%231a1a1a'/%3E%3Crect x='23' y='20' width='18' height='3' rx='1.5' fill='%23F5C518'/%3E%3Crect x='23' y='28' width='18' height='3' rx='1.5' fill='%23fff'/%3E%3Crect x='23' y='36' width='13' height='3' rx='1.5' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -2318,6 +2319,8 @@ select option{background:var(--surface);color:var(--text)}
   color:#444;
 }
 .hist-actions button.secondary:hover{background:rgba(232,232,232,.9)}
+.hist-actions button.secondary.warn{background:rgba(255,140,0,.16);color:#a04e00}
+.hist-actions button.secondary.warn:hover{background:rgba(255,140,0,.26)}
 .hist-actions button.danger{
   background:rgba(255,83,72,.14);
   color:#c0392b;
@@ -2330,13 +2333,19 @@ select option{background:var(--surface);color:var(--text)}
   width:30px;height:30px;border-radius:999px;
   display:flex;align-items:center;justify-content:center;
   border:1px solid rgba(26,26,26,.1);
-  background:rgba(255,255,255,.88);color:var(--text2);
+  background:rgba(255,255,255,.92);color:var(--text2);
   font-size:15px;line-height:1;cursor:pointer;
   box-shadow:var(--sh-1);
   backdrop-filter:blur(4px);
-  transition:background var(--t-out),transform var(--t-out),box-shadow var(--t-out);
+  opacity:0;transform:scale(.5);pointer-events:none;
+  transition:opacity var(--t-out),transform var(--t-spring),background var(--t-out),box-shadow var(--t-out);
 }
-.hist-card-more:hover{transform:translateY(-1px);background:#fff}
+.hist-card:hover .hist-card-more,
+.hist-card:focus-within .hist-card-more,
+.hist-card.menu-open .hist-card-more{
+  opacity:1;transform:scale(1);pointer-events:auto;
+}
+.hist-card-more:hover{background:#fff;box-shadow:var(--sh-2)}
 .hist-card.menu-open .hist-main,
 .hist-card.menu-open .hist-actions{filter:blur(6px);pointer-events:none}
 .hist-card-menu{
@@ -2873,6 +2882,8 @@ html[data-theme="night"] .batch-toggle{
 }
 html[data-theme="night"] .hist-actions button.secondary{color:var(--text2)}
 html[data-theme="night"] .hist-actions button.secondary:hover{background:rgba(45,49,57,.85)}
+html[data-theme="night"] .hist-actions button.secondary.warn{background:rgba(255,140,0,.16);color:#ffb25e}
+html[data-theme="night"] .hist-actions button.secondary.warn:hover{background:rgba(255,140,0,.28)}
 html[data-theme="night"] .hist-actions button.danger{background:rgba(255,83,72,.18);color:#ff8a8a}
 html[data-theme="night"] .hist-actions button.danger:hover{background:rgba(255,83,72,.28)}
 html[data-theme="night"] .hist-card-more{background:rgba(35,38,44,.8);border-color:rgba(255,255,255,.12);color:var(--text2)}
@@ -3631,7 +3642,6 @@ html[data-theme="night"] .hist-cover-wrap::after{
             <option value="title">标题 A-Z</option>
           </select>
         </label>
-        <button class="history-reset" id="history-reset" type="button" hidden>清除</button>
       </div>
     </div>
     <div class="hist-deck" id="hist-grid" role="list" aria-label="历史笔记列表"></div>
@@ -4404,13 +4414,13 @@ function renderHistoryCard(it){
   ];
   if(it.has_full) actions.push('<a href="'+outputHref(it.name, 'full.png')+'" target="_blank" rel="noopener noreferrer" data-open-link="1" class="secondary">长图</a>');
   if(it.has_cover) actions.push('<a href="'+outputHref(it.name, 'cover.jpg')+'" target="_blank" rel="noopener noreferrer" data-open-link="1" class="secondary">封面</a>');
-  const menu = [
-    '<button type="button" class="menu-btn" data-history-action="pin" data-name="'+escapeHtml(it.name)+'">'+(isPinned(it.name)?'取消置顶':'置顶')+'</button>'
-  ];
   if(it.source_url && qualityStatus !== 'ok'){
-    menu.push('<button type="button" class="menu-btn" data-history-action="regen" data-name="'+escapeHtml(it.name)+'" data-url="'+escapeHtml(it.source_url)+'">重生成</button>');
+    actions.push('<button type="button" class="secondary warn" data-history-action="regen" data-name="'+escapeHtml(it.name)+'" data-url="'+escapeHtml(it.source_url)+'">重生成</button>');
   }
-  menu.push('<button type="button" class="menu-btn danger" data-history-action="del" data-name="'+escapeHtml(it.name)+'">删除</button>');
+  const menu = [
+    '<button type="button" class="menu-btn" data-history-action="pin" data-name="'+escapeHtml(it.name)+'">'+(isPinned(it.name)?'取消置顶':'置顶')+'</button>',
+    '<button type="button" class="menu-btn danger" data-history-action="del" data-name="'+escapeHtml(it.name)+'">删除</button>'
+  ];
   return '<article class="hist-card quality-'+qualityStatus+'" role="listitem">' +
     '<button type="button" class="hist-card-more" data-history-action="more" aria-label="更多操作">&#x22ee;</button>' +
     '<a class="hist-main" href="'+noteHref+'" target="_blank" rel="noopener noreferrer" data-open-link="1">' +
