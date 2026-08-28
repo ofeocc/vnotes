@@ -1380,7 +1380,7 @@ body.settings-drawer-open{overflow:hidden}
 }
 
 /* ---- Processing ---- */
-.processing{margin-top:36px;animation:fadeInUp .5s ease}
+.processing{margin-top:36px;position:relative;animation:fadeInUp .5s ease}
 .stage-desc{
   text-align:center;font-family:var(--font-display);
   font-size:22px;font-weight:400;color:var(--text2);
@@ -2487,13 +2487,15 @@ html[data-theme="night"] .filter-dd-opt.sel{background:linear-gradient(135deg,#F
 html[data-theme="night"] .toast{background:rgba(20,22,27,.96)}
 /* ---- 取消生成按钮 ---- */
 .cancel-btn{
-  display:block;margin:6px auto 0;padding:8px 20px;border-radius:999px;
-  border:1px solid rgba(255,83,72,.4);
-  background:rgba(255,83,72,.12);color:var(--error);
-  font:inherit;font-size:13px;font-weight:600;cursor:pointer;
-  transition:background var(--t-out),transform var(--t-out),box-shadow var(--t-out);
+  position:absolute;top:2px;right:0;
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 12px;border-radius:999px;
+  border:1px solid var(--border);
+  background:transparent;color:var(--text3);
+  font:inherit;font-size:12px;font-weight:500;letter-spacing:0;cursor:pointer;
+  transition:color var(--t-out),border-color var(--t-out),background var(--t-out),transform var(--t-out);
 }
-.cancel-btn:hover{background:rgba(255,83,72,.22);transform:translateY(-1px);box-shadow:0 6px 16px rgba(255,83,72,.18)}
+.cancel-btn:hover{color:var(--error);border-color:rgba(255,83,72,.45);background:rgba(255,83,72,.08);transform:translateY(-1px)}
 .cancel-btn:disabled{opacity:.55;cursor:default;transform:none}
 /* ---- 触屏/手机：⋯ 与 取消置顶 ✕ 常显，不依赖 hover ---- */
 @media (hover: none){
@@ -3752,7 +3754,7 @@ html[data-theme="night"] .hist-cover-wrap::after{
       </div>
     </div>
     <div class="stage-desc" id="stage-desc"></div>
-    <button type="button" id="cancel-btn" class="cancel-btn" style="display:none">取消生成</button>
+    <button type="button" id="cancel-btn" class="cancel-btn" style="display:none">⏹ 停止</button>
     <div class="pipeline" id="pipeline"></div>
     <div class="log-box" id="log-box"></div>
   </section>
@@ -4114,7 +4116,7 @@ function setGenerateBusy(isBusy, text){
   btn.classList.toggle('is-loading', !!isBusy);
   btn.textContent = text || '生成笔记';
   const cancel = document.getElementById('cancel-btn');
-  if(cancel) cancel.style.display = (isBusy && currentJobId) ? 'block' : 'none';
+  if(cancel) cancel.style.display = (isBusy && currentJobId) ? 'inline-flex' : 'none';
 }
 
 function cancelJob(){
