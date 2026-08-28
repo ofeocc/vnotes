@@ -4537,13 +4537,13 @@ function renderHistoryCard(it){
   ];
   if(it.has_full) actions.push('<a href="'+outputHref(it.name, 'full.png')+'" target="_blank" rel="noopener noreferrer" data-open-link="1" class="secondary">长图</a>');
   if(it.has_cover) actions.push('<a href="'+outputHref(it.name, 'cover.jpg')+'" target="_blank" rel="noopener noreferrer" data-open-link="1" class="secondary">封面</a>');
-  if(it.source_url && qualityStatus !== 'ok'){
-    actions.push('<button type="button" class="secondary warn" data-history-action="regen" data-name="'+escapeHtml(it.name)+'" data-url="'+escapeHtml(it.source_url)+'">重生成</button>');
-  }
   const menu = [
-    '<button type="button" class="menu-btn" data-history-action="pin" data-name="'+escapeHtml(it.name)+'">'+(isPinned(it.name)?'取消置顶':'置顶')+'</button>',
-    '<button type="button" class="menu-btn danger" data-history-action="del" data-name="'+escapeHtml(it.name)+'">删除</button>'
+    '<button type="button" class="menu-btn" data-history-action="pin" data-name="'+escapeHtml(it.name)+'">'+(isPinned(it.name)?'取消置顶':'置顶')+'</button>'
   ];
+  if(it.source_url && qualityStatus !== 'ok'){
+    menu.push('<button type="button" class="menu-btn" data-history-action="regen" data-name="'+escapeHtml(it.name)+'" data-url="'+escapeHtml(it.source_url)+'">重生成</button>');
+  }
+  menu.push('<button type="button" class="menu-btn danger" data-history-action="del" data-name="'+escapeHtml(it.name)+'">删除</button>');
   return '<article class="hist-card quality-'+qualityStatus+'" role="listitem">' +
     '<button type="button" class="hist-card-more" data-history-action="more" aria-label="更多操作">&#x22ee;</button>' +
     '<a class="hist-main" href="'+noteHref+'" target="_blank" rel="noopener noreferrer" data-open-link="1">' +
