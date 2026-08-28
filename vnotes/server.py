@@ -2564,38 +2564,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 .cancel-btn:active{transform:scale(.97)}
 .hist-actions button:active{transform:scale(.96)}
 .pin-card:active{transform:scale(.98)}
-/* ---- 视图切换 ---- */
-.view-switch{
-  display:flex;align-items:center;gap:4px;
-  margin:0 0 14px;padding:5px;width:max-content;
-  border:1px solid var(--border);border-radius:999px;
-  background:rgba(255,255,255,.6);
-  box-shadow:var(--sh-1);
-}
-.view-switch-label{font-size:11px;color:var(--text3);margin:0 6px 0 8px;letter-spacing:.04em}
-.view-switch-btn{border:0;background:transparent;color:var(--text2);padding:7px 16px;font:inherit;font-size:13px;border-radius:999px;cursor:pointer;letter-spacing:0;transition:background var(--t-out),color var(--t-out),transform var(--t-out)}
-.view-switch-btn:hover{color:var(--text)}
-.view-switch-btn.is-active{background:linear-gradient(135deg,#F5C518 0%,#FFD93D 100%);color:var(--accent-dk);font-weight:600;box-shadow:0 4px 12px var(--accent-glow)}
-.view-switch-btn:active{transform:scale(.96)}
-html[data-theme="night"] .view-switch{background:rgba(35,38,44,.6);border-color:rgba(255,255,255,.08)}
-html[data-theme="night"] .view-switch-btn{color:var(--text2)}
-html[data-theme="night"] .view-switch-btn:hover{color:var(--text)}
-html[data-theme="night"] .view-switch-btn.is-active{color:#15110a}
-/* ---- 照片墙 ---- */
-.hist-deck.view-wall{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
-.wall-card{display:block;position:relative;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:linear-gradient(135deg,var(--surface2),var(--bg2));border:1px solid var(--border);box-shadow:var(--sh-1);transition:transform var(--t-out),box-shadow var(--t-out),border-color var(--t-out);cursor:pointer;text-decoration:none;color:var(--text)}
-.wall-card:hover{transform:translateY(-4px) scale(1.015);box-shadow:var(--sh-3);border-color:rgba(245,197,24,.5)}
-.wall-card img{width:100%;height:100%;object-fit:cover;display:block}
-.wall-card .wall-title{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.62));color:#fff;font-size:13px;font-weight:500;letter-spacing:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-html[data-theme="night"] .wall-card{border-color:rgba(255,255,255,.08)}
-/* ---- 环形 3D ---- */
-.hist-deck.view-ring{position:relative;height:420px;display:block;perspective:1200px;overflow:visible}
-.ring-card{position:absolute;left:50%;top:50%;width:210px;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,var(--surface2),var(--bg2));border:1px solid var(--border);box-shadow:var(--sh-2);cursor:pointer;text-decoration:none;color:var(--text);transform:translate(-50%,-50%);will-change:transform,opacity;transition:box-shadow var(--t-out)}
-.ring-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:var(--bg2)}
-.ring-card .ring-title{padding:8px 10px;font-size:13px;font-weight:500;letter-spacing:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:var(--surface)}
-.ring-card.current{border-color:rgba(245,197,24,.65);box-shadow:var(--sh-3),0 0 24px var(--accent-glow)}
-html[data-theme="night"] .ring-card{border-color:rgba(255,255,255,.08)}
-html[data-theme="night"] .ring-card .ring-title{background:#1b1d22}
 .history-more{
   grid-column:1/-1;
   display:flex;
@@ -3800,12 +3768,6 @@ html[data-theme="night"] .hist-cover-wrap::after{
         <div class="history-stats" id="history-stats"></div>
       </div>
     </div>
-    <div class="view-switch" id="view-switch" role="tablist" aria-label="视图切换">
-      <span class="view-switch-label">视图</span>
-      <button type="button" class="view-switch-btn" data-mode="wall" role="tab" aria-selected="false">照片墙</button>
-      <button type="button" class="view-switch-btn" data-mode="ring" role="tab" aria-selected="false">环形 3D</button>
-      <button type="button" class="view-switch-btn is-active" data-mode="list" role="tab" aria-selected="true">列表</button>
-    </div>
     <div class="pin-bar hidden" id="pin-bar" aria-label="置顶笔记">
       <span class="pin-bar-label">📌 置顶</span>
       <div class="pin-track" id="pin-track"></div>
@@ -4492,9 +4454,6 @@ function dealCards(){
 let historyItems = [];
 const HISTORY_PAGE_SIZE = 12;
 let historyVisibleLimit = HISTORY_PAGE_SIZE;
-let historyViewMode = 'list';
-let ringPos = 0;
-let ringItems = [];
 
 function formatHistoryDuration(sec){
   const seconds = Number(sec || 0);
@@ -4786,85 +4745,9 @@ function renderHistory(query){
     return;
   }
   const visible = filtered.slice(0, historyVisibleLimit);
-  deck.className = 'hist-deck view-' + historyViewMode;
-  if(historyViewMode === 'ring'){
-    ringItems = filtered;
-    deck.innerHTML = filtered.map(renderRingCard).join('');
-    layoutRing();
-    return;
-  }
-  const markup = historyViewMode === 'wall'
-    ? visible.map(renderWallCard).join('')
-    : visible.map(renderHistoryCard).join('');
-  deck.innerHTML = markup + renderHistoryMore(filtered.length, visible.length);
-  if(historyViewMode === 'list') dealCards();
+  deck.innerHTML = visible.map(renderHistoryCard).join('') + renderHistoryMore(filtered.length, visible.length);
+  dealCards();
   bindHistoryMore();
-}
-
-function renderWallCard(it){
-  const href = outputHref(it.name, 'notes.html');
-  const cover = it.has_cover ? '<img src="'+outputHref(it.name, 'cover.jpg')+'" alt="" loading="lazy"/>' : '';
-  return '<a class="wall-card" href="'+href+'" target="_blank" rel="noopener noreferrer" data-name="'+escapeHtml(it.name)+'" data-title="'+escapeHtml(it.title || it.name)+'">' + cover + '<span class="wall-title">'+escapeHtml(it.title || it.name)+'</span></a>';
-}
-function renderRingCard(it){
-  const href = outputHref(it.name, 'notes.html');
-  const cover = it.has_cover ? '<img src="'+outputHref(it.name, 'cover.jpg')+'" alt="" loading="lazy"/>' : '';
-  return '<a class="ring-card" href="'+href+'" target="_blank" rel="noopener noreferrer" data-name="'+escapeHtml(it.name)+'" data-title="'+escapeHtml(it.title || it.name)+'">' + cover + '<span class="ring-title">'+escapeHtml(it.title || it.name)+'</span></a>';
-}
-function layoutRing(){
-  const deck = document.getElementById('hist-grid');
-  if(!deck || historyViewMode !== 'ring') return;
-  const cards = deck.querySelectorAll('.ring-card');
-  const N = Math.max(1, ringItems.length || cards.length);
-  const R = Math.min(640, Math.max(320, window.innerWidth * 0.4));
-  const t = ringPos;
-  cards.forEach((card, i) => {
-    let d = (i - t) / N * Math.PI * 2;
-    while(d > Math.PI) d -= Math.PI * 2;
-    while(d < -Math.PI) d += Math.PI * 2;
-    const cos = Math.cos(d);
-    const sin = Math.sin(d);
-    const x = sin * R;
-    const scale = 0.6 + 0.44 * (cos + 1) / 2;
-    const ry = -sin * 10;
-    const op = cos < -0.5 ? (0.06 + 0.08 * (cos + 1)) : Math.max(0.3, 0.55 + 0.42 * cos);
-    card.style.transform = 'translate(-50%,-50%) translate3d(' + x.toFixed(1) + 'px,0,0) rotateY(' + ry.toFixed(1) + 'deg) scale(' + scale.toFixed(3) + ')';
-    card.style.zIndex = String(Math.round((cos + 1) * 100));
-    card.style.opacity = op.toFixed(3);
-    card.classList.toggle('current', Math.abs(d) < (Math.PI / N) * 0.72);
-  });
-}
-function setHistoryView(mode){
-  historyViewMode = mode;
-  document.querySelectorAll('#view-switch .view-switch-btn').forEach(b => {
-    const on = b.dataset.mode === mode;
-    b.classList.toggle('is-active', on);
-    b.setAttribute('aria-selected', on ? 'true' : 'false');
-  });
-  historyVisibleLimit = HISTORY_PAGE_SIZE;
-  renderHistory();
-}
-function bindViewSwitch(){
-  const sw = document.getElementById('view-switch');
-  if(!sw || sw.dataset.bound) return;
-  sw.dataset.bound = '1';
-  sw.addEventListener('click', (e) => { const b = e.target.closest ? e.target.closest('.view-switch-btn') : null; if(b) setHistoryView(b.dataset.mode); });
-}
-function bindRingControls(){
-  const deck = document.getElementById('hist-grid');
-  if(!deck || deck.dataset.ringBound) return;
-  deck.dataset.ringBound = '1';
-  deck.addEventListener('wheel', (e) => {
-    if(historyViewMode !== 'ring') return;
-    e.preventDefault();
-    ringPos += e.deltaY / 300;
-    layoutRing();
-  }, { passive: false });
-  let down = false, sx = 0, sp = 0;
-  deck.addEventListener('pointerdown', (e) => { if(historyViewMode !== 'ring') return; down = true; sx = e.clientX; sp = ringPos; if(deck.setPointerCapture) try { deck.setPointerCapture(e.pointerId); } catch(_) {} });
-  deck.addEventListener('pointermove', (e) => { if(!down || historyViewMode !== 'ring') return; ringPos = sp - (e.clientX - sx) / 140; layoutRing(); });
-  deck.addEventListener('pointerup', () => { down = false; });
-  deck.addEventListener('pointercancel', () => { down = false; });
 }
 
 function initFilterDropdown(id){
@@ -5457,8 +5340,6 @@ try{ loadConfigStatus(); }catch(e){}
 try{ loadHistory(); }catch(e){}
 try{ observeReveal(); }catch(e){}
 try{ bindNotePreview(); }catch(e){}
-try{ bindViewSwitch(); }catch(e){}
-try{ bindRingControls(); }catch(e){}
 // 兜底：即使某一步初始化出错，也确保笔记预览绑定生效
 window.addEventListener('load', () => { try{ bindNotePreview(); }catch(e){} });
 </script>
