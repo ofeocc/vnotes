@@ -2109,6 +2109,8 @@ select option{background:var(--surface);color:var(--text)}
   box-shadow:0 1px 2px rgba(20,24,28,.04);
 }
 .history-toolbar{
+  position:relative;
+  z-index:80;
   display:grid;
   grid-template-columns:minmax(260px,1fr) auto;
   align-items:center;
@@ -2239,6 +2241,8 @@ html[data-theme="night"] .filter-dd-opt.sel{background:linear-gradient(135deg,#F
   transform:translateY(-68%) rotate(45deg);
   pointer-events:none;
 }
+/* 自定义下拉时隐藏原 select 箭头，避免重影 */
+.history-select-wrap.filter-dd::after{content:none}
 .history-filter{
   height:100%;
   min-width:0;
