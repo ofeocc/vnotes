@@ -44,20 +44,27 @@ def _out_dir(cfg: Config, meta: dict) -> Path:
 
 def pipeline(cfg: Config, url: str, *, part: int | None, no_frames: bool,
              no_slice: bool, stub_transcript: bool,
-             out_dir: Path | None = None) -> Path:
+             out_dir: Path | None = None, cancel_check=None) -> Path:
     cfg.ensure_dirs()
     url = M.normalize_video_url(url)
     work = _work_dir(cfg, url)
     work.mkdir(parents=True, exist_ok=True)
     log.info("main", f"vnotes {__version__} · 工作目录={work}")
 
+    def _check():
+        if cancel_check:
+            cancel_check()
+
     # 1 元数据
+    _check()
     meta = M.fetch_metadata(cfg, url, part=part, work_dir=work)
 
     # 2 音频
+    _check()
     audio = A.download_audio(cfg, meta, work)
 
     # 3 转写
+    _check()
     if stub_transcript:
         log.warn("main", "使用桩转写（不调用 Whisper）")
         dur = audio.get("duration_sec") or meta.get("duration") or 60.0
@@ -70,9 +77,11 @@ def pipeline(cfg: Config, url: str, *, part: int | None, no_frames: bool,
         transcript = T.transcribe(cfg, audio, work)
 
     # 4 内容分析
+    _check()
     analysis = Z.analyze(cfg, meta, transcript, work)
 
     # 5 SVG
+    _check()
     svgs = S.generate_svgs(cfg, analysis, work)
 
     # 6 输出目录 & 帧
@@ -95,14 +104,17 @@ def pipeline(cfg: Config, url: str, *, part: int | None, no_frames: bool,
         log.info("main", "跳过抽帧" + ("（--no-frames）" if no_frames else "（非界面演示类）"))
 
     # 7 渲染 HTML
+    _check()
     html = out_dir / "notes.html"
     R.render_html(cfg, meta, transcript, analysis, svgs, audio, html, frames_dir)
     log.info("main", f"HTML 已生成：{html}")
 
     # 8 整页截图
+    _check()
     shot = SH.screenshot(cfg, html, out_dir / "full.png")
 
     # 9 QA
+    _check()
     q = Q.qa(cfg, shot, analysis)
     content_q = Q.note_quality(meta, audio, analysis, transcript, q)
     for wmsg in content_q.get("warnings", []):

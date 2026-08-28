@@ -35,6 +35,11 @@ class Logger:
 log = Logger()
 
 
+class JobCancelled(RuntimeError):
+    """用户主动取消生成任务。"""
+    pass
+
+
 # ---- 子进程 ----
 def run(cmd: list[str], *, tag: str = "run", check: bool = True,
         capture: bool = True, text: bool = True, timeout: int | None = None,

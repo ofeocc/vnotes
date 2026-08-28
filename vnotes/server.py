@@ -41,7 +41,7 @@ from .config import Config
 from .lightbox import inject_note_lightbox
 from .metadata import normalize_video_url
 from .qa import note_quality
-from .util import log
+from .util import log, JobCancelled
 
 # 确保项目根目录在 sys.path（run.py 在根目录）
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -333,6 +333,10 @@ def _run_pipeline(job_id: str, req: GenerateRequest) -> None:
     # 构建配置（从 .env 加载，再用用户输入覆盖）
     cfg = _config_for_request(req)
 
+    def _raise_if_cancelled():
+        if job.get("cancel_requested"):
+            raise JobCancelled("已取消")
+
     tracker = StageTracker(lambda ev: q.put(ev))
 
     # 拦截日志
@@ -375,6 +379,7 @@ def _run_pipeline(job_id: str, req: GenerateRequest) -> None:
                 no_frames=req.no_frames,
                 no_slice=req.no_slice,
                 on_progress=on_progress,
+                cancel_check=_raise_if_cancelled,
             )
             tracker.finish()
 
@@ -400,6 +405,7 @@ def _run_pipeline(job_id: str, req: GenerateRequest) -> None:
                 no_frames=req.no_frames,
                 no_slice=req.no_slice,
                 stub_transcript=False,
+                cancel_check=_raise_if_cancelled,
             )
             tracker.finish()
 
@@ -431,6 +437,14 @@ def _run_pipeline(job_id: str, req: GenerateRequest) -> None:
             job["finished_at"] = time.time()
             _write_job_snapshot(job_id)
 
+    except JobCancelled as e:
+        log.warn("main", f"任务已取消：{e}")
+        tracker.finish()
+        q.put({"type": "cancelled", "message": str(e)})
+        job["status"] = "cancelled"
+        job["error"] = str(e)
+        job["finished_at"] = time.time()
+        _write_job_snapshot(job_id)
     except Exception as e:
         tb = traceback.format_exc()
         log.error("main", f"任务失败：{e}")
@@ -498,6 +512,7 @@ async def generate(req: GenerateRequest):
             "finished_at": None,
             "logs": [],
             "traceback": "",
+            "cancel_requested": False,
         }
         _write_job_snapshot(job_id)
 
@@ -517,6 +532,21 @@ async def job_status(job_id: str):
             return JSONResponse(json.loads(snap.read_text(encoding="utf-8")))
         return JSONResponse({"error": "任务不存在"}, status_code=404)
     return JSONResponse(_public_job(_jobs[job_id]))
+
+
+@app.post("/api/job/{job_id}/cancel")
+async def job_cancel(job_id: str):
+    """请求取消一个正在运行的生成任务。"""
+    job = _jobs.get(job_id)
+    if not job:
+        # 允许对已结束/未知任务返回 ok（无副作用）
+        return {"ok": True, "job_id": job_id, "note": "任务不存在或已结束"}
+    if job.get("status") != "running":
+        return {"ok": True, "job_id": job_id, "note": f"任务状态为 {job.get('status')}，无需取消"}
+    with _JOB_STATE_LOCK:
+        job["cancel_requested"] = True
+    log.info("main", f"收到取消请求：job={job_id}")
+    return {"ok": True, "job_id": job_id}
 
 
 @app.get("/api/stream/{job_id}")
@@ -2389,6 +2419,39 @@ select option{background:var(--surface);color:var(--text)}
 .pin-card-unpin{position:absolute;top:5px;right:5px;width:20px;height:20px;border:0;border-radius:999px;cursor:pointer;background:rgba(0,0,0,.45);color:#fff;font-size:11px;line-height:1;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--t-out),background var(--t-out)}
 .pin-card:hover .pin-card-unpin{opacity:1}
 .pin-card-unpin:hover{background:rgba(0,0,0,.7)}
+/* ---- Toast 通知 ---- */
+.toast-box{
+  position:fixed;top:16px;left:50%;transform:translateX(-50%);
+  z-index:9999;display:flex;flex-direction:column;align-items:center;gap:8px;
+  pointer-events:none;
+}
+.toast{
+  max-width:min(520px,92vw);
+  padding:10px 16px;border-radius:14px;
+  background:rgba(30,33,39,.94);color:#fff;
+  font-size:13px;line-height:1.45;letter-spacing:0;
+  box-shadow:0 12px 34px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.1);
+  opacity:0;transform:translateY(-10px) scale(.96);
+  transition:opacity var(--t-out),transform var(--t-spring);
+  backdrop-filter:blur(12px);
+  pointer-events:none;
+}
+.toast.show{opacity:1;transform:translateY(0) scale(1)}
+.toast.success{border-color:rgba(46,204,113,.5);box-shadow:0 12px 34px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.08),0 0 20px rgba(46,204,113,.25)}
+.toast.error{border-color:rgba(255,59,48,.55);box-shadow:0 12px 34px rgba(0,0,0,.22),0 0 20px rgba(255,59,48,.25)}
+.toast.info{border-color:rgba(72,199,216,.5);box-shadow:0 12px 34px rgba(0,0,0,.22),0 0 20px rgba(72,199,216,.28)}
+html[data-theme="night"] .toast{background:rgba(20,22,27,.96)}
+/* ---- 取消生成按钮 ---- */
+.cancel-btn{
+  display:block;margin:6px auto 0;padding:8px 20px;border-radius:999px;
+  border:1px solid rgba(255,83,72,.4);
+  background:rgba(255,83,72,.12);color:var(--error);
+  font:inherit;font-size:13px;font-weight:600;cursor:pointer;
+  transition:background var(--t-out),transform var(--t-out),box-shadow var(--t-out);
+}
+.cancel-btn:hover{background:rgba(255,83,72,.22);transform:translateY(-1px);box-shadow:0 6px 16px rgba(255,83,72,.18)}
+.cancel-btn:disabled{opacity:.55;cursor:default;transform:none}
 .hist-empty{
   border:1px dashed rgba(26,26,26,.12);
   border-radius:16px;
@@ -3582,6 +3645,7 @@ html[data-theme="night"] .hist-cover-wrap::after{
       </div>
     </div>
     <div class="stage-desc" id="stage-desc"></div>
+    <button type="button" id="cancel-btn" class="cancel-btn" style="display:none">取消生成</button>
     <div class="pipeline" id="pipeline"></div>
     <div class="log-box" id="log-box"></div>
   </section>
@@ -3698,6 +3762,7 @@ const STAGES = [
 ];
 
 let es = null;
+let currentJobId = null;
 let CONFIG_STATUS = null;
 
 const BACKEND_LABELS = {
@@ -3941,6 +4006,38 @@ function setGenerateBusy(isBusy, text){
   btn.disabled = !!isBusy;
   btn.classList.toggle('is-loading', !!isBusy);
   btn.textContent = text || '生成笔记';
+  const cancel = document.getElementById('cancel-btn');
+  if(cancel) cancel.style.display = (isBusy && currentJobId) ? 'block' : 'none';
+}
+
+function cancelJob(){
+  if(!currentJobId) return;
+  const btn = document.getElementById('cancel-btn');
+  if(btn){ btn.disabled = true; btn.textContent = '取消中…'; }
+  fetch('/api/job/'+currentJobId+'/cancel', { method:'POST' })
+    .then(r => r.json())
+    .then(() => toast('已请求取消生成…','info'))
+    .catch(() => toast('取消失败', 'error'));
+}
+
+function toast(msg, type){
+  const box = document.getElementById('toast-box');
+  if(!box) return;
+  const el = document.createElement('div');
+  el.className = 'toast ' + (type || 'info');
+  el.textContent = msg;
+  box.appendChild(el);
+  setTimeout(() => el.classList.add('show'), 10);
+  setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 300); }, 2600);
+}
+
+function getVideoId(url){
+  if(!url) return '';
+  const bv = String(url).match(/BV[\w]{10}/i);
+  if(bv) return bv[0].toUpperCase();
+  const yt = String(url).match(/[?&]v=([\w-]{6,})/i);
+  if(yt) return yt[1];
+  return '';
 }
 
 async function startGen(){
@@ -3953,6 +4050,13 @@ async function startGen(){
     return;
   }
   if(url !== rawInput) inp.value = url;
+
+  // 防重复：同一视频已生成过则确认
+  const vid = getVideoId(url);
+  if(vid){
+    const dup = (historyItems || []).find(it => getVideoId(it.source_url || '') === vid);
+    if(dup && !confirm('已生成过《'+(dup.title||dup.name)+'》，确定要重新生成并覆盖吗？')) return;
+  }
 
   const noteMode = document.getElementById('note-mode').value;
   const backend = document.getElementById('backend').value;
@@ -4009,6 +4113,8 @@ async function startGen(){
       throw new Error(data.error || '生成请求失败，请检查视频链接。');
     }
 
+    currentJobId = data.job_id;
+    setGenerateBusy(true, '生成中…');
     es = new EventSource('/api/stream/'+data.job_id);
     es.onmessage = (e) => {
       const ev = JSON.parse(e.data);
@@ -4049,7 +4155,9 @@ function handleEvent(ev){
       document.querySelectorAll('.p-conn').forEach(c=>c.classList.remove('running'));
       showResult(ev.result);
       setGenerateBusy(false);
+      currentJobId = null;
       document.getElementById('stage-desc').textContent = '完成。';
+      toast('笔记生成完成','success');
       loadHistory();
       break;
     case 'error':
@@ -4057,9 +4165,20 @@ function handleEvent(ev){
       document.querySelectorAll('.p-conn').forEach(c=>c.classList.remove('running'));
       showError(ev.message);
       setGenerateBusy(false);
+      currentJobId = null;
       const errDesc = document.getElementById('stage-desc');
       errDesc.textContent = '出了点问题。';
       errDesc.style.color = 'var(--error)';
+      toast('生成失败：' + ev.message, 'error');
+      break;
+    case 'cancelled':
+      if(es) es.close();
+      document.querySelectorAll('.p-conn').forEach(c=>c.classList.remove('running'));
+      setGenerateBusy(false);
+      currentJobId = null;
+      const cDesc = document.getElementById('stage-desc');
+      if(cDesc){ cDesc.textContent = '已取消。'; cDesc.style.color = ''; }
+      toast('已取消生成','info');
       break;
   }
 }
@@ -4530,8 +4649,8 @@ function bindHistoryActions(){
         const url = t.dataset.url || '';
         const act = t.dataset.historyAction;
         if(act === 'more'){ toggleCardMenu(t); }
-        else if(act === 'pin'){ togglePin(name); closeCardMenus(); renderPinBar(); renderHistory(); }
-        else if(act === 'regen'){ closeCardMenus(); regenNote(name, url); }
+        else if(act === 'pin'){ togglePin(name); closeCardMenus(); renderPinBar(); renderHistory(); toast(isPinned(name)?'已置顶':'已取消置顶','success'); }
+        else if(act === 'regen'){ closeCardMenus(); toast('开始重新生成','info'); regenNote(name, url); }
         else if(act === 'del'){ closeCardMenus(); deleteNote(name); }
         return;
       }
@@ -4607,6 +4726,8 @@ async function regenNote(name, url){
     });
     const data = await resp.json();
     if(!resp.ok || data.error || !data.job_id){ throw new Error(data.error || '重生成请求失败。'); }
+    currentJobId = data.job_id;
+    setGenerateBusy(true, '重生成中…');
     es = new EventSource('/api/stream/'+data.job_id);
     es.onmessage = (e) => { const ev = JSON.parse(e.data); handleEvent(ev); };
     es.onerror = () => { es.close(); setGenerateBusy(false); };
@@ -4628,8 +4749,9 @@ async function deleteNote(name){
     if(!resp.ok) throw new Error(data.error || '删除失败');
     if(Array.isArray(historyItems)) historyItems = historyItems.filter(it => it.name !== name);
     renderHistory();
+    toast('笔记已删除','success');
   } catch(err) {
-    alert('删除失败：' + err.message);
+    toast('删除失败：' + err.message, 'error');
   }
 }
 
@@ -5006,6 +5128,7 @@ loadConfigStatus();
 loadHistory();
 observeReveal();
 </script>
+    <div class="toast-box" id="toast-box" aria-live="polite"></div>
 </body>
 </html>"""
 

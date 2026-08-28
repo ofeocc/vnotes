@@ -47,6 +47,7 @@ def batch_pipeline(
     no_frames: bool = False,
     no_slice: bool = False,
     on_progress: Callable[[int, int, str], None] | None = None,
+    cancel_check=None,
 ) -> Path:
     """批量处理多 P 视频。
 
@@ -57,6 +58,7 @@ def batch_pipeline(
         no_frames: 跳过抽帧
         no_slice: 跳过切片
         on_progress: 进度回调 (completed, total, current_title)
+        cancel_check: 可选，每次处理前调用；抛出异常则中止批量
 
     Returns:
         index.html 的路径
@@ -74,7 +76,7 @@ def batch_pipeline(
         log.warn("batch", "视频只有 1 个 P，无需批量处理，退回单 P 模式")
         html_path = run_pipeline(
             cfg, url, part=1, no_frames=no_frames,
-            no_slice=no_slice, stub_transcript=False,
+            no_slice=no_slice, stub_transcript=False, cancel_check=cancel_check,
         )
         return html_path
 
@@ -124,6 +126,7 @@ def batch_pipeline(
                 no_slice=no_slice,
                 stub_transcript=False,
                 out_dir=out_dir,
+                cancel_check=cancel_check,
             )
             elapsed = time.time() - t0
             log.info("batch", f"P{p_idx} 完成（{elapsed:.0f}s）")
