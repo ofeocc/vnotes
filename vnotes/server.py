@@ -2075,10 +2075,16 @@ select option{background:var(--surface);color:var(--text)}
   min-width:0;
 }
 .history-title-row h2{
-  font-size:24px;
+  font-family:var(--font-display);
+  font-size:30px;
   font-weight:500;
-  letter-spacing:0;
+  letter-spacing:.01em;
   color:var(--text);
+  position:relative;
+}
+.history-title-row h2::after{
+  content:'';display:block;width:46px;height:3px;margin-top:10px;
+  background:linear-gradient(90deg,var(--accent),#FFD93D);border-radius:2px;
 }
 .history-subtitle{
   margin-top:2px;
@@ -2183,6 +2189,38 @@ select option{background:var(--surface);color:var(--text)}
   min-width:136px;
   padding:0 12px;
 }
+/* ---- 自定义筛选下拉 ---- */
+.history-select-wrap.filter-dd{position:relative}
+.filter-dd-btn{
+  height:100%;width:100%;border:0;background:transparent;padding:0 4px 0 0;
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  color:var(--text);font:inherit;font-size:13px;cursor:pointer;letter-spacing:0;
+}
+.filter-dd-val{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left}
+.filter-dd-caret{
+  flex:0 0 auto;width:8px;height:8px;border-right:1.6px solid var(--text3);border-bottom:1.6px solid var(--text3);
+  transform:rotate(45deg) translateY(-2px);transition:transform var(--t-out);opacity:.75;
+}
+.history-select-wrap.dd-open .filter-dd-caret{transform:rotate(225deg) translateY(-1px)}
+.filter-dd-panel{
+  position:absolute;top:calc(100% + 6px);left:0;right:0;z-index:50;
+  display:none;flex-direction:column;gap:2px;padding:6px;
+  border:1px solid var(--border);border-radius:14px;
+  background:var(--surface);box-shadow:var(--sh-3);
+  max-height:280px;overflow:auto;
+}
+.history-select-wrap.dd-open .filter-dd-panel{display:flex;animation:ddIn .18s var(--t-out)}
+@keyframes ddIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.filter-dd-opt{
+  text-align:left;width:100%;border:0;background:transparent;color:var(--text);
+  padding:9px 10px;font:inherit;font-size:13px;border-radius:9px;cursor:pointer;letter-spacing:0;
+  transition:background var(--t-out),color var(--t-out);
+}
+.filter-dd-opt:hover{background:var(--accent-soft);color:var(--accent-dk)}
+.filter-dd-opt.sel{background:linear-gradient(135deg,#F5C518 0%,#FFD93D 100%);color:var(--accent-dk);font-weight:600}
+html[data-theme="night"] .filter-dd-panel{background:rgba(27,29,34,.97);border-color:rgba(255,255,255,.09)}
+html[data-theme="night"] .filter-dd-opt:hover{background:rgba(245,197,24,.16);color:#FFD93D}
+html[data-theme="night"] .filter-dd-opt.sel{background:linear-gradient(135deg,#F5C518 0%,#FFD93D 100%);color:#15110a}
 .history-select-wrap>span{
   color:var(--text3);
   font-size:11px;
@@ -2499,11 +2537,29 @@ body.note-preview-open{overflow:hidden}
   .note-preview-panel{width:100vw;border-left:none}
 }
 .hist-empty{
-  border:1px dashed rgba(26,26,26,.12);
-  border-radius:16px;
-  background:rgba(255,255,255,.54);
+  grid-column:1/-1;
+  border:1px dashed rgba(26,26,26,.14);
+  border-radius:18px;
+  background:rgba(255,255,255,.5);
   color:var(--text3);
+  padding:44px 24px;
+  text-align:center;
+  font-size:14px;
+  letter-spacing:0;
+  line-height:1.6;
 }
+.hist-empty::before{
+  content:'◐';display:block;font-size:36px;color:var(--accent);
+  margin-bottom:14px;opacity:.92;
+}
+html[data-theme="night"] .hist-empty{border-color:rgba(255,255,255,.12);background:rgba(30,33,39,.4)}
+html[data-theme="night"] .hist-empty::before{color:#FFD93D}
+/* ---- 微交互：按钮按压 ---- */
+button,a{-webkit-tap-highlight-color:transparent}
+.filter-dd-btn:active{transform:scale(.98)}
+.cancel-btn:active{transform:scale(.97)}
+.hist-actions button:active{transform:scale(.96)}
+.pin-card:active{transform:scale(.98)}
 .history-more{
   grid-column:1/-1;
   display:flex;
@@ -4437,6 +4493,8 @@ function syncHistoryCategoryOptions(){
     .concat(historyCategories(historyItems).map(c => '<option value="'+escapeHtml(c)+'">'+escapeHtml(c)+'</option>'));
   select.innerHTML = options.join('');
   if([...select.options].some(o => o.value === current)) select.value = current;
+  const wrap = select.parentElement;
+  if(wrap && wrap.__ddRefresh) wrap.__ddRefresh();
 }
 
 function historyStatsText(items, total){
@@ -4549,6 +4607,8 @@ function syncHistoryCategoryOptions(){
     .concat(historyCategories(historyItems).map(c => '<option value="'+escapeHtml(c)+'">'+escapeHtml(c)+'</option>'));
   select.innerHTML = options.join('');
   if([...select.options].some(o => o.value === current)) select.value = current;
+  const wrap = select.parentElement;
+  if(wrap && wrap.__ddRefresh) wrap.__ddRefresh();
 }
 
 function historyStatsText(items, total){
@@ -4686,6 +4746,58 @@ function renderHistory(query){
   bindHistoryMore();
 }
 
+function initFilterDropdown(id){
+  const sel = document.getElementById(id);
+  if(!sel || sel.dataset.ddBound || !sel.parentElement) return;
+  sel.dataset.ddBound = '1';
+  const wrap = sel.parentElement;
+  wrap.classList.add('filter-dd');
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'filter-dd-btn';
+  btn.setAttribute('aria-haspopup','listbox');
+  const val = document.createElement('span');
+  val.className = 'filter-dd-val';
+  const caret = document.createElement('span');
+  caret.className = 'filter-dd-caret';
+  btn.appendChild(val); btn.appendChild(caret);
+  const panel = document.createElement('div');
+  panel.className = 'filter-dd-panel';
+  panel.setAttribute('role','listbox');
+  function renderOpts(){
+    panel.innerHTML = Array.prototype.map.call(sel.options, function(o,i){
+      return '<button type="button" class="filter-dd-opt' + (o.selected ? ' sel' : '') + '" data-i="' + i + '">' + escapeHtml(o.text) + '</button>';
+    }).join('');
+  }
+  function syncVal(){
+    const o = sel.options[sel.selectedIndex];
+    val.textContent = o ? o.text : sel.value;
+  }
+  renderOpts(); syncVal();
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    const open = wrap.classList.toggle('dd-open');
+    if(open) closeAllFilterDD(wrap);
+  });
+  panel.addEventListener('click', function(e){
+    const opt = e.target.closest ? e.target.closest('.filter-dd-opt') : null;
+    if(!opt) return;
+    e.stopPropagation();
+    sel.selectedIndex = Number(opt.dataset.i);
+    sel.dispatchEvent(new Event('change'));
+    wrap.classList.remove('dd-open');
+    renderOpts(); syncVal();
+  });
+  wrap.appendChild(btn); wrap.appendChild(panel);
+  sel.style.display = 'none';
+  wrap.__ddRefresh = function(){ renderOpts(); syncVal(); };
+}
+function closeAllFilterDD(except){
+  document.querySelectorAll('.history-select-wrap.filter-dd.dd-open').forEach(function(w){
+    if(w !== except) w.classList.remove('dd-open');
+  });
+}
+
 function bindHistoryControls(){
   const controls = [
     document.getElementById('history-search'),
@@ -4706,6 +4818,8 @@ function bindHistoryControls(){
       renderHistory();
     });
   });
+  ['history-platform','history-category','history-quality','history-sort'].forEach(initFilterDropdown);
+  document.addEventListener('click', () => closeAllFilterDD(null));
   const reset = document.getElementById('history-reset');
   if(reset && !reset.dataset.bound){
     reset.dataset.bound = '1';
