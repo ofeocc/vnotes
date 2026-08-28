@@ -98,13 +98,16 @@ def _build_part_url(base_url: str, part: int) -> str:
 
 
 def _run_ytdlp(cfg: Config, args: list[str], *, tag: str) -> list[dict]:
-    cp = run_ytdlp(
-        cfg,
-        ["--socket-timeout", "15", "--retries", "2", "--extractor-retries", "2", "--no-warnings", *args],
-        tag=tag,
-        check=True,
-        timeout=90,
-    )
+    try:
+        cp = run_ytdlp(
+            cfg,
+            ["--socket-timeout", "15", "--retries", "2", "--extractor-retries", "2", "--no-warnings", *args],
+            tag=tag,
+            check=True,
+            timeout=90,
+        )
+    except RuntimeError as e:
+        raise _friendly_ytdlp_error(e) from e
     lines = [ln for ln in cp.stdout.splitlines() if ln.strip()]
     out = []
     for ln in lines:
@@ -113,6 +116,25 @@ def _run_ytdlp(cfg: Config, args: list[str], *, tag: str) -> list[dict]:
         except json.JSONDecodeError:
             continue
     return out
+
+
+def _friendly_ytdlp_error(e: Exception) -> RuntimeError:
+    """给 yt-dlp 常见失败补充可操作的排查提示。"""
+    text = str(e)
+    lower = text.lower()
+    if any(k in lower for k in ("youtube", "youtu.be", "no video formats",
+                                "sign in to confirm", "needs to be reloaded",
+                                "bot", "not a bot")):
+        return RuntimeError(
+            f"{text}\n\n"
+            "[排查提示] YouTube 抓取失败通常是这几种情况：\n"
+            "  1. 国内直连被墙 —— 请在 .env 配置 VNOTES_PROXY（如 http://127.0.0.1:7890）走代理；\n"
+            "  2. 缺 YouTube 登录态 —— 浏览器需已登录 YouTube（用 VNOTES_COOKIES_BROWSER），或导出 cookies.txt 配 VNOTES_COOKIES_FILE；\n"
+            "  3. YouTube 反爬 —— 仍失败时多为代理 IP 被标记或需 PO token，可换更稳的代理节点后重试。"
+        )
+    if "timeout" in lower:
+        return RuntimeError(f"{text}\n\n[提示] 拉取元数据超时：请检查网络/代理，或稍后重试。")
+    return e if isinstance(e, RuntimeError) else RuntimeError(str(e))
 
 
 def _fetch_parts(cfg: Config, base_url: str) -> list[dict]:

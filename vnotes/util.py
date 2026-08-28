@@ -76,7 +76,8 @@ def run_ytdlp(cfg: Any, args: list[str], *, tag: str = "yt-dlp",
               check: bool = True, timeout: int | None = None) -> subprocess.CompletedProcess:
     """Run yt-dlp, falling back without browser cookies if cookie DB copying fails."""
     cookie_args = cfg.cookies_args()
-    cmd = [cfg.yt_dlp, *cookie_args, *args]
+    proxy_args = ["--proxy", cfg.proxy] if getattr(cfg, "proxy", "") else []
+    cmd = [cfg.yt_dlp, *proxy_args, *cookie_args, *args]
     try:
         return run(cmd, tag=tag, check=check, timeout=timeout)
     except Exception as e:
@@ -86,7 +87,7 @@ def run_ytdlp(cfg: Any, args: list[str], *, tag: str = "yt-dlp",
                 "浏览器 Cookie 数据库读取失败，已自动改用无 Cookie 模式重试；"
                 "如果视频需要登录/大会员权限，请导出 cookies.txt 后配置 VNOTES_COOKIES_FILE。",
             )
-            return run([cfg.yt_dlp, *args], tag=tag, check=check, timeout=timeout)
+            return run([cfg.yt_dlp, *proxy_args, *args], tag=tag, check=check, timeout=timeout)
         raise
 
 

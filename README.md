@@ -173,6 +173,8 @@ output/<视频标题>/
 
 支持直接粘贴分享文本（含中文标题），自动提取 URL。
 
+> 🌐 **YouTube 须知**：国内直连 YouTube 通常被墙，需在 `.env` 配置代理（`VNOTES_PROXY=http://127.0.0.1:7890`）供 yt-dlp 使用；并确保浏览器已登录 YouTube（`VNOTES_COOKIES_BROWSER`）。若仍报 `Sign in to confirm you're not a bot` / `No video formats found`，多为代理 IP 被标记或需 PO token，请换更稳的代理节点后重试。B 站不受此限制。
+
 ## 🧱 技术栈
 
 - **Python**（FastAPI / uvicorn）+ 原生 JS 前端（单页、无构建）

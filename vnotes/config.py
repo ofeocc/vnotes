@@ -60,6 +60,7 @@ class Config:
     ffmpeg: str = "ffmpeg"
     ffprobe: str = "ffprobe"
     chrome: Optional[str] = None
+    proxy: str = ""  # 可选 HTTP(S) 代理（如 http://127.0.0.1:7890），透传给 yt-dlp，用于 YouTube 等被墙站点
 
     # LLM（OpenAI 兼容）
     llm_base_url: str = "https://api.deepseek.com/v1"
@@ -127,6 +128,7 @@ class Config:
         cfg.ffmpeg = _find("ffmpeg") or "ffmpeg"
         cfg.ffprobe = _find("ffprobe") or "ffprobe"
         cfg.chrome = detect_chrome()
+        cfg.proxy = env("VNOTES_PROXY", "")
 
         cfg.llm_base_url = env("VNOTES_LLM_BASE_URL", cfg.llm_base_url)
         cfg.llm_api_key = env("VNOTES_LLM_API_KEY", cfg.llm_api_key)
