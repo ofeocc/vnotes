@@ -700,7 +700,7 @@ _HTML = r"""<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>vnotes · 视频笔记工作室</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fff' stop-opacity='.42'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='.06'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%23F5C518'/%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Cpath d='M11 16 L22 16 L32 40 L42 16 L53 16 L32 50 Z' fill='%23121109'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fff' stop-opacity='.42'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='.06'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%23F5C518'/%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Cpath transform='rotate(-3 32 32)' d='M12 15 C16 17 20 16 21 15 C25 26 28 37 31 44 C32 46 34 46 35 44 C39 35 43 24 48 15 C50 16 52 17 53 16 C49 27 44 39 39 47 C36 51 32 52 29 50 C24 46 17 31 12 15 Z' fill='%23140f0a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Yellowtail&family=Great+Vibes&display=swap" rel="stylesheet">
