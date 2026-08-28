@@ -2323,6 +2323,64 @@ select option{background:var(--surface);color:var(--text)}
   color:#c0392b;
 }
 .hist-actions button.danger:hover{background:rgba(255,83,72,.24)}
+/* ---- 卡片更多菜单（⋯）：高斯模糊 + 拟物化弹层 ---- */
+.hist-card{position:relative}
+.hist-card-more{
+  position:absolute;top:10px;right:10px;z-index:3;
+  width:30px;height:30px;border-radius:999px;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(26,26,26,.1);
+  background:rgba(255,255,255,.88);color:var(--text2);
+  font-size:15px;line-height:1;cursor:pointer;
+  box-shadow:var(--sh-1);
+  backdrop-filter:blur(4px);
+  transition:background var(--t-out),transform var(--t-out),box-shadow var(--t-out);
+}
+.hist-card-more:hover{transform:translateY(-1px);background:#fff}
+.hist-card.menu-open .hist-main,
+.hist-card.menu-open .hist-actions{filter:blur(6px);pointer-events:none}
+.hist-card-menu{
+  position:absolute;inset:0;z-index:4;
+  display:flex;flex-direction:column;gap:10px;
+  align-items:center;justify-content:center;padding:16px;
+  opacity:0;pointer-events:none;
+  transition:opacity var(--t-out);
+}
+.hist-card.menu-open .hist-card-menu{opacity:1;pointer-events:auto}
+.menu-btn{
+  min-width:120px;padding:11px 18px;border-radius:14px;
+  border:1px solid rgba(26,26,26,.12);
+  background:linear-gradient(180deg,#fff 0%,#efefef 100%);
+  color:var(--text);font:inherit;font-size:14px;font-weight:600;letter-spacing:0;cursor:pointer;
+  box-shadow:0 2px 5px rgba(0,0,0,.06),inset 0 1px 0 rgba(255,255,255,.7);
+  transition:transform var(--t-out),box-shadow var(--t-out);
+}
+.menu-btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.7)}
+.menu-btn:active{transform:translateY(0)}
+.menu-btn.danger{
+  background:linear-gradient(180deg,#ffefee 0%,#ffdedb 100%);
+  border-color:rgba(255,83,72,.3);color:#b42318;
+}
+/* ---- 置顶栏 ---- */
+.pin-bar{
+  display:flex;align-items:center;gap:12px;
+  margin:0 0 18px;padding:12px 14px;
+  border:1px solid var(--border);border-radius:var(--rs);
+  background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%);
+  box-shadow:var(--sh-1);
+}
+.pin-bar.hidden{display:none}
+.pin-bar-label{flex:0 0 auto;font-size:12px;font-weight:600;color:var(--text3);border-right:1px solid var(--border);padding-right:12px;letter-spacing:.02em;white-space:nowrap}
+.pin-track{display:flex;gap:10px;overflow-x:auto;flex:1;padding-bottom:2px;scrollbar-width:thin}
+.pin-card{position:relative;flex:0 0 auto;width:150px;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--surface);box-shadow:var(--sh-1);transition:transform var(--t-out),box-shadow var(--t-out)}
+.pin-card:hover{transform:translateY(-2px);box-shadow:var(--sh-2)}
+.pin-card-link{display:block;text-decoration:none;color:var(--text)}
+.pin-cover{display:block;width:100%;height:70px;object-fit:cover;background:linear-gradient(135deg,var(--surface2),var(--bg2))}
+.pin-cover.ph{display:flex;align-items:center;justify-content:center;color:var(--text3)}
+.pin-title{display:block;padding:7px 9px 8px;font-size:12px;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pin-card-unpin{position:absolute;top:5px;right:5px;width:20px;height:20px;border:0;border-radius:999px;cursor:pointer;background:rgba(0,0,0,.45);color:#fff;font-size:11px;line-height:1;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--t-out),background var(--t-out)}
+.pin-card:hover .pin-card-unpin{opacity:1}
+.pin-card-unpin:hover{background:rgba(0,0,0,.7)}
 .hist-empty{
   border:1px dashed rgba(26,26,26,.12);
   border-radius:16px;
@@ -2817,6 +2875,19 @@ html[data-theme="night"] .hist-actions button.secondary{color:var(--text2)}
 html[data-theme="night"] .hist-actions button.secondary:hover{background:rgba(45,49,57,.85)}
 html[data-theme="night"] .hist-actions button.danger{background:rgba(255,83,72,.18);color:#ff8a8a}
 html[data-theme="night"] .hist-actions button.danger:hover{background:rgba(255,83,72,.28)}
+html[data-theme="night"] .hist-card-more{background:rgba(35,38,44,.8);border-color:rgba(255,255,255,.12);color:var(--text2)}
+html[data-theme="night"] .hist-card-more:hover{background:rgba(45,49,57,.9)}
+html[data-theme="night"] .menu-btn{
+  background:linear-gradient(180deg,#2a2e35 0%,#1b1e24 100%);
+  border-color:rgba(255,255,255,.09);color:var(--text);
+  box-shadow:0 2px 6px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.06);
+}
+html[data-theme="night"] .menu-btn:hover{box-shadow:0 6px 18px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.06)}
+html[data-theme="night"] .menu-btn.danger{background:linear-gradient(180deg,#3a2224 0%,#291b1c 100%);border-color:rgba(255,83,72,.36);color:#ff8a8a}
+html[data-theme="night"] .pin-bar{background:linear-gradient(180deg,var(--surface) 0%,var(--surface2) 100%)}
+html[data-theme="night"] .pin-card{background:var(--surface);border-color:rgba(255,255,255,.08)}
+html[data-theme="night"] .pin-cover{background:linear-gradient(135deg,var(--surface2),var(--bg2))}
+html[data-theme="night"] .pin-card-link{color:var(--text)}
 html[data-theme="night"] .settings,
 html[data-theme="night"] .hist-card,
 html[data-theme="night"] .hist-deck:not(.dealt) .hist-card,
@@ -3516,6 +3587,10 @@ html[data-theme="night"] .hist-cover-wrap::after{
         </div>
         <div class="history-stats" id="history-stats"></div>
       </div>
+    </div>
+    <div class="pin-bar hidden" id="pin-bar" aria-label="置顶笔记">
+      <span class="pin-bar-label">📌 置顶</span>
+      <div class="pin-track" id="pin-track"></div>
     </div>
     <div class="history-toolbar" aria-label="历史笔记筛选">
       <label class="history-control history-search-wrap" aria-label="搜索历史笔记">
@@ -4329,11 +4404,15 @@ function renderHistoryCard(it){
   ];
   if(it.has_full) actions.push('<a href="'+outputHref(it.name, 'full.png')+'" target="_blank" rel="noopener noreferrer" data-open-link="1" class="secondary">长图</a>');
   if(it.has_cover) actions.push('<a href="'+outputHref(it.name, 'cover.jpg')+'" target="_blank" rel="noopener noreferrer" data-open-link="1" class="secondary">封面</a>');
+  const menu = [
+    '<button type="button" class="menu-btn" data-history-action="pin" data-name="'+escapeHtml(it.name)+'">'+(isPinned(it.name)?'取消置顶':'置顶')+'</button>'
+  ];
   if(it.source_url && qualityStatus !== 'ok'){
-    actions.push('<button type="button" class="secondary" data-history-action="regen" data-name="'+escapeHtml(it.name)+'" data-url="'+escapeHtml(it.source_url)+'">重生成</button>');
+    menu.push('<button type="button" class="menu-btn" data-history-action="regen" data-name="'+escapeHtml(it.name)+'" data-url="'+escapeHtml(it.source_url)+'">重生成</button>');
   }
-  actions.push('<button type="button" class="danger" data-history-action="del" data-name="'+escapeHtml(it.name)+'">删除</button>');
+  menu.push('<button type="button" class="menu-btn danger" data-history-action="del" data-name="'+escapeHtml(it.name)+'">删除</button>');
   return '<article class="hist-card quality-'+qualityStatus+'" role="listitem">' +
+    '<button type="button" class="hist-card-more" data-history-action="more" aria-label="更多操作">&#x22ee;</button>' +
     '<a class="hist-main" href="'+noteHref+'" target="_blank" rel="noopener noreferrer" data-open-link="1">' +
       cover +
       '<div class="hist-info"><h4>'+escapeHtml(title)+'</h4>' +
@@ -4342,6 +4421,7 @@ function renderHistoryCard(it){
       '</div>' +
     '</a>' +
     '<div class="hist-actions">' + actions.join('') + '</div>' +
+    '<div class="hist-card-menu">' + menu.join('') + '</div>' +
   '</article>';
 }
 
@@ -4431,18 +4511,47 @@ function bindHistorySearch(){
 
 function bindHistoryActions(){
   const grid = document.getElementById('hist-grid');
-  if(!grid || grid.dataset.actionsBound) return;
-  grid.dataset.actionsBound = '1';
-  grid.addEventListener('click', (ev) => {
-    const t = ev.target.closest && ev.target.closest('[data-history-action]');
-    if(!t) return;
-    ev.preventDefault();
-    ev.stopPropagation();
-    const name = t.dataset.name || '';
-    const url = t.dataset.url || '';
-    if(t.dataset.historyAction === 'regen') regenNote(name, url);
-    else if(t.dataset.historyAction === 'del') deleteNote(name);
-  });
+  if(grid && !grid.dataset.actionsBound){
+    grid.dataset.actionsBound = '1';
+    grid.addEventListener('click', (ev) => {
+      const t = ev.target.closest && ev.target.closest('[data-history-action]');
+      if(t){
+        ev.preventDefault(); ev.stopPropagation();
+        const name = t.dataset.name || '';
+        const url = t.dataset.url || '';
+        const act = t.dataset.historyAction;
+        if(act === 'more'){ toggleCardMenu(t); }
+        else if(act === 'pin'){ togglePin(name); closeCardMenus(); renderPinBar(); renderHistory(); }
+        else if(act === 'regen'){ closeCardMenus(); regenNote(name, url); }
+        else if(act === 'del'){ closeCardMenus(); deleteNote(name); }
+        return;
+      }
+      if(ev.target.classList && ev.target.classList.contains('hist-card-menu')){ closeCardMenus(); return; }
+      if(!ev.target.closest('.hist-card')) closeCardMenus();
+    });
+  }
+  const track = document.getElementById('pin-track');
+  if(track && !track.dataset.bound){
+    track.dataset.bound = '1';
+    track.addEventListener('click', (ev) => {
+      const unpin = ev.target.closest && ev.target.closest('[data-pin-unpin]');
+      if(unpin){ ev.preventDefault(); ev.stopPropagation(); togglePin(unpin.dataset.pinUnpin); renderPinBar(); renderHistory(); }
+    });
+  }
+  if(!document.body.dataset.menuDocBound){
+    document.body.dataset.menuDocBound = '1';
+    document.addEventListener('click', (e) => { if(!e.target.closest('.hist-card')) closeCardMenus(); });
+  }
+}
+
+function toggleCardMenu(btn){
+  const card = btn.closest('.hist-card');
+  const wasOpen = card && card.classList.contains('menu-open');
+  closeCardMenus();
+  if(!wasOpen && card) card.classList.add('menu-open');
+}
+function closeCardMenus(){
+  document.querySelectorAll('.hist-card.menu-open').forEach(c => c.classList.remove('menu-open'));
 }
 
 async function loadHistory(){
@@ -4454,6 +4563,7 @@ async function loadHistory(){
     historyItems = Array.isArray(data.items) ? data.items : [];
     historyVisibleLimit = HISTORY_PAGE_SIZE;
     renderHistory();
+    renderPinBar();
   } catch(e) {
     if(deck) deck.innerHTML = '<p class="hist-empty">加载失败</p>';
     const stats = document.getElementById('history-stats');
@@ -4512,6 +4622,39 @@ async function deleteNote(name){
   } catch(err) {
     alert('删除失败：' + err.message);
   }
+}
+
+// ---- 置顶状态（localStorage 持久化）----
+let pinnedNotes = [];
+try { pinnedNotes = JSON.parse(localStorage.getItem('vnotes_pinned') || '[]'); if(!Array.isArray(pinnedNotes)) pinnedNotes = []; } catch(e) { pinnedNotes = []; }
+function savePinned(){ try { localStorage.setItem('vnotes_pinned', JSON.stringify(pinnedNotes)); } catch(e){} }
+function isPinned(name){ return pinnedNotes.indexOf(name) !== -1; }
+function togglePin(name){
+  if(!name) return;
+  const i = pinnedNotes.indexOf(name);
+  if(i === -1) pinnedNotes.unshift(name); else pinnedNotes.splice(i, 1);
+  savePinned();
+}
+function renderPinBar(){
+  const bar = document.getElementById('pin-bar');
+  const track = document.getElementById('pin-track');
+  if(!bar || !track) return;
+  const items = pinnedNotes.map(n => (historyItems || []).find(it => it.name === n)).filter(Boolean);
+  if(!items.length){ bar.classList.add('hidden'); track.innerHTML = ''; return; }
+  bar.classList.remove('hidden');
+  track.innerHTML = items.map(it => {
+    const href = outputHref(it.name, 'notes.html');
+    const cover = it.has_cover
+      ? '<img class="pin-cover" src="'+outputHref(it.name, 'cover.jpg')+'" alt="" loading="lazy"/>'
+      : '<span class="pin-cover ph"></span>';
+    return '<div class="pin-card">' +
+      '<a class="pin-card-link" href="'+href+'" target="_blank" rel="noopener noreferrer" data-open-link="1">' +
+        cover +
+        '<span class="pin-title">'+escapeHtml(it.title || it.name)+'</span>' +
+      '</a>' +
+      '<button type="button" class="pin-card-unpin" data-pin-unpin="'+escapeHtml(it.name)+'" title="取消置顶" aria-label="取消置顶">&#10005;</button>' +
+    '</div>';
+  }).join('');
 }
 
 // ---- Settings ----
