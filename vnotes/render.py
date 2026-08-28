@@ -242,7 +242,7 @@ font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","No
 .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 .tag-chip{font-size:12px;color:var(--acc-dk);background:var(--acc-soft);border:1px solid #f0e0a0;border-radius:7px;padding:3px 9px}
 /* toc */
-.toc{position:sticky;top:0;z-index:5;background:rgba(250,250,250,.93);backdrop-filter:saturate(180%) blur(12px);
+.toc{position:sticky;top:0;z-index:5;background:rgba(250,250,250,.8);backdrop-filter:saturate(150%) blur(6px);-webkit-backdrop-filter:saturate(150%) blur(6px);
 border-bottom:1px solid var(--line);margin:0 -20px 8px;padding:10px 20px;display:flex;align-items:center;gap:14px}
 .toc-in{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;flex:1}
 .toc-in a{display:flex;flex-direction:column;min-width:84px;padding:6px 10px;border-radius:10px;text-decoration:none;color:var(--sub);font-size:12px;transition:.2s}

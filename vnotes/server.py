@@ -2206,13 +2206,14 @@ select option{background:var(--surface);color:var(--text)}
 .history-select-wrap.dd-open .filter-dd-caret{transform:rotate(225deg) translateY(-1px)}
 .filter-dd-panel{
   position:absolute;top:calc(100% + 6px);left:0;right:0;z-index:50;
-  display:none;flex-direction:column;gap:2px;padding:6px;
+  display:flex;flex-direction:column;gap:2px;padding:6px;
   border:1px solid var(--border);border-radius:14px;
   background:var(--surface);box-shadow:var(--sh-3);
   max-height:280px;overflow:auto;
+  visibility:hidden;opacity:0;transform:translateY(-4px);pointer-events:none;
+  transition:opacity var(--t-out),transform var(--t-out),visibility 0s linear var(--t-out);
 }
-.history-select-wrap.dd-open .filter-dd-panel{display:flex;animation:ddIn .18s var(--t-out)}
-@keyframes ddIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.history-select-wrap.dd-open .filter-dd-panel{visibility:visible;opacity:1;transform:none;pointer-events:auto;transition-delay:0s}
 .filter-dd-opt{
   text-align:left;width:100%;border:0;background:transparent;color:var(--text);
   padding:9px 10px;font:inherit;font-size:13px;border-radius:9px;cursor:pointer;letter-spacing:0;
