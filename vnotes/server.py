@@ -673,7 +673,7 @@ _HTML = r"""<!DOCTYPE html>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F5C518'/%3E%3Crect x='16' y='12' width='32' height='40' rx='5' fill='%231a1a1a'/%3E%3Crect x='23' y='20' width='18' height='3' rx='1.5' fill='%23F5C518'/%3E%3Crect x='23' y='28' width='18' height='3' rx='1.5' fill='%23fff'/%3E%3Crect x='23' y='36' width='13' height='3' rx='1.5' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Yellowtail&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
 :root{
   color-scheme:light;
@@ -703,6 +703,7 @@ _HTML = r"""<!DOCTYPE html>
   /* 字体 */
   --font-display:"Instrument Serif","Noto Serif SC",Georgia,serif;
   --font-body:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --font-script:"Yellowtail","Great Vibes","Brush Script MT",cursive;
   --font-mono:"SF Mono","Cascadia Code","JetBrains Mono","Fira Code",monospace;
 }
 html[data-theme="night"]{
@@ -778,15 +779,15 @@ body{
   flex-shrink:0;
 }
 .rig-badge-text{
-  font-family:var(--font-display);
-  font-size:15px;font-weight:400;letter-spacing:.02em;
+  font-family:var(--font-script);
+  font-size:19px;font-weight:400;letter-spacing:0;
   color:rgba(255,255,255,.85);
   line-height:1;
   display:flex;align-items:baseline;gap:1px;
 }
 .rig-badge-text em{
-  font-style:italic;color:var(--accent);
-  text-shadow:0 0 10px rgba(245,197,24,.6);
+  font-style:normal;color:var(--accent);
+  text-shadow:0 0 12px rgba(245,197,24,.62);
 }
 /* 铭牌底部小字 */
 .rig-badge-sub{
@@ -1068,35 +1069,33 @@ body::after{
   opacity:0;animation:ringExpand 3s ease-out infinite 1.5s;
 }
 .hero h1{
-  font-family:var(--font-display);
-  font-size:54px;font-weight:400;letter-spacing:-.02em;
-  color:var(--text);line-height:1;
+  font-family:var(--font-script);
+  font-size:72px;font-weight:400;letter-spacing:0;
+  color:var(--text);line-height:1.12;
   position:relative;display:inline-block;
+  text-shadow:0 2px 22px rgba(0,0,0,.16);
 }
 /* 聚光灯穿透标题效果 */
 .hero h1::before{
-  content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);
-  width:140%;height:160%;
-  background:radial-gradient(ellipse 50% 60% at 50% 50%,rgba(245,197,24,.12) 0%,transparent 70%);
+  content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);
+  width:150%;height:160%;
+  background:radial-gradient(ellipse 50% 60% at 50% 50%,rgba(245,197,24,.14) 0%,transparent 70%);
   pointer-events:none;z-index:-1;
 }
 .hero h1 em{
-  font-style:italic;color:var(--accent-dk);
-  background:linear-gradient(135deg,#F5C518 0%,#FFD93D 50%,#F5C518 100%);
-  padding:2px 14px 4px;border-radius:8px;font-weight:400;
-  box-shadow:0 4px 16px var(--accent-glow),inset 0 1px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(0,0,0,.08);
-  position:relative;overflow:hidden;
-  transition:transform var(--t-out),box-shadow var(--t-out);
+  font-style:normal;
+  color:transparent;text-shadow:none;
+  background:linear-gradient(140deg,#FFD93D 0%,#F5C518 45%,#e0a800 100%);
+  -webkit-background-clip:text;background-clip:text;
+  padding:0 6px;font-weight:400;
+  position:relative;
+  filter:drop-shadow(0 3px 16px rgba(245,197,24,.42));
+  transition:filter var(--t-out),transform var(--t-out);
 }
-/* 色块光泽扫过 */
-.hero h1 em::after{
-  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
-  background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);
-  animation:sheen 5s ease-in-out infinite;
-}
+.hero h1 em::after{content:none}
 .hero h1 em:hover{
-  transform:translateY(-2px) rotate(-1deg);
-  box-shadow:0 8px 24px var(--accent-glow),inset 0 1px 0 rgba(255,255,255,.5),inset 0 -1px 0 rgba(0,0,0,.08);
+  transform:translateY(-2px) rotate(-1deg) scale(1.02);
+  filter:drop-shadow(0 6px 26px rgba(245,197,24,.62));
 }
 .hero p{
   font-size:12px;color:var(--text2);margin-top:12px;
@@ -2655,7 +2654,7 @@ select option{background:var(--surface);color:var(--text)}
 /* ---- Responsive ---- */
 @media(max-width:640px){
   .app{padding:48px 16px 80px}
-  .hero h1{font-size:40px}
+  .hero h1{font-size:52px}
   .input-row{flex-direction:column}
   .gen-btn{width:100%}
   .pipeline{flex-wrap:wrap;gap:12px;justify-content:center}
@@ -2789,7 +2788,7 @@ body{
 .app{padding-top:96px}
 .hero{margin-bottom:34px}
 .hero-mark{margin-bottom:12px;opacity:.86}
-.hero h1{font-size:48px}
+.hero h1{font-size:58px}
 .hero h1::before{
   top:-18%;
   height:130%;
@@ -2828,7 +2827,7 @@ body{
   .spot-core{top:38px;height:130px;width:54vw}
   .app{padding-top:82px}
   .hero{margin-bottom:26px}
-  .hero h1{font-size:39px}
+  .hero h1{font-size:50px}
 }
 
 html[data-theme="night"] body{
