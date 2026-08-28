@@ -652,6 +652,7 @@ _HTML = r"""<!DOCTYPE html>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
+  color-scheme:light;
   --bg:#fafafa; --bg2:#f0f0f0;
   --surface:#fff; --surface2:#f7f7f7;
   --border:#e5e5e5; --border2:#d0d0d0;
@@ -681,6 +682,7 @@ _HTML = r"""<!DOCTYPE html>
   --font-mono:"SF Mono","Cascadia Code","JetBrains Mono","Fira Code",monospace;
 }
 html[data-theme="night"]{
+  color-scheme:dark;
   --bg:#101114; --bg2:#17191e;
   --surface:#1b1d22; --surface2:#23262c;
   --border:#31343c; --border2:#444954;
@@ -1626,6 +1628,9 @@ body.settings-drawer-open{overflow:hidden}
   border-color:var(--accent);
   box-shadow:0 0 0 3px var(--accent-glow);
 }
+/* 让 native select 及其下拉菜单跟随主题，避免白底白字 / 深底黑字 */
+select{color-scheme:inherit}
+select option{background:var(--surface);color:var(--text)}
 .history-filter{
   height:38px;
   min-width:104px;
