@@ -62,8 +62,10 @@ def _raise_if_audio_too_short(cfg: Config, meta: dict, probe: float | None) -> N
         "音频下载不完整，已停止生成，避免输出残缺笔记。\n"
         f"视频：{title}\n"
         f"元数据时长：{fmt_ts(float(meta_dur))}，实际音频：{fmt_ts(float(probe))}。\n"
-        "这通常是 B 站未登录/权限限制/CDN 只返回试看片段导致的；本次日志里浏览器 Cookie 读取失败，"
-        "请导出 cookies.txt 后配置 VNOTES_COOKIES_FILE，再重新生成。"
+        "这通常是 B 站未登录/权限限制/CDN 只返回试看片段导致的；本次日志里浏览器 Cookie 读取失败（多为 Chrome 运行时被锁）。\n"
+        "解决方案（任选其一）：\n"
+        "  1) 先完全退出 Chrome，再重新生成（让 yt-dlp 读取 B 站登录态）；\n"
+        "  2) 导出 B 站 cookies.txt 后配置 VNOTES_COOKIES_FILE（推荐，一劳永逸，见 README）。"
     )
 
 
