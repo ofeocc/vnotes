@@ -6,6 +6,10 @@ from pathlib import Path
 # 确保能 import vnotes
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from vnotes.bootstrap import ensure_project_venv
+
+ensure_project_venv(script=__file__)
+
 from vnotes.config import Config
 
 def main():

@@ -18,6 +18,16 @@ from pathlib import Path
 from typing import Any
 
 try:
+    from .bootstrap import ensure_project_venv, runtime_status
+except ImportError:
+    _BOOTSTRAP_ROOT = Path(__file__).resolve().parent.parent
+    if str(_BOOTSTRAP_ROOT) not in sys.path:
+        sys.path.insert(0, str(_BOOTSTRAP_ROOT))
+    from vnotes.bootstrap import ensure_project_venv, runtime_status
+
+ensure_project_venv(module="vnotes.server")
+
+try:
     from fastapi import FastAPI
     from fastapi.responses import HTMLResponse, StreamingResponse, JSONResponse, FileResponse
     from pydantic import BaseModel
@@ -138,9 +148,39 @@ def _module_available(name: str) -> bool:
         return False
 
 
+def _backend_problem(cfg: Config, backend: str | None = None) -> str:
+    backend = (backend or cfg.transcribe_backend or "faster-whisper").strip()
+    if backend == "faster-whisper":
+        if not _module_available("faster_whisper"):
+            return "当前 Python 环境没有 faster-whisper。请用项目 venv 启动，或在设置里切到 Vosk/Paraformer。"
+    elif backend == "vosk":
+        if not _module_available("vosk"):
+            return "当前 Python 环境没有 vosk。请用项目 venv 启动，或重新运行 install.bat。"
+        if not Path(cfg.vosk_model_dir).exists():
+            return f"未找到 Vosk 模型目录：{cfg.vosk_model_dir}"
+    elif backend == "groq":
+        if not cfg.groq_api_key:
+            return "Groq 后端缺少 API Key。"
+        if not _module_available("openai"):
+            return "Groq 后端需要 openai 包。"
+    elif backend == "paraformer":
+        if not cfg.dashscope_api_key:
+            return "阿里云 Paraformer 后端缺少 DashScope API Key。"
+        if not _module_available("dashscope"):
+            return "Paraformer 后端需要 dashscope 包。"
+    elif backend == "openai-whisper":
+        if not (_module_available("whisper") and _module_available("torch")):
+            return "openai-whisper 后端需要 whisper/torch。"
+    else:
+        return f"未知转写后端：{backend}"
+    return ""
+
+
 def _config_status() -> dict[str, Any]:
     """返回非敏感配置状态，供前端解释当前默认路线。"""
     cfg = Config.load()
+    backend_problem = _backend_problem(cfg)
+    runtime = runtime_status(_PROJECT_ROOT)
     return {
         "default_backend": cfg.transcribe_backend,
         "note_mode": cfg.note_mode,
@@ -148,8 +188,15 @@ def _config_status() -> dict[str, Any]:
         "has_groq_api_key": bool(cfg.groq_api_key),
         "has_dashscope_api_key": bool(cfg.dashscope_api_key),
         "has_vosk_model": Path(cfg.vosk_model_dir).exists(),
+        "has_vosk": _module_available("vosk"),
         "has_faster_whisper": _module_available("faster_whisper"),
         "has_dashscope": _module_available("dashscope"),
+        "has_openai_whisper": _module_available("whisper") and _module_available("torch"),
+        "backend_ready": not backend_problem,
+        "backend_problem": backend_problem,
+        "python_env": runtime["python_env"],
+        "in_project_venv": runtime["in_project_venv"],
+        "project_venv_exists": runtime["project_venv_exists"],
         "server_port": cfg.server_port,
         "llm_model": cfg.llm_model,
         "groq_model": cfg.groq_model,
@@ -179,8 +226,12 @@ def _preflight_error(cfg: Config) -> str | None:
         if not Path(cfg.vosk_model_dir).exists():
             return f"未找到 Vosk 中文模型目录：{cfg.vosk_model_dir}。请运行：python download_model.py vosk-cn D:/vnotes_models"
     elif backend == "openai-whisper":
-        if not _module_available("whisper"):
+        if not (_module_available("whisper") and _module_available("torch")):
             return "openai-whisper 后端需要 whisper/torch。建议改选 faster-whisper、Vosk 或 Groq。"
+    elif backend == "faster-whisper":
+        problem = _backend_problem(cfg, backend)
+        if problem:
+            return problem
     elif backend != "faster-whisper":
         return f"未知转写后端：{backend}。请改选 faster-whisper / Vosk / Groq / Paraformer。"
     return None
@@ -3579,6 +3630,66 @@ function frontendPreflight(backend, groqKey, dashscopeKey, llmKey){
   if(effective === 'paraformer' && CONFIG_STATUS && !CONFIG_STATUS.has_dashscope_api_key && !dashscopeKey){
     return '你当前选择阿里云 Paraformer，但没有 DashScope API Key。请在设置里填写 DashScope API Key，或切回本地/Vosk。';
   }
+  return '';
+}
+
+function backendProblemFor(effective, groqKey, dashscopeKey){
+  if(!CONFIG_STATUS) return '';
+  if(effective === 'faster-whisper' && !CONFIG_STATUS.has_faster_whisper){
+    return '当前 Python 环境没有 faster-whisper。请用项目 venv 启动，或在设置里切到 Vosk/Paraformer。';
+  }
+  if(effective === 'vosk'){
+    if(!CONFIG_STATUS.has_vosk) return '当前 Python 环境没有 vosk。请用项目 venv 启动，或重新运行 install.bat。';
+    if(!CONFIG_STATUS.has_vosk_model) return '未找到 Vosk 模型目录，请重新运行 install.bat 或下载 Vosk 中文模型。';
+  }
+  if(effective === 'groq'){
+    if(!CONFIG_STATUS.has_groq_api_key && !groqKey) return 'Groq 后端缺少 API Key。';
+  }
+  if(effective === 'paraformer'){
+    if(!CONFIG_STATUS.has_dashscope_api_key && !dashscopeKey) return '阿里云 Paraformer 后端缺少 DashScope API Key。';
+    if(!CONFIG_STATUS.has_dashscope) return 'Paraformer 后端需要 dashscope 包，请重新运行 install.bat。';
+  }
+  if(effective === 'openai-whisper' && !CONFIG_STATUS.has_openai_whisper){
+    return 'openai-whisper 后端需要 whisper/torch；建议改用 faster-whisper、Vosk 或云端后端。';
+  }
+  return '';
+}
+
+function renderConfigStatus(){
+  const el = document.getElementById('config-status');
+  if(!el) return;
+  const backend = document.getElementById('backend')?.value || '';
+  const groqKey = document.getElementById('groq-key')?.value.trim() || '';
+  const dashscopeKey = document.getElementById('dashscope-key')?.value.trim() || '';
+  const effective = backend || (CONFIG_STATUS && CONFIG_STATUS.default_backend) || 'faster-whisper';
+  if(!CONFIG_STATUS){
+    el.textContent = '正在读取本机配置状态…';
+    return;
+  }
+  const envLabel = CONFIG_STATUS.in_project_venv
+    ? '运行环境：项目 venv'
+    : (CONFIG_STATUS.project_venv_exists ? '运行环境：系统 Python（建议重启到项目 venv）' : '运行环境：当前 Python');
+  const problem = backendProblemFor(effective, groqKey, dashscopeKey);
+  const parts = [
+    envLabel,
+    '当前会走：' + (BACKEND_LABELS[effective] || effective),
+    '.env 默认：' + (BACKEND_LABELS[CONFIG_STATUS.default_backend] || CONFIG_STATUS.default_backend),
+    keyState(CONFIG_STATUS.has_llm_api_key, 'DeepSeek '),
+    keyState(CONFIG_STATUS.has_groq_api_key || !!groqKey, 'Groq '),
+    keyState(CONFIG_STATUS.has_dashscope_api_key || !!dashscopeKey, 'DashScope '),
+  ];
+  if(problem) parts.push('当前后端不可用：' + problem);
+  el.textContent = parts.join(' · ');
+  if(typeof updateSettingsSummary === 'function') updateSettingsSummary();
+}
+
+function frontendPreflight(backend, groqKey, dashscopeKey, llmKey){
+  if(CONFIG_STATUS && !CONFIG_STATUS.has_llm_api_key && !llmKey){
+    return '缺少 DeepSeek API Key。请在设置里填写 DeepSeek API Key，或写入 .env。';
+  }
+  const effective = backend || (CONFIG_STATUS && CONFIG_STATUS.default_backend) || '';
+  const problem = backendProblemFor(effective, groqKey, dashscopeKey);
+  if(problem) return problem;
   return '';
 }
 

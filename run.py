@@ -14,6 +14,10 @@ import sys
 import time
 from pathlib import Path
 
+from vnotes.bootstrap import ensure_project_venv
+
+ensure_project_venv(script=__file__)
+
 from vnotes import Config, __version__
 from vnotes.util import log, safe_name, write_json, fmt_ts
 from vnotes import metadata as M
