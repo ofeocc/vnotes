@@ -2457,6 +2457,47 @@ html[data-theme="night"] .toast{background:rgba(20,22,27,.96)}
   .hist-card-more{opacity:1;transform:scale(1);pointer-events:auto}
   .pin-card-unpin{opacity:1}
 }
+/* ---- 笔记预览抽屉 ---- */
+.note-preview{position:fixed;inset:0;z-index:6000;display:none}
+.note-preview.open{display:block}
+.note-preview-backdrop{position:absolute;inset:0;background:rgba(8,10,14,.5);backdrop-filter:blur(4px);opacity:0;transition:opacity var(--t-out)}
+.note-preview.open .note-preview-backdrop{opacity:1}
+.note-preview-panel{
+  position:absolute;top:0;right:0;height:100%;
+  width:min(820px,96vw);
+  background:var(--bg);color:var(--text);
+  box-shadow:-24px 0 70px rgba(0,0,0,.22);
+  display:flex;flex-direction:column;
+  transform:translateX(100%);
+  transition:transform var(--t-spring);
+  border-left:1px solid var(--border);
+}
+.note-preview.open .note-preview-panel{transform:translateX(0)}
+.note-preview-head{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 16px;border-bottom:1px solid var(--border);
+  background:linear-gradient(180deg,var(--surface),var(--surface2));
+}
+.note-preview-title{flex:1;min-width:0;font-weight:600;font-size:14px;letter-spacing:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.note-preview-actions{display:flex;align-items:center;gap:10px}
+.note-preview-open{font-size:12px;color:var(--accent-dk);text-decoration:none;font-weight:600;white-space:nowrap}
+.note-preview-open:hover{text-decoration:underline}
+.note-preview-close{
+  width:30px;height:30px;border:0;border-radius:999px;cursor:pointer;
+  background:rgba(127,127,127,.14);color:var(--text2);font-size:14px;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  transition:background var(--t-out),transform var(--t-out);
+}
+.note-preview-close:hover{background:rgba(127,127,127,.24);transform:rotate(90deg)}
+.note-preview-body{flex:1;min-height:0;background:#fff}
+.note-preview-body iframe{width:100%;height:100%;border:0;display:block}
+html[data-theme="night"] .note-preview-panel{background:var(--bg);border-left-color:rgba(255,255,255,.08)}
+html[data-theme="night"] .note-preview-body{background:#1b1d22}
+html[data-theme="night"] .note-preview-open{color:#FFD93D}
+body.note-preview-open{overflow:hidden}
+@media (max-width:640px){
+  .note-preview-panel{width:100vw;border-left:none}
+}
 .hist-empty{
   border:1px dashed rgba(26,26,26,.12);
   border-radius:16px;
@@ -4036,6 +4077,54 @@ function toast(msg, type){
   setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 300); }, 2600);
 }
 
+function openNotePreview(name, title){
+  const drawer = document.getElementById('note-preview');
+  const frame = document.getElementById('note-frame');
+  if(!drawer || !frame) return;
+  const href = outputHref(name, 'notes.html');
+  frame.src = href;
+  const openLink = document.getElementById('note-preview-open');
+  if(openLink) openLink.href = href;
+  const label = document.getElementById('note-preview-title');
+  if(label && title) label.textContent = title;
+  drawer.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  document.body.classList.add('note-preview-open');
+}
+function closeNotePreview(){
+  const drawer = document.getElementById('note-preview');
+  if(!drawer) return;
+  drawer.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  document.body.classList.remove('note-preview-open');
+  const frame = document.getElementById('note-frame');
+  if(frame) setTimeout(() => { frame.src=''; }, 300);
+}
+function bindNotePreview(){
+  const drawer = document.getElementById('note-preview');
+  if(!drawer || drawer.dataset.bound) return;
+  drawer.dataset.bound = '1';
+  const close = document.getElementById('note-preview-close');
+  if(close) close.addEventListener('click', closeNotePreview);
+  const backdrop = document.getElementById('note-preview-backdrop');
+  if(backdrop) backdrop.addEventListener('click', closeNotePreview);
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeNotePreview(); });
+  // 拦截“打开笔记”链接 → 应用内预览（而非新标签页）
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('a[href$="/notes.html"]');
+    if(a && !a.dataset.noPreview){
+      e.preventDefault();
+      let name = a.dataset.name;
+      let title = a.dataset.title;
+      if(!name){
+        const m = (a.getAttribute('href')||'').match(/\/output\/(.+?)\/notes\.html/);
+        if(m) try { name = decodeURIComponent(m[1]); } catch(_) { name = m[1]; }
+      }
+      openNotePreview(name, title);
+    }
+  });
+}
+
 function getVideoId(url){
   if(!url) return '';
   const bv = String(url).match(/BV[\w]{10}/i);
@@ -4533,7 +4622,7 @@ function renderHistoryCard(it){
   if(uploaded) badges.push('<span>发布 ' + escapeHtml(uploaded) + '</span>');
   if(it.has_full) badges.push('<span>长图</span>');
   const actions = [
-    '<a href="'+noteHref+'" target="_blank" rel="noopener noreferrer" data-open-link="1">打开</a>'
+    '<a href="'+noteHref+'" target="_blank" rel="noopener noreferrer" data-open-link="1" data-name="'+escapeHtml(it.name)+'" data-title="'+escapeHtml(title)+'">打开</a>'
   ];
   if(it.has_full) actions.push('<a href="'+outputHref(it.name, 'full.png')+'" target="_blank" rel="noopener noreferrer" data-open-link="1" class="secondary">长图</a>');
   if(it.has_cover) actions.push('<a href="'+outputHref(it.name, 'cover.jpg')+'" target="_blank" rel="noopener noreferrer" data-open-link="1" class="secondary">封面</a>');
@@ -4546,7 +4635,7 @@ function renderHistoryCard(it){
   menu.push('<button type="button" class="menu-btn danger" data-history-action="del" data-name="'+escapeHtml(it.name)+'">删除</button>');
   return '<article class="hist-card quality-'+qualityStatus+'" role="listitem">' +
     '<button type="button" class="hist-card-more" data-history-action="more" aria-label="更多操作">&#x22ee;</button>' +
-    '<a class="hist-main" href="'+noteHref+'" target="_blank" rel="noopener noreferrer" data-open-link="1">' +
+    '<a class="hist-main" href="'+noteHref+'" target="_blank" rel="noopener noreferrer" data-open-link="1" data-name="'+escapeHtml(it.name)+'" data-title="'+escapeHtml(title)+'">' +
       cover +
       '<div class="hist-info"><h4>'+escapeHtml(title)+'</h4>' +
         '<p class="hist-meta">'+escapeHtml(metaParts.join(' · ') || '已生成')+'</p>' +
@@ -4784,7 +4873,7 @@ function renderPinBar(){
       ? '<img class="pin-cover" src="'+outputHref(it.name, 'cover.jpg')+'" alt="" loading="lazy"/>'
       : '<span class="pin-cover ph"></span>';
     return '<div class="pin-card">' +
-      '<a class="pin-card-link" href="'+href+'" target="_blank" rel="noopener noreferrer" data-open-link="1">' +
+      '<a class="pin-card-link" href="'+href+'" target="_blank" rel="noopener noreferrer" data-open-link="1" data-name="'+escapeHtml(it.name)+'" data-title="'+escapeHtml(it.title || it.name)+'">' +
         cover +
         '<span class="pin-title">'+escapeHtml(it.title || it.name)+'</span>' +
       '</a>' +
@@ -5127,13 +5216,31 @@ function observeReveal(){
   })();
 
 // ---- Init ----
-initPipeline();
-loadSettings();
-loadConfigStatus();
-loadHistory();
-observeReveal();
+try{ initPipeline(); }catch(e){}
+try{ loadSettings(); }catch(e){}
+try{ loadConfigStatus(); }catch(e){}
+try{ loadHistory(); }catch(e){}
+try{ observeReveal(); }catch(e){}
+try{ bindNotePreview(); }catch(e){}
+// 兜底：即使某一步初始化出错，也确保笔记预览绑定生效
+window.addEventListener('load', () => { try{ bindNotePreview(); }catch(e){} });
 </script>
     <div class="toast-box" id="toast-box" aria-live="polite"></div>
+
+    <!-- 笔记预览抽屉 -->
+    <div class="note-preview" id="note-preview" aria-hidden="true">
+      <div class="note-preview-backdrop" id="note-preview-backdrop"></div>
+      <aside class="note-preview-panel" role="dialog" aria-label="笔记预览">
+        <header class="note-preview-head">
+          <span class="note-preview-title" id="note-preview-title">笔记预览</span>
+          <div class="note-preview-actions">
+            <a id="note-preview-open" class="note-preview-open" target="_blank" rel="noopener noreferrer" data-no-preview="1">新标签页打开 ↗</a>
+            <button type="button" class="note-preview-close" id="note-preview-close" aria-label="关闭">&#10005;</button>
+          </div>
+        </header>
+        <div class="note-preview-body"><iframe id="note-frame" src="" title="笔记内容"></iframe></div>
+      </aside>
+    </div>
 </body>
 </html>"""
 
