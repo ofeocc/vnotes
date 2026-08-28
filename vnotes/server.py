@@ -2452,6 +2452,11 @@ html[data-theme="night"] .toast{background:rgba(20,22,27,.96)}
 }
 .cancel-btn:hover{background:rgba(255,83,72,.22);transform:translateY(-1px);box-shadow:0 6px 16px rgba(255,83,72,.18)}
 .cancel-btn:disabled{opacity:.55;cursor:default;transform:none}
+/* ---- 触屏/手机：⋯ 与 取消置顶 ✕ 常显，不依赖 hover ---- */
+@media (hover: none){
+  .hist-card-more{opacity:1;transform:scale(1);pointer-events:auto}
+  .pin-card-unpin{opacity:1}
+}
 .hist-empty{
   border:1px dashed rgba(26,26,26,.12);
   border-radius:16px;
