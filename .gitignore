@@ -36,6 +36,9 @@ full-transcribe-test.*.log
 *.jpg
 *.png
 !output/_self_test/frames/*.jpg
+# GitHub Pages 静态站点需要提交图片/HTML，整体放行 docs/
+!docs/
+!docs/**
 
 # 密钥
 .env
