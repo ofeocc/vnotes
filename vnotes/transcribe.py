@@ -14,6 +14,7 @@ import gc
 import json
 import os
 import re
+import shutil
 import subprocess
 import tempfile
 import wave
@@ -22,6 +23,39 @@ from typing import Any
 
 from .config import Config
 from .util import log, write_json, run
+
+
+def _ensure_gpu_libs() -> None:
+    """让 Windows 上 faster-whisper 的 CTranslate2 能找到 CUDA 运行库。
+
+    CTranslate2 用裸名 LoadLibrary("cublas64_12.dll")，Windows 加载器优先搜它自己目录。
+    这里把 nvidia pip 包（nvidia-cublas-cu12 / cudnn-cu12）bin 下的 DLL 复制进 ctranslate2 目录，
+    并把目录加进 PATH，使 `_cuda_runtime_available()` 判定为真（从而真正走 GPU）。
+    """
+    if os.name != "nt":
+        return
+    try:
+        import ctranslate2  # noqa: F401
+        ct_dir = Path(ctranslate2.__file__).resolve().parent
+        sp = ct_dir.parent  # site-packages
+        bins = [sp / "nvidia" / "cublas" / "bin",
+                sp / "nvidia" / "cudnn" / "bin",
+                sp / "nvidia" / "cuda_nvrtc" / "bin"]
+        for b in bins:
+            if not b.is_dir():
+                continue
+            try:
+                for dll in b.glob("*.dll"):
+                    dest = ct_dir / dll.name
+                    if not dest.exists():
+                        shutil.copy2(dll, dest)
+            except OSError:
+                pass
+            p = str(b)
+            if p not in os.environ.get("PATH", "").split(os.pathsep):
+                os.environ["PATH"] = p + os.pathsep + os.environ.get("PATH", "")
+    except Exception:
+        pass
 
 
 # ============================================================
@@ -977,6 +1011,7 @@ def _transcribe_openai(cfg: Config, audio_path: Path, audio_dur: float | None) -
 # ============================================================
 def transcribe(cfg: Config, audio_info: dict, work_dir: Path) -> dict[str, Any]:
     """转写音频。自动选择后端，返回标准结构。"""
+    _ensure_gpu_libs()  # 让 faster-whisper 的 CTranslate2 能找到 CUDA DLL，走真 GPU
     audio_path = Path(audio_info.get("abs_path") or (work_dir / audio_info["path"]))
     audio_dur = audio_info.get("duration_sec")
     backend = cfg.transcribe_backend
