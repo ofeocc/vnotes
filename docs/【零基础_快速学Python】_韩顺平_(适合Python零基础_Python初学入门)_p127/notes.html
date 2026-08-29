@@ -1,0 +1,755 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>【零基础 快速学Python】 韩顺平 (适合Python零基础  Python初学入门) p127 127_韩顺平Python_类型注解使用 · 视频笔记</title>
+<style>
+:root{--bg:#fafafa;--card:#fff;--ink:#1a1a1a;--sub:#666;--line:#e0e0e0;--soft:#f5f5f5;
+--acc:#F5C518;--acc-dk:#1a1a1a;--acc-soft:#fff8e1;--warn:#ff6b35;--danger:#ff3b30;--ok:#2ecc71;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Segoe UI,Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;line-height:1.7;font-size:16px}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px 120px}
+/* header */
+.hd{display:flex;gap:24px;padding:40px 0 28px;border-bottom:3px solid var(--acc);flex-wrap:wrap}
+.hd-cover{flex:0 0 240px}.cover{width:100%;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:block}
+.hd-main{flex:1;min-width:280px}
+.hd-main h1{font-size:26px;line-height:1.3;margin:0 0 10px;letter-spacing:-.01em}
+.sub{display:flex;gap:14px;align-items:center;color:var(--sub);font-size:14px;flex-wrap:wrap}
+.up{font-weight:600;color:var(--ink)}
+.badges .chip{background:var(--acc-soft);border-radius:7px;padding:2px 9px;font-size:12px;margin-right:6px;color:var(--acc-dk);font-weight:500}
+.parts{margin:14px 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.parts .lbl{color:var(--sub);font-size:13px}.parts .p{font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--sub)}
+.parts .p.cur{background:var(--acc);color:var(--acc-dk);border-color:var(--acc);font-weight:600}
+.summary{margin:14px 0;padding:12px 16px;background:var(--acc-soft);border-left:4px solid var(--acc);border-radius:8px;font-size:15px;font-weight:500}
+.desc{color:var(--sub);font-size:13px;white-space:pre-wrap;margin:10px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tag-chip{font-size:12px;color:var(--acc-dk);background:var(--acc-soft);border:1px solid #f0e0a0;border-radius:7px;padding:3px 9px}
+/* toc */
+.toc{position:sticky;top:0;z-index:5;background:rgba(250,250,250,.93);backdrop-filter:saturate(180%) blur(12px);
+border-bottom:1px solid var(--line);margin:0 -20px 8px;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.toc-in{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;flex:1}
+.toc-in a{display:flex;flex-direction:column;min-width:84px;padding:6px 10px;border-radius:10px;text-decoration:none;color:var(--sub);font-size:12px;transition:.2s}
+.toc-in a:hover{background:var(--acc-soft)}
+.toc-in a b{color:var(--acc-dk);font-size:13px}.toc-in a i{font-style:normal;color:var(--sub);font-size:11px}
+.watch{font-size:13px;color:var(--acc-dk);text-decoration:none;white-space:nowrap;font-weight:600}
+.watch:hover{text-decoration:underline}
+/* chapter */
+.chapter{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;margin:18px 0;
+box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.ch-head{display:flex;gap:16px;align-items:flex-start;border-bottom:2px solid var(--acc);padding-bottom:14px;margin-bottom:16px}
+.ch-no{font-size:22px;font-weight:800;color:var(--acc-dk);flex:0 0 auto;background:var(--acc);padding:2px 10px;border-radius:8px}
+.ch-titles h3{margin:0;font-size:19px;letter-spacing:-.01em}
+.ch-meta{font-size:13px;color:var(--sub);margin-top:3px}
+.ts{color:var(--acc-dk);text-decoration:none;border-bottom:1px dotted var(--acc-dk);font-weight:500}
+.ts:hover{color:var(--warn);border-color:var(--warn)}
+.ch-body h4{font-size:14px;color:var(--sub);margin:18px 0 8px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.ch-body h4.warn{color:var(--warn)}
+.ch-body h5{font-size:15px;color:var(--ink);margin:0 0 4px;font-weight:600}
+.blk{list-style:none;padding:0;margin:0 0 6px}.blk li{display:flex;gap:10px;padding:4px 0;font-size:15px}
+.blk .mk{flex:0 0 18px;text-align:center;font-weight:700}
+.blk.q .mk{color:var(--acc-dk)}.blk.trap .mk{color:var(--warn)}.blk.kp .mk{color:var(--acc-dk)}
+.blk.trap li{background:#fff5f0;border-radius:8px;padding:6px 10px;margin-bottom:4px}
+.steps{margin:0 0 6px;padding-left:22px}.steps li{padding:4px 0;font-size:15px}
+.steps li::marker{color:var(--acc-dk);font-weight:700}
+.concl{margin:6px 0;padding:12px 16px;background:var(--acc-soft);border-radius:10px;font-weight:500;border-left:4px solid var(--acc)}
+.quotes{display:flex;flex-direction:column;gap:8px}
+.quotes blockquote{margin:0;padding:10px 16px;background:#fafafa;border-left:3px solid var(--acc);border-radius:0 8px 8px 0}
+.quotes blockquote p{margin:0;font-size:14px}.quotes blockquote footer{margin-top:4px;font-size:12px}
+/* detail sections (细致模式) */
+.detail-toggle{margin:12px 0;border:1px solid var(--line);border-radius:12px;background:#fff}
+.detail-toggle summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;font-size:14px;font-weight:700;color:var(--acc-dk);list-style:none}
+.detail-toggle summary::-webkit-details-marker{display:none}
+.detail-toggle summary::after{content:"+";width:22px;height:22px;border-radius:999px;background:var(--acc-soft);display:inline-flex;align-items:center;justify-content:center;font-weight:800}
+.detail-toggle[open] summary::after{content:"-"}
+.detail-toggle summary small{font-size:12px;font-weight:500;color:var(--sub);margin-left:auto}
+.detail-toggle .detail-block{padding:0 16px 14px}
+.detail-block{display:flex;flex-direction:column;gap:10px;margin:6px 0}
+.detail-sec{padding:12px 16px;background:var(--soft);border-radius:10px;border-left:3px solid var(--acc)}
+.detail-sec h5{font-size:14px;color:var(--acc-dk);margin:0 0 4px}
+.detail-sec p{margin:0;font-size:14px;color:var(--ink);line-height:1.6}
+/* media */
+.media{margin:18px 0 4px}.media figcaption{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.tag{font-size:11px;font-weight:700;padding:2px 9px;border-radius:6px;letter-spacing:.04em}
+.tag.svg{background:var(--acc-soft);color:var(--acc-dk);border:1px solid #f0e0a0}.tag.shot{background:#fff0e6;color:var(--warn)}
+.cap{font-size:12px;color:var(--sub)}
+.svg-wrap{background:var(--soft);border-radius:12px;padding:14px;border:1px solid var(--line)}
+.svg-wrap svg{border-radius:8px}
+.media img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+/* frame gallery (细致模式) */
+.frame-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0 4px}
+.frame-item{margin:0}.frame-item img{width:100%;border-radius:10px;border:1px solid var(--line);display:block;transition:transform .25s}
+.frame-item img:hover{transform:scale(1.02)}
+.frame-item figcaption{display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap}
+/* footer */
+.ft{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--sub);font-size:12px}
+.ft-warn{margin:0 0 10px;padding-left:18px}.ft-warn li{color:var(--warn);margin:3px 0}
+@media (max-width:640px){.hd-cover{flex:1 1 100%}.chapter{padding:18px}.hd-main h1{font-size:22px}.frame-gallery{grid-template-columns:1fr}}
+@media print{.toc{display:none}.chapter{break-inside:avoid;box-shadow:none}}
+</style></head>
+<body><div class="wrap">
+
+<header class='hd'>
+  <div class='hd-cover'><img class='cover' src='cover.jpg' alt='封面'/></div>
+  <div class='hd-main'>
+    <h1>【零基础 快速学Python】 韩顺平 (适合Python零基础  Python初学入门) p127 127_韩顺平Python_类型注解使用</h1>
+    <div class='sub'>
+      <span class='up'>UP · 韩顺平</span>
+      <span class='badges'><span class='chip '>BiliBili</span><span class='chip '>29:03</span><span class='chip '>当前 P127</span></span>
+    </div>
+    <div class='parts'><span class='lbl'>分P</span><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1'>P1 P1</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=2'>P2 P2</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=3'>P3 P3</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=4'>P4 P4</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=5'>P5 P5</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=6'>P6 P6</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=7'>P7 P7</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=8'>P8 P8</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=9'>P9 P9</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=10'>P10 P10</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=11'>P11 P11</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=12'>P12 P12</a></div>
+    <div class='summary'>本视频讲解了Python类型注解的使用，包括变量、函数/方法、容器、联合类型等，强调注解是提示而非强制。</div>
+    <p class='desc'>本套Python视频教程非常适合零基础的学员观看，本教程全面讲解了Python基础的方方面面。每一个知识点都讲解的非常细致，通俗易懂。 既让初学者快速掌握Python，也能让Python老手更全面、系统的学习到技术细节, 是想转行 人工智能, 数据分析, 大数据, 运维, 测试 程序员的优质资源 韩顺平</p>
+    <div class='tags'><span class='chip tag-chip'>Python零基础视频教程</span><span class='chip tag-chip'>Python</span><span class='chip tag-chip'>Python入门</span><span class='chip tag-chip'>python基础</span><span class='chip tag-chip'>python入门</span><span class='chip tag-chip'>python教程</span><span class='chip tag-chip'>Python视频</span><span class='chip tag-chip'>Python零基础</span><span class='chip tag-chip'>python新手教学</span></div>
+  </div>
+</header>
+<nav class='toc'><div class='toc-in'><a href='#ch-1'><b>01</b><span>变量类型注解基础</span><i>0:01</i></a><a href='#ch-2'><b>02</b><span>对象类型注解</span><i>2:51</i></a><a href='#ch-3'><b>03</b><span>容器类型注解</span><i>4:29</i></a><a href='#ch-4'><b>04</b><span>容器详细类型注解</span><i>5:55</i></a><a href='#ch-5'><b>05</b><span>在注释中使用类型注解</span><i>10:00</i></a><a href='#ch-6'><b>06</b><span>函数/方法中的类型注解</span><i>12:26</i></a><a href='#ch-7'><b>07</b><span>联合类型注解</span><i>21:51</i></a></div><a class='watch' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=0'>原视频 ↗</a></nav>
+
+<section class='chapter' id='ch-1'>
+  <header class='ch-head'>
+    <span class='ch-no'>01</span>
+    <div class='ch-titles'>
+      <h3>变量类型注解基础</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1'>⏱ 0:01 – 2:49</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <details class='detail-toggle'><summary><span>详细讲解</span><small>展开本章完整拆解</small></summary><div class='detail-block'><div class='detail-sec'><h5>基本语法演示</h5><p>通过变量a: int = 10演示基本语法，然后修改为a: int = &#x27;hello&#x27;，IDE立即显示黄色警告，提示期望int类型但得到str。</p></div><div class='detail-sec'><h5>警告信息解读</h5><p>警告信息明确说明期望的类型和实际类型，帮助开发者快速定位问题。例如：&#x27;Expected type &#x27;int&#x27;, got &#x27;str&#x27; instead&#x27;。</p></div></div></details><h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>变量类型注解的基本语法是什么？</span></li><li><span class='mk'>?</span><span>如果给变量赋值的类型与注解不一致会发生什么？</span></li><li><span class='mk'>?</span><span>类型注解是强制性的吗？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>类型注解不是强制性的，但类型不匹配时IDE会给出黄色警告。</span></li><li><span class='mk'>!</span><span>初学者可能误以为类型注解会强制类型检查，实际上只是提示。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>基本语法：变量名: 类型 = 值，例如 a: int = 10。</li><li>如果赋值的类型与注解不一致，IDE会显示黄色警告。</li><li>警告信息会提示期望的类型和实际给出的类型。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>基本语法：变量名: 类型 = 值。</span></li><li><span class='mk'>•</span><span>类型不匹配时IDE给出黄色警告。</span></li><li><span class='mk'>•</span><span>注解是提示性的，不是强制性的。</span></li><li><span class='mk'>•</span><span>警告信息明确显示期望类型和实际类型。</span></li></ul><h4>结论</h4><p class='concl'>变量类型注解通过冒号指定变量类型，类型不匹配时给出黄色警告，但不会阻止程序运行。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>基本语法是变量冒号类型</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1'>⏱ 0:01</a></footer></blockquote><blockquote><p>对a进行类型数据标注，标注a的类型为int</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=67'>⏱ 1:07</a></footer></blockquote><blockquote><p>如果给出的值的类型和标注的类型不一致，则他会给出黄色警告</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=109'>⏱ 1:49</a></footer></blockquote><blockquote><p>他要求的是一个int，你给的是一个str，所以他就给了你一个警告</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=145'>⏱ 2:25</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示变量类型注解的基本语法和警告机制，突出类型不匹配时的黄色警告。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff8a3d"/>
+    </marker>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#1d1d1f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">变量类型注解基础</text>
+
+  <!-- 分隔线 -->
+  <line x1="60" y1="52" x2="660" y2="52" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 基本语法卡片 -->
+  <rect x="40" y="70" width="640" height="90" rx="10" ry="10" fill="#f5f5f7" filter="url(#shadow)"/>
+  <text x="60" y="96" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0071e3">基本语法</text>
+  <text x="60" y="120" font-family="Courier, monospace" font-size="16" fill="#1d1d1f">变量名: 类型 = 值</text>
+  <text x="60" y="146" font-family="Courier, monospace" font-size="16" fill="#1d1d1f">a: int = 10</text>
+
+  <!-- 箭头：基本语法 → 类型不匹配 -->
+  <line x1="360" y1="165" x2="360" y2="195" stroke="#0071e3" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- 类型不匹配卡片 -->
+  <rect x="40" y="200" width="640" height="100" rx="10" ry="10" fill="#f5f5f7" filter="url(#shadow)"/>
+  <text x="60" y="226" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#ff8a3d">类型不匹配 → 黄色警告</text>
+  
+  <!-- 代码行 -->
+  <rect x="60" y="240" width="580" height="24" rx="4" ry="4" fill="#ffffff"/>
+  <text x="72" y="257" font-family="Courier, monospace" font-size="14" fill="#1d1d1f">a: int = "hello"</text>
+  
+  <!-- 黄色警告条 -->
+  <rect x="60" y="268" width="580" height="22" rx="4" ry="4" fill="#fff3cd" stroke="#ffc107" stroke-width="1"/>
+  <text x="72" y="284" font-family="Courier, monospace" font-size="13" fill="#856404">⚠ Expected type 'int', got 'str' instead</text>
+
+  <!-- 箭头：类型不匹配 → 提示性 -->
+  <line x1="360" y1="305" x2="360" y2="335" stroke="#ff8a3d" stroke-width="2" marker-end="url(#arrowOrange)"/>
+
+  <!-- 提示性卡片 -->
+  <rect x="40" y="340" width="640" height="65" rx="10" ry="10" fill="#f5f5f7" filter="url(#shadow)"/>
+  <text x="60" y="365" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#34c759">注解是提示性的，不是强制性的</text>
+  <text x="60" y="390" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">程序仍可正常运行，但 IDE 会提示类型不匹配</text>
+
+  <!-- 底部信息 -->
+  <text x="360" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">变量类型注解 · 基础概念</text>
+</svg></div></figure>
+    <div class='frame-gallery'><figure class='frame-item'><img loading='lazy' src='frames/01_00_变量类型注解基础_000001.jpg' alt='变量类型注解基础 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1'>⏱ 0:01</a> · 显示基本语法：变量冒号类型</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/01_01_变量类型注解基础_000107.jpg' alt='变量类型注解基础 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=67'>⏱ 1:07</a> · 老韩解读：对a进行类型标注</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/01_02_变量类型注解基础_000208.jpg' alt='变量类型注解基础 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=128'>⏱ 2:08</a> · 代码编辑器中a: int = 10，无警告</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/01_03_变量类型注解基础_000224.jpg' alt='变量类型注解基础 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=144'>⏱ 2:24</a> · 修改为a: int = &#x27;hello&#x27;，出现黄色警告</span></figcaption></figure></div>
+  </div>
+</section>
+<section class='chapter' id='ch-2'>
+  <header class='ch-head'>
+    <span class='ch-no'>02</span>
+    <div class='ch-titles'>
+      <h3>对象类型注解</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=171'>⏱ 2:51 – 4:28</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <details class='detail-toggle'><summary><span>详细讲解</span><small>展开本章完整拆解</small></summary><div class='detail-block'><div class='detail-sec'><h5>对象注解示例</h5><p>定义Cat类，创建cat对象并注解为Cat类型。如果错误地赋值为字符串，IDE会显示黄色警告。</p></div><div class='detail-sec'><h5>类名与变量名区分</h5><p>注解中的Cat是类名（大写），变量名cat是小写，两者不同，容易混淆。</p></div></div></details><h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>如何对自定义对象进行类型注解？</span></li><li><span class='mk'>?</span><span>对象类型注解中，类名和变量名有什么区别？</span></li><li><span class='mk'>?</span><span>对象类型不匹配时也会给出警告吗？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>容易混淆小写的变量名和大写的类名。</span></li><li><span class='mk'>!</span><span>对象类型注解同样不是强制性的，但类型不匹配会警告。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>定义一个类，例如class Cat: pass。</li><li>创建对象并注解：cat: Cat = Cat()。</li><li>如果赋值为其他类型，例如cat: Cat = &#x27;hello&#x27;，会给出黄色警告。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>对象类型注解语法：变量名: 类名 = 对象。</span></li><li><span class='mk'>•</span><span>类名首字母大写，变量名小写。</span></li><li><span class='mk'>•</span><span>类型不匹配时IDE给出黄色警告。</span></li></ul><h4>结论</h4><p class='concl'>对象类型注解使用类名作为类型，类型不匹配时同样给出黄色警告。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>定义了一个类，类名叫Cat</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=171'>⏱ 2:51</a></footer></blockquote><blockquote><p>对cat进行类型注解，标注他的类型是Cat</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=205'>⏱ 3:25</a></footer></blockquote><blockquote><p>如果你给的这个类型不一致，他也会给出一个黄色的警告</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=239'>⏱ 3:59</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示自定义对象类型的注解，强调类名和变量名的区别。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" fill="#0071e3">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+    <marker id="arrow-warn" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" fill="#ff8a3d">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff" rx="8" />
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">对象类型注解</text>
+  <line x1="200" y1="48" x2="520" y2="48" stroke="#d2d2d7" stroke-width="1" />
+
+  <!-- 左侧：代码示例卡片 -->
+  <rect x="30" y="70" width="320" height="200" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1" />
+  <text x="50" y="100" font-family="'Courier New', monospace" font-size="15" fill="#1d1d1f">1. 定义类</text>
+  <text x="50" y="125" font-family="'Courier New', monospace" font-size="15" fill="#1d1d1f">   <tspan fill="#0071e3">class</tspan> Cat: <tspan fill="#6e6e73">pass</tspan></text>
+  <text x="50" y="155" font-family="'Courier New', monospace" font-size="15" fill="#1d1d1f">2. 创建对象并注解</text>
+  <text x="50" y="180" font-family="'Courier New', monospace" font-size="15" fill="#1d1d1f">   <tspan fill="#6e6e73">cat</tspan>: <tspan fill="#0071e3">Cat</tspan> = <tspan fill="#0071e3">Cat</tspan>()</text>
+  <text x="50" y="210" font-family="'Courier New', monospace" font-size="15" fill="#1d1d1f">3. 类型不匹配（警告）</text>
+  <text x="50" y="235" font-family="'Courier New', monospace" font-size="15" fill="#1d1d1f">   <tspan fill="#6e6e73">cat</tspan>: <tspan fill="#0071e3">Cat</tspan> = <tspan fill="#ff8a3d">'hello'</tspan></text>
+
+  <!-- 右侧：关系图 -->
+  <!-- 变量名卡片 -->
+  <rect x="400" y="80" width="130" height="50" rx="8" fill="#e8f4fd" stroke="#0071e3" stroke-width="1.5" />
+  <text x="465" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0071e3">变量名</text>
+  <text x="465" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">小写开头</text>
+
+  <!-- 类名卡片 -->
+  <rect x="570" y="80" width="130" height="50" rx="8" fill="#f0f7e6" stroke="#34c759" stroke-width="1.5" />
+  <text x="635" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#34c759">类名</text>
+  <text x="635" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">大写开头</text>
+
+  <!-- 箭头：变量名 → 类名 -->
+  <line x1="530" y1="105" x2="565" y2="105" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="548" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0071e3">注解</text>
+
+  <!-- 对象卡片 -->
+  <rect x="400" y="160" width="130" height="50" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1" />
+  <text x="465" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#1d1d1f">对象</text>
+  <text x="465" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">cat</text>
+
+  <!-- 箭头：对象 → 变量名 -->
+  <line x1="465" y1="160" x2="465" y2="135" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- 警告卡片 -->
+  <rect x="400" y="240" width="300" height="60" rx="8" fill="#fff5e6" stroke="#ff8a3d" stroke-width="1.5" />
+  <text x="550" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ff8a3d">黄色警告</text>
+  <text x="550" y="285" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#ff8a3d">Expected type 'Cat', got 'str'</text>
+
+  <!-- 箭头：类型不匹配 → 警告 -->
+  <line x1="465" y1="210" x2="465" y2="236" stroke="#ff8a3d" stroke-width="1.5" marker-end="url(#arrow-warn)" stroke-dasharray="4,2" />
+
+  <!-- 底部结论 -->
+  <rect x="30" y="310" width="660" height="50" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1" />
+  <text x="360" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#1d1d1f">结论：对象类型注解使用类名作为类型，类型不匹配时给出黄色警告</text>
+
+  <!-- 关键引用 -->
+  <text x="360" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">关键引用：定义类 Cat → 注解 cat: Cat → 类型不匹配警告</text>
+</svg></div></figure>
+    <div class='frame-gallery'><figure class='frame-item'><img loading='lazy' src='frames/02_00_对象类型注解_000253.jpg' alt='对象类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=173'>⏱ 2:53</a> · 定义Cat类</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/02_01_对象类型注解_000310.jpg' alt='对象类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=190'>⏱ 3:10</a> · 创建对象并注解：cat: Cat = Cat()</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/02_02_对象类型注解_000359.jpg' alt='对象类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=239'>⏱ 3:59</a> · 修改为cat: Cat = &#x27;hello&#x27;，出现黄色警告</span></figcaption></figure></div>
+  </div>
+</section>
+<section class='chapter' id='ch-3'>
+  <header class='ch-head'>
+    <span class='ch-no'>03</span>
+    <div class='ch-titles'>
+      <h3>容器类型注解</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=269'>⏱ 4:29 – 5:54</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <details class='detail-toggle'><summary><span>详细讲解</span><small>展开本章完整拆解</small></summary><div class='detail-block'><div class='detail-sec'><h5>容器注解示例</h5><p>演示列表、元组、集合、字典的注解，并展示类型不匹配时的警告。</p></div><div class='detail-sec'><h5>警告信息</h5><p>当my_list被赋值为元组时，警告信息明确提示期望list类型但得到tuple。</p></div></div></details><h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>如何对列表、元组、集合、字典等容器进行类型注解？</span></li><li><span class='mk'>?</span><span>容器类型注解的语法是什么？</span></li><li><span class='mk'>?</span><span>容器类型不匹配时也会警告吗？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>容器类型注解需要区分具体容器类型，如list、tuple、set、dict。</span></li><li><span class='mk'>!</span><span>类型不匹配时警告信息明确。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>列表注解：my_list: list = [1, 2, 3]。</li><li>元组注解：my_tuple: tuple = (1, 2, 3)。</li><li>集合注解：my_set: set = {1, 2, 3}。</li><li>字典注解：my_dict: dict = {&#x27;a&#x27;: 1}。</li><li>如果赋值的容器类型不匹配，例如my_list: list = (1, 2, 3)，会给出黄色警告。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>容器类型注解语法：变量名: 容器类型 = 值。</span></li><li><span class='mk'>•</span><span>常见容器类型：list、tuple、set、dict。</span></li><li><span class='mk'>•</span><span>类型不匹配时IDE给出黄色警告。</span></li></ul><h4>结论</h4><p class='concl'>容器类型注解使用list、tuple、set、dict等关键字，类型不匹配时给出黄色警告。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>容器类型注解就是假如你的变量是容器，我们也可以给他做出相应的注解</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=269'>⏱ 4:29</a></footer></blockquote><blockquote><p>对my_list进行类型注解，标注my_list的类型为list</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=285'>⏱ 4:45</a></footer></blockquote><blockquote><p>我把它改成一个元组，马上就有一个黄色的警告</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=300'>⏱ 5:00</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示列表、元组、集合、字典等容器类型的注解。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowWarn" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff8a3d"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">容器类型注解</text>
+  <line x1="200" y1="50" x2="520" y2="50" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 语法说明卡片 -->
+  <rect x="30" y="65" width="660" height="50" rx="8" fill="#f5f5f7"/>
+  <text x="50" y="88" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f" font-weight="bold">语法：</text>
+  <text x="110" y="88" font-family="Arial, sans-serif" font-size="14" fill="#6e6e73">变量名: 容器类型 = 值</text>
+  <text x="380" y="88" font-family="Arial, sans-serif" font-size="14" fill="#6e6e73">常见容器类型：list、tuple、set、dict</text>
+
+  <!-- 四个容器类型卡片 -->
+  <!-- list -->
+  <rect x="30" y="130" width="300" height="90" rx="8" fill="#e8f0fe" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="50" y="155" font-family="Courier, monospace" font-size="15" fill="#1d1d1f" font-weight="bold">list</text>
+  <text x="50" y="178" font-family="Courier, monospace" font-size="13" fill="#1d1d1f">my_list: list = [1, 2, 3]</text>
+  <text x="50" y="200" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">方括号 [] 定义列表</text>
+
+  <!-- tuple -->
+  <rect x="390" y="130" width="300" height="90" rx="8" fill="#e8f0fe" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="410" y="155" font-family="Courier, monospace" font-size="15" fill="#1d1d1f" font-weight="bold">tuple</text>
+  <text x="410" y="178" font-family="Courier, monospace" font-size="13" fill="#1d1d1f">my_tuple: tuple = (1, 2, 3)</text>
+  <text x="410" y="200" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">圆括号 () 定义元组</text>
+
+  <!-- set -->
+  <rect x="30" y="235" width="300" height="90" rx="8" fill="#e8f0fe" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="50" y="260" font-family="Courier, monospace" font-size="15" fill="#1d1d1f" font-weight="bold">set</text>
+  <text x="50" y="283" font-family="Courier, monospace" font-size="13" fill="#1d1d1f">my_set: set = {1, 2, 3}</text>
+  <text x="50" y="305" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">花括号 {} 定义集合</text>
+
+  <!-- dict -->
+  <rect x="390" y="235" width="300" height="90" rx="8" fill="#e8f0fe" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="410" y="260" font-family="Courier, monospace" font-size="15" fill="#1d1d1f" font-weight="bold">dict</text>
+  <text x="410" y="283" font-family="Courier, monospace" font-size="13" fill="#1d1d1f">my_dict: dict = {'a': 1}</text>
+  <text x="410" y="305" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">键值对形式定义字典</text>
+
+  <!-- 警告示例 -->
+  <rect x="30" y="340" width="660" height="65" rx="8" fill="#fff4e5" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="50" y="363" font-family="Arial, sans-serif" font-size="14" fill="#ff8a3d" font-weight="bold">⚠ 类型不匹配警告</text>
+  <text x="50" y="385" font-family="Courier, monospace" font-size="13" fill="#1d1d1f">my_list: list = (1, 2, 3)  </text>
+  <text x="310" y="385" font-family="Arial, sans-serif" font-size="13" fill="#ff8a3d">→ 黄色警告：Expected type 'list', got 'tuple'</text>
+
+  <!-- 连线箭头：从语法到各容器 -->
+  <line x1="180" y1="115" x2="180" y2="128" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="540" y1="115" x2="540" y2="128" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="180" y1="220" x2="180" y2="233" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="540" y1="220" x2="540" y2="233" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 从容器到警告的连线 -->
+  <line x1="330" y1="220" x2="330" y2="338" stroke="#ff8a3d" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowWarn)"/>
+  <text x="340" y="280" font-family="Arial, sans-serif" font-size="11" fill="#ff8a3d">类型不匹配</text>
+</svg></div></figure>
+    <div class='frame-gallery'><figure class='frame-item'><img loading='lazy' src='frames/03_00_容器类型注解_000431.jpg' alt='容器类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=271'>⏱ 4:31</a> · 开始讲解容器类型注解</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/03_01_容器类型注解_000447.jpg' alt='容器类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=287'>⏱ 4:47</a> · 显示my_list: list = [1,2,3]</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/03_02_容器类型注解_000502.jpg' alt='容器类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=302'>⏱ 5:02</a> · 修改为my_list: list = (1,2,3)，出现黄色警告</span></figcaption></figure></div>
+  </div>
+</section>
+<section class='chapter' id='ch-4'>
+  <header class='ch-head'>
+    <span class='ch-no'>04</span>
+    <div class='ch-titles'>
+      <h3>容器详细类型注解</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=355'>⏱ 5:55 – 10:00</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <details class='detail-toggle'><summary><span>详细讲解</span><small>展开本章完整拆解</small></summary><div class='detail-block'><div class='detail-sec'><h5>列表详细注解</h5><p>使用List[int]表示列表元素为int类型，如果元素包含字符串则警告。</p></div><div class='detail-sec'><h5>字典详细注解</h5><p>使用Dict[str, int]表示键为str、值为int，不匹配时警告。</p></div><div class='detail-sec'><h5>元组和集合详细注解</h5><p>Tuple[str, str, str]指定每个元素类型，Set[str]指定集合元素类型。</p></div></div></details><h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>如何对容器内的元素类型进行详细注解？</span></li><li><span class='mk'>?</span><span>List[int]和Dict[str, int]的语法是什么？</span></li><li><span class='mk'>?</span><span>元素类型不匹配时也会警告吗？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>需要从typing模块导入List、Dict等类型。</span></li><li><span class='mk'>!</span><span>详细注解语法较复杂，容易写错。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>导入typing模块：from typing import List, Dict, Tuple, Set。</li><li>列表元素注解：my_list: List[int] = [1, 2, 3]。</li><li>字典键值注解：my_dict: Dict[str, int] = {&#x27;a&#x27;: 1}。</li><li>元组元素注解：my_tuple: Tuple[str, str, str] = (&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;)。</li><li>集合元素注解：my_set: Set[str] = {&#x27;a&#x27;, &#x27;b&#x27;}。</li><li>如果元素类型不匹配，例如my_list: List[int] = [1, &#x27;a&#x27;]，会给出黄色警告。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>需要从typing模块导入List、Dict等。</span></li><li><span class='mk'>•</span><span>语法：容器类型[元素类型]。</span></li><li><span class='mk'>•</span><span>字典需要分别指定键和值的类型。</span></li><li><span class='mk'>•</span><span>元素类型不匹配时IDE给出黄色警告。</span></li></ul><h4>结论</h4><p class='concl'>容器详细类型注解可以指定元素类型，类型不匹配时给出黄色警告。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>容器详细类型注解就是有些时候我们可能想对这个容器类型要求你是一个列表，而且要求这个列表里面的元素是什么类型</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=355'>⏱ 5:55</a></footer></blockquote><blockquote><p>对my_list2进行类型注解，标注my_list2的类型是list，而且该list的元素是int类型</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=395'>⏱ 6:35</a></footer></blockquote><blockquote><p>这个tuple里面写了str的类型，表示第一个元素是str，第二个也是str，第三个还是str，第四个也是str</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=444'>⏱ 7:24</a></footer></blockquote><blockquote><p>这个字典的键是str类型，值是int类型</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=484'>⏱ 8:04</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示容器内元素类型的详细注解，如List[int]、Dict[str, int]等。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d2d2d7"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#1d1d1f">容器详细类型注解</text>
+  <line x1="200" y1="50" x2="520" y2="50" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 导入语句卡片 -->
+  <rect x="30" y="70" width="660" height="42" rx="8" fill="#f5f5f7"/>
+  <text x="50" y="96" font-family="monospace, Courier" font-size="14" fill="#1d1d1f">from typing import List, Dict, Tuple, Set</text>
+
+  <!-- 四个容器类型卡片 -->
+  <!-- List[int] -->
+  <rect x="30" y="130" width="310" height="100" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <rect x="30" y="130" width="310" height="28" rx="10" fill="#0071e3"/>
+  <rect x="30" y="148" width="310" height="10" fill="#0071e3"/>
+  <text x="185" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#ffffff">列表 List</text>
+  <text x="50" y="180" font-family="monospace, Courier" font-size="14" fill="#1d1d1f">my_list: List[int] = [1, 2, 3]</text>
+  <text x="50" y="205" font-family="monospace, Courier" font-size="13" fill="#6e6e73">元素类型：int</text>
+
+  <!-- Dict[str, int] -->
+  <rect x="380" y="130" width="310" height="100" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <rect x="380" y="130" width="310" height="28" rx="10" fill="#0071e3"/>
+  <rect x="380" y="148" width="310" height="10" fill="#0071e3"/>
+  <text x="535" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#ffffff">字典 Dict</text>
+  <text x="400" y="180" font-family="monospace, Courier" font-size="14" fill="#1d1d1f">my_dict: Dict[str, int] = {"a": 1}</text>
+  <text x="400" y="205" font-family="monospace, Courier" font-size="13" fill="#6e6e73">键类型：str，值类型：int</text>
+
+  <!-- Tuple[str, str, str] -->
+  <rect x="30" y="250" width="310" height="100" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <rect x="30" y="250" width="310" height="28" rx="10" fill="#00b8d9"/>
+  <rect x="30" y="268" width="310" height="10" fill="#00b8d9"/>
+  <text x="185" y="270" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#ffffff">元组 Tuple</text>
+  <text x="50" y="300" font-family="monospace, Courier" font-size="14" fill="#1d1d1f">my_tuple: Tuple[str, str, str]</text>
+  <text x="50" y="325" font-family="monospace, Courier" font-size="13" fill="#6e6e73">每个位置元素类型：str</text>
+
+  <!-- Set[str] -->
+  <rect x="380" y="250" width="310" height="100" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <rect x="380" y="250" width="310" height="28" rx="10" fill="#00b8d9"/>
+  <rect x="380" y="268" width="310" height="10" fill="#00b8d9"/>
+  <text x="535" y="270" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#ffffff">集合 Set</text>
+  <text x="400" y="300" font-family="monospace, Courier" font-size="14" fill="#1d1d1f">my_set: Set[str] = {"a", "b"}</text>
+  <text x="400" y="325" font-family="monospace, Courier" font-size="13" fill="#6e6e73">元素类型：str</text>
+
+  <!-- 箭头连接：导入 -> 各容器 -->
+  <line x1="360" y1="112" x2="185" y2="130" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <line x1="360" y1="112" x2="535" y2="130" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <line x1="360" y1="112" x2="185" y2="250" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <line x1="360" y1="112" x2="535" y2="250" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- 黄色警告示例 -->
+  <rect x="30" y="370" width="660" height="38" rx="8" fill="#fff8e1" stroke="#ff8a3d" stroke-width="1"/>
+  <text x="50" y="394" font-family="monospace, Courier" font-size="14" fill="#1d1d1f">my_list: List[int] = [1, 'a']</text>
+  <text x="380" y="394" font-family="monospace, Courier" font-size="14" fill="#ff3b30">⚠ 黄色警告：类型不匹配</text>
+</svg></div></figure>
+    <div class='frame-gallery'><figure class='frame-item'><img loading='lazy' src='frames/04_00_容器详细类型注解_000556.jpg' alt='容器详细类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=356'>⏱ 5:56</a> · 开始讲解容器详细类型注解</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/04_01_容器详细类型注解_000634.jpg' alt='容器详细类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=394'>⏱ 6:34</a> · 显示my_list: List[int] = [1,2,3]</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/04_02_容器详细类型注解_000805.jpg' alt='容器详细类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=485'>⏱ 8:05</a> · 显示my_dict: Dict[str, int] = {&#x27;a&#x27;:1}</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/04_03_容器详细类型注解_000914.jpg' alt='容器详细类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=554'>⏱ 9:14</a> · 修改字典值类型，出现黄色警告</span></figcaption></figure></div>
+  </div>
+</section>
+<section class='chapter' id='ch-5'>
+  <header class='ch-head'>
+    <span class='ch-no'>05</span>
+    <div class='ch-titles'>
+      <h3>在注释中使用类型注解</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=600'>⏱ 10:00 – 12:26</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <details class='detail-toggle'><summary><span>详细讲解</span><small>展开本章完整拆解</small></summary><div class='detail-block'><div class='detail-sec'><h5>注释注解示例</h5><p>演示a = 10  # type: int，然后修改为a = &#x27;hello&#x27;  # type: int，出现黄色警告。</p></div><div class='detail-sec'><h5>格式要求</h5><p>注释注解的格式是# type: 类型，注意冒号和空格，格式错误可能导致警告不显示或误报。</p></div></div></details><h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>如何在注释中使用类型注解？</span></li><li><span class='mk'>?</span><span>注释中类型注解的语法是什么？</span></li><li><span class='mk'>?</span><span>注释中类型不匹配也会警告吗？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>注释中的类型注解格式要求严格，容易因空格等问题导致警告。</span></li><li><span class='mk'>!</span><span>注释注解不如直接注解直观。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>在变量赋值后添加注释：a = 10  # type: int。</li><li>如果实际类型与注释不一致，IDE会给出黄色警告。</li><li>例如：a = &#x27;hello&#x27;  # type: int 会警告。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>语法：变量 = 值  # type: 类型。</span></li><li><span class='mk'>•</span><span>类型不匹配时IDE给出黄色警告。</span></li><li><span class='mk'>•</span><span>注释注解格式要求严格，注意空格。</span></li></ul><h4>结论</h4><p class='concl'>注释中可以使用# type: 类型进行注解，类型不匹配时同样给出黄色警告。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>在注释中使用类型注解，而且的注视中类型注解还是比较神奇，很少见的</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=600'>⏱ 10:00</a></footer></blockquote><blockquote><p>格式是前面是变量名，后面就指定你这个变量的类型是什么，是float就写float，是list就写list</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=632'>⏱ 10:32</a></footer></blockquote><blockquote><p>如果给的类型不一致，他依然会给你一个黄色的警告</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=656'>⏱ 10:56</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示在注释中通过# type: 类型进行注解的方式。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#6e6e73"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">在注释中使用类型注解</text>
+
+  <!-- 副标题 -->
+  <text x="360" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">语法：变量 = 值  # type: 类型</text>
+
+  <!-- 分隔线 -->
+  <line x1="60" y1="78" x2="660" y2="78" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- ===== 左侧：代码示例卡片 ===== -->
+  <rect x="40" y="95" width="300" height="200" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="60" y="122" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">代码示例</text>
+
+  <!-- 代码行 1 -->
+  <rect x="55" y="135" width="270" height="36" rx="6" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="65" y="158" font-family="Courier, monospace" font-size="14" fill="#1d1d1f">a = 10  </text>
+  <text x="145" y="158" font-family="Courier, monospace" font-size="14" fill="#6e6e73"># type: int</text>
+
+  <!-- 代码行 2（正确） -->
+  <rect x="55" y="180" width="270" height="36" rx="6" fill="#ffffff" stroke="#34c759" stroke-width="1.5"/>
+  <text x="65" y="203" font-family="Courier, monospace" font-size="14" fill="#1d1d1f">b = 3.14  </text>
+  <text x="155" y="203" font-family="Courier, monospace" font-size="14" fill="#6e6e73"># type: float</text>
+
+  <!-- 代码行 3（警告） -->
+  <rect x="55" y="225" width="270" height="36" rx="6" fill="#fff8f0" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="65" y="248" font-family="Courier, monospace" font-size="14" fill="#1d1d1f">c = "hello"  </text>
+  <text x="175" y="248" font-family="Courier, monospace" font-size="14" fill="#6e6e73"># type: int</text>
+  <!-- 警告图标 -->
+  <circle cx="310" cy="243" r="8" fill="#ff8a3d"/>
+  <text x="310" y="247" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold">!</text>
+
+  <!-- ===== 右侧：警告说明卡片 ===== -->
+  <rect x="380" y="95" width="300" height="200" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="400" y="122" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">IDE 警告提示</text>
+
+  <!-- 警告框 -->
+  <rect x="395" y="135" width="270" height="50" rx="6" fill="#fff8f0" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="405" y="155" font-family="Courier, monospace" font-size="13" fill="#ff8a3d">⚠ Expected type 'int',</text>
+  <text x="405" y="174" font-family="Courier, monospace" font-size="13" fill="#ff8a3d">  got 'str' instead</text>
+
+  <!-- 说明文字 -->
+  <text x="400" y="210" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">• 类型不匹配时给出黄色警告</text>
+  <text x="400" y="232" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">• 注释注解格式要求严格</text>
+  <text x="400" y="254" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">• 注意空格： # type: int</text>
+
+  <!-- 箭头：从代码示例指向警告 -->
+  <line x1="340" y1="195" x2="378" y2="160" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== 底部：关键要点 ===== -->
+  <rect x="40" y="310" width="640" height="90" rx="10" fill="#f0f7ff" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="60" y="338" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">关键要点</text>
+  <text x="60" y="360" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">1. 语法：变量 = 值  # type: 类型（注意 # 前后各有一个空格）</text>
+  <text x="60" y="380" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">2. 类型不匹配时 IDE 会给出黄色警告，帮助发现潜在错误</text>
+  <text x="60" y="400" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">3. 注释注解不如直接注解直观，但可用于不支持类型注解的旧版本 Python</text>
+</svg></div></figure>
+    <div class='frame-gallery'><figure class='frame-item'><img loading='lazy' src='frames/05_00_在注释中使用类型注解_001002.jpg' alt='在注释中使用类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=602'>⏱ 10:02</a> · 开始讲解注释中的类型注解</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/05_01_在注释中使用类型注解_001034.jpg' alt='在注释中使用类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=634'>⏱ 10:34</a> · 显示a = 10  # type: int</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/05_02_在注释中使用类型注解_001115.jpg' alt='在注释中使用类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=675'>⏱ 11:15</a> · 修改为a = &#x27;hello&#x27;  # type: int，出现黄色警告</span></figcaption></figure></div>
+  </div>
+</section>
+<section class='chapter' id='ch-6'>
+  <header class='ch-head'>
+    <span class='ch-no'>06</span>
+    <div class='ch-titles'>
+      <h3>函数/方法中的类型注解</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=746'>⏱ 12:26 – 21:51</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <details class='detail-toggle'><summary><span>详细讲解</span><small>展开本章完整拆解</small></summary><div class='detail-block'><div class='detail-sec'><h5>参数注解示例</h5><p>定义函数func(name: str)，调用时传入int类型，IDE显示黄色警告，但程序仍可运行。</p></div><div class='detail-sec'><h5>返回值注解示例</h5><p>定义函数add(a: int, b: int) -&gt; int，返回a+b，如果返回类型不匹配也会警告。</p></div><div class='detail-sec'><h5>注解非强制演示</h5><p>故意传入float类型，虽然警告，但程序仍能计算并返回结果，说明注解只是提示。</p></div></div></details><h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>如何在函数参数中使用类型注解？</span></li><li><span class='mk'>?</span><span>如何注解函数的返回值？</span></li><li><span class='mk'>?</span><span>函数类型注解不匹配时也会警告吗？</span></li><li><span class='mk'>?</span><span>类型注解是强制性的吗？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>返回值注解使用箭头-&gt;类型。</span></li><li><span class='mk'>!</span><span>参数注解在参数名后加冒号和类型。</span></li><li><span class='mk'>!</span><span>类型注解只是提示，不是强制，程序仍可运行。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>参数注解：def func(param: type):。</li><li>返回值注解：def func() -&gt; type:。</li><li>例如：def add(a: int, b: int) -&gt; int: return a + b。</li><li>调用时如果传入类型不匹配，IDE给出黄色警告。</li><li>即使有警告，程序仍可运行，但可能出错。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>参数注解：参数名: 类型。</span></li><li><span class='mk'>•</span><span>返回值注解：-&gt; 类型。</span></li><li><span class='mk'>•</span><span>类型不匹配时IDE给出黄色警告。</span></li><li><span class='mk'>•</span><span>注解是提示性的，不是强制性的。</span></li><li><span class='mk'>•</span><span>程序仍可运行，但逻辑错误可能导致异常。</span></li></ul><h4>结论</h4><p class='concl'>函数参数和返回值可以使用类型注解，类型不匹配时给出黄色警告，但注解只是提示，不是强制。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>在函数和的方法中怎么去使用类型注解呢</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=746'>⏱ 12:26</a></footer></blockquote><blockquote><p>一个箭头后面就可以使用我们这个类型去指定返回值的类型</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=780'>⏱ 13:00</a></footer></blockquote><blockquote><p>对形参进行类型注解，标注他的类型是什么，后面这个地方是标注他的返回值的类型是什么</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=800'>⏱ 13:20</a></footer></blockquote><blockquote><p>对形参name进行类型注解，标注name的类型是str</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=860'>⏱ 14:20</a></footer></blockquote><blockquote><p>他就告诉你我要接收一个参数name，而且他的类型是str的，这样就非常方便了</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=925'>⏱ 15:25</a></footer></blockquote><blockquote><p>类型注解是提示的，并不是强制性的</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1173'>⏱ 19:33</a></footer></blockquote><blockquote><p>他依然可以运行，而且这个结果是30.1</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1237'>⏱ 20:37</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>流程 · 展示函数参数和返回值的类型注解流程，包括参数注解和返回值注解。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff3b30"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff8a3d"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="#1d1d1f">函数/方法中的类型注解流程</text>
+
+  <!-- 步骤1：参数注解 -->
+  <rect x="40" y="65" width="280" height="55" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="180" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d1d1f">步骤1：参数注解</text>
+  <text x="180" y="108" text-anchor="middle" font-size="13" fill="#6e6e73">def func(param: type):</text>
+
+  <!-- 箭头1 -->
+  <line x1="320" y1="92" x2="390" y2="92" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 步骤2：返回值注解 -->
+  <rect x="400" y="65" width="280" height="55" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="540" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d1d1f">步骤2：返回值注解</text>
+  <text x="540" y="108" text-anchor="middle" font-size="13" fill="#6e6e73">def func() -> type:</text>
+
+  <!-- 箭头2：向下 -->
+  <line x1="540" y1="120" x2="540" y2="165" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 步骤3：示例代码 -->
+  <rect x="140" y="170" width="440" height="50" rx="8" fill="#e8f5e9" stroke="#34c759" stroke-width="1.5"/>
+  <text x="360" y="192" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d1d1f">示例：def add(a: int, b: int) -> int:</text>
+  <text x="360" y="210" text-anchor="middle" font-size="13" fill="#6e6e73">return a + b</text>
+
+  <!-- 箭头3：向下 -->
+  <line x1="360" y1="220" x2="360" y2="260" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 菱形决策：类型匹配？ -->
+  <polygon points="360,265 460,310 360,355 260,310" fill="#fff8e1" stroke="#ff8a3d" stroke-width="2"/>
+  <text x="360" y="307" text-anchor="middle" font-size="14" font-weight="bold" fill="#ff8a3d">类型匹配？</text>
+
+  <!-- 分支：匹配（绿色） -->
+  <line x1="460" y1="310" x2="540" y2="310" stroke="#34c759" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="545" y="290" width="140" height="40" rx="6" fill="#e8f5e9" stroke="#34c759" stroke-width="1.5"/>
+  <text x="615" y="315" text-anchor="middle" font-size="13" fill="#1d1d1f" font-weight="bold">正常运行</text>
+
+  <!-- 分支：不匹配（红色） -->
+  <line x1="260" y1="310" x2="180" y2="310" stroke="#ff3b30" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <rect x="35" y="290" width="140" height="40" rx="6" fill="#ffebee" stroke="#ff3b30" stroke-width="1.5"/>
+  <text x="105" y="315" text-anchor="middle" font-size="13" fill="#1d1d1f" font-weight="bold">黄色警告</text>
+
+  <!-- 从黄色警告向下 -->
+  <line x1="105" y1="330" x2="105" y2="370" stroke="#ff3b30" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <!-- 结论框 -->
+  <rect x="30" y="375" width="660" height="38" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="360" y="398" text-anchor="middle" font-size="13" fill="#6e6e73">结论：类型注解是提示性的，不是强制性的；即使有警告，程序仍可运行，但逻辑错误可能导致异常</text>
+
+  <!-- 视觉锚点：代码示例 -->
+  <rect x="545" y="340" width="150" height="30" rx="4" fill="#e3f2fd" stroke="#0071e3" stroke-width="1"/>
+  <text x="620" y="359" text-anchor="middle" font-size="11" fill="#0071e3">Expected type 'str', got 'int'</text>
+</svg></div></figure>
+    <div class='frame-gallery'><figure class='frame-item'><img loading='lazy' src='frames/06_00_函数_方法中的类型注解_001227.jpg' alt='函数/方法中的类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=747'>⏱ 12:27</a> · 开始讲解函数中的类型注解</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/06_01_函数_方法中的类型注解_001422.jpg' alt='函数/方法中的类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=862'>⏱ 14:22</a> · 显示def func(name: str):</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/06_02_函数_方法中的类型注解_001526.jpg' alt='函数/方法中的类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=926'>⏱ 15:26</a> · 调用func(&#x27;hello&#x27;)，IDE提示参数类型</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/06_03_函数_方法中的类型注解_001934.jpg' alt='函数/方法中的类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1174'>⏱ 19:34</a> · 强调类型注解是提示，不是强制</span></figcaption></figure></div>
+  </div>
+</section>
+<section class='chapter' id='ch-7'>
+  <header class='ch-head'>
+    <span class='ch-no'>07</span>
+    <div class='ch-titles'>
+      <h3>联合类型注解</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1311'>⏱ 21:51 – 29:03</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <details class='detail-toggle'><summary><span>详细讲解</span><small>展开本章完整拆解</small></summary><div class='detail-block'><div class='detail-sec'><h5>变量联合注解</h5><p>a: Union[int, str] = 10，如果赋值为float则警告。</p></div><div class='detail-sec'><h5>容器联合注解</h5><p>my_list: List[Union[int, str]] = [1, &#x27;a&#x27;]，元素可以是int或str。</p></div><div class='detail-sec'><h5>函数联合注解</h5><p>函数参数和返回值可以使用Union，例如def func(a: Union[int, str]) -&gt; Union[int, str]。</p></div></div></details><h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>什么是联合类型注解？</span></li><li><span class='mk'>?</span><span>如何使用Union类型？</span></li><li><span class='mk'>?</span><span>联合类型注解在变量、容器、函数中如何使用？</span></li><li><span class='mk'>?</span><span>联合类型不匹配时也会警告吗？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>使用Union需要从typing导入。</span></li><li><span class='mk'>!</span><span>Union可以指定多个类型，用逗号分隔。</span></li><li><span class='mk'>!</span><span>类型不匹配时警告。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>导入Union：from typing import Union。</li><li>变量注解：a: Union[int, str] = 10。</li><li>容器注解：my_list: List[Union[int, str]] = [1, &#x27;a&#x27;]。</li><li>函数参数注解：def func(a: Union[int, str]):。</li><li>函数返回值注解：def func() -&gt; Union[int, str]:。</li><li>如果赋值的类型不在Union中，给出黄色警告。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>需要从typing导入Union。</span></li><li><span class='mk'>•</span><span>语法：Union[类型1, 类型2, ...]。</span></li><li><span class='mk'>•</span><span>可用于变量、容器、函数参数和返回值。</span></li><li><span class='mk'>•</span><span>类型不匹配时IDE给出黄色警告。</span></li></ul><h4>结论</h4><p class='concl'>联合类型注解使用Union指定多个允许的类型，类型不匹配时给出黄色警告。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>联合类型，Union类型，他等价于X或者Y，就是或的意思</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1311'>⏱ 21:51</a></footer></blockquote><blockquote><p>使用的时候我们需要先导入Union</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1345'>⏱ 22:25</a></footer></blockquote><blockquote><p>b: Union[int, str] 表示b可以是int类型也可以是str类型</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1453'>⏱ 24:13</a></footer></blockquote><blockquote><p>如果在这个地方又增加了float，就相当于我这个变量可以是int，也可以是str，还可以是float</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1517'>⏱ 25:17</a></footer></blockquote><blockquote><p>对my_list做了一个类型注解，他的类型是list，然后这个地方用了Union[int, str]</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1552'>⏱ 25:52</a></footer></blockquote><blockquote><p>函数参数中，name1: Union[int, float]，name2: Union[str, bool]</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1587'>⏱ 26:27</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示Union类型的使用，允许变量或参数接受多种类型。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" font-family="system-ui, -apple-system, sans-serif" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6e6e73"/>
+    </marker>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#00000015"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#1d1d1f">联合类型注解（Union Types）</text>
+  <text x="360" y="58" text-anchor="middle" font-size="13" fill="#6e6e73">允许变量或参数接受多种类型，类型不匹配时给出黄色警告</text>
+
+  <!-- 主卡片：核心概念 -->
+  <rect x="40" y="75" width="640" height="40" rx="8" fill="#0071e3" filter="url(#shadow)"/>
+  <text x="360" y="101" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">核心概念：Union[类型1, 类型2, ...] 表示“或”关系</text>
+
+  <!-- 从核心出发的箭头 -->
+  <line x1="360" y1="115" x2="360" y2="140" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 三个应用场景卡片 -->
+  <rect x="40" y="145" width="195" height="50" rx="8" fill="#f5f5f7" filter="url(#shadow)"/>
+  <text x="137" y="167" text-anchor="middle" font-size="14" font-weight="600" fill="#1d1d1f">变量注解</text>
+  <text x="137" y="185" text-anchor="middle" font-size="12" fill="#6e6e73">a: Union[int, str] = 10</text>
+
+  <rect x="262" y="145" width="195" height="50" rx="8" fill="#f5f5f7" filter="url(#shadow)"/>
+  <text x="359" y="167" text-anchor="middle" font-size="14" font-weight="600" fill="#1d1d1f">容器注解</text>
+  <text x="359" y="185" text-anchor="middle" font-size="12" fill="#6e6e73">List[Union[int, str]]</text>
+
+  <rect x="485" y="145" width="195" height="50" rx="8" fill="#f5f5f7" filter="url(#shadow)"/>
+  <text x="582" y="167" text-anchor="middle" font-size="14" font-weight="600" fill="#1d1d1f">函数注解</text>
+  <text x="582" y="185" text-anchor="middle" font-size="12" fill="#6e6e73">参数 + 返回值</text>
+
+  <!-- 从三个卡片向下的箭头 -->
+  <line x1="137" y1="195" x2="137" y2="220" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <line x1="359" y1="195" x2="359" y2="220" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <line x1="582" y1="195" x2="582" y2="220" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- 变量注解详情 -->
+  <rect x="40" y="225" width="195" height="70" rx="6" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="137" y="245" text-anchor="middle" font-size="12" font-weight="600" fill="#1d1d1f">变量注解示例</text>
+  <text x="50" y="263" font-size="11" fill="#1d1d1f">a: Union[int, str] = 10</text>
+  <text x="50" y="280" font-size="11" fill="#6e6e73">b: Union[int, str, float]</text>
+
+  <!-- 容器注解详情 -->
+  <rect x="262" y="225" width="195" height="70" rx="6" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="359" y="245" text-anchor="middle" font-size="12" font-weight="600" fill="#1d1d1f">容器注解示例</text>
+  <text x="272" y="263" font-size="11" fill="#1d1d1f">my_list: List[Union[int, str]]</text>
+  <text x="272" y="280" font-size="11" fill="#6e6e73">= [1, "a", 3, "b"]</text>
+
+  <!-- 函数注解详情 -->
+  <rect x="485" y="225" width="195" height="70" rx="6" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="582" y="245" text-anchor="middle" font-size="12" font-weight="600" fill="#1d1d1f">函数注解示例</text>
+  <text x="495" y="263" font-size="11" fill="#1d1d1f">def func(a: Union[int, str])</text>
+  <text x="495" y="280" font-size="11" fill="#6e6e73">→ Union[int, str]:</text>
+
+  <!-- 警告提示区 -->
+  <rect x="40" y="310" width="640" height="45" rx="8" fill="#fff8e1" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="55" y="330" font-size="13" font-weight="600" fill="#ff8a3d">⚠ 类型不匹配警告</text>
+  <text x="55" y="347" font-size="12" fill="#1d1d1f">Expected type 'Union[int, str]', got 'float' instead</text>
+
+  <!-- 底部导入提示 -->
+  <rect x="40" y="368" width="640" height="36" rx="6" fill="#f5f5f7"/>
+  <text x="55" y="391" font-size="13" fill="#1d1d1f">📦 导入方式：<tspan font-family="monospace" fill="#0071e3">from typing import Union</tspan></text>
+</svg></div></figure>
+    <div class='frame-gallery'><figure class='frame-item'><img loading='lazy' src='frames/07_00_联合类型注解_002153.jpg' alt='联合类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1313'>⏱ 21:53</a> · 开始讲解联合类型注解</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/07_01_联合类型注解_002411.jpg' alt='联合类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1451'>⏱ 24:11</a> · 显示b: Union[int, str] = 100</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/07_02_联合类型注解_002517.jpg' alt='联合类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1517'>⏱ 25:17</a> · 修改为b: Union[int, str] = 1.0，出现黄色警告</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/07_03_联合类型注解_002550.jpg' alt='联合类型注解 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1zN4y1v7Vv/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=127&amp;t=1550'>⏱ 25:50</a> · 显示my_list: List[Union[int, str]] = [1, &#x27;a&#x27;]</span></figcaption></figure></div>
+  </div>
+</section>
+
+<footer class='ft'>
+  
+  <p>由 vnotes 生成 · 2026-07-28 10:00 · 模型转写+大模型整理 · 图解为 AI 据章节内容动态生成</p>
+</footer>
+</div>
+<style data-vnotes-lightbox>
+.cover,.media img,.frame-item img,.svg-wrap{cursor:zoom-in}
+.vnotes-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(12,12,12,.88);padding:24px}
+.vnotes-lightbox.open{display:flex}
+.vnotes-lightbox figure{margin:0;max-width:96vw;max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:10px}
+.vnotes-lightbox img{max-width:96vw;max-height:84vh;object-fit:contain;border-radius:10px;background:#fff;box-shadow:0 24px 80px rgba(0,0,0,.45)}
+.vnotes-lightbox figcaption{max-width:min(820px,92vw);color:rgba(255,255,255,.82);font-size:13px;line-height:1.5;text-align:center}
+.vnotes-lightbox-close{position:fixed;top:18px;right:18px;width:40px;height:40px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-size:22px;line-height:1;cursor:pointer;backdrop-filter:blur(10px)}
+.vnotes-lightbox-close:hover{background:rgba(255,255,255,.2)}
+html.vnotes-lightbox-open{overflow:hidden}
+@media (max-width:640px){.vnotes-lightbox{padding:12px}.vnotes-lightbox-close{top:10px;right:10px}.vnotes-lightbox img{max-width:94vw;max-height:80vh}}
+</style>
+<script data-vnotes-lightbox>
+(function(){
+  if(window.__vnotesLightboxReady) return;
+  window.__vnotesLightboxReady = true;
+
+  function textFrom(node){
+    return node ? String(node.textContent || '').replace(/\s+/g, ' ').trim() : '';
+  }
+
+  function svgToImageSource(svg){
+    var clone = svg.cloneNode(true);
+    if(!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new XMLSerializer().serializeToString(clone));
+  }
+
+  function sourceFromTarget(target){
+    if(!target || !target.closest) return null;
+
+    var img = target.closest('img');
+    if(img && (img.classList.contains('cover') || img.closest('.hd-cover,.media,.frame-gallery,.frame-item'))){
+      var fig = img.closest('figure');
+      return {
+        src: img.currentSrc || img.src,
+        caption: textFrom(fig ? fig.querySelector('figcaption') : null) || img.alt || ''
+      };
+    }
+
+    var wrap = target.closest('.svg-wrap');
+    if(wrap){
+      var svg = wrap.querySelector('svg');
+      if(svg){
+        var figure = wrap.closest('figure');
+        return {
+          src: svgToImageSource(svg),
+          caption: textFrom(figure ? figure.querySelector('figcaption') : null)
+        };
+      }
+    }
+    return null;
+  }
+
+  var overlay = document.createElement('div');
+  overlay.className = 'vnotes-lightbox';
+  overlay.setAttribute('aria-hidden', 'true');
+  overlay.innerHTML = '<button type="button" class="vnotes-lightbox-close" aria-label="Close">&#215;</button><figure><img alt=""><figcaption></figcaption></figure>';
+  var image = overlay.querySelector('img');
+  var caption = overlay.querySelector('figcaption');
+
+  function close(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.remove('vnotes-lightbox-open');
+    image.removeAttribute('src');
+  }
+
+  function open(src, text){
+    image.src = src;
+    caption.textContent = text || '';
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('vnotes-lightbox-open');
+  }
+
+  overlay.addEventListener('click', function(event){
+    if(event.target === overlay || event.target.closest('.vnotes-lightbox-close')) close();
+  });
+  document.addEventListener('keydown', function(event){
+    if(event.key === 'Escape' && overlay.classList.contains('open')) close();
+  });
+  document.addEventListener('click', function(event){
+    if(event.defaultPrevented) return;
+    var source = sourceFromTarget(event.target);
+    if(!source || !source.src) return;
+    event.preventDefault();
+    open(source.src, source.caption);
+  });
+
+  document.addEventListener('DOMContentLoaded', function(){
+    if(!overlay.parentNode) document.body.appendChild(overlay);
+  });
+  if(document.body) document.body.appendChild(overlay);
+})();
+</script>
+</body></html>

@@ -1,0 +1,908 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>二次元美少女的顶点是黑长直!【bilibili次元论战】 · 视频笔记</title>
+<style>
+:root{--bg:#fafafa;--card:#fff;--ink:#1a1a1a;--sub:#666;--line:#e0e0e0;--soft:#f5f5f5;
+--acc:#F5C518;--acc-dk:#1a1a1a;--acc-soft:#fff8e1;--warn:#ff6b35;--danger:#ff3b30;--ok:#2ecc71;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Segoe UI,Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;line-height:1.7;font-size:16px}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px 120px}
+/* header */
+.hd{display:flex;gap:24px;padding:40px 0 28px;border-bottom:3px solid var(--acc);flex-wrap:wrap}
+.hd-cover{flex:0 0 240px}.cover{width:100%;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:block}
+.hd-main{flex:1;min-width:280px}
+.hd-main h1{font-size:26px;line-height:1.3;margin:0 0 10px;letter-spacing:-.01em}
+.sub{display:flex;gap:14px;align-items:center;color:var(--sub);font-size:14px;flex-wrap:wrap}
+.up{font-weight:600;color:var(--ink)}
+.badges .chip{background:var(--acc-soft);border-radius:7px;padding:2px 9px;font-size:12px;margin-right:6px;color:var(--acc-dk);font-weight:500}
+.parts{margin:14px 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.parts .lbl{color:var(--sub);font-size:13px}.parts .p{font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--sub)}
+.parts .p.cur{background:var(--acc);color:var(--acc-dk);border-color:var(--acc);font-weight:600}
+.summary{margin:14px 0;padding:12px 16px;background:var(--acc-soft);border-left:4px solid var(--acc);border-radius:8px;font-size:15px;font-weight:500}
+.desc{color:var(--sub);font-size:13px;white-space:pre-wrap;margin:10px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tag-chip{font-size:12px;color:var(--acc-dk);background:var(--acc-soft);border:1px solid #f0e0a0;border-radius:7px;padding:3px 9px}
+/* toc */
+.toc{position:sticky;top:0;z-index:5;background:rgba(250,250,250,.93);backdrop-filter:saturate(180%) blur(12px);
+border-bottom:1px solid var(--line);margin:0 -20px 8px;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.toc-in{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;flex:1}
+.toc-in a{display:flex;flex-direction:column;min-width:84px;padding:6px 10px;border-radius:10px;text-decoration:none;color:var(--sub);font-size:12px;transition:.2s}
+.toc-in a:hover{background:var(--acc-soft)}
+.toc-in a b{color:var(--acc-dk);font-size:13px}.toc-in a i{font-style:normal;color:var(--sub);font-size:11px}
+.watch{font-size:13px;color:var(--acc-dk);text-decoration:none;white-space:nowrap;font-weight:600}
+.watch:hover{text-decoration:underline}
+/* chapter */
+.chapter{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;margin:18px 0;
+box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.ch-head{display:flex;gap:16px;align-items:flex-start;border-bottom:2px solid var(--acc);padding-bottom:14px;margin-bottom:16px}
+.ch-no{font-size:22px;font-weight:800;color:var(--acc-dk);flex:0 0 auto;background:var(--acc);padding:2px 10px;border-radius:8px}
+.ch-titles h3{margin:0;font-size:19px;letter-spacing:-.01em}
+.ch-meta{font-size:13px;color:var(--sub);margin-top:3px}
+.ts{color:var(--acc-dk);text-decoration:none;border-bottom:1px dotted var(--acc-dk);font-weight:500}
+.ts:hover{color:var(--warn);border-color:var(--warn)}
+.ch-body h4{font-size:14px;color:var(--sub);margin:18px 0 8px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.ch-body h4.warn{color:var(--warn)}
+.ch-body h5{font-size:15px;color:var(--ink);margin:0 0 4px;font-weight:600}
+.blk{list-style:none;padding:0;margin:0 0 6px}.blk li{display:flex;gap:10px;padding:4px 0;font-size:15px}
+.blk .mk{flex:0 0 18px;text-align:center;font-weight:700}
+.blk.q .mk{color:var(--acc-dk)}.blk.trap .mk{color:var(--warn)}.blk.kp .mk{color:var(--acc-dk)}
+.blk.trap li{background:#fff5f0;border-radius:8px;padding:6px 10px;margin-bottom:4px}
+.steps{margin:0 0 6px;padding-left:22px}.steps li{padding:4px 0;font-size:15px}
+.steps li::marker{color:var(--acc-dk);font-weight:700}
+.concl{margin:6px 0;padding:12px 16px;background:var(--acc-soft);border-radius:10px;font-weight:500;border-left:4px solid var(--acc)}
+.quotes{display:flex;flex-direction:column;gap:8px}
+.quotes blockquote{margin:0;padding:10px 16px;background:#fafafa;border-left:3px solid var(--acc);border-radius:0 8px 8px 0}
+.quotes blockquote p{margin:0;font-size:14px}.quotes blockquote footer{margin-top:4px;font-size:12px}
+/* detail sections (细致模式) */
+.detail-toggle{margin:12px 0;border:1px solid var(--line);border-radius:12px;background:#fff}
+.detail-toggle summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;font-size:14px;font-weight:700;color:var(--acc-dk);list-style:none}
+.detail-toggle summary::-webkit-details-marker{display:none}
+.detail-toggle summary::after{content:"+";width:22px;height:22px;border-radius:999px;background:var(--acc-soft);display:inline-flex;align-items:center;justify-content:center;font-weight:800}
+.detail-toggle[open] summary::after{content:"-"}
+.detail-toggle summary small{font-size:12px;font-weight:500;color:var(--sub);margin-left:auto}
+.detail-toggle .detail-block{padding:0 16px 14px}
+.detail-block{display:flex;flex-direction:column;gap:10px;margin:6px 0}
+.detail-sec{padding:12px 16px;background:var(--soft);border-radius:10px;border-left:3px solid var(--acc)}
+.detail-sec h5{font-size:14px;color:var(--acc-dk);margin:0 0 4px}
+.detail-sec p{margin:0;font-size:14px;color:var(--ink);line-height:1.6}
+/* media */
+.media{margin:18px 0 4px}.media figcaption{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.tag{font-size:11px;font-weight:700;padding:2px 9px;border-radius:6px;letter-spacing:.04em}
+.tag.svg{background:var(--acc-soft);color:var(--acc-dk);border:1px solid #f0e0a0}.tag.shot{background:#fff0e6;color:var(--warn)}
+.cap{font-size:12px;color:var(--sub)}
+.svg-wrap{background:var(--soft);border-radius:12px;padding:14px;border:1px solid var(--line)}
+.svg-wrap svg{border-radius:8px}
+.media img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+/* frame gallery (细致模式) */
+.frame-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0 4px}
+.frame-item{margin:0}.frame-item img{width:100%;border-radius:10px;border:1px solid var(--line);display:block;transition:transform .25s}
+.frame-item img:hover{transform:scale(1.02)}
+.frame-item figcaption{display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap}
+/* footer */
+.ft{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--sub);font-size:12px}
+.ft-warn{margin:0 0 10px;padding-left:18px}.ft-warn li{color:var(--warn);margin:3px 0}
+@media (max-width:640px){.hd-cover{flex:1 1 100%}.chapter{padding:18px}.hd-main h1{font-size:22px}.frame-gallery{grid-template-columns:1fr}}
+@media print{.toc{display:none}.chapter{break-inside:avoid;box-shadow:none}}
+</style></head>
+<body><div class="wrap">
+
+<header class='hd'>
+  <div class='hd-cover'><img class='cover' src='cover.jpg' alt='封面'/></div>
+  <div class='hd-main'>
+    <h1>二次元美少女的顶点是黑长直!【bilibili次元论战】</h1>
+    <div class='sub'>
+      <span class='up'>UP · CHL-你C爷</span>
+      <span class='badges'><span class='chip '>BiliBili</span><span class='chip '>9:07</span></span>
+    </div>
+    
+    <div class='summary'>探讨黑长直作为二次元萌属性的发展历程、经典角色及其魅力所在。</div>
+    <p class='desc'>黑长直宇宙第一！
+哪位黑长直角色最令你印象深刻
+本期视频是次元论战S3第一期视频
+各位看得开心可以三连+关注
+求求投币喵~</p>
+    <div class='tags'><span class='chip tag-chip'>bilibili次元论战</span><span class='chip tag-chip'>高坂丽奈</span><span class='chip tag-chip'>486</span><span class='chip tag-chip'>轻音少女</span><span class='chip tag-chip'>动漫杂谈</span><span class='chip tag-chip'>千反田爱瑠</span><span class='chip tag-chip'>瓶子君152</span><span class='chip tag-chip'>类型角色</span><span class='chip tag-chip'>千咲</span><span class='chip tag-chip'>樱岛麻衣</span></div>
+  </div>
+</header>
+<nav class='toc'><div class='toc-in'><a href='#ch-1'><b>01</b><span>引言与定义</span><i>0:00</i></a><a href='#ch-2'><b>02</b><span>黑长直的历史与早期角色</span><i>0:20</i></a><a href='#ch-3'><b>03</b><span>秋山澪：黑长直与反差萌</span><i>1:45</i></a><a href='#ch-4'><b>04</b><span>冬马和纱：高冷笨拙的黑长直</span><i>2:52</i></a><a href='#ch-5'><b>05</b><span>千反田爱瑠：传统与烟火气的融合</span><i>4:03</i></a><a href='#ch-6'><b>06</b><span>高坂丽奈：执拗与韧劲</span><i>5:52</i></a><a href='#ch-7'><b>07</b><span>总结：黑长直的多重魅力</span><i>7:07</i></a><a href='#ch-8'><b>08</b><span>结尾与互动</span><i>8:28</i></a></div><a class='watch' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=0'>原视频 ↗</a></nav>
+
+<section class='chapter' id='ch-1'>
+  <header class='ch-head'>
+    <span class='ch-no'>01</span>
+    <div class='ch-titles'>
+      <h3>引言与定义</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=0'>⏱ 0:00 – 0:20</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>黑长直是什么？</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>黑长直是字面意义上的黑色放射状长发。</span></li><li><span class='mk'>•</span><span>是一种外貌萌属性。</span></li></ul><h4>结论</h4><p class='concl'>黑长直是黑色放射状长发的组合。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>黑长直其实这个放行第一时间浮现在你脑海里的是什么...</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=0'>⏱ 0:00</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示黑长直定义的核心要素：黑色、放射状、长发。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#6e6e73"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#1d1d1f">黑长直定义：核心要素</text>
+  <line x1="200" y1="50" x2="520" y2="50" stroke="#d2d2d7" stroke-width="1.5"/>
+
+  <!-- 中心概念卡片：黑长直 -->
+  <rect x="260" y="80" width="200" height="60" rx="12" ry="12" fill="#0071e3"/>
+  <text x="360" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">黑长直</text>
+
+  <!-- 三个要素卡片 -->
+  <!-- 要素1：黑色 -->
+  <rect x="60" y="200" width="160" height="70" rx="10" ry="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <circle cx="140" cy="222" r="12" fill="#1d1d1f"/>
+  <text x="140" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d1d1f">黑色</text>
+  <text x="140" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">发色属性</text>
+
+  <!-- 要素2：放射状 -->
+  <rect x="280" y="200" width="160" height="70" rx="10" ry="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <!-- 放射状图标：小星形 -->
+  <line x1="360" y1="212" x2="360" y2="232" stroke="#ff8a3d" stroke-width="2"/>
+  <line x1="350" y1="222" x2="370" y2="222" stroke="#ff8a3d" stroke-width="2"/>
+  <line x1="353" y1="215" x2="367" y2="229" stroke="#ff8a3d" stroke-width="2"/>
+  <line x1="367" y1="215" x2="353" y2="229" stroke="#ff8a3d" stroke-width="2"/>
+  <text x="360" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d1d1f">放射状</text>
+  <text x="360" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">发型形态</text>
+
+  <!-- 要素3：长发 -->
+  <rect x="500" y="200" width="160" height="70" rx="10" ry="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="580" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d1d1f">长发</text>
+  <text x="580" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">头发长度</text>
+
+  <!-- 连线：中心到三个要素 -->
+  <line x1="310" y1="140" x2="140" y2="195" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="360" y1="140" x2="360" y2="195" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="410" y1="140" x2="580" y2="195" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 关系标签 -->
+  <rect x="145" y="158" width="90" height="22" rx="11" ry="11" fill="#e8f0fe"/>
+  <text x="190" y="174" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#0071e3">包含要素</text>
+
+  <rect x="315" y="158" width="90" height="22" rx="11" ry="11" fill="#e8f0fe"/>
+  <text x="360" y="174" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#0071e3">包含要素</text>
+
+  <rect x="485" y="158" width="90" height="22" rx="11" ry="11" fill="#e8f0fe"/>
+  <text x="530" y="174" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#0071e3">包含要素</text>
+
+  <!-- 萌属性标签 -->
+  <rect x="260" y="300" width="200" height="44" rx="22" ry="22" fill="#34c759" opacity="0.9"/>
+  <text x="360" y="328" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">外貌萌属性</text>
+
+  <!-- 连线：三个要素汇聚到萌属性 -->
+  <line x1="140" y1="270" x2="300" y2="300" stroke="#6e6e73" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arrow-gray)"/>
+  <line x1="360" y1="270" x2="360" y2="300" stroke="#6e6e73" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arrow-gray)"/>
+  <line x1="580" y1="270" x2="420" y2="300" stroke="#6e6e73" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arrow-gray)"/>
+
+  <!-- 底部结论 -->
+  <rect x="180" y="360" width="360" height="36" rx="8" ry="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="360" y="384" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#1d1d1f">结论：黑长直 = 黑色 + 放射状 + 长发</text>
+
+  <!-- 视觉锚点：黑长直角色剪影（简化） -->
+  <circle cx="680" cy="30" r="18" fill="#1d1d1f" opacity="0.15"/>
+  <line x1="668" y1="22" x2="668" y2="48" stroke="#1d1d1f" stroke-width="2" opacity="0.15"/>
+  <line x1="692" y1="22" x2="692" y2="48" stroke="#1d1d1f" stroke-width="2" opacity="0.15"/>
+  <line x1="662" y1="30" x2="698" y2="30" stroke="#1d1d1f" stroke-width="2" opacity="0.15"/>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-2'>
+  <header class='ch-head'>
+    <span class='ch-no'>02</span>
+    <div class='ch-titles'>
+      <h3>黑长直的历史与早期角色</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=20'>⏱ 0:20 – 1:45</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>黑长直如何从外貌特征演变为文化符号？</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>80年代黑长直成为独立萌属性。</span></li><li><span class='mk'>•</span><span>民工漫时代桔梗等角色出现。</span></li><li><span class='mk'>•</span><span>早期黑长直多贴传统标签：情绪内敛、举止端庄。</span></li></ul><h4>结论</h4><p class='concl'>黑长直从80年代开始独立为萌属性，并在民工漫时代批量出现。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>黑长直本身在作品人设中已经独立出来成为一个单独的萌属性。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=53'>⏱ 0:53</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>时间线 · 展示黑长直从80年代到民工漫时代的发展时间线。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="dot" markerWidth="8" markerHeight="8" refX="4" refY="4">
+      <circle cx="4" cy="4" r="3" fill="#0071e3"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">黑长直的历史与早期角色</text>
+  <text x="360" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#6e6e73">从外貌特征到文化符号的演变（1980s–2000s）</text>
+
+  <!-- 时间轴主线 -->
+  <line x1="60" y1="200" x2="660" y2="200" stroke="#d2d2d7" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 刻度 1980 -->
+  <line x1="120" y1="190" x2="120" y2="210" stroke="#d2d2d7" stroke-width="2"/>
+  <text x="120" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#1d1d1f">1980s</text>
+
+  <!-- 刻度 1990 -->
+  <line x1="260" y1="190" x2="260" y2="210" stroke="#d2d2d7" stroke-width="2"/>
+  <text x="260" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#1d1d1f">1990s</text>
+
+  <!-- 刻度 2000 -->
+  <line x1="420" y1="190" x2="420" y2="210" stroke="#d2d2d7" stroke-width="2"/>
+  <text x="420" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#1d1d1f">2000s</text>
+
+  <!-- 刻度 2010 -->
+  <line x1="580" y1="190" x2="580" y2="210" stroke="#d2d2d7" stroke-width="2"/>
+  <text x="580" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#1d1d1f">2010s</text>
+
+  <!-- 事件1：80年代 独立萌属性 -->
+  <circle cx="120" cy="200" r="6" fill="#0071e3"/>
+  <rect x="50" y="110" width="140" height="70" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="120" y="135" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">独立萌属性</text>
+  <text x="120" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">黑长直从外貌特征</text>
+  <text x="120" y="172" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">独立为萌属性</text>
+  <line x1="120" y1="180" x2="120" y2="194" stroke="#0071e3" stroke-width="1.5"/>
+
+  <!-- 事件2：90年代 传统标签 -->
+  <circle cx="260" cy="200" r="6" fill="#0071e3"/>
+  <rect x="190" y="110" width="140" height="70" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="260" y="135" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">传统标签定型</text>
+  <text x="260" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">情绪内敛</text>
+  <text x="260" y="172" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">举止端庄</text>
+  <line x1="260" y1="180" x2="260" y2="194" stroke="#0071e3" stroke-width="1.5"/>
+
+  <!-- 事件3：2000s 民工漫时代 桔梗等 -->
+  <circle cx="420" cy="200" r="6" fill="#ff8a3d"/>
+  <rect x="350" y="110" width="140" height="70" rx="8" fill="#fff5eb" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="420" y="135" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">民工漫时代</text>
+  <text x="420" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">桔梗等角色出现</text>
+  <text x="420" y="172" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">批量涌现</text>
+  <line x1="420" y1="180" x2="420" y2="194" stroke="#ff8a3d" stroke-width="1.5"/>
+
+  <!-- 事件4：2010s 文化符号 -->
+  <circle cx="580" cy="200" r="6" fill="#34c759"/>
+  <rect x="510" y="110" width="140" height="70" rx="8" fill="#f0faf0" stroke="#34c759" stroke-width="1.5"/>
+  <text x="580" y="135" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">文化符号</text>
+  <text x="580" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">从外貌特征演变为</text>
+  <text x="580" y="172" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">文化符号</text>
+  <line x1="580" y1="180" x2="580" y2="194" stroke="#34c759" stroke-width="1.5"/>
+
+  <!-- 底部总结 -->
+  <rect x="160" y="280" width="400" height="50" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="360" y="302" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">演变路径</text>
+  <text x="360" y="320" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#6e6e73">外貌特征 → 独立萌属性 → 传统标签 → 文化符号</text>
+
+  <!-- 关键引用 -->
+  <text x="360" y="370" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#0071e3" font-style="italic">“黑长直本身在作品人设中已经独立出来成为一个单独的萌属性”</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-3'>
+  <header class='ch-head'>
+    <span class='ch-no'>03</span>
+    <div class='ch-titles'>
+      <h3>秋山澪：黑长直与反差萌</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=105'>⏱ 1:45 – 2:52</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>秋山澪如何体现黑长直的反差萌？</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>秋山澪正片胆小慌张，舞台上摇滚大胆。</span></li><li><span class='mk'>•</span><span>黑长直赋予她羞怯与柔软。</span></li></ul><h4>结论</h4><p class='concl'>秋山澪将黑长直与软妹性格结合，形成强烈反差。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>黑长直到了动画的毅力里完全换了的模样...</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=132'>⏱ 2:12</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>对比 · 对比秋山澪正片与舞台上的反差，突出黑长直与性格的奇妙结合。</span></figcaption><div class='svg-wrap'><svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="40" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">秋山澪：黑长直与反差萌</text>
+  <text x="360" y="62" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6e6e73">时间段：105.0s - 172.0s</text>
+
+  <!-- 对比表外框 -->
+  <rect x="40" y="85" width="640" height="280" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+
+  <!-- 表头行 -->
+  <rect x="40" y="85" width="640" height="40" rx="8" fill="#0071e3" opacity="0.15"/>
+  <rect x="40" y="105" width="640" height="20" fill="#0071e3" opacity="0.15"/>
+
+  <text x="180" y="112" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">维度</text>
+  <text x="360" y="112" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">秋山澪 正片</text>
+  <text x="540" y="112" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">秋山澪 舞台</text>
+
+  <!-- 分割线 -->
+  <line x1="40" y1="125" x2="680" y2="125" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 行1：性格 -->
+  <rect x="40" y="125" width="640" height="55" fill="#ffffff" opacity="0.6"/>
+  <text x="180" y="155" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">性格</text>
+  <text x="360" y="155" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6e6e73">胆小慌张</text>
+  <text x="540" y="155" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#0071e3" font-weight="bold">摇滚大胆</text>
+
+  <!-- 行1 下分割线 -->
+  <line x1="40" y1="180" x2="680" y2="180" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 行2：黑长直气质 -->
+  <rect x="40" y="180" width="640" height="55" fill="#f5f5f7"/>
+  <text x="180" y="210" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">黑长直气质</text>
+  <text x="360" y="210" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6e6e73">羞怯柔软</text>
+  <text x="540" y="210" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#0071e3" font-weight="bold">反差爆发</text>
+
+  <!-- 行2 下分割线 -->
+  <line x1="40" y1="235" x2="680" y2="235" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 行3：视觉表现 -->
+  <rect x="40" y="235" width="640" height="55" fill="#ffffff" opacity="0.6"/>
+  <text x="180" y="265" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">视觉表现</text>
+  <text x="360" y="265" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6e6e73">日常校服</text>
+  <text x="540" y="265" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#0071e3" font-weight="bold">贝斯·紧身衣</text>
+
+  <!-- 行3 下分割线 -->
+  <line x1="40" y1="290" x2="680" y2="290" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 行4：关键台词 -->
+  <rect x="40" y="290" width="640" height="55" fill="#f5f5f7"/>
+  <text x="180" y="320" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">关键台词</text>
+  <text x="360" y="320" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6e6e73">“不要啊！”</text>
+  <text x="540" y="320" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#0071e3" font-weight="bold">“燃烧吧！”</text>
+
+  <!-- 底部结论 -->
+  <rect x="140" y="380" width="440" height="30" rx="15" fill="#00b8d9" opacity="0.12"/>
+  <text x="360" y="400" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">结论：黑长直 + 软妹性格 = 强烈反差萌</text>
+
+  <!-- 箭头连接正片与舞台 -->
+  <line x1="280" y1="150" x2="320" y2="150" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="280" y1="205" x2="320" y2="205" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="280" y1="260" x2="320" y2="260" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="280" y1="315" x2="320" y2="315" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 引用标注 -->
+  <text x="360" y="350" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6e6e73" font-style="italic">引用（132.0s）：“黑长直到了动画的毅力里完全换了的模样...”</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-4'>
+  <header class='ch-head'>
+    <span class='ch-no'>04</span>
+    <div class='ch-titles'>
+      <h3>冬马和纱：高冷笨拙的黑长直</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=172'>⏱ 2:52 – 4:03</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>冬马和纱如何奠定党争作品黑长直经典？</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>冬马和纱高冷笨拙，交际能力差。</span></li><li><span class='mk'>•</span><span>黑长直自带距离感，打破后带来冲击。</span></li></ul><h4>结论</h4><p class='concl'>冬马和纱的高冷与笨拙形成探索欲，让观众共情。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>陈毅微寒秋景深嫌犯无视壳家人...</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=194'>⏱ 3:14</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示冬马和纱的高冷外表与笨拙内心的矛盾。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#ff8a3d"/>
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#1d1d1f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">冬马和纱：高冷笨拙的黑长直</text>
+  <text x="360" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">高冷外表与笨拙内心的矛盾 · 时间 172.0s – 243.0s</text>
+
+  <!-- 中心人物卡片 -->
+  <rect x="260" y="80" width="200" height="60" rx="12" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="360" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d1d1f">冬马和纱</text>
+  <text x="360" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">高冷 · 笨拙 · 交际能力差</text>
+
+  <!-- 左侧：高冷外表 -->
+  <rect x="60" y="170" width="180" height="80" rx="10" fill="#e8f4fd" stroke="#0071e3" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="150" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0071e3">高冷外表</text>
+  <text x="150" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">黑长直自带距离感</text>
+  <text x="150" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">言语冷淡 · 拒人千里</text>
+
+  <!-- 右侧：笨拙内心 -->
+  <rect x="480" y="170" width="180" height="80" rx="10" fill="#fff3e8" stroke="#ff8a3d" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="570" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#ff8a3d">笨拙内心</text>
+  <text x="570" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">不擅社交 · 口是心非</text>
+  <text x="570" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">渴望理解却退缩</text>
+
+  <!-- 连线：中心 → 左（高冷） -->
+  <line x1="260" y1="115" x2="240" y2="170" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- 连线：中心 → 右（笨拙） -->
+  <line x1="460" y1="115" x2="480" y2="170" stroke="#ff8a3d" stroke-width="2" marker-end="url(#arrow-orange)"/>
+
+  <!-- 矛盾冲击标签 -->
+  <rect x="200" y="280" width="320" height="50" rx="25" fill="#1d1d1f" filter="url(#shadow)"/>
+  <text x="360" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">高冷与笨拙 → 探索欲 · 共情</text>
+
+  <!-- 冲击箭头：左+右 → 下方 -->
+  <path d="M150,250 L150,275 Q150,280 155,280 L200,280" stroke="#0071e3" stroke-width="1.8" fill="none" marker-end="url(#arrow)"/>
+  <path d="M570,250 L570,275 Q570,280 565,280 L520,280" stroke="#ff8a3d" stroke-width="1.8" fill="none" marker-end="url(#arrow-orange)"/>
+
+  <!-- 底部结论 -->
+  <rect x="140" y="350" width="440" height="50" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1" filter="url(#shadow)"/>
+  <text x="360" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">奠定党争作品黑长直经典</text>
+  <text x="360" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">反差塑造让观众共情 · 视觉锚：经典构图</text>
+
+  <!-- 关键引用标注 -->
+  <text x="360" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">关键引用 (194.0s)：陈毅微寒秋景深嫌犯无视壳家人...</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-5'>
+  <header class='ch-head'>
+    <span class='ch-no'>05</span>
+    <div class='ch-titles'>
+      <h3>千反田爱瑠：传统与烟火气的融合</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=243'>⏱ 4:03 – 5:52</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>千反田如何融合传统与烟火气？</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>千反田是大小姐但好奇心旺盛。</span></li><li><span class='mk'>•</span><span>黑长直随动作晃动，增添灵动。</span></li></ul><h4>结论</h4><p class='concl'>千反田将黑长直的传统质感与少女的灵动好奇完美结合。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>我个人认为前往的出现第一次把黑长直的传统质感与绿城烟火气息完美融合...</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=295'>⏱ 4:55</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>对比 · 对比千反田的大小姐气质与好奇心，展示传统与灵动的结合。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#d2d2d7"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">千反田爱瑠：传统与烟火气的融合</text>
+  <text x="360" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#6e6e73">大小姐气质 × 好奇心 × 黑长直灵动</text>
+
+  <!-- 装饰线 -->
+  <line x1="60" y1="72" x2="660" y2="72" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 对比矩阵：行 = 维度，列 = 传统 vs 烟火气 -->
+  <!-- 列标题 -->
+  <rect x="80" y="85" width="200" height="36" rx="6" fill="#f5f5f7"/>
+  <text x="180" y="109" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">传统质感</text>
+
+  <rect x="310" y="85" width="200" height="36" rx="6" fill="#f5f5f7"/>
+  <text x="410" y="109" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">烟火气息</text>
+
+  <rect x="540" y="85" width="120" height="36" rx="6" fill="#0071e3" fill-opacity="0.1"/>
+  <text x="600" y="109" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">融合效果</text>
+
+  <!-- 行1：外貌特征 -->
+  <text x="30" y="150" font-family="system-ui, sans-serif" font-size="13" fill="#1d1d1f" font-weight="bold">外貌</text>
+  <line x1="30" y1="157" x2="60" y2="157" stroke="#d2d2d7" stroke-width="1"/>
+
+  <rect x="80" y="135" width="200" height="50" rx="4" fill="#f5f5f7"/>
+  <text x="180" y="158" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1d1d1f">黑长直·传统大小姐</text>
+  <text x="180" y="176" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">发丝垂顺，典雅庄重</text>
+
+  <rect x="310" y="135" width="200" height="50" rx="4" fill="#f5f5f7"/>
+  <text x="410" y="158" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1d1d1f">随动作晃动</text>
+  <text x="410" y="176" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">发梢飞舞，充满活力</text>
+
+  <rect x="540" y="135" width="120" height="50" rx="4" fill="#e8f5e9"/>
+  <text x="600" y="158" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#34c759" font-weight="bold">灵动感</text>
+  <text x="600" y="176" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#34c759">动静结合</text>
+
+  <!-- 行2：性格气质 -->
+  <text x="30" y="220" font-family="system-ui, sans-serif" font-size="13" fill="#1d1d1f" font-weight="bold">气质</text>
+  <line x1="30" y1="227" x2="60" y2="227" stroke="#d2d2d7" stroke-width="1"/>
+
+  <rect x="80" y="205" width="200" height="50" rx="4" fill="#f5f5f7"/>
+  <text x="180" y="228" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1d1d1f">大小姐风范</text>
+  <text x="180" y="246" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">举止优雅，教养良好</text>
+
+  <rect x="310" y="205" width="200" height="50" rx="4" fill="#f5f5f7"/>
+  <text x="410" y="228" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1d1d1f">好奇心旺盛</text>
+  <text x="410" y="246" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">“我很好奇！”</text>
+
+  <rect x="540" y="205" width="120" height="50" rx="4" fill="#e8f5e9"/>
+  <text x="600" y="228" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#34c759" font-weight="bold">反差萌</text>
+  <text x="600" y="246" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#34c759">高贵又可爱</text>
+
+  <!-- 行3：场景氛围 -->
+  <text x="30" y="290" font-family="system-ui, sans-serif" font-size="13" fill="#1d1d1f" font-weight="bold">场景</text>
+  <line x1="30" y1="297" x2="60" y2="297" stroke="#d2d2d7" stroke-width="1"/>
+
+  <rect x="80" y="275" width="200" height="50" rx="4" fill="#f5f5f7"/>
+  <text x="180" y="298" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1d1d1f">樱花树下</text>
+  <text x="180" y="316" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">古典和风意境</text>
+
+  <rect x="310" y="275" width="200" height="50" rx="4" fill="#f5f5f7"/>
+  <text x="410" y="298" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1d1d1f">绿城烟火</text>
+  <text x="410" y="316" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">市井生活气息</text>
+
+  <rect x="540" y="275" width="120" height="50" rx="4" fill="#e8f5e9"/>
+  <text x="600" y="298" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#34c759" font-weight="bold">完美融合</text>
+  <text x="600" y="316" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#34c759">传统×烟火</text>
+
+  <!-- 箭头连线：传统 → 融合 -->
+  <line x1="280" y1="160" x2="308" y2="160" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="280" y1="230" x2="308" y2="230" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="280" y1="300" x2="308" y2="300" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 箭头连线：烟火气 → 融合 -->
+  <line x1="510" y1="160" x2="538" y2="160" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="510" y1="230" x2="538" y2="230" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="510" y1="300" x2="538" y2="300" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 底部结论 -->
+  <rect x="80" y="345" width="580" height="50" rx="8" fill="#0071e3" fill-opacity="0.08"/>
+  <text x="360" y="368" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">结论：黑长直的传统质感 × 少女的灵动好奇 = 千反田爱瑠的独特魅力</text>
+  <text x="360" y="386" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">“第一次把黑长直的传统质感与绿城烟火气息完美融合”</text>
+
+  <!-- 装饰樱花 -->
+  <circle cx="660" cy="360" r="12" fill="#ff8a3d" fill-opacity="0.15"/>
+  <circle cx="660" cy="360" r="6" fill="#ff8a3d" fill-opacity="0.3"/>
+  <circle cx="60" cy="360" r="12" fill="#ff8a3d" fill-opacity="0.15"/>
+  <circle cx="60" cy="360" r="6" fill="#ff8a3d" fill-opacity="0.3"/>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-6'>
+  <header class='ch-head'>
+    <span class='ch-no'>06</span>
+    <div class='ch-titles'>
+      <h3>高坂丽奈：执拗与韧劲</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=352'>⏱ 5:52 – 7:07</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>高坂丽奈如何体现黑长直的新性格维度？</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>高坂丽奈冰山美人，目标明确。</span></li><li><span class='mk'>•</span><span>黑长直整齐，象征克制执拗。</span></li></ul><h4>结论</h4><p class='concl'>高坂丽奈的黑长直成为人物气质的一部分，代表执拗与韧劲。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>高文明的来自吹响绑上挺好...</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=386'>⏱ 6:26</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示高坂丽奈的冰山外表与不服输的韧劲。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#6e6e73"/>
+    </marker>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f5f5f7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#1d1d1f">高坂丽奈：执拗与韧劲</text>
+  <text x="360" y="66" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6e6e73">时间段：352.0s - 427.0s</text>
+
+  <!-- 中心人物卡片 -->
+  <rect x="260" y="90" width="200" height="60" rx="12" fill="url(#cardGrad)" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="360" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d1d1f">高坂丽奈</text>
+  <text x="360" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">冰山美人 · 目标明确</text>
+
+  <!-- 视觉锚点：小号图标 -->
+  <circle cx="360" cy="185" r="18" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="360" y="191" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0071e3">🎺</text>
+
+  <!-- 左侧：外表特征 -->
+  <rect x="40" y="100" width="180" height="80" rx="10" fill="url(#cardGrad)" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="130" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">外表特征</text>
+  <text x="130" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">黑长直整齐</text>
+  <text x="130" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">象征克制执拗</text>
+
+  <!-- 左侧到中心连线 -->
+  <line x1="220" y1="140" x2="258" y2="120" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- 右侧：性格内核 -->
+  <rect x="500" y="100" width="180" height="80" rx="10" fill="url(#cardGrad)" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="590" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">性格内核</text>
+  <text x="590" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">执拗 · 韧劲</text>
+  <text x="590" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">不服输</text>
+
+  <!-- 右侧到中心连线 -->
+  <line x1="500" y1="140" x2="462" y2="120" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- 底部：关键引用与结论 -->
+  <rect x="100" y="230" width="520" height="70" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="360" y="256" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">关键引用</text>
+  <text x="360" y="278" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">“高文明的来自吹响绑上挺好…”（t=386.0s）</text>
+
+  <!-- 底部到中心连线 -->
+  <line x1="360" y1="230" x2="360" y2="203" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- 结论卡片 -->
+  <rect x="140" y="325" width="440" height="50" rx="10" fill="#0071e3" opacity="0.08" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="360" y="348" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">结论</text>
+  <text x="360" y="366" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">黑长直成为人物气质的一部分，代表执拗与韧劲</text>
+
+  <!-- 问题气泡 -->
+  <rect x="480" y="325" width="160" height="50" rx="20" fill="#ff8a3d" opacity="0.08" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="560" y="348" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ff8a3d">❓ 问题</text>
+  <text x="560" y="364" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">黑长直的新性格维度？</text>
+
+  <!-- 底部装饰线 -->
+  <line x1="200" y1="400" x2="520" y2="400" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="360" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">概念关系图 · 高坂丽奈人物分析</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-7'>
+  <header class='ch-head'>
+    <span class='ch-no'>07</span>
+    <div class='ch-titles'>
+      <h3>总结：黑长直的多重魅力</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=427'>⏱ 7:07 – 8:28</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>黑长直的核心魅力是什么？</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>黑长直是外表统称，与性格组合产生多样魅力。</span></li><li><span class='mk'>•</span><span>视觉上简洁耐看，文化上亲近。</span></li><li><span class='mk'>•</span><span>创作者赋予其厚重宿命、御姐气场、软萌少女心等可能。</span></li></ul><h4>结论</h4><p class='concl'>黑长直魅力在于与各种性格组合，产生不同质感。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>其实了都是历经能看出来我们了黑长直的魅力早就跳都出了发型本身的范畴...</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=427'>⏱ 7:07</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示黑长直与多种性格组合的多样性。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#6e6e73"/>
+    </marker>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#1d1d1f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#1d1d1f">黑长直的多重魅力</text>
+  <text x="360" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#6e6e73">外表统称 × 性格组合 → 多样魅力</text>
+
+  <!-- 中心核心卡片 -->
+  <rect x="285" y="80" width="150" height="44" rx="22" fill="#0071e3" filter="url(#shadow)"/>
+  <text x="360" y="107" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#ffffff">黑长直</text>
+
+  <!-- 从中心向外的连线 -->
+  <!-- 左上 -->
+  <line x1="285" y1="102" x2="175" y2="150" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+  <!-- 右上 -->
+  <line x1="435" y1="102" x2="545" y2="150" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+  <!-- 左下 -->
+  <line x1="310" y1="124" x2="175" y2="260" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+  <!-- 右下 -->
+  <line x1="410" y1="124" x2="545" y2="260" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+
+  <!-- 左上卡片：视觉简洁耐看 -->
+  <rect x="50" y="145" width="130" height="70" rx="10" fill="#f5f5f7" filter="url(#shadow)"/>
+  <text x="115" y="170" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1d1d1f">视觉简洁耐看</text>
+  <text x="115" y="190" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">清爽大方</text>
+  <text x="115" y="205" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">辨识度高</text>
+
+  <!-- 右上卡片：文化亲近 -->
+  <rect x="540" y="145" width="130" height="70" rx="10" fill="#f5f5f7" filter="url(#shadow)"/>
+  <text x="605" y="170" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1d1d1f">文化亲近</text>
+  <text x="605" y="190" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">东方审美</text>
+  <text x="605" y="205" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">经典意象</text>
+
+  <!-- 左下卡片：厚重宿命 -->
+  <rect x="50" y="255" width="130" height="70" rx="10" fill="#f5f5f7" filter="url(#shadow)"/>
+  <text x="115" y="280" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1d1d1f">厚重宿命</text>
+  <text x="115" y="300" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">悲情过往</text>
+  <text x="115" y="315" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">命运纠葛</text>
+
+  <!-- 右下卡片：御姐气场 / 软萌少女心 -->
+  <rect x="540" y="255" width="130" height="70" rx="10" fill="#f5f5f7" filter="url(#shadow)"/>
+  <text x="605" y="278" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1d1d1f">性格反差</text>
+  <text x="605" y="298" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">御姐气场</text>
+  <text x="605" y="315" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">软萌少女心</text>
+
+  <!-- 底部结论条 -->
+  <rect x="100" y="360" width="520" height="40" rx="20" fill="#00b8d9" opacity="0.12"/>
+  <text x="360" y="386" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#0071e3">魅力 = 黑长直 × 性格组合 → 不同质感</text>
+
+  <!-- 装饰小点 -->
+  <circle cx="285" cy="102" r="3" fill="#0071e3"/>
+  <circle cx="435" cy="102" r="3" fill="#0071e3"/>
+  <circle cx="310" cy="124" r="3" fill="#0071e3"/>
+  <circle cx="410" cy="124" r="3" fill="#0071e3"/>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-8'>
+  <header class='ch-head'>
+    <span class='ch-no'>08</span>
+    <div class='ch-titles'>
+      <h3>结尾与互动</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=508'>⏱ 8:28 – 9:09</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>你印象最深刻的黑长直是谁？</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>黑长直不仅是属性，更是具体角色。</span></li><li><span class='mk'>•</span><span>情感是黑长直魅力的核心。</span></li></ul><h4>结论</h4><p class='concl'>黑长直的核心魅力是沉淀的情感。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>那么回到开的的问题如今在提起黑长直大家的时间想到的是什么...</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Pwg86SEp9/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=508'>⏱ 8:28</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>流程 · 引导观众互动，形成讨论流程。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#d2d2d7"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">结尾与互动 · 讨论流程</text>
+  <text x="360" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">时间段：508.0s - 549.0s</text>
+
+  <!-- 时间线装饰 -->
+  <line x1="60" y1="70" x2="660" y2="70" stroke="#d2d2d7" stroke-width="1"/>
+  <circle cx="60" cy="70" r="3" fill="#0071e3"/>
+  <circle cx="660" cy="70" r="3" fill="#0071e3"/>
+
+  <!-- 流程节点 1：开场问题 -->
+  <rect x="100" y="90" width="520" height="48" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="360" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f" font-weight="bold">开场问题</text>
+  <text x="360" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">“如今再提起黑长直，大家第一时间想到的是什么？”</text>
+
+  <!-- 箭头 1→2 -->
+  <line x1="360" y1="138" x2="360" y2="168" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 流程节点 2：核心观点 -->
+  <rect x="120" y="170" width="480" height="48" rx="8" fill="#e8f4fd" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="360" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f" font-weight="bold">核心观点</text>
+  <text x="360" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#0071e3">黑长直不仅是属性，更是具体角色；情感是魅力的核心</text>
+
+  <!-- 箭头 2→3 -->
+  <line x1="360" y1="218" x2="360" y2="248" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 流程节点 3：互动提问（菱形决策点） -->
+  <polygon points="360,250 520,290 360,330 200,290" fill="#fff8e5" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="360" y="286" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f" font-weight="bold">互动提问</text>
+  <text x="360" y="304" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ff8a3d">“你印象最深刻的黑长直是谁？”</text>
+
+  <!-- 箭头 3→4（左分支） -->
+  <line x1="200" y1="290" x2="100" y2="290" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <text x="150" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">观众</text>
+  <text x="150" y="296" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">弹幕反馈</text>
+
+  <!-- 箭头 3→4（右分支） -->
+  <line x1="520" y1="290" x2="620" y2="290" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <text x="570" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">UP主</text>
+  <text x="570" y="296" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">引导讨论</text>
+
+  <!-- 箭头 3→5（向下） -->
+  <line x1="360" y1="330" x2="360" y2="358" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 流程节点 4：结论 -->
+  <rect x="140" y="360" width="440" height="40" rx="8" fill="#1d1d1f" stroke="none"/>
+  <text x="360" y="386" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#ffffff" font-weight="bold">结论：黑长直的核心魅力是沉淀的情感</text>
+
+  <!-- 视觉锚点：UP主头像/结束画面 -->
+  <circle cx="660" cy="395" r="18" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="660" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6e6e73">🎬</text>
+  <text x="660" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">结束</text>
+
+  <!-- 底部装饰线 -->
+  <line x1="60" y1="410" x2="660" y2="410" stroke="#d2d2d7" stroke-width="0.5"/>
+</svg></div></figure>
+    
+  </div>
+</section>
+
+<footer class='ft'>
+  
+  <p>由 vnotes 生成 · 2026-07-28 09:59 · 模型转写+大模型整理 · 图解为 AI 据章节内容动态生成</p>
+</footer>
+</div>
+<style data-vnotes-lightbox>
+.cover,.media img,.frame-item img,.svg-wrap{cursor:zoom-in}
+.vnotes-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(12,12,12,.88);padding:24px}
+.vnotes-lightbox.open{display:flex}
+.vnotes-lightbox figure{margin:0;max-width:96vw;max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:10px}
+.vnotes-lightbox img{max-width:96vw;max-height:84vh;object-fit:contain;border-radius:10px;background:#fff;box-shadow:0 24px 80px rgba(0,0,0,.45)}
+.vnotes-lightbox figcaption{max-width:min(820px,92vw);color:rgba(255,255,255,.82);font-size:13px;line-height:1.5;text-align:center}
+.vnotes-lightbox-close{position:fixed;top:18px;right:18px;width:40px;height:40px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-size:22px;line-height:1;cursor:pointer;backdrop-filter:blur(10px)}
+.vnotes-lightbox-close:hover{background:rgba(255,255,255,.2)}
+html.vnotes-lightbox-open{overflow:hidden}
+@media (max-width:640px){.vnotes-lightbox{padding:12px}.vnotes-lightbox-close{top:10px;right:10px}.vnotes-lightbox img{max-width:94vw;max-height:80vh}}
+</style>
+<script data-vnotes-lightbox>
+(function(){
+  if(window.__vnotesLightboxReady) return;
+  window.__vnotesLightboxReady = true;
+
+  function textFrom(node){
+    return node ? String(node.textContent || '').replace(/\s+/g, ' ').trim() : '';
+  }
+
+  function svgToImageSource(svg){
+    var clone = svg.cloneNode(true);
+    if(!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new XMLSerializer().serializeToString(clone));
+  }
+
+  function sourceFromTarget(target){
+    if(!target || !target.closest) return null;
+
+    var img = target.closest('img');
+    if(img && (img.classList.contains('cover') || img.closest('.hd-cover,.media,.frame-gallery,.frame-item'))){
+      var fig = img.closest('figure');
+      return {
+        src: img.currentSrc || img.src,
+        caption: textFrom(fig ? fig.querySelector('figcaption') : null) || img.alt || ''
+      };
+    }
+
+    var wrap = target.closest('.svg-wrap');
+    if(wrap){
+      var svg = wrap.querySelector('svg');
+      if(svg){
+        var figure = wrap.closest('figure');
+        return {
+          src: svgToImageSource(svg),
+          caption: textFrom(figure ? figure.querySelector('figcaption') : null)
+        };
+      }
+    }
+    return null;
+  }
+
+  var overlay = document.createElement('div');
+  overlay.className = 'vnotes-lightbox';
+  overlay.setAttribute('aria-hidden', 'true');
+  overlay.innerHTML = '<button type="button" class="vnotes-lightbox-close" aria-label="Close">&#215;</button><figure><img alt=""><figcaption></figcaption></figure>';
+  var image = overlay.querySelector('img');
+  var caption = overlay.querySelector('figcaption');
+
+  function close(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.remove('vnotes-lightbox-open');
+    image.removeAttribute('src');
+  }
+
+  function open(src, text){
+    image.src = src;
+    caption.textContent = text || '';
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('vnotes-lightbox-open');
+  }
+
+  overlay.addEventListener('click', function(event){
+    if(event.target === overlay || event.target.closest('.vnotes-lightbox-close')) close();
+  });
+  document.addEventListener('keydown', function(event){
+    if(event.key === 'Escape' && overlay.classList.contains('open')) close();
+  });
+  document.addEventListener('click', function(event){
+    if(event.defaultPrevented) return;
+    var source = sourceFromTarget(event.target);
+    if(!source || !source.src) return;
+    event.preventDefault();
+    open(source.src, source.caption);
+  });
+
+  document.addEventListener('DOMContentLoaded', function(){
+    if(!overlay.parentNode) document.body.appendChild(overlay);
+  });
+  if(document.body) document.body.appendChild(overlay);
+})();
+</script>
+</body></html>

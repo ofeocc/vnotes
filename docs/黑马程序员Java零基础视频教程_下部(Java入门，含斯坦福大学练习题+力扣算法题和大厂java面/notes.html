@@ -1,0 +1,334 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>黑马程序员Java零基础视频教程_下部(Java入门，含斯坦福大学练习题+力扣算法题和大厂java面试题） p01 从入门到起飞（下）课程介绍 · 视频笔记</title>
+<style>
+:root{--bg:#fafafa;--card:#fff;--ink:#1a1a1a;--sub:#666;--line:#e0e0e0;--soft:#f5f5f5;
+--acc:#F5C518;--acc-dk:#1a1a1a;--acc-soft:#fff8e1;--warn:#ff6b35;--danger:#ff3b30;--ok:#2ecc71;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Segoe UI,Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;line-height:1.7;font-size:16px}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px 120px}
+/* header */
+.hd{display:flex;gap:24px;padding:40px 0 28px;border-bottom:3px solid var(--acc);flex-wrap:wrap}
+.hd-cover{flex:0 0 240px}.cover{width:100%;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:block}
+.hd-main{flex:1;min-width:280px}
+.hd-main h1{font-size:26px;line-height:1.3;margin:0 0 10px;letter-spacing:-.01em}
+.sub{display:flex;gap:14px;align-items:center;color:var(--sub);font-size:14px;flex-wrap:wrap}
+.up{font-weight:600;color:var(--ink)}
+.badges .chip{background:var(--acc-soft);border-radius:7px;padding:2px 9px;font-size:12px;margin-right:6px;color:var(--acc-dk);font-weight:500}
+.parts{margin:14px 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.parts .lbl{color:var(--sub);font-size:13px}.parts .p{font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--sub)}
+.parts .p.cur{background:var(--acc);color:var(--acc-dk);border-color:var(--acc);font-weight:600}
+.summary{margin:14px 0;padding:12px 16px;background:var(--acc-soft);border-left:4px solid var(--acc);border-radius:8px;font-size:15px;font-weight:500}
+.desc{color:var(--sub);font-size:13px;white-space:pre-wrap;margin:10px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tag-chip{font-size:12px;color:var(--acc-dk);background:var(--acc-soft);border:1px solid #f0e0a0;border-radius:7px;padding:3px 9px}
+/* toc */
+.toc{position:sticky;top:0;z-index:5;background:rgba(250,250,250,.93);backdrop-filter:saturate(180%) blur(12px);
+border-bottom:1px solid var(--line);margin:0 -20px 8px;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.toc-in{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;flex:1}
+.toc-in a{display:flex;flex-direction:column;min-width:84px;padding:6px 10px;border-radius:10px;text-decoration:none;color:var(--sub);font-size:12px;transition:.2s}
+.toc-in a:hover{background:var(--acc-soft)}
+.toc-in a b{color:var(--acc-dk);font-size:13px}.toc-in a i{font-style:normal;color:var(--sub);font-size:11px}
+.watch{font-size:13px;color:var(--acc-dk);text-decoration:none;white-space:nowrap;font-weight:600}
+.watch:hover{text-decoration:underline}
+/* chapter */
+.chapter{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;margin:18px 0;
+box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.ch-head{display:flex;gap:16px;align-items:flex-start;border-bottom:2px solid var(--acc);padding-bottom:14px;margin-bottom:16px}
+.ch-no{font-size:22px;font-weight:800;color:var(--acc-dk);flex:0 0 auto;background:var(--acc);padding:2px 10px;border-radius:8px}
+.ch-titles h3{margin:0;font-size:19px;letter-spacing:-.01em}
+.ch-meta{font-size:13px;color:var(--sub);margin-top:3px}
+.ts{color:var(--acc-dk);text-decoration:none;border-bottom:1px dotted var(--acc-dk);font-weight:500}
+.ts:hover{color:var(--warn);border-color:var(--warn)}
+.ch-body h4{font-size:14px;color:var(--sub);margin:18px 0 8px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.ch-body h4.warn{color:var(--warn)}
+.ch-body h5{font-size:15px;color:var(--ink);margin:0 0 4px;font-weight:600}
+.blk{list-style:none;padding:0;margin:0 0 6px}.blk li{display:flex;gap:10px;padding:4px 0;font-size:15px}
+.blk .mk{flex:0 0 18px;text-align:center;font-weight:700}
+.blk.q .mk{color:var(--acc-dk)}.blk.trap .mk{color:var(--warn)}.blk.kp .mk{color:var(--acc-dk)}
+.blk.trap li{background:#fff5f0;border-radius:8px;padding:6px 10px;margin-bottom:4px}
+.steps{margin:0 0 6px;padding-left:22px}.steps li{padding:4px 0;font-size:15px}
+.steps li::marker{color:var(--acc-dk);font-weight:700}
+.concl{margin:6px 0;padding:12px 16px;background:var(--acc-soft);border-radius:10px;font-weight:500;border-left:4px solid var(--acc)}
+.quotes{display:flex;flex-direction:column;gap:8px}
+.quotes blockquote{margin:0;padding:10px 16px;background:#fafafa;border-left:3px solid var(--acc);border-radius:0 8px 8px 0}
+.quotes blockquote p{margin:0;font-size:14px}.quotes blockquote footer{margin-top:4px;font-size:12px}
+/* detail sections (细致模式) */
+.detail-toggle{margin:12px 0;border:1px solid var(--line);border-radius:12px;background:#fff}
+.detail-toggle summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;font-size:14px;font-weight:700;color:var(--acc-dk);list-style:none}
+.detail-toggle summary::-webkit-details-marker{display:none}
+.detail-toggle summary::after{content:"+";width:22px;height:22px;border-radius:999px;background:var(--acc-soft);display:inline-flex;align-items:center;justify-content:center;font-weight:800}
+.detail-toggle[open] summary::after{content:"-"}
+.detail-toggle summary small{font-size:12px;font-weight:500;color:var(--sub);margin-left:auto}
+.detail-toggle .detail-block{padding:0 16px 14px}
+.detail-block{display:flex;flex-direction:column;gap:10px;margin:6px 0}
+.detail-sec{padding:12px 16px;background:var(--soft);border-radius:10px;border-left:3px solid var(--acc)}
+.detail-sec h5{font-size:14px;color:var(--acc-dk);margin:0 0 4px}
+.detail-sec p{margin:0;font-size:14px;color:var(--ink);line-height:1.6}
+/* media */
+.media{margin:18px 0 4px}.media figcaption{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.tag{font-size:11px;font-weight:700;padding:2px 9px;border-radius:6px;letter-spacing:.04em}
+.tag.svg{background:var(--acc-soft);color:var(--acc-dk);border:1px solid #f0e0a0}.tag.shot{background:#fff0e6;color:var(--warn)}
+.cap{font-size:12px;color:var(--sub)}
+.svg-wrap{background:var(--soft);border-radius:12px;padding:14px;border:1px solid var(--line)}
+.svg-wrap svg{border-radius:8px}
+.media img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+/* frame gallery (细致模式) */
+.frame-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0 4px}
+.frame-item{margin:0}.frame-item img{width:100%;border-radius:10px;border:1px solid var(--line);display:block;transition:transform .25s}
+.frame-item img:hover{transform:scale(1.02)}
+.frame-item figcaption{display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap}
+/* footer */
+.ft{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--sub);font-size:12px}
+.ft-warn{margin:0 0 10px;padding-left:18px}.ft-warn li{color:var(--warn);margin:3px 0}
+@media (max-width:640px){.hd-cover{flex:1 1 100%}.chapter{padding:18px}.hd-main h1{font-size:22px}.frame-gallery{grid-template-columns:1fr}}
+@media print{.toc{display:none}.chapter{break-inside:avoid;box-shadow:none}}
+</style></head>
+<body><div class="wrap">
+
+<header class='hd'>
+  <div class='hd-cover'><img class='cover' src='cover.jpg' alt='封面'/></div>
+  <div class='hd-main'>
+    <h1>黑马程序员Java零基础视频教程_下部(Java入门，含斯坦福大学练习题+力扣算法题和大厂java面试题） p01 从入门到起飞（下）课程介绍</h1>
+    <div class='sub'>
+      <span class='up'>UP · 黑马程序员</span>
+      <span class='badges'><span class='chip '>BiliBili</span><span class='chip '>7:18</span><span class='chip '>当前 P1</span></span>
+    </div>
+    <div class='parts'><span class='lbl'>分P</span><a class='p cur' target='_blank' href='https://www.bilibili.com/video/BV1yW4y1Y7Ms?p=1'>P1 P1</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1yW4y1Y7Ms?p=2'>P2 P2</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1yW4y1Y7Ms?p=3'>P3 P3</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1yW4y1Y7Ms?p=4'>P4 P4</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1yW4y1Y7Ms?p=5'>P5 P5</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1yW4y1Y7Ms?p=6'>P6 P6</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1yW4y1Y7Ms?p=7'>P7 P7</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1yW4y1Y7Ms?p=8'>P8 P8</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1yW4y1Y7Ms?p=9'>P9 P9</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1yW4y1Y7Ms?p=10'>P10 P10</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1yW4y1Y7Ms?p=11'>P11 P11</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV1yW4y1Y7Ms?p=12'>P12 P12</a></div>
+    <div class='summary'>本视频为黑马程序员Java零基础教程下部（从入门到起飞）的课程介绍，主要讲解学习路线、资料获取方式及后续课程安排。</div>
+    <p class='desc'>学习集Q结Q地群：625260577
+【Java学习路线图】展开查看更多内容
+https://www.bilibili.com/read/cv9965357
+如何下载资料：
+https://www.bilibili.com/read/cv11763184
+Java入门到起飞（上部）：BV17F411T7Ao
+
+Java最高效学习路线图（依次向下顺序学习即可）
+Java基础：BV1gb42177hm
+Javaweb+AI：BV1yGydYEE3H
+苍穹外卖：BV1TP411v7v6
+AI+若依框架：BV1pf421B71v
+微服务全套：BV1S142197x7
+学成在线项目：BV1j8411N7Bm
+黑马头条项目：BV1Qs4y1v7x4
+23年Java大厂面试：BV1yT411H7YK
+
+解决99%自学编程难题，黑马官方知识星球社群来了！
+https://www.bilibili.com/read/cv37115015/
+名师答疑、独享项目、面试指导等更多助学服务~
+
+工作后进阶提升，点击下方技术点详细学习
+
+MySQL：BV1Kr4y1i7ru
+JVM：BV1r94y1b7eS
+数据结构与算法上部：BV1Lv4y1e7HL
+数据结构与算法下部：BV1rv4y1H7o6
+SSM：BV1Fi4y1S7ix
+springboot：BV14z4y1N7pg
+Spring高级：BV1P44…</p>
+    <div class='tags'><span class='chip tag-chip'>科技猎手</span><span class='chip tag-chip'>程序员</span><span class='chip tag-chip'>java真题</span><span class='chip tag-chip'>JAVA基础</span><span class='chip tag-chip'>java</span><span class='chip tag-chip'>java编程</span><span class='chip tag-chip'>java教程</span><span class='chip tag-chip'>java项目</span><span class='chip tag-chip'>java面试</span><span class='chip tag-chip'>科技猎手计划2022第三期</span></div>
+  </div>
+</header>
+<nav class='toc'><div class='toc-in'><a href='#ch-1'><b>01</b><span>课程介绍与学习资源</span><i>0:00</i></a></div><a class='watch' target='_blank' href='https://www.bilibili.com/video/BV1yW4y1Y7Ms?p=1&amp;t=0'>原视频 ↗</a></nav>
+
+<section class='chapter' id='ch-1'>
+  <header class='ch-head'>
+    <span class='ch-no'>01</span>
+    <div class='ch-titles'>
+      <h3>课程介绍与学习资源</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1yW4y1Y7Ms?p=1&amp;t=0'>⏱ 0:00 – 7:18</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>如何获取学习资料？</span></li><li><span class='mk'>?</span><span>Java学习路线图是怎样的？</span></li><li><span class='mk'>?</span><span>如何加入学习交流群？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>不要跳过基础直接学习框架</span></li><li><span class='mk'>!</span><span>避免盲目学习，应按照路线图顺序</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>加入学习交流群（QQ群：625260577）</li><li>查看Java学习路线图（B站专栏）</li><li>下载学习资料（B站专栏）</li><li>按顺序学习：Java基础→JavaWeb+AI→苍穹外卖→AI+若依框架→微服务全套→学成在线项目→黑马头条项目→Java大厂面试</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>提供QQ交流群和资料下载方式</span></li><li><span class='mk'>•</span><span>学习路线图涵盖基础到面试</span></li><li><span class='mk'>•</span><span>后续有多个实战项目课程</span></li></ul><h4>结论</h4><p class='concl'>本课程提供完整的Java学习路线和资源，帮助初学者从入门到就业。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>学习交流群：625260577</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1yW4y1Y7Ms?p=1&amp;t=0'>⏱ 0:00</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示课程整体结构、学习路线图及资源获取方式的分层关系。</span></figcaption><div class='svg-wrap'><svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff8a3d"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="32" text-anchor="middle" font-size="20" font-weight="bold" fill="#1d1d1f">课程介绍与学习资源</text>
+  <text x="360" y="52" text-anchor="middle" font-size="13" fill="#6e6e73">时间段：0.0s - 437.95s | 完整Java学习路线与资源获取</text>
+
+  <!-- 顶部资源获取卡片 -->
+  <rect x="40" y="70" width="200" height="100" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="140" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#0071e3">资源获取</text>
+  <text x="140" y="114" text-anchor="middle" font-size="13" fill="#1d1d1f">QQ交流群</text>
+  <text x="140" y="134" text-anchor="middle" font-size="14" font-weight="bold" fill="#ff3b30">625260577</text>
+  <text x="140" y="156" text-anchor="middle" font-size="13" fill="#1d1d1f">B站专栏下载资料</text>
+
+  <!-- 中间学习路线图卡片 -->
+  <rect x="280" y="70" width="400" height="100" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="480" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#0071e3">Java学习路线图</text>
+  <text x="480" y="114" text-anchor="middle" font-size="13" fill="#1d1d1f">基础 → 进阶 → 实战 → 面试</text>
+  <text x="480" y="136" text-anchor="middle" font-size="13" fill="#6e6e73">B站专栏查看完整路线</text>
+  <text x="480" y="158" text-anchor="middle" font-size="13" fill="#ff8a3d">⚠ 不要跳过基础直接学框架</text>
+
+  <!-- 箭头：资源→路线 -->
+  <line x1="240" y1="120" x2="278" y2="120" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 学习步骤标题 -->
+  <text x="360" y="200" text-anchor="middle" font-size="15" font-weight="bold" fill="#1d1d1f">按顺序学习路径</text>
+
+  <!-- 学习步骤节点 -->
+  <rect x="40" y="215" width="120" height="40" rx="8" fill="#0071e3"/>
+  <text x="100" y="240" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="bold">Java基础</text>
+
+  <line x1="160" y1="235" x2="190" y2="235" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="195" y="215" width="120" height="40" rx="8" fill="#00b8d9"/>
+  <text x="255" y="240" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="bold">JavaWeb+AI</text>
+
+  <line x1="315" y1="235" x2="345" y2="235" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="350" y="215" width="120" height="40" rx="8" fill="#ff8a3d"/>
+  <text x="410" y="240" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="bold">苍穹外卖</text>
+
+  <line x1="470" y1="235" x2="500" y2="235" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="505" y="215" width="130" height="40" rx="8" fill="#34c759"/>
+  <text x="570" y="240" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="bold">AI+若依框架</text>
+
+  <!-- 第二行步骤 -->
+  <line x1="570" y1="255" x2="570" y2="275" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="505" y="280" width="130" height="40" rx="8" fill="#0071e3"/>
+  <text x="570" y="305" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="bold">微服务全套</text>
+
+  <line x1="505" y1="300" x2="475" y2="300" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="350" y="280" width="120" height="40" rx="8" fill="#00b8d9"/>
+  <text x="410" y="305" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="bold">学成在线</text>
+
+  <line x1="350" y1="300" x2="320" y2="300" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="195" y="280" width="120" height="40" rx="8" fill="#ff8a3d"/>
+  <text x="255" y="305" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="bold">黑马头条</text>
+
+  <line x1="195" y1="300" x2="165" y2="300" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="40" y="280" width="120" height="40" rx="8" fill="#ff3b30"/>
+  <text x="100" y="305" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="bold">Java大厂面试</text>
+
+  <!-- 底部结论 -->
+  <rect x="140" y="345" width="440" height="50" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="360" y="367" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d1d1f">结论：完整Java学习路线与资源</text>
+  <text x="360" y="386" text-anchor="middle" font-size="13" fill="#6e6e73">帮助初学者从入门到就业 | 避免盲目学习，按路线图顺序</text>
+
+</svg></div></figure>
+    
+  </div>
+</section>
+
+<footer class='ft'>
+  
+  <p>由 vnotes 生成 · 2026-08-28 17:05 · 模型转写+大模型整理 · 图解为 AI 据章节内容动态生成</p>
+</footer>
+</div>
+<style data-vnotes-lightbox>
+.cover,.media img,.frame-item img,.svg-wrap{cursor:zoom-in}
+.vnotes-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(12,12,12,.88);padding:24px}
+.vnotes-lightbox.open{display:flex}
+.vnotes-lightbox figure{margin:0;max-width:96vw;max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:10px}
+.vnotes-lightbox img{max-width:96vw;max-height:84vh;object-fit:contain;border-radius:10px;background:#fff;box-shadow:0 24px 80px rgba(0,0,0,.45)}
+.vnotes-lightbox figcaption{max-width:min(820px,92vw);color:rgba(255,255,255,.82);font-size:13px;line-height:1.5;text-align:center}
+.vnotes-lightbox-close{position:fixed;top:18px;right:18px;width:40px;height:40px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-size:22px;line-height:1;cursor:pointer;backdrop-filter:blur(10px)}
+.vnotes-lightbox-close:hover{background:rgba(255,255,255,.2)}
+html.vnotes-lightbox-open{overflow:hidden}
+@media (max-width:640px){.vnotes-lightbox{padding:12px}.vnotes-lightbox-close{top:10px;right:10px}.vnotes-lightbox img{max-width:94vw;max-height:80vh}}
+</style>
+<script data-vnotes-lightbox>
+(function(){
+  if(window.__vnotesLightboxReady) return;
+  window.__vnotesLightboxReady = true;
+
+  function textFrom(node){
+    return node ? String(node.textContent || '').replace(/\s+/g, ' ').trim() : '';
+  }
+
+  function svgToImageSource(svg){
+    var clone = svg.cloneNode(true);
+    if(!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new XMLSerializer().serializeToString(clone));
+  }
+
+  function sourceFromTarget(target){
+    if(!target || !target.closest) return null;
+
+    var img = target.closest('img');
+    if(img && (img.classList.contains('cover') || img.closest('.hd-cover,.media,.frame-gallery,.frame-item'))){
+      var fig = img.closest('figure');
+      return {
+        src: img.currentSrc || img.src,
+        caption: textFrom(fig ? fig.querySelector('figcaption') : null) || img.alt || ''
+      };
+    }
+
+    var wrap = target.closest('.svg-wrap');
+    if(wrap){
+      var svg = wrap.querySelector('svg');
+      if(svg){
+        var figure = wrap.closest('figure');
+        return {
+          src: svgToImageSource(svg),
+          caption: textFrom(figure ? figure.querySelector('figcaption') : null)
+        };
+      }
+    }
+    return null;
+  }
+
+  var overlay = document.createElement('div');
+  overlay.className = 'vnotes-lightbox';
+  overlay.setAttribute('aria-hidden', 'true');
+  overlay.innerHTML = '<button type="button" class="vnotes-lightbox-close" aria-label="Close">&#215;</button><figure><img alt=""><figcaption></figcaption></figure>';
+  var image = overlay.querySelector('img');
+  var caption = overlay.querySelector('figcaption');
+
+  function close(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.remove('vnotes-lightbox-open');
+    image.removeAttribute('src');
+  }
+
+  function open(src, text){
+    image.src = src;
+    caption.textContent = text || '';
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('vnotes-lightbox-open');
+  }
+
+  overlay.addEventListener('click', function(event){
+    if(event.target === overlay || event.target.closest('.vnotes-lightbox-close')) close();
+  });
+  document.addEventListener('keydown', function(event){
+    if(event.key === 'Escape' && overlay.classList.contains('open')) close();
+  });
+  document.addEventListener('click', function(event){
+    if(event.defaultPrevented) return;
+    var source = sourceFromTarget(event.target);
+    if(!source || !source.src) return;
+    event.preventDefault();
+    open(source.src, source.caption);
+  });
+
+  document.addEventListener('DOMContentLoaded', function(){
+    if(!overlay.parentNode) document.body.appendChild(overlay);
+  });
+  if(document.body) document.body.appendChild(overlay);
+})();
+</script>
+</body></html>

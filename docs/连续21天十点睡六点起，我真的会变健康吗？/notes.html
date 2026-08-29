@@ -1,0 +1,876 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>连续21天十点睡六点起，我真的会变健康吗？ · 视频笔记</title>
+<style>
+:root{--bg:#fafafa;--card:#fff;--ink:#1a1a1a;--sub:#666;--line:#e0e0e0;--soft:#f5f5f5;
+--acc:#F5C518;--acc-dk:#1a1a1a;--acc-soft:#fff8e1;--warn:#ff6b35;--danger:#ff3b30;--ok:#2ecc71;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Segoe UI,Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;line-height:1.7;font-size:16px}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px 120px}
+/* header */
+.hd{display:flex;gap:24px;padding:40px 0 28px;border-bottom:3px solid var(--acc);flex-wrap:wrap}
+.hd-cover{flex:0 0 240px}.cover{width:100%;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:block}
+.hd-main{flex:1;min-width:280px}
+.hd-main h1{font-size:26px;line-height:1.3;margin:0 0 10px;letter-spacing:-.01em}
+.sub{display:flex;gap:14px;align-items:center;color:var(--sub);font-size:14px;flex-wrap:wrap}
+.up{font-weight:600;color:var(--ink)}
+.badges .chip{background:var(--acc-soft);border-radius:7px;padding:2px 9px;font-size:12px;margin-right:6px;color:var(--acc-dk);font-weight:500}
+.parts{margin:14px 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.parts .lbl{color:var(--sub);font-size:13px}.parts .p{font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--sub)}
+.parts .p.cur{background:var(--acc);color:var(--acc-dk);border-color:var(--acc);font-weight:600}
+.summary{margin:14px 0;padding:12px 16px;background:var(--acc-soft);border-left:4px solid var(--acc);border-radius:8px;font-size:15px;font-weight:500}
+.desc{color:var(--sub);font-size:13px;white-space:pre-wrap;margin:10px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tag-chip{font-size:12px;color:var(--acc-dk);background:var(--acc-soft);border:1px solid #f0e0a0;border-radius:7px;padding:3px 9px}
+/* toc */
+.toc{position:sticky;top:0;z-index:5;background:rgba(250,250,250,.93);backdrop-filter:saturate(180%) blur(12px);
+border-bottom:1px solid var(--line);margin:0 -20px 8px;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.toc-in{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;flex:1}
+.toc-in a{display:flex;flex-direction:column;min-width:84px;padding:6px 10px;border-radius:10px;text-decoration:none;color:var(--sub);font-size:12px;transition:.2s}
+.toc-in a:hover{background:var(--acc-soft)}
+.toc-in a b{color:var(--acc-dk);font-size:13px}.toc-in a i{font-style:normal;color:var(--sub);font-size:11px}
+.watch{font-size:13px;color:var(--acc-dk);text-decoration:none;white-space:nowrap;font-weight:600}
+.watch:hover{text-decoration:underline}
+/* chapter */
+.chapter{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;margin:18px 0;
+box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.ch-head{display:flex;gap:16px;align-items:flex-start;border-bottom:2px solid var(--acc);padding-bottom:14px;margin-bottom:16px}
+.ch-no{font-size:22px;font-weight:800;color:var(--acc-dk);flex:0 0 auto;background:var(--acc);padding:2px 10px;border-radius:8px}
+.ch-titles h3{margin:0;font-size:19px;letter-spacing:-.01em}
+.ch-meta{font-size:13px;color:var(--sub);margin-top:3px}
+.ts{color:var(--acc-dk);text-decoration:none;border-bottom:1px dotted var(--acc-dk);font-weight:500}
+.ts:hover{color:var(--warn);border-color:var(--warn)}
+.ch-body h4{font-size:14px;color:var(--sub);margin:18px 0 8px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.ch-body h4.warn{color:var(--warn)}
+.ch-body h5{font-size:15px;color:var(--ink);margin:0 0 4px;font-weight:600}
+.blk{list-style:none;padding:0;margin:0 0 6px}.blk li{display:flex;gap:10px;padding:4px 0;font-size:15px}
+.blk .mk{flex:0 0 18px;text-align:center;font-weight:700}
+.blk.q .mk{color:var(--acc-dk)}.blk.trap .mk{color:var(--warn)}.blk.kp .mk{color:var(--acc-dk)}
+.blk.trap li{background:#fff5f0;border-radius:8px;padding:6px 10px;margin-bottom:4px}
+.steps{margin:0 0 6px;padding-left:22px}.steps li{padding:4px 0;font-size:15px}
+.steps li::marker{color:var(--acc-dk);font-weight:700}
+.concl{margin:6px 0;padding:12px 16px;background:var(--acc-soft);border-radius:10px;font-weight:500;border-left:4px solid var(--acc)}
+.quotes{display:flex;flex-direction:column;gap:8px}
+.quotes blockquote{margin:0;padding:10px 16px;background:#fafafa;border-left:3px solid var(--acc);border-radius:0 8px 8px 0}
+.quotes blockquote p{margin:0;font-size:14px}.quotes blockquote footer{margin-top:4px;font-size:12px}
+/* detail sections (细致模式) */
+.detail-toggle{margin:12px 0;border:1px solid var(--line);border-radius:12px;background:#fff}
+.detail-toggle summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;font-size:14px;font-weight:700;color:var(--acc-dk);list-style:none}
+.detail-toggle summary::-webkit-details-marker{display:none}
+.detail-toggle summary::after{content:"+";width:22px;height:22px;border-radius:999px;background:var(--acc-soft);display:inline-flex;align-items:center;justify-content:center;font-weight:800}
+.detail-toggle[open] summary::after{content:"-"}
+.detail-toggle summary small{font-size:12px;font-weight:500;color:var(--sub);margin-left:auto}
+.detail-toggle .detail-block{padding:0 16px 14px}
+.detail-block{display:flex;flex-direction:column;gap:10px;margin:6px 0}
+.detail-sec{padding:12px 16px;background:var(--soft);border-radius:10px;border-left:3px solid var(--acc)}
+.detail-sec h5{font-size:14px;color:var(--acc-dk);margin:0 0 4px}
+.detail-sec p{margin:0;font-size:14px;color:var(--ink);line-height:1.6}
+/* media */
+.media{margin:18px 0 4px}.media figcaption{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.tag{font-size:11px;font-weight:700;padding:2px 9px;border-radius:6px;letter-spacing:.04em}
+.tag.svg{background:var(--acc-soft);color:var(--acc-dk);border:1px solid #f0e0a0}.tag.shot{background:#fff0e6;color:var(--warn)}
+.cap{font-size:12px;color:var(--sub)}
+.svg-wrap{background:var(--soft);border-radius:12px;padding:14px;border:1px solid var(--line)}
+.svg-wrap svg{border-radius:8px}
+.media img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+/* frame gallery (细致模式) */
+.frame-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0 4px}
+.frame-item{margin:0}.frame-item img{width:100%;border-radius:10px;border:1px solid var(--line);display:block;transition:transform .25s}
+.frame-item img:hover{transform:scale(1.02)}
+.frame-item figcaption{display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap}
+/* footer */
+.ft{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--sub);font-size:12px}
+.ft-warn{margin:0 0 10px;padding-left:18px}.ft-warn li{color:var(--warn);margin:3px 0}
+@media (max-width:640px){.hd-cover{flex:1 1 100%}.chapter{padding:18px}.hd-main h1{font-size:22px}.frame-gallery{grid-template-columns:1fr}}
+@media print{.toc{display:none}.chapter{break-inside:avoid;box-shadow:none}}
+</style></head>
+<body><div class="wrap">
+
+<header class='hd'>
+  <div class='hd-cover'><img class='cover' src='cover.jpg' alt='封面'/></div>
+  <div class='hd-main'>
+    <h1>连续21天十点睡六点起，我真的会变健康吗？</h1>
+    <div class='sub'>
+      <span class='up'>UP · 亿点点不一样</span>
+      <span class='badges'><span class='chip '>BiliBili</span><span class='chip '>12:05</span></span>
+    </div>
+    
+    <div class='summary'>通过21天实验，验证早睡早起对健康的影响，并揭示睡眠规律的重要性。</div>
+    <p class='desc'>平常你几点睡几点起？之前我们挑战过熬夜，这一次我们想再挑战一下，看看如果让两位经常熬夜的同事，坚持早睡早起21天，会发生什么？他们的身体真的会变健康吗？感谢杭州市第七人民医院对本期内容的支持～如果这期视频对你有帮助，请多多支持我们，把视频也分享给你的朋友们一起看看～</p>
+    <div class='tags'><span class='chip tag-chip'>健康新知计划</span><span class='chip tag-chip'>冷知识</span><span class='chip tag-chip'>4K</span><span class='chip tag-chip'>健康</span><span class='chip tag-chip'>知识</span><span class='chip tag-chip'>科普</span><span class='chip tag-chip'>失眠</span><span class='chip tag-chip'>医学</span><span class='chip tag-chip'>睡眠</span></div>
+  </div>
+</header>
+<nav class='toc'><div class='toc-in'><a href='#ch-1'><b>01</b><span>挑战开始：早睡早起真的可行吗？</span><i>0:00</i></a><a href='#ch-2'><b>02</b><span>第一周：早睡早起的痛苦与挣扎</span><i>1:16</i></a><a href='#ch-3'><b>03</b><span>引入对比组：晚睡晚起睡够8小时</span><i>3:21</i></a><a href='#ch-4'><b>04</b><span>褪黑素的真相与失眠认知行为治疗</span><i>4:27</i></a><a href='#ch-5'><b>05</b><span>第二周：早睡早起组的适应与晚睡晚</span><i>6:21</i></a><a href='#ch-6'><b>06</b><span>第三周：早睡早起的效果与晚睡晚起</span><i>8:30</i></a><a href='#ch-7'><b>07</b><span>最终结果：睡眠质量提升与规律作息</span><i>10:41</i></a></div><a class='watch' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=0'>原视频 ↗</a></nav>
+
+<section class='chapter' id='ch-1'>
+  <header class='ch-head'>
+    <span class='ch-no'>01</span>
+    <div class='ch-titles'>
+      <h3>挑战开始：早睡早起真的可行吗？</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=0'>⏱ 0:00 – 1:16</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>连续21天早睡早起会变健康吗？</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>招募两位长期熬夜的同事</li><li>进行多导睡眠监测检查</li><li>要求十点睡六点起</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>参与者红龙和皇位长期熬夜</span></li><li><span class='mk'>•</span><span>首次睡眠监测显示深度睡眠不足</span></li><li><span class='mk'>•</span><span>醒来后更疲惫</span></li></ul><h4>结论</h4><p class='concl'>早睡早起初期难以适应，睡眠质量反而下降。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>平常你几点睡几点起？</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=0'>⏱ 0:00</a></footer></blockquote><blockquote><p>通过二十一天早睡早起真的会变得更健康吗？</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=56'>⏱ 0:56</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>流程 · 展示实验流程：从招募参与者到首次睡眠监测。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6e6e73"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">挑战开始：早睡早起真的可行吗？</text>
+
+  <!-- 副标题/时间段 -->
+  <text x="360" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">时间段：0.09s – 75.84s</text>
+
+  <!-- 步骤1：招募 -->
+  <rect x="60" y="90" width="180" height="70" rx="10" ry="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="150" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">招募参与者</text>
+  <text x="150" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">红龙 &amp; 皇位</text>
+  <text x="150" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ff3b30">长期熬夜</text>
+
+  <!-- 箭头1 -->
+  <line x1="240" y1="125" x2="290" y2="125" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 步骤2：睡眠监测 -->
+  <rect x="300" y="90" width="180" height="70" rx="10" ry="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="390" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">多导睡眠监测</text>
+  <text x="390" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">佩戴监测设备</text>
+  <text x="390" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ff3b30">深度睡眠不足</text>
+
+  <!-- 箭头2 -->
+  <line x1="480" y1="125" x2="530" y2="125" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 步骤3：作息要求 -->
+  <rect x="540" y="90" width="140" height="70" rx="10" ry="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="610" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">作息要求</text>
+  <text x="610" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">22:00睡 6:00起</text>
+  <text x="610" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ff8a3d">连续21天</text>
+
+  <!-- 菱形决策点 -->
+  <polygon points="360,220 480,270 360,320 240,270" fill="#ffffff" stroke="#0071e3" stroke-width="2"/>
+  <text x="360" y="264" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">21天后</text>
+  <text x="360" y="282" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">会更健康吗？</text>
+
+  <!-- 从步骤3到决策点的箭头 -->
+  <line x1="610" y1="160" x2="610" y2="200" stroke="#d2d2d7" stroke-width="1.5"/>
+  <line x1="610" y1="200" x2="480" y2="200" stroke="#d2d2d7" stroke-width="1.5"/>
+  <line x1="480" y1="200" x2="480" y2="270" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- 从步骤2到决策点的备用路径（直接向下） -->
+  <line x1="390" y1="160" x2="390" y2="200" stroke="#d2d2d7" stroke-width="1.5"/>
+  <line x1="390" y1="200" x2="360" y2="200" stroke="#d2d2d7" stroke-width="1.5"/>
+  <line x1="360" y1="200" x2="360" y2="220" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- 结论框 -->
+  <rect x="180" y="340" width="360" height="50" rx="10" ry="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="360" y="362" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">初期结论</text>
+  <text x="360" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ff3b30">早睡早起初期难以适应，睡眠质量反而下降</text>
+
+  <!-- 从决策点到结论的箭头 -->
+  <line x1="360" y1="320" x2="360" y2="340" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 视觉锚点：睡眠监测设备图标（简化） -->
+  <rect x="20" y="200" width="40" height="30" rx="5" ry="5" fill="#e8f0fe" stroke="#0071e3" stroke-width="1"/>
+  <text x="40" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#0071e3">监测</text>
+  <text x="40" y="228" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#6e6e73">设备</text>
+
+  <!-- 视觉锚点：参与者佩戴导线 -->
+  <circle cx="680" cy="210" r="18" fill="#e8f0fe" stroke="#0071e3" stroke-width="1"/>
+  <text x="680" y="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#0071e3">佩戴</text>
+  <text x="680" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#0071e3">导线</text>
+  <line x1="662" y1="210" x2="645" y2="210" stroke="#0071e3" stroke-width="1"/>
+  <line x1="698" y1="210" x2="710" y2="210" stroke="#0071e3" stroke-width="1"/>
+
+  <!-- 关键引用 -->
+  <text x="360" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">关键引用：“平常你几点睡几点起？”（0.09s）</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-2'>
+  <header class='ch-head'>
+    <span class='ch-no'>02</span>
+    <div class='ch-titles'>
+      <h3>第一周：早睡早起的痛苦与挣扎</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=76'>⏱ 1:16 – 3:21</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>为什么早睡早起反而更累？</span></li><li><span class='mk'>?</span><span>睡眠不足对认知有什么影响？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>突然改变作息导致睡眠碎片化</span></li><li><span class='mk'>!</span><span>深度睡眠不足导致白天更疲惫</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>记录睡眠分期</li><li>进行斯特鲁普测试</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>中途醒来后难以再入睡</span></li><li><span class='mk'>•</span><span>深度睡眠时间短</span></li><li><span class='mk'>•</span><span>斯特鲁普测试成绩差</span></li></ul><h4>结论</h4><p class='concl'>突然改变作息会破坏睡眠结构，导致认知功能下降。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>现在是晚上的两点五十二，我十点钟躺在这里，一个小时就睡着了，莫名其妙醒</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=88'>⏱ 1:28</a></footer></blockquote><blockquote><p>你也应该体验过这种睡了但感觉没睡的痛苦</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=134'>⏱ 2:14</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>风险决策 · 展示早睡早起初期遇到的困难和误区。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff3b30"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d2d2d7"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">第一周：早睡早起的痛苦与挣扎</text>
+  <text x="360" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">时间段：76.14s – 200.88s</text>
+
+  <!-- 陷阱警示框 -->
+  <rect x="30" y="78" width="660" height="44" rx="8" fill="#fff0f0" stroke="#ff3b30" stroke-width="1.5"/>
+  <text x="50" y="100" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ff3b30">⚠ 常见陷阱</text>
+  <text x="50" y="118" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">突然改变作息 → 睡眠碎片化 · 深度睡眠不足 → 白天更疲惫</text>
+
+  <!-- 核心问题 -->
+  <text x="360" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">核心问题</text>
+
+  <rect x="160" y="158" width="180" height="36" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="250" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">为什么早睡早起反而更累？</text>
+
+  <rect x="380" y="158" width="180" height="36" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="470" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">睡眠不足对认知有什么影响？</text>
+
+  <!-- 箭头：问题 → 检查步骤 -->
+  <line x1="250" y1="194" x2="250" y2="218" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <line x1="470" y1="194" x2="470" y2="218" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- 检查步骤 -->
+  <text x="360" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">检查步骤</text>
+
+  <rect x="80" y="248" width="240" height="36" rx="6" fill="#e8f5ff" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="200" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0071e3">① 记录睡眠分期</text>
+
+  <rect x="400" y="248" width="240" height="36" rx="6" fill="#e8f5ff" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="520" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0071e3">② 进行斯特鲁普测试</text>
+
+  <!-- 箭头：检查步骤 → 发现的问题 -->
+  <line x1="200" y1="284" x2="200" y2="308" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <line x1="520" y1="284" x2="520" y2="308" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- 发现的问题 -->
+  <text x="360" y="328" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">发现的问题</text>
+
+  <rect x="30" y="338" width="200" height="36" rx="6" fill="#fff5e6" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="130" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">中途醒来难以再入睡</text>
+
+  <rect x="260" y="338" width="200" height="36" rx="6" fill="#fff5e6" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="360" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">深度睡眠时间短</text>
+
+  <rect x="490" y="338" width="200" height="36" rx="6" fill="#fff5e6" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="590" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">斯特鲁普测试成绩差</text>
+
+  <!-- 结论 -->
+  <rect x="160" y="388" width="400" height="24" rx="12" fill="#0071e3"/>
+  <text x="360" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">结论：突然改变作息会破坏睡眠结构，导致认知功能下降</text>
+
+  <!-- 关键引用 -->
+  <text x="30" y="78" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73" opacity="0.6">引用：87.6s “十点钟躺下，一小时睡着，莫名其妙醒”</text>
+  <text x="30" y="92" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73" opacity="0.6">引用：133.92s “睡了但感觉没睡的痛苦”</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-3'>
+  <header class='ch-head'>
+    <span class='ch-no'>03</span>
+    <div class='ch-titles'>
+      <h3>引入对比组：晚睡晚起睡够8小时</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=201'>⏱ 3:21 – 4:27</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>晚睡晚起但睡够8小时是否健康？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>睡眠规律比时长更重要</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>引入区作为晚睡晚起组</li><li>要求保证每天8小时睡眠</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>区睡眠规律最差但评分高</span></li><li><span class='mk'>•</span><span>早睡早起组睡眠质量评分低</span></li><li><span class='mk'>•</span><span>白天精神状态差</span></li></ul><h4>结论</h4><p class='concl'>晚睡晚起组睡眠评分高但生物钟紊乱。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>如果晚点睡，睡够八个小时，是不是也算是健康的？</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=201'>⏱ 3:21</a></footer></blockquote><blockquote><p>早睡早起组并没有朝着我们想象的方向发展</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=247'>⏱ 4:07</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>对比 · 对比早睡早起组和晚睡晚起组的不同作息和状态。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#6e6e73"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="#1d1d1f">引入对比组：晚睡晚起睡够8小时</text>
+  <text x="360" y="58" text-anchor="middle" font-size="13" fill="#6e6e73">时间段：200.94s – 266.88s</text>
+
+  <!-- 分隔线 -->
+  <line x1="40" y1="72" x2="680" y2="72" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 对比表标题行 -->
+  <rect x="50" y="85" width="180" height="36" rx="6" fill="#f5f5f7"/>
+  <text x="140" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d1d1f">对比维度</text>
+
+  <rect x="240" y="85" width="210" height="36" rx="6" fill="#e8f0fe"/>
+  <text x="345" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="#0071e3">早睡早起组</text>
+
+  <rect x="460" y="85" width="210" height="36" rx="6" fill="#fff3e0"/>
+  <text x="565" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="#ff8a3d">晚睡晚起组</text>
+
+  <!-- 行1：作息规律 -->
+  <rect x="50" y="130" width="180" height="40" rx="4" fill="#f5f5f7"/>
+  <text x="140" y="155" text-anchor="middle" font-size="14" fill="#1d1d1f">作息规律</text>
+
+  <rect x="240" y="130" width="210" height="40" rx="4" fill="#f5f5f7"/>
+  <text x="345" y="155" text-anchor="middle" font-size="14" fill="#34c759">规律</text>
+
+  <rect x="460" y="130" width="210" height="40" rx="4" fill="#f5f5f7"/>
+  <text x="565" y="155" text-anchor="middle" font-size="14" fill="#ff3b30">最差</text>
+
+  <!-- 行2：睡眠质量评分 -->
+  <rect x="50" y="178" width="180" height="40" rx="4" fill="#f5f5f7"/>
+  <text x="140" y="203" text-anchor="middle" font-size="14" fill="#1d1d1f">睡眠质量评分</text>
+
+  <rect x="240" y="178" width="210" height="40" rx="4" fill="#f5f5f7"/>
+  <text x="345" y="203" text-anchor="middle" font-size="14" fill="#ff3b30">低</text>
+
+  <rect x="460" y="178" width="210" height="40" rx="4" fill="#f5f5f7"/>
+  <text x="565" y="203" text-anchor="middle" font-size="14" fill="#34c759">高</text>
+
+  <!-- 行3：白天精神状态 -->
+  <rect x="50" y="226" width="180" height="40" rx="4" fill="#f5f5f7"/>
+  <text x="140" y="251" text-anchor="middle" font-size="14" fill="#1d1d1f">白天精神状态</text>
+
+  <rect x="240" y="226" width="210" height="40" rx="4" fill="#f5f5f7"/>
+  <text x="345" y="251" text-anchor="middle" font-size="14" fill="#34c759">好</text>
+
+  <rect x="460" y="226" width="210" height="40" rx="4" fill="#f5f5f7"/>
+  <text x="565" y="251" text-anchor="middle" font-size="14" fill="#ff3b30">差</text>
+
+  <!-- 行4：生物钟状态 -->
+  <rect x="50" y="274" width="180" height="40" rx="4" fill="#f5f5f7"/>
+  <text x="140" y="299" text-anchor="middle" font-size="14" fill="#1d1d1f">生物钟状态</text>
+
+  <rect x="240" y="274" width="210" height="40" rx="4" fill="#f5f5f7"/>
+  <text x="345" y="299" text-anchor="middle" font-size="14" fill="#34c759">正常</text>
+
+  <rect x="460" y="274" width="210" height="40" rx="4" fill="#f5f5f7"/>
+  <text x="565" y="299" text-anchor="middle" font-size="14" fill="#ff3b30">紊乱</text>
+
+  <!-- 结论区域 -->
+  <rect x="50" y="330" width="620" height="70" rx="8" fill="#fff8e1" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="360" y="352" text-anchor="middle" font-size="14" font-weight="bold" fill="#ff8a3d">结论</text>
+  <text x="360" y="374" text-anchor="middle" font-size="13" fill="#1d1d1f">晚睡晚起组睡眠评分高，但生物钟紊乱；睡眠规律比时长更重要</text>
+
+  <!-- 箭头：从结论指向关键引用 -->
+  <line x1="360" y1="330" x2="360" y2="310" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow-blue)" stroke-dasharray="4,3"/>
+
+  <!-- 关键引用标注 -->
+  <text x="360" y="408" text-anchor="middle" font-size="12" fill="#6e6e73">关键引用：200.94s “晚睡睡够8小时是否健康？” | 246.72s “早睡早起组未按预期发展”</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-4'>
+  <header class='ch-head'>
+    <span class='ch-no'>04</span>
+    <div class='ch-titles'>
+      <h3>褪黑素的真相与失眠认知行为治疗</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=267'>⏱ 4:27 – 6:21</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>吃褪黑素靠谱吗？</span></li><li><span class='mk'>?</span><span>如何正确治疗失眠？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>褪黑素不能长期使用</span></li><li><span class='mk'>!</span><span>失眠多因过度觉醒而非褪黑素缺乏</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>咨询医生</li><li>尝试失眠认知行为治疗</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>褪黑素是大脑分泌的化学物质</span></li><li><span class='mk'>•</span><span>长期使用褪黑素可能导致受体问题</span></li><li><span class='mk'>•</span><span>失眠认知行为治疗包括调整生物钟和刺激控制</span></li></ul><h4>结论</h4><p class='concl'>失眠认知行为治疗是首选方案，褪黑素仅适用于特定情况。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>吃褪黑素辅助睡眠靠谱吗？</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=288'>⏱ 4:48</a></footer></blockquote><blockquote><p>失眠认知行为治疗是许多医疗学会推荐的首选方案</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=340'>⏱ 5:40</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 解释褪黑素的作用和失眠认知行为治疗的核心概念。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#d2d2d7"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#ff8a3d"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">褪黑素的真相与失眠认知行为治疗</text>
+
+  <!-- 分隔线 -->
+  <line x1="60" y1="52" x2="660" y2="52" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- ===== 左侧区域：褪黑素真相 ===== -->
+  <!-- 左侧卡片背景 -->
+  <rect x="30" y="70" width="310" height="320" rx="10" fill="#f5f5f7"/>
+
+  <!-- 左侧标题 -->
+  <text x="185" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d1d1f">褪黑素</text>
+
+  <!-- 节点1：大脑分泌 -->
+  <rect x="55" y="120" width="260" height="44" rx="8" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="185" y="147" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">大脑分泌的化学物质</text>
+
+  <!-- 箭头：分泌 → 问题 -->
+  <line x1="185" y1="164" x2="185" y2="184" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 节点2：长期使用问题 -->
+  <rect x="55" y="188" width="260" height="44" rx="8" fill="#ffffff" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="185" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ff8a3d">长期使用 → 受体问题</text>
+
+  <!-- 箭头：问题 → 陷阱 -->
+  <line x1="185" y1="232" x2="185" y2="252" stroke="#ff3b30" stroke-width="1.5" marker-end="url(#arrow-orange)"/>
+
+  <!-- 节点3：陷阱 -->
+  <rect x="55" y="256" width="260" height="44" rx="8" fill="#fff5f5" stroke="#ff3b30" stroke-width="1.5"/>
+  <text x="185" y="283" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ff3b30">⚠ 不能长期使用</text>
+
+  <!-- 箭头：陷阱 → 结论 -->
+  <line x1="185" y1="300" x2="185" y2="320" stroke="#ff3b30" stroke-width="1.5" marker-end="url(#arrow-orange)"/>
+
+  <!-- 节点4：结论 -->
+  <rect x="55" y="324" width="260" height="44" rx="8" fill="#f0f8ff" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="185" y="351" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0071e3">仅适用于特定情况</text>
+
+  <!-- ===== 右侧区域：失眠认知行为治疗 ===== -->
+  <!-- 右侧卡片背景 -->
+  <rect x="380" y="70" width="310" height="320" rx="10" fill="#f5f5f7"/>
+
+  <!-- 右侧标题 -->
+  <text x="535" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d1d1f">失眠认知行为治疗 (CBT-I)</text>
+
+  <!-- 节点1：核心 -->
+  <rect x="405" y="120" width="260" height="44" rx="8" fill="#ffffff" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="535" y="147" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0071e3">医疗学会推荐的首选方案</text>
+
+  <!-- 箭头 -->
+  <line x1="535" y1="164" x2="535" y2="184" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- 节点2：调整生物钟 -->
+  <rect x="405" y="188" width="260" height="44" rx="8" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="535" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">调整生物钟</text>
+
+  <!-- 箭头 -->
+  <line x1="535" y1="232" x2="535" y2="252" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- 节点3：刺激控制 -->
+  <rect x="405" y="256" width="260" height="44" rx="8" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="535" y="283" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">刺激控制</text>
+
+  <!-- 箭头 -->
+  <line x1="535" y1="300" x2="535" y2="320" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- 节点4：步骤 -->
+  <rect x="405" y="324" width="260" height="44" rx="8" fill="#e8f5e9" stroke="#34c759" stroke-width="1.5"/>
+  <text x="535" y="351" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#34c759">步骤：咨询医生 → 尝试CBT-I</text>
+
+  <!-- ===== 底部关键引用 ===== -->
+  <rect x="30" y="400" width="660" height="1" fill="#d2d2d7"/>
+
+  <!-- 关键引用文字 -->
+  <text x="360" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">关键引用：“吃褪黑素辅助睡眠靠谱吗？” · “失眠认知行为治疗是许多医疗学会推荐的首选方案”</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-5'>
+  <header class='ch-head'>
+    <span class='ch-no'>05</span>
+    <div class='ch-titles'>
+      <h3>第二周：早睡早起组的适应与晚睡晚起组的紊乱</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=381'>⏱ 6:21 – 8:30</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>早睡早起组适应了吗？</span></li><li><span class='mk'>?</span><span>晚睡晚起组状态如何？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>晚睡晚起错过自然光导致生物钟紊乱</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>早睡早起组进行刺激控制训练</li><li>记录睡眠评分变化</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>早睡早起组深度睡眠增加</span></li><li><span class='mk'>•</span><span>晚睡晚起组白天迷糊</span></li><li><span class='mk'>•</span><span>自然光对生物钟重要</span></li></ul><h4>结论</h4><p class='concl'>早睡早起组睡眠质量提升，晚睡晚起组生物钟紊乱。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>醒了之后要立即起床，不能赖床</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=401'>⏱ 6:41</a></footer></blockquote><blockquote><p>整个人感觉就是非常空虚，脑子思考也变慢了</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=470'>⏱ 7:50</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>时间线 · 展示两组随时间变化的睡眠质量和状态。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d2d2d7"/>
+    </marker>
+    <linearGradient id="gradEarly" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#34c759" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#34c759" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="gradLate" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff3b30" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ff3b30" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="#1d1d1f">第二周：早睡早起组适应 vs 晚睡晚起组紊乱</text>
+  <text x="360" y="58" text-anchor="middle" font-size="13" fill="#6e6e73">时间段：380.64s – 510.0s</text>
+
+  <!-- 时间轴主线 -->
+  <line x1="60" y1="120" x2="660" y2="120" stroke="#d2d2d7" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <!-- 时间刻度 -->
+  <text x="60" y="108" text-anchor="middle" font-size="13" fill="#6e6e73">380s</text>
+  <line x1="60" y1="115" x2="60" y2="125" stroke="#d2d2d7" stroke-width="1.5"/>
+
+  <text x="210" y="108" text-anchor="middle" font-size="13" fill="#6e6e73">400s</text>
+  <line x1="210" y1="115" x2="210" y2="125" stroke="#d2d2d7" stroke-width="1.5"/>
+
+  <text x="360" y="108" text-anchor="middle" font-size="13" fill="#6e6e73">440s</text>
+  <line x1="360" y1="115" x2="360" y2="125" stroke="#d2d2d7" stroke-width="1.5"/>
+
+  <text x="510" y="108" text-anchor="middle" font-size="13" fill="#6e6e73">470s</text>
+  <line x1="510" y1="115" x2="510" y2="125" stroke="#d2d2d7" stroke-width="1.5"/>
+
+  <text x="660" y="108" text-anchor="middle" font-size="13" fill="#6e6e73">510s</text>
+  <line x1="660" y1="115" x2="660" y2="125" stroke="#d2d2d7" stroke-width="1.5"/>
+
+  <!-- ===== 早睡早起组（上方） ===== -->
+  <text x="60" y="155" font-size="14" font-weight="bold" fill="#34c759">早睡早起组</text>
+
+  <!-- 事件1：刺激控制训练 -->
+  <rect x="120" y="140" width="140" height="36" rx="6" fill="#e8f8ee" stroke="#34c759" stroke-width="1.2"/>
+  <text x="190" y="163" text-anchor="middle" font-size="13" fill="#1d1d1f">刺激控制训练</text>
+  <line x1="190" y1="140" x2="190" y2="125" stroke="#34c759" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <!-- 事件2：立即起床 -->
+  <rect x="300" y="140" width="150" height="36" rx="6" fill="#e8f8ee" stroke="#34c759" stroke-width="1.2"/>
+  <text x="375" y="156" text-anchor="middle" font-size="13" fill="#1d1d1f">醒了立即起床</text>
+  <text x="375" y="170" text-anchor="middle" font-size="12" fill="#6e6e73">不赖床</text>
+  <line x1="375" y1="140" x2="375" y2="125" stroke="#34c759" stroke-width="1.2" stroke-dasharray="3,2"/>
+  <!-- 时间戳 -->
+  <text x="375" y="118" text-anchor="middle" font-size="11" fill="#6e6e73">400.8s</text>
+
+  <!-- 睡眠评分趋势（上升箭头） -->
+  <rect x="500" y="140" width="130" height="36" rx="6" fill="#e8f8ee" stroke="#34c759" stroke-width="1.2"/>
+  <text x="565" y="156" text-anchor="middle" font-size="13" fill="#1d1d1f">睡眠评分 ↑</text>
+  <text x="565" y="170" text-anchor="middle" font-size="12" fill="#6e6e73">深度睡眠增加</text>
+  <line x1="565" y1="140" x2="565" y2="125" stroke="#34c759" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <!-- 评分趋势图（小折线） -->
+  <polyline points="120,200 200,185 280,175 360,165 440,158 520,150 600,145" fill="none" stroke="#34c759" stroke-width="2.5"/>
+  <circle cx="120" cy="200" r="3" fill="#34c759"/>
+  <circle cx="360" cy="165" r="3" fill="#34c759"/>
+  <circle cx="600" cy="145" r="3" fill="#34c759"/>
+  <text x="610" y="140" font-size="12" fill="#34c759" font-weight="bold">睡眠质量提升</text>
+
+  <!-- ===== 晚睡晚起组（下方） ===== -->
+  <text x="60" y="255" font-size="14" font-weight="bold" fill="#ff3b30">晚睡晚起组</text>
+
+  <!-- 事件1：白天迷糊 -->
+  <rect x="120" y="270" width="130" height="36" rx="6" fill="#fde8e7" stroke="#ff3b30" stroke-width="1.2"/>
+  <text x="185" y="293" text-anchor="middle" font-size="13" fill="#1d1d1f">白天迷糊</text>
+  <line x1="185" y1="270" x2="185" y2="255" stroke="#ff3b30" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <!-- 事件2：空虚感 -->
+  <rect x="290" y="270" width="150" height="36" rx="6" fill="#fde8e7" stroke="#ff3b30" stroke-width="1.2"/>
+  <text x="365" y="286" text-anchor="middle" font-size="13" fill="#1d1d1f">空虚感</text>
+  <text x="365" y="300" text-anchor="middle" font-size="12" fill="#6e6e73">脑子思考变慢</text>
+  <line x1="365" y1="270" x2="365" y2="255" stroke="#ff3b30" stroke-width="1.2" stroke-dasharray="3,2"/>
+  <text x="365" y="248" text-anchor="middle" font-size="11" fill="#6e6e73">469.98s</text>
+
+  <!-- 事件3：错过自然光 -->
+  <rect x="480" y="270" width="140" height="36" rx="6" fill="#fde8e7" stroke="#ff3b30" stroke-width="1.2"/>
+  <text x="550" y="286" text-anchor="middle" font-size="13" fill="#1d1d1f">错过自然光</text>
+  <text x="550" y="300" text-anchor="middle" font-size="12" fill="#6e6e73">生物钟紊乱</text>
+  <line x1="550" y1="270" x2="550" y2="255" stroke="#ff3b30" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <!-- 评分趋势图（下降） -->
+  <polyline points="120,340 200,350 280,358 360,365 440,370 520,375 600,378" fill="none" stroke="#ff3b30" stroke-width="2.5"/>
+  <circle cx="120" cy="340" r="3" fill="#ff3b30"/>
+  <circle cx="360" cy="365" r="3" fill="#ff3b30"/>
+  <circle cx="600" cy="378" r="3" fill="#ff3b30"/>
+  <text x="610" y="383" font-size="12" fill="#ff3b30" font-weight="bold">状态下降</text>
+
+  <!-- 自然光与生物钟示意图 -->
+  <rect x="60" y="370" width="16" height="16" rx="3" fill="#ff8a3d" opacity="0.7"/>
+  <text x="82" y="383" font-size="12" fill="#6e6e73">自然光</text>
+  <line x1="130" y1="378" x2="170" y2="378" stroke="#d2d2d7" stroke-width="1" stroke-dasharray="3,2"/>
+  <rect x="175" y="370" width="16" height="16" rx="3" fill="#0071e3" opacity="0.7"/>
+  <text x="197" y="383" font-size="12" fill="#6e6e73">生物钟</text>
+  <text x="260" y="383" font-size="12" fill="#ff3b30">→ 错过自然光 → 生物钟紊乱</text>
+
+  <!-- 结论 -->
+  <rect x="60" y="395" width="600" height="20" rx="4" fill="#f5f5f7"/>
+  <text x="360" y="409" text-anchor="middle" font-size="13" fill="#1d1d1f" font-weight="bold">结论：早睡早起组睡眠质量提升，晚睡晚起组生物钟紊乱</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-6'>
+  <header class='ch-head'>
+    <span class='ch-no'>06</span>
+    <div class='ch-titles'>
+      <h3>第三周：早睡早起的效果与晚睡晚起的代价</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=510'>⏱ 8:30 – 10:40</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>早睡早起对睾酮有影响吗？</span></li><li><span class='mk'>?</span><span>晚睡晚起组状态如何？</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>进行专注力测试</li><li>检查睾酮水平</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>早睡早起组专注力测试成绩提升</span></li><li><span class='mk'>•</span><span>红龙睾酮上升</span></li><li><span class='mk'>•</span><span>晚睡晚起组出差后状态差</span></li></ul><h4>结论</h4><p class='concl'>早睡早起组专注力提升、睾酮上升，晚睡晚起组力不从心。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>我觉得我现在眼睛也没有那么干涩了，我能感觉到我真的长脑子了</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=539'>⏱ 8:59</a></footer></blockquote><blockquote><p>面对白天密集的工作明显显得力不从心</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=600'>⏱ 10:00</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>对比 · 对比两组在第三周的身体和精神状态差异。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff8a3d"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6e6e73"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">第三周：早睡早起 vs 晚睡晚起 效果对比</text>
+
+  <!-- 副标题 / 时间段 -->
+  <text x="360" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">时间段：510.06s – 640.32s</text>
+
+  <!-- 表头背景 -->
+  <rect x="40" y="80" width="640" height="36" rx="6" fill="#f5f5f7"/>
+  <text x="120" y="103" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">对比维度</text>
+  <line x1="200" y1="82" x2="200" y2="114" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="340" y="103" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">早睡早起组</text>
+  <line x1="480" y1="82" x2="480" y2="114" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="560" y="103" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ff8a3d">晚睡晚起组</text>
+
+  <!-- 行1：专注力测试 -->
+  <rect x="40" y="126" width="640" height="60" rx="6" fill="#f5f5f7" opacity="0.6"/>
+  <text x="120" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">专注力测试</text>
+  <line x1="200" y1="128" x2="200" y2="184" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="340" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">成绩提升</text>
+  <text x="340" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">“我能感觉到我真的长脑子了”</text>
+  <line x1="480" y1="128" x2="480" y2="184" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="560" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">力不从心</text>
+  <text x="560" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">“面对密集工作明显力不从心”</text>
+
+  <!-- 箭头：专注力对比 -->
+  <line x1="340" y1="192" x2="340" y2="210" stroke="#0071e3" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <line x1="560" y1="192" x2="560" y2="210" stroke="#ff8a3d" stroke-width="2" marker-end="url(#arrowOrange)"/>
+
+  <!-- 行2：睾酮水平 -->
+  <rect x="40" y="216" width="640" height="60" rx="6" fill="#f5f5f7" opacity="0.6"/>
+  <text x="120" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">睾酮水平</text>
+  <line x1="200" y1="218" x2="200" y2="274" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="340" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">红龙睾酮上升</text>
+  <text x="340" y="267" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">检测报告：指标改善</text>
+  <line x1="480" y1="218" x2="480" y2="274" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="560" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">出差后状态差</text>
+  <text x="560" y="267" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">未检测到改善</text>
+
+  <!-- 箭头：睾酮对比 -->
+  <line x1="340" y1="282" x2="340" y2="300" stroke="#0071e3" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <line x1="560" y1="282" x2="560" y2="300" stroke="#ff8a3d" stroke-width="2" marker-end="url(#arrowOrange)"/>
+
+  <!-- 结论区域 -->
+  <rect x="40" y="310" width="640" height="90" rx="8" fill="#f5f5f7"/>
+  <text x="360" y="338" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">结论</text>
+  <text x="360" y="362" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">早睡早起组：专注力提升 + 睾酮上升 → 状态积极</text>
+  <text x="360" y="386" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">晚睡晚起组：力不从心 + 出差后状态差 → 代价明显</text>
+
+  <!-- 底部装饰线 -->
+  <line x1="40" y1="408" x2="680" y2="408" stroke="#d2d2d7" stroke-width="1"/>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-7'>
+  <header class='ch-head'>
+    <span class='ch-no'>07</span>
+    <div class='ch-titles'>
+      <h3>最终结果：睡眠质量提升与规律作息的重要性</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=641'>⏱ 10:41 – 12:05</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>早睡早起对身体有什么实质性变化？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>晚睡晚起组深度睡眠长但并非好事</span></li><li><span class='mk'>!</span><span>周末报复性补觉会扰乱生物钟</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>进行最后一次睡眠监测</li><li>对比前后数据</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>早睡早起组入睡时间缩短</span></li><li><span class='mk'>•</span><span>深度睡眠增加26分钟</span></li><li><span class='mk'>•</span><span>晚睡晚起组深度睡眠长但紊乱</span></li></ul><h4>结论</h4><p class='concl'>规律作息比早睡早起本身更重要，睡眠质量提升。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>不建议大家超过十二点钟以后去睡</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=660'>⏱ 11:00</a></footer></blockquote><blockquote><p>尽量要规律我们的生活经历，这个是非常重要的</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1DAgS6SEqa/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=701'>⏱ 11:41</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>数据 · 展示最终睡眠监测数据，强调规律作息的重要性。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1d1d1f"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff8a3d"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1d1d1f">最终结果：睡眠质量提升与规律作息的重要性</text>
+  <text x="360" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">时间段：640.73s - 725.07s</text>
+
+  <!-- 左侧：早睡早起组 -->
+  <rect x="40" y="80" width="300" height="310" rx="10" fill="#f5f5f7"/>
+  <text x="190" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0071e3">早睡早起组</text>
+
+  <!-- 入睡时间缩短条形图 -->
+  <text x="60" y="140" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">入睡时间</text>
+  <rect x="60" y="148" width="120" height="20" rx="4" fill="#d2d2d7"/>
+  <rect x="60" y="148" width="80" height="20" rx="4" fill="#0071e3"/>
+  <text x="185" y="163" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">缩短 40%</text>
+
+  <!-- 深度睡眠增加条形图 -->
+  <text x="60" y="200" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">深度睡眠</text>
+  <rect x="60" y="208" width="120" height="20" rx="4" fill="#d2d2d7"/>
+  <rect x="60" y="208" width="100" height="20" rx="4" fill="#34c759"/>
+  <text x="185" y="223" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">+26 分钟</text>
+
+  <!-- 规律作息标签 -->
+  <rect x="60" y="250" width="260" height="50" rx="6" fill="#e8f5e9"/>
+  <text x="190" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">规律作息 → 睡眠质量提升</text>
+  <text x="190" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">不建议超过十二点钟以后去睡</text>
+
+  <!-- 箭头：早睡早起 → 结论 -->
+  <line x1="340" y1="200" x2="380" y2="200" stroke="#0071e3" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- 右侧：晚睡晚起组 -->
+  <rect x="380" y="80" width="300" height="310" rx="10" fill="#f5f5f7"/>
+  <text x="530" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#ff8a3d">晚睡晚起组</text>
+
+  <!-- 深度睡眠长但紊乱 -->
+  <text x="400" y="140" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">深度睡眠时长</text>
+  <rect x="400" y="148" width="120" height="20" rx="4" fill="#d2d2d7"/>
+  <rect x="400" y="148" width="110" height="20" rx="4" fill="#ff8a3d"/>
+  <text x="525" y="163" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">较长但紊乱</text>
+
+  <!-- 紊乱警示 -->
+  <rect x="400" y="190" width="260" height="50" rx="6" fill="#fff3e0"/>
+  <text x="530" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ff3b30">⚠ 深度睡眠长并非好事</text>
+  <text x="530" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">生物钟紊乱风险高</text>
+
+  <!-- 周末补觉陷阱 -->
+  <rect x="400" y="260" width="260" height="50" rx="6" fill="#fff3e0"/>
+  <text x="530" y="282" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ff3b30">⚠ 周末报复性补觉</text>
+  <text x="530" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">会扰乱生物钟</text>
+
+  <!-- 结论区域 -->
+  <rect x="160" y="340" width="400" height="40" rx="8" fill="#1d1d1f"/>
+  <text x="360" y="366" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">结论：规律作息比早睡早起本身更重要</text>
+
+  <!-- 底部引用 -->
+  <text x="360" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">“尽量要规律我们的生活经历，这个是非常重要的”</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+
+<footer class='ft'>
+  
+  <p>由 vnotes 生成 · 2026-07-28 10:00 · 模型转写+大模型整理 · 图解为 AI 据章节内容动态生成</p>
+</footer>
+</div>
+<style data-vnotes-lightbox>
+.cover,.media img,.frame-item img,.svg-wrap{cursor:zoom-in}
+.vnotes-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(12,12,12,.88);padding:24px}
+.vnotes-lightbox.open{display:flex}
+.vnotes-lightbox figure{margin:0;max-width:96vw;max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:10px}
+.vnotes-lightbox img{max-width:96vw;max-height:84vh;object-fit:contain;border-radius:10px;background:#fff;box-shadow:0 24px 80px rgba(0,0,0,.45)}
+.vnotes-lightbox figcaption{max-width:min(820px,92vw);color:rgba(255,255,255,.82);font-size:13px;line-height:1.5;text-align:center}
+.vnotes-lightbox-close{position:fixed;top:18px;right:18px;width:40px;height:40px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-size:22px;line-height:1;cursor:pointer;backdrop-filter:blur(10px)}
+.vnotes-lightbox-close:hover{background:rgba(255,255,255,.2)}
+html.vnotes-lightbox-open{overflow:hidden}
+@media (max-width:640px){.vnotes-lightbox{padding:12px}.vnotes-lightbox-close{top:10px;right:10px}.vnotes-lightbox img{max-width:94vw;max-height:80vh}}
+</style>
+<script data-vnotes-lightbox>
+(function(){
+  if(window.__vnotesLightboxReady) return;
+  window.__vnotesLightboxReady = true;
+
+  function textFrom(node){
+    return node ? String(node.textContent || '').replace(/\s+/g, ' ').trim() : '';
+  }
+
+  function svgToImageSource(svg){
+    var clone = svg.cloneNode(true);
+    if(!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new XMLSerializer().serializeToString(clone));
+  }
+
+  function sourceFromTarget(target){
+    if(!target || !target.closest) return null;
+
+    var img = target.closest('img');
+    if(img && (img.classList.contains('cover') || img.closest('.hd-cover,.media,.frame-gallery,.frame-item'))){
+      var fig = img.closest('figure');
+      return {
+        src: img.currentSrc || img.src,
+        caption: textFrom(fig ? fig.querySelector('figcaption') : null) || img.alt || ''
+      };
+    }
+
+    var wrap = target.closest('.svg-wrap');
+    if(wrap){
+      var svg = wrap.querySelector('svg');
+      if(svg){
+        var figure = wrap.closest('figure');
+        return {
+          src: svgToImageSource(svg),
+          caption: textFrom(figure ? figure.querySelector('figcaption') : null)
+        };
+      }
+    }
+    return null;
+  }
+
+  var overlay = document.createElement('div');
+  overlay.className = 'vnotes-lightbox';
+  overlay.setAttribute('aria-hidden', 'true');
+  overlay.innerHTML = '<button type="button" class="vnotes-lightbox-close" aria-label="Close">&#215;</button><figure><img alt=""><figcaption></figcaption></figure>';
+  var image = overlay.querySelector('img');
+  var caption = overlay.querySelector('figcaption');
+
+  function close(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.remove('vnotes-lightbox-open');
+    image.removeAttribute('src');
+  }
+
+  function open(src, text){
+    image.src = src;
+    caption.textContent = text || '';
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('vnotes-lightbox-open');
+  }
+
+  overlay.addEventListener('click', function(event){
+    if(event.target === overlay || event.target.closest('.vnotes-lightbox-close')) close();
+  });
+  document.addEventListener('keydown', function(event){
+    if(event.key === 'Escape' && overlay.classList.contains('open')) close();
+  });
+  document.addEventListener('click', function(event){
+    if(event.defaultPrevented) return;
+    var source = sourceFromTarget(event.target);
+    if(!source || !source.src) return;
+    event.preventDefault();
+    open(source.src, source.caption);
+  });
+
+  document.addEventListener('DOMContentLoaded', function(){
+    if(!overlay.parentNode) document.body.appendChild(overlay);
+  });
+  if(document.body) document.body.appendChild(overlay);
+})();
+</script>
+</body></html>

@@ -1,0 +1,1170 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>十大推理逻辑 · 视频笔记</title>
+<style>
+:root{--bg:#fafafa;--card:#fff;--ink:#1a1a1a;--sub:#666;--line:#e0e0e0;--soft:#f5f5f5;
+--acc:#F5C518;--acc-dk:#1a1a1a;--acc-soft:#fff8e1;--warn:#ff6b35;--danger:#ff3b30;--ok:#2ecc71;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Segoe UI,Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;line-height:1.7;font-size:16px}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px 120px}
+/* header */
+.hd{display:flex;gap:24px;padding:40px 0 28px;border-bottom:3px solid var(--acc);flex-wrap:wrap}
+.hd-cover{flex:0 0 240px}.cover{width:100%;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:block}
+.hd-main{flex:1;min-width:280px}
+.hd-main h1{font-size:26px;line-height:1.3;margin:0 0 10px;letter-spacing:-.01em}
+.sub{display:flex;gap:14px;align-items:center;color:var(--sub);font-size:14px;flex-wrap:wrap}
+.up{font-weight:600;color:var(--ink)}
+.badges .chip{background:var(--acc-soft);border-radius:7px;padding:2px 9px;font-size:12px;margin-right:6px;color:var(--acc-dk);font-weight:500}
+.parts{margin:14px 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.parts .lbl{color:var(--sub);font-size:13px}.parts .p{font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--sub)}
+.parts .p.cur{background:var(--acc);color:var(--acc-dk);border-color:var(--acc);font-weight:600}
+.summary{margin:14px 0;padding:12px 16px;background:var(--acc-soft);border-left:4px solid var(--acc);border-radius:8px;font-size:15px;font-weight:500}
+.desc{color:var(--sub);font-size:13px;white-space:pre-wrap;margin:10px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tag-chip{font-size:12px;color:var(--acc-dk);background:var(--acc-soft);border:1px solid #f0e0a0;border-radius:7px;padding:3px 9px}
+/* toc */
+.toc{position:sticky;top:0;z-index:5;background:rgba(250,250,250,.93);backdrop-filter:saturate(180%) blur(12px);
+border-bottom:1px solid var(--line);margin:0 -20px 8px;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.toc-in{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;flex:1}
+.toc-in a{display:flex;flex-direction:column;min-width:84px;padding:6px 10px;border-radius:10px;text-decoration:none;color:var(--sub);font-size:12px;transition:.2s}
+.toc-in a:hover{background:var(--acc-soft)}
+.toc-in a b{color:var(--acc-dk);font-size:13px}.toc-in a i{font-style:normal;color:var(--sub);font-size:11px}
+.watch{font-size:13px;color:var(--acc-dk);text-decoration:none;white-space:nowrap;font-weight:600}
+.watch:hover{text-decoration:underline}
+/* chapter */
+.chapter{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;margin:18px 0;
+box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.ch-head{display:flex;gap:16px;align-items:flex-start;border-bottom:2px solid var(--acc);padding-bottom:14px;margin-bottom:16px}
+.ch-no{font-size:22px;font-weight:800;color:var(--acc-dk);flex:0 0 auto;background:var(--acc);padding:2px 10px;border-radius:8px}
+.ch-titles h3{margin:0;font-size:19px;letter-spacing:-.01em}
+.ch-meta{font-size:13px;color:var(--sub);margin-top:3px}
+.ts{color:var(--acc-dk);text-decoration:none;border-bottom:1px dotted var(--acc-dk);font-weight:500}
+.ts:hover{color:var(--warn);border-color:var(--warn)}
+.ch-body h4{font-size:14px;color:var(--sub);margin:18px 0 8px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.ch-body h4.warn{color:var(--warn)}
+.ch-body h5{font-size:15px;color:var(--ink);margin:0 0 4px;font-weight:600}
+.blk{list-style:none;padding:0;margin:0 0 6px}.blk li{display:flex;gap:10px;padding:4px 0;font-size:15px}
+.blk .mk{flex:0 0 18px;text-align:center;font-weight:700}
+.blk.q .mk{color:var(--acc-dk)}.blk.trap .mk{color:var(--warn)}.blk.kp .mk{color:var(--acc-dk)}
+.blk.trap li{background:#fff5f0;border-radius:8px;padding:6px 10px;margin-bottom:4px}
+.steps{margin:0 0 6px;padding-left:22px}.steps li{padding:4px 0;font-size:15px}
+.steps li::marker{color:var(--acc-dk);font-weight:700}
+.concl{margin:6px 0;padding:12px 16px;background:var(--acc-soft);border-radius:10px;font-weight:500;border-left:4px solid var(--acc)}
+.quotes{display:flex;flex-direction:column;gap:8px}
+.quotes blockquote{margin:0;padding:10px 16px;background:#fafafa;border-left:3px solid var(--acc);border-radius:0 8px 8px 0}
+.quotes blockquote p{margin:0;font-size:14px}.quotes blockquote footer{margin-top:4px;font-size:12px}
+/* detail sections (细致模式) */
+.detail-toggle{margin:12px 0;border:1px solid var(--line);border-radius:12px;background:#fff}
+.detail-toggle summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;font-size:14px;font-weight:700;color:var(--acc-dk);list-style:none}
+.detail-toggle summary::-webkit-details-marker{display:none}
+.detail-toggle summary::after{content:"+";width:22px;height:22px;border-radius:999px;background:var(--acc-soft);display:inline-flex;align-items:center;justify-content:center;font-weight:800}
+.detail-toggle[open] summary::after{content:"-"}
+.detail-toggle summary small{font-size:12px;font-weight:500;color:var(--sub);margin-left:auto}
+.detail-toggle .detail-block{padding:0 16px 14px}
+.detail-block{display:flex;flex-direction:column;gap:10px;margin:6px 0}
+.detail-sec{padding:12px 16px;background:var(--soft);border-radius:10px;border-left:3px solid var(--acc)}
+.detail-sec h5{font-size:14px;color:var(--acc-dk);margin:0 0 4px}
+.detail-sec p{margin:0;font-size:14px;color:var(--ink);line-height:1.6}
+/* media */
+.media{margin:18px 0 4px}.media figcaption{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.tag{font-size:11px;font-weight:700;padding:2px 9px;border-radius:6px;letter-spacing:.04em}
+.tag.svg{background:var(--acc-soft);color:var(--acc-dk);border:1px solid #f0e0a0}.tag.shot{background:#fff0e6;color:var(--warn)}
+.cap{font-size:12px;color:var(--sub)}
+.svg-wrap{background:var(--soft);border-radius:12px;padding:14px;border:1px solid var(--line)}
+.svg-wrap svg{border-radius:8px}
+.media img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+/* frame gallery (细致模式) */
+.frame-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0 4px}
+.frame-item{margin:0}.frame-item img{width:100%;border-radius:10px;border:1px solid var(--line);display:block;transition:transform .25s}
+.frame-item img:hover{transform:scale(1.02)}
+.frame-item figcaption{display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap}
+/* footer */
+.ft{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--sub);font-size:12px}
+.ft-warn{margin:0 0 10px;padding-left:18px}.ft-warn li{color:var(--warn);margin:3px 0}
+@media (max-width:640px){.hd-cover{flex:1 1 100%}.chapter{padding:18px}.hd-main h1{font-size:22px}.frame-gallery{grid-template-columns:1fr}}
+@media print{.toc{display:none}.chapter{break-inside:avoid;box-shadow:none}}
+</style></head>
+<body><div class="wrap">
+
+<header class='hd'>
+  <div class='hd-cover'><img class='cover' src='cover.jpg' alt='封面'/></div>
+  <div class='hd-main'>
+    <h1>十大推理逻辑</h1>
+    <div class='sub'>
+      <span class='up'>UP · 倔犟的马户</span>
+      <span class='badges'><span class='chip '>BiliBili</span><span class='chip '>8:15</span></span>
+    </div>
+    
+    <div class='summary'>本视频介绍了刑事案件侦查中的十大推理逻辑，包括远抛近埋、性别与抛尸方式、熟人作案、物质交换原理、死亡时间推断、第一现场、反常细节、谎言破绽、地理分布规律和电子数据追踪。</div>
+    
+    <div class='tags'><span class='chip tag-chip'>逻辑</span><span class='chip tag-chip'>学习</span></div>
+  </div>
+</header>
+<nav class='toc'><div class='toc-in'><a href='#ch-1'><b>01</b><span>远抛近埋：凶手的心理矛盾</span><i>0:00</i></a><a href='#ch-2'><b>02</b><span>男人编织袋，女人行李箱：性别与抛</span><i>1:12</i></a><a href='#ch-3'><b>03</b><span>命案必先查熟人：社交网络中的真相</span><i>2:12</i></a><a href='#ch-4'><b>04</b><span>凡有接触必留痕迹：物质交换原理</span><i>2:55</i></a><a href='#ch-5'><b>05</b><span>尸体上的伪装与死亡时间推断</span><i>3:41</i></a><a href='#ch-6'><b>06</b><span>第一现场：真相的原始坐标</span><i>4:23</i></a><a href='#ch-7'><b>07</b><span>反常必有妖：不和谐细节的觉察</span><i>5:11</i></a><a href='#ch-8'><b>08</b><span>谎言破绽：时间与细节的碰撞</span><i>5:51</i></a><a href='#ch-9'><b>09</b><span>兔子不吃窝边草：地理分布规律</span><i>6:38</i></a><a href='#ch-10'><b>10</b><span>数字时代：电子数据追踪</span><i>7:30</i></a></div><a class='watch' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=0'>原视频 ↗</a></nav>
+
+<section class='chapter' id='ch-1'>
+  <header class='ch-head'>
+    <span class='ch-no'>01</span>
+    <div class='ch-titles'>
+      <h3>远抛近埋：凶手的心理矛盾</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=0'>⏱ 0:00 – 1:12</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>凶手在处理尸体时为何会陷入矛盾心理？</span></li><li><span class='mk'>?</span><span>远抛和近埋分别反映了什么心理？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>远抛时试图通过空间距离切断与受害者的联系，但可能暴露运输工具。</span></li><li><span class='mk'>!</span><span>近埋时选择熟悉环境，但可能因体力消耗和风险暴露。</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>远抛：利用空间距离切断逻辑关联，干扰警方排查。</span></li><li><span class='mk'>•</span><span>近埋：选择熟悉环境，便于操作和监控。</span></li><li><span class='mk'>•</span><span>凶手行为受焦虑和安全感驱动。</span></li></ul><h4>结论</h4><p class='concl'>远抛近埋是凶手基于心理安全感的两种极端选择，反映其逃避与依赖的矛盾。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>当凶手具备运输工具时，他会产生一种强烈的逃避动机，试图将证据丢弃在完全不属于自己社交圈的陌生区域。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=17'>⏱ 0:17</a></footer></blockquote><blockquote><p>在高度焦虑状态下，人会潜意识里选择自己感到安全的地方，这些地方通常是凶手的势力范围。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=37'>⏱ 0:37</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>对比 · 对比远抛与近埋两种行为模式，展示其背后的心理动机和空间选择差异。</span></figcaption><div class='svg-wrap'><svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff8a3d"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6e6e73"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">远抛近埋：凶手的心理矛盾</text>
+  <text x="360" y="54" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">时间段：0.06s - 71.94s ｜ 行为模式对比</text>
+
+  <!-- 分隔线 -->
+  <line x1="40" y1="66" x2="680" y2="66" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 表头区域 -->
+  <rect x="40" y="80" width="200" height="36" rx="6" fill="#f5f5f7"/>
+  <rect x="250" y="80" width="210" height="36" rx="6" fill="#0071e3"/>
+  <rect x="470" y="80" width="210" height="36" rx="6" fill="#ff8a3d"/>
+
+  <text x="140" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">对比维度</text>
+  <text x="355" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">远抛（空间逃避）</text>
+  <text x="575" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">近埋（熟悉依赖）</text>
+
+  <!-- 行1：空间选择 -->
+  <rect x="40" y="126" width="200" height="52" rx="6" fill="#f5f5f7"/>
+  <rect x="250" y="126" width="210" height="52" rx="6" fill="#ffffff" stroke="#d2d2d7"/>
+  <rect x="470" y="126" width="210" height="52" rx="6" fill="#ffffff" stroke="#d2d2d7"/>
+
+  <text x="140" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">空间选择</text>
+  <text x="355" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">陌生区域，远离社交圈</text>
+  <text x="575" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">熟悉环境，势力范围</text>
+
+  <!-- 行2：心理动机 -->
+  <rect x="40" y="188" width="200" height="52" rx="6" fill="#f5f5f7"/>
+  <rect x="250" y="188" width="210" height="52" rx="6" fill="#ffffff" stroke="#d2d2d7"/>
+  <rect x="470" y="188" width="210" height="52" rx="6" fill="#ffffff" stroke="#d2d2d7"/>
+
+  <text x="140" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">心理动机</text>
+  <text x="355" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">逃避动机，切断逻辑关联</text>
+  <text x="575" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">焦虑中寻求安全感</text>
+
+  <!-- 行3：核心逻辑 -->
+  <rect x="40" y="250" width="200" height="52" rx="6" fill="#f5f5f7"/>
+  <rect x="250" y="250" width="210" height="52" rx="6" fill="#ffffff" stroke="#d2d2d7"/>
+  <rect x="470" y="250" width="210" height="52" rx="6" fill="#ffffff" stroke="#d2d2d7"/>
+
+  <text x="140" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">核心逻辑</text>
+  <text x="355" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">干扰警方排查方向</text>
+  <text x="575" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">便于操作和监控</text>
+
+  <!-- 行4：风险暴露 -->
+  <rect x="40" y="312" width="200" height="52" rx="6" fill="#f5f5f7"/>
+  <rect x="250" y="312" width="210" height="52" rx="6" fill="#ffffff" stroke="#d2d2d7"/>
+  <rect x="470" y="312" width="210" height="52" rx="6" fill="#ffffff" stroke="#d2d2d7"/>
+
+  <text x="140" y="334" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">风险暴露</text>
+  <text x="355" y="334" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ff3b30">运输工具可能暴露</text>
+  <text x="575" y="334" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ff3b30">体力消耗与现场风险</text>
+
+  <!-- 底部结论 -->
+  <rect x="40" y="376" width="640" height="34" rx="8" fill="#f5f5f7"/>
+  <text x="360" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">结论：远抛近埋是凶手基于心理安全感的两种极端选择，反映其逃避与依赖的矛盾</text>
+
+  <!-- 箭头：远抛 → 焦虑驱动 -->
+  <line x1="250" y1="118" x2="250" y2="126" stroke="#0071e3" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <line x1="470" y1="118" x2="470" y2="126" stroke="#ff8a3d" stroke-width="2" marker-end="url(#arrowOrange)"/>
+
+  <!-- 中间连接箭头（矛盾心理） -->
+  <line x1="460" y1="104" x2="470" y2="104" stroke="#6e6e73" stroke-width="2" marker-end="url(#arrowGray)"/>
+  <text x="465" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">矛盾</text>
+
+  <!-- 底部关键引用标注 -->
+  <text x="60" y="420" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">引用：t=16.56s「逃避动机」；t=37.2s「焦虑中选安全处」</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-2'>
+  <header class='ch-head'>
+    <span class='ch-no'>02</span>
+    <div class='ch-titles'>
+      <h3>男人编织袋，女人行李箱：性别与抛尸方式</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=72'>⏱ 1:12 – 2:12</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>为什么抛尸时男人用编织袋、女人用行李箱？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>男性尸体可能超重导致行李箱损坏，需用编织袋。</span></li><li><span class='mk'>!</span><span>女性尸体较轻，行李箱更隐蔽。</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>女性尸体较轻，可塞进行李箱，拖行自然不引人怀疑。</span></li><li><span class='mk'>•</span><span>男性尸体较重，行李箱易损坏，编织袋更实用。</span></li><li><span class='mk'>•</span><span>这一细节可帮助侦查员初步画像凶手。</span></li></ul><h4>结论</h4><p class='concl'>抛尸工具的选择受受害者体型和重量影响，反映凶手的体力与运输手段。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>成年女性受害者由于骨架相对纤细、身体较轻，且死亡初期具有一定的可塑性，能够被塞进中大型行李箱中。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=72'>⏱ 1:12</a></footer></blockquote><blockquote><p>成年男性受害者往往体重超标、体型魁梧，普通的旅行箱难以容纳，且容易在运输过程中因超重导致轮子损毁或箱体破裂。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=92'>⏱ 1:32</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>对比 · 对比男女受害者尸体特征与抛尸工具选择，展示性别差异对作案方式的影响。</span></figcaption><div class='svg-wrap'><svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6e6e73"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="34" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="19" font-weight="bold" fill="#1d1d1f">男人编织袋，女人行李箱：性别与抛尸方式</text>
+  <text x="360" y="54" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">抛尸工具选择受受害者体型与重量影响，反映凶手体力与运输手段</text>
+
+  <!-- 分隔线 -->
+  <line x1="40" y1="66" x2="680" y2="66" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 左侧：行李箱（女性） -->
+  <rect x="50" y="90" width="280" height="250" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="190" y="118" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" fill="#0071e3">🧳 行李箱 · 女性受害者</text>
+
+  <!-- 行李箱图形 -->
+  <rect x="120" y="135" width="140" height="90" rx="12" fill="#ffffff" stroke="#0071e3" stroke-width="2.5"/>
+  <line x1="190" y1="135" x2="190" y2="145" stroke="#0071e3" stroke-width="2.5"/>
+  <rect x="175" y="145" width="30" height="8" rx="3" fill="#0071e3"/>
+  <line x1="160" y1="180" x2="220" y2="180" stroke="#d2d2d7" stroke-width="1.5"/>
+  <line x1="160" y1="195" x2="220" y2="195" stroke="#d2d2d7" stroke-width="1.5"/>
+  <line x1="160" y1="210" x2="220" y2="210" stroke="#d2d2d7" stroke-width="1.5"/>
+  <circle cx="175" cy="225" r="4" fill="#d2d2d7"/>
+  <circle cx="205" cy="225" r="4" fill="#d2d2d7"/>
+
+  <!-- 女性特征 -->
+  <text x="190" y="250" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">骨架纤细 · 身体较轻</text>
+  <text x="190" y="270" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">死亡初期具可塑性</text>
+  <text x="190" y="290" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">可塞入中大型行李箱</text>
+
+  <!-- 关键词标签 -->
+  <rect x="75" y="305" width="110" height="24" rx="12" fill="#e8f4fd"/>
+  <text x="130" y="321" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#0071e3">拖行自然不引人疑</text>
+
+  <rect x="195" y="305" width="110" height="24" rx="12" fill="#e8f4fd"/>
+  <text x="250" y="321" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#0071e3">隐蔽性高</text>
+
+  <!-- 右侧：编织袋（男性） -->
+  <rect x="390" y="90" width="280" height="250" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="530" y="118" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" fill="#ff8a3d">👜 编织袋 · 男性受害者</text>
+
+  <!-- 编织袋图形 -->
+  <path d="M 460 140 L 600 140 L 590 225 L 470 225 Z" fill="#ffffff" stroke="#ff8a3d" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M 480 140 Q 530 115 580 140" fill="none" stroke="#ff8a3d" stroke-width="2.5"/>
+  <line x1="490" y1="165" x2="570" y2="165" stroke="#d2d2d7" stroke-width="1.5"/>
+  <line x1="490" y1="180" x2="570" y2="180" stroke="#d2d2d7" stroke-width="1.5"/>
+  <line x1="490" y1="195" x2="570" y2="195" stroke="#d2d2d7" stroke-width="1.5"/>
+  <line x1="490" y1="210" x2="570" y2="210" stroke="#d2d2d7" stroke-width="1.5"/>
+
+  <!-- 男性特征 -->
+  <text x="530" y="250" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">体重超标 · 体型魁梧</text>
+  <text x="530" y="270" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">普通旅行箱难以容纳</text>
+  <text x="530" y="290" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">超重易致轮毁箱破</text>
+
+  <!-- 关键词标签 -->
+  <rect x="415" y="305" width="110" height="24" rx="12" fill="#fff3e8"/>
+  <text x="470" y="321" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#ff8a3d">编织袋更实用</text>
+
+  <rect x="535" y="305" width="110" height="24" rx="12" fill="#fff3e8"/>
+  <text x="590" y="321" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#ff8a3d">承重更强</text>
+
+  <!-- 中间对比箭头 -->
+  <line x1="335" y1="200" x2="385" y2="200" stroke="#6e6e73" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="385" y1="230" x2="335" y2="230" stroke="#6e6e73" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 底部结论区 -->
+  <rect x="50" y="355" width="620" height="50" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="360" y="375" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">侦查启示</text>
+  <text x="360" y="395" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">抛尸工具选择反映凶手体力与运输手段 → 可初步画像凶手特征</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-3'>
+  <header class='ch-head'>
+    <span class='ch-no'>03</span>
+    <div class='ch-titles'>
+      <h3>命案必先查熟人：社交网络中的真相</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=132'>⏱ 2:12 – 2:55</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>为什么命案中熟人作案比例高？</span></li><li><span class='mk'>?</span><span>如何通过社交网络锁定嫌疑人？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>忽略熟人关系，盲目排查陌生人。</span></li><li><span class='mk'>!</span><span>被表面证据误导，忽视深层利益冲突。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>由内向外排查受害者社交圈。</li><li>寻找近期发生激烈冲突或重大利益交集的人。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>致命冲突源于情感、债务、利益纠葛。</span></li><li><span class='mk'>•</span><span>凶手进入室内需要合法入场券，即受害者信任。</span></li><li><span class='mk'>•</span><span>最残忍的凶手往往来自最亲近的人。</span></li></ul><h4>结论</h4><p class='concl'>绝大多数室内杀人案真相隐藏在受害者通讯录中，熟人作案是高频规律。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>在绝大多数室内杀人案中，真相往往隐藏在受害者的通讯录里，这就是熟人作案的高频规律。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=132'>⏱ 2:12</a></footer></blockquote><blockquote><p>由内向外，通过对受害者社交网络进行地毯式梳理，寻找那个近期与其发生激烈冲突或有重大利益交集的人。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=155'>⏱ 2:35</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示熟人作案的高频规律，强调社交网络分析在案件侦破中的核心地位。</span></figcaption><div class='svg-wrap'><svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1d1d1f"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0071e3"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="34" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">命案必先查熟人：社交网络中的真相</text>
+  <line x1="180" y1="46" x2="540" y2="46" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 左侧：社交网络关系图 -->
+  <text x="80" y="76" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">社交网络关系图</text>
+
+  <!-- 中心节点：受害者 -->
+  <circle cx="100" cy="150" r="26" fill="#1d1d1f"/>
+  <text x="100" y="155" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#ffffff" font-weight="bold">受害者</text>
+
+  <!-- 外围节点：亲友、同事、邻居、债主、伴侣 -->
+  <circle cx="40" cy="90" r="18" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="40" y="95" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">亲友</text>
+
+  <circle cx="160" cy="80" r="18" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="160" y="85" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">同事</text>
+
+  <circle cx="30" cy="220" r="18" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="30" y="225" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">邻居</text>
+
+  <circle cx="170" cy="230" r="18" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="170" y="235" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">债主</text>
+
+  <!-- 高亮可疑节点：伴侣 -->
+  <circle cx="100" cy="260" r="20" fill="#ff8a3d" stroke="#ff3b30" stroke-width="2.5"/>
+  <text x="100" y="265" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#ffffff" font-weight="bold">伴侣</text>
+
+  <!-- 连线：由内向外 -->
+  <line x1="85" y1="130" x2="50" y2="103" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="120" y1="135" x2="148" y2="95" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="80" y1="168" x2="45" y2="207" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="120" y1="170" x2="155" y2="215" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="100" y1="176" x2="100" y2="238" stroke="#ff3b30" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- 标注：由内向外排查 -->
+  <text x="100" y="305" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">由内向外排查社交圈</text>
+
+  <!-- 右侧：关键要点与陷阱 -->
+  <rect x="280" y="70" width="410" height="310" rx="8" fill="#f5f5f7"/>
+
+  <!-- 要点 -->
+  <text x="300" y="98" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">核心要点</text>
+  <circle cx="308" cy="118" r="4" fill="#0071e3"/>
+  <text x="320" y="123" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">致命冲突源于情感、债务、利益纠葛</text>
+  <circle cx="308" cy="146" r="4" fill="#0071e3"/>
+  <text x="320" y="151" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">凶手进入室内需要合法入场券——受害者信任</text>
+  <circle cx="308" cy="174" r="4" fill="#0071e3"/>
+  <text x="320" y="179" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">最残忍的凶手往往来自最亲近的人</text>
+
+  <!-- 步骤 -->
+  <text x="300" y="210" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">侦破步骤</text>
+  <text x="308" y="232" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">① 由内向外排查受害者社交圈</text>
+  <text x="308" y="254" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">② 寻找近期激烈冲突或重大利益交集者</text>
+
+  <!-- 陷阱 -->
+  <text x="300" y="286" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#ff3b30">常见陷阱</text>
+  <text x="308" y="308" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">⚠ 忽略熟人关系，盲目排查陌生人</text>
+  <text x="308" y="330" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">⚠ 被表面证据误导，忽视深层利益冲突</text>
+
+  <!-- 结论 -->
+  <rect x="280" y="348" width="410" height="32" rx="6" fill="#0071e3"/>
+  <text x="485" y="369" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">结论：真相藏在通讯录里，熟人作案是高频规律</text>
+
+  <!-- 底部时间标注 -->
+  <text x="360" y="408" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">时间段：132.24s - 174.66s</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-4'>
+  <header class='ch-head'>
+    <span class='ch-no'>04</span>
+    <div class='ch-titles'>
+      <h3>凡有接触必留痕迹：物质交换原理</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=175'>⏱ 2:55 – 3:41</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>为什么说凡有接触必留痕迹？</span></li><li><span class='mk'>?</span><span>现代刑侦技术如何利用物质交换原理？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>认为可以完全清除痕迹，忽视微观证据。</span></li><li><span class='mk'>!</span><span>只关注宏观证据，忽略微量物证。</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>接触会导致痕迹交换，如指纹、纤维、气味。</span></li><li><span class='mk'>•</span><span>现代技术可追踪线粒体DNA和电子脉冲。</span></li><li><span class='mk'>•</span><span>罪犯如同在雪地上行走，每一步都留下痕迹。</span></li></ul><h4>结论</h4><p class='concl'>物质交换是双向的，现代技术可追踪微小痕迹，罪犯难以完全隐藏。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>凡有接触必留痕迹，犯罪行为人一旦进入现场，物理世界的平衡就会被打破。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=175'>⏱ 2:55</a></footer></blockquote><blockquote><p>这种交换是双向的，且往往是微观的。现代刑侦技术已经从宏观的指纹脚印进化到了对线粒体DNA和电子脉冲的追踪。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=201'>⏱ 3:21</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>因果 · 展示接触与痕迹之间的因果链，强调双向交换的必然性。</span></figcaption><div class='svg-wrap'><svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff8a3d"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题区域 -->
+  <text x="360" y="32" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="bold" fill="#1d1d1f">凡有接触必留痕迹：物质交换原理</text>
+  <text x="360" y="52" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">因果链路 · 双向交换的必然性</text>
+
+  <!-- 因果链主流程：接触 → 痕迹交换 → 微观证据 → 现代追踪 -->
+  <!-- 节点1：接触 -->
+  <rect x="40" y="100" width="130" height="60" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="105" y="128" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">接触</text>
+  <text x="105" y="148" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">进入现场</text>
+
+  <!-- 箭头1 -->
+  <line x1="170" y1="130" x2="220" y2="130" stroke="#0071e3" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- 节点2：痕迹交换 -->
+  <rect x="225" y="100" width="150" height="60" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="300" y="122" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">痕迹交换</text>
+  <text x="300" y="142" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">指纹·纤维·气味</text>
+
+  <!-- 箭头2 -->
+  <line x1="375" y1="130" x2="425" y2="130" stroke="#0071e3" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- 节点3：微观证据 -->
+  <rect x="430" y="100" width="130" height="60" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="495" y="128" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">微观证据</text>
+  <text x="495" y="148" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">微量物证</text>
+
+  <!-- 箭头3 -->
+  <line x1="560" y1="130" x2="610" y2="130" stroke="#0071e3" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- 节点4：现代追踪 -->
+  <rect x="615" y="100" width="90" height="60" rx="10" fill="#0071e3"/>
+  <text x="660" y="128" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">现代追踪</text>
+  <text x="660" y="148" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#ffffff">技术手段</text>
+
+  <!-- 双向交换示意（下方左侧） -->
+  <rect x="40" y="200" width="280" height="110" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="180" y="224" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">双向交换示意</text>
+  <!-- 双向箭头 -->
+  <line x1="80" y1="260" x2="240" y2="260" stroke="#ff8a3d" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+  <line x1="240" y1="280" x2="80" y2="280" stroke="#ff8a3d" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+  <text x="160" y="252" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">罪犯 → 现场</text>
+  <text x="160" y="300" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">现场 → 罪犯</text>
+
+  <!-- 关键引用（下方右侧） -->
+  <rect x="340" y="200" width="340" height="110" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="510" y="224" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">关键原理</text>
+  <text x="360" y="248" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">• 接触打破物理平衡，必然留痕</text>
+  <text x="360" y="270" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">• 交换双向且微观，难以完全清除</text>
+  <text x="360" y="292" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">• 追踪线粒体DNA与电子脉冲</text>
+
+  <!-- 底部警示 -->
+  <rect x="40" y="330" width="640" height="60" rx="10" fill="#fff5f5" stroke="#ff3b30" stroke-width="1.5"/>
+  <text x="360" y="354" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#ff3b30">认知陷阱</text>
+  <text x="360" y="376" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">✗ 认为可完全清除痕迹 · ✗ 只关注宏观证据而忽略微量物证</text>
+
+  <!-- 雪地隐喻 -->
+  <text x="360" y="410" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">“罪犯如同在雪地上行走，每一步都留下痕迹”</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-5'>
+  <header class='ch-head'>
+    <span class='ch-no'>05</span>
+    <div class='ch-titles'>
+      <h3>尸体上的伪装与死亡时间推断</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=221'>⏱ 3:41 – 4:23</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>凶手如何干扰死亡时间推断？</span></li><li><span class='mk'>?</span><span>法医如何识破伪装？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>利用空调、电热毯等改变尸体温度。</span></li><li><span class='mk'>!</span><span>仅依赖尸温判断，忽视环境因素。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>观察尸温下降和腐败过程。</li><li>结合昆虫发育周期、眼球晶状体变化、电表刻度等交叉验证。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>凶手可能用空调降温或电热毯升温。</span></li><li><span class='mk'>•</span><span>法医综合多种指标，不只看尸温。</span></li><li><span class='mk'>•</span><span>物理手段无法完全操纵真相。</span></li></ul><h4>结论</h4><p class='concl'>法医通过多维度交叉验证，能识破凶手对死亡时间的伪装。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>聪明的凶手会利用物理手段来扰乱尸温，比如在夏季作案后将空调开着，或在冬季使用电热毯给尸体加温。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=223'>⏱ 3:43</a></footer></blockquote><blockquote><p>法医的智慧在于交叉验证，经验丰富的法医不会只盯着尸温看，他们会结合蝇蛆的发育周期、眼球晶状体的化学变化甚至室内电表跳动的刻度来综合研判。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=243'>⏱ 4:03</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>时间线 · 展示凶手如何干扰死亡时间推断，以及法医如何通过交叉验证还原真相。</span></figcaption><div class='svg-wrap'><svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1d1d1f"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="32" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">尸体上的伪装与死亡时间推断</text>
+  <text x="360" y="52" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">法医通过多维度交叉验证，识破凶手对死亡时间的伪装</text>
+
+  <!-- 时间轴主线 -->
+  <line x1="60" y1="180" x2="660" y2="180" stroke="#d2d2d7" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 时间刻度节点 -->
+  <!-- 节点1：案发时间 -->
+  <circle cx="120" cy="180" r="6" fill="#0071e3"/>
+  <text x="120" y="165" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#0071e3">案发</text>
+  <text x="120" y="205" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">凶手作案</text>
+
+  <!-- 节点2：伪装手段 -->
+  <circle cx="260" cy="180" r="6" fill="#ff8a3d"/>
+  <text x="260" y="165" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#ff8a3d">伪装</text>
+  <text x="260" y="205" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">空调降温 / 电热毯升温</text>
+
+  <!-- 节点3：初步尸温判断 -->
+  <circle cx="400" cy="180" r="6" fill="#ff3b30"/>
+  <text x="400" y="165" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#ff3b30">误判</text>
+  <text x="400" y="205" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">仅看尸温 → 时间偏差</text>
+
+  <!-- 节点4：交叉验证 -->
+  <circle cx="540" cy="180" r="6" fill="#34c759"/>
+  <text x="540" y="165" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#34c759">识破</text>
+  <text x="540" y="205" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">多维指标交叉验证</text>
+
+  <!-- 节点5：真相还原 -->
+  <circle cx="640" cy="180" r="6" fill="#0071e3"/>
+  <text x="640" y="165" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#0071e3">真相</text>
+  <text x="640" y="205" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">还原死亡时间</text>
+
+  <!-- 温度变化曲线示意（上方区域） -->
+  <text x="360" y="85" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">尸体温度变化曲线（受伪装干扰）</text>
+
+  <!-- 坐标轴 -->
+  <line x1="100" y1="130" x2="620" y2="130" stroke="#d2d2d7" stroke-width="1"/>
+  <line x1="100" y1="130" x2="100" y2="100" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 正常尸温下降曲线（虚线） -->
+  <path d="M100,105 Q200,115 300,120 Q400,124 500,127 Q560,128 620,129" fill="none" stroke="#6e6e73" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="620" y="125" text-anchor="end" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">正常下降</text>
+
+  <!-- 被干扰的尸温曲线（实线） -->
+  <path d="M100,105 Q150,108 200,112 Q250,118 300,115 Q350,110 400,113 Q450,118 500,120 Q560,123 620,126" fill="none" stroke="#ff3b30" stroke-width="2.5"/>
+  <text x="620" y="140" text-anchor="end" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#ff3b30">被干扰（波动）</text>
+
+  <!-- 干扰标记 -->
+  <text x="300" y="102" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#ff8a3d">空调/电热毯干扰</text>
+
+  <!-- 下方交叉验证区域 -->
+  <rect x="60" y="240" width="600" height="140" rx="8" fill="#f5f5f7"/>
+
+  <text x="360" y="265" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">法医交叉验证手段</text>
+
+  <!-- 三个验证维度卡片 -->
+  <rect x="80" y="280" width="160" height="80" rx="6" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <circle cx="160" cy="300" r="4" fill="#0071e3"/>
+  <text x="160" y="320" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">昆虫发育周期</text>
+  <text x="160" y="340" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">蝇蛆生长阶段</text>
+
+  <rect x="270" y="280" width="160" height="80" rx="6" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <circle cx="350" cy="300" r="4" fill="#00b8d9"/>
+  <text x="350" y="320" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">眼球晶状体</text>
+  <text x="350" y="340" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">化学变化分析</text>
+
+  <rect x="460" y="280" width="160" height="80" rx="6" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <circle cx="540" cy="300" r="4" fill="#34c759"/>
+  <text x="540" y="320" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">电表刻度</text>
+  <text x="540" y="340" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">用电量异常</text>
+
+  <!-- 箭头连接 -->
+  <line x1="240" y1="320" x2="266" y2="320" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <line x1="430" y1="320" x2="456" y2="320" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- 底部结论 -->
+  <text x="360" y="395" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">结论：物理手段无法完全操纵真相，多维度交叉验证还原死亡时间</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-6'>
+  <header class='ch-head'>
+    <span class='ch-no'>06</span>
+    <div class='ch-titles'>
+      <h3>第一现场：真相的原始坐标</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=263'>⏱ 4:23 – 5:10</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>为什么第一现场至关重要？</span></li><li><span class='mk'>?</span><span>如何通过现场证据还原案件？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>被伪装现场误导，忽视第一现场。</span></li><li><span class='mk'>!</span><span>忽略现场细节，如血迹形态、拖拽痕迹。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>寻找第一现场。</li><li>分析喷溅血迹、拖拽痕迹、破碎物件等。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>发现尸体的地方往往是谎言，杀人的地方才是真相。</span></li><li><span class='mk'>•</span><span>血迹形态可揭示凶手手法和身高。</span></li><li><span class='mk'>•</span><span>现场证据揭示凶手与空间的关系。</span></li></ul><h4>结论</h4><p class='concl'>第一现场包含关键动力学证据，锁定它等于完成案件拼图的一大半。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>发现尸体的地方往往是谎言，杀人的地方才是真相。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=263'>⏱ 4:23</a></footer></blockquote><blockquote><p>第一现场包含着最关键的动力学证据，墙上的喷溅血迹可以告诉你凶手的手法，地上的拖拽痕迹能暴露凶手的体力。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=283'>⏱ 4:43</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 强调第一现场的重要性，展示现场证据与凶手行为的关系。</span></figcaption><div class='svg-wrap'><svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+<polygon points="0 0, 10 3.5, 0 7" fill="#d2d2d7"/>
+</marker>
+<marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+<polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+</marker>
+</defs>
+
+<!-- 背景 -->
+<rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+<!-- 标题区 -->
+<text x="360" y="34" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">第一现场：真相的原始坐标</text>
+<text x="360" y="54" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">时间段 263.28s - 310.29s</text>
+
+<!-- 核心概念卡片（中央） -->
+<rect x="255" y="72" width="210" height="56" rx="10" fill="#0071e3"/>
+<text x="360" y="96" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">第一现场</text>
+<text x="360" y="116" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#ffffff">杀人的地方才是真相</text>
+
+<!-- 左侧：抛尸现场（谎言） -->
+<rect x="40" y="72" width="160" height="56" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+<text x="120" y="96" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#6e6e73">抛尸现场</text>
+<text x="120" y="116" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#ff3b30">往往是谎言</text>
+
+<!-- 左侧到中心连线 -->
+<line x1="200" y1="100" x2="255" y2="100" stroke="#d2d2d7" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="228" y="92" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">误导</text>
+
+<!-- 右侧：关键证据（动力学证据） -->
+<rect x="520" y="72" width="160" height="56" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+<text x="600" y="96" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">关键证据</text>
+<text x="600" y="116" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#0071e3">动力学证据</text>
+
+<!-- 中心到右侧连线 -->
+<line x1="465" y1="100" x2="520" y2="100" stroke="#0071e3" stroke-width="2" marker-end="url(#arrowBlue)"/>
+<text x="492" y="92" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#0071e3">包含</text>
+
+<!-- 证据子卡片（右侧下方） -->
+<rect x="520" y="148" width="160" height="40" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+<text x="600" y="172" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">喷溅血迹 → 手法</text>
+
+<rect x="520" y="198" width="160" height="40" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+<text x="600" y="222" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">拖拽痕迹 → 体力</text>
+
+<rect x="520" y="248" width="160" height="40" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+<text x="600" y="272" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">破碎物件 → 冲突</text>
+
+<!-- 证据子卡片连线 -->
+<line x1="600" y1="128" x2="600" y2="148" stroke="#d2d2d7" stroke-width="1.5"/>
+<line x1="600" y1="188" x2="600" y2="198" stroke="#d2d2d7" stroke-width="1.5"/>
+<line x1="600" y1="238" x2="600" y2="248" stroke="#d2d2d7" stroke-width="1.5"/>
+
+<!-- 下方：调查步骤 -->
+<rect x="40" y="310" width="200" height="90" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+<text x="140" y="334" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">调查步骤</text>
+<text x="140" y="356" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">① 寻找第一现场</text>
+<text x="140" y="378" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">② 分析血迹/拖痕/碎物</text>
+
+<!-- 下方：陷阱警示 -->
+<rect x="260" y="310" width="200" height="90" rx="10" fill="#fff5f5" stroke="#ff3b30" stroke-width="1.5"/>
+<text x="360" y="334" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#ff3b30">陷阱警示</text>
+<text x="360" y="356" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">⚠ 被伪装现场误导</text>
+<text x="360" y="378" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">⚠ 忽略血迹/拖痕细节</text>
+
+<!-- 下方：结论 -->
+<rect x="480" y="310" width="200" height="90" rx="10" fill="#f0f7f0" stroke="#34c759" stroke-width="1.5"/>
+<text x="580" y="334" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#34c759">结论</text>
+<text x="580" y="356" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">锁定第一现场</text>
+<text x="580" y="378" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">= 完成拼图一大半</text>
+
+<!-- 中心到下方步骤连线 -->
+<line x1="360" y1="128" x2="140" y2="310" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="220" y="230" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73" transform="rotate(-35,220,230)">行动</text>
+
+<line x1="360" y1="128" x2="360" y2="310" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="378" y="230" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">警惕</text>
+
+<line x1="360" y1="128" x2="580" y2="310" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="500" y="230" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73" transform="rotate(35,500,230)">目标</text>
+
+<!-- 底部引用 -->
+<rect x="40" y="148" width="160" height="140" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+<text x="120" y="170" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">核心引用</text>
+<text x="120" y="194" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">“发现尸体的地方</text>
+<text x="120" y="214" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">往往是谎言，</text>
+<text x="120" y="234" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">杀人的地方</text>
+<text x="120" y="254" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">才是真相。”</text>
+<text x="120" y="278" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#0071e3">— 263.28s</text>
+
+<!-- 左侧到中心下方连线 -->
+<line x1="120" y1="128" x2="120" y2="148" stroke="#d2d2d7" stroke-width="1.5"/>
+
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-7'>
+  <header class='ch-head'>
+    <span class='ch-no'>07</span>
+    <div class='ch-titles'>
+      <h3>反常必有妖：不和谐细节的觉察</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=311'>⏱ 5:11 – 5:51</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>如何通过反常细节识破伪装？</span></li><li><span class='mk'>?</span><span>为什么伪装往往用力过猛？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>伪装成入室盗窃但行为不符。</span></li><li><span class='mk'>!</span><span>过度表演导致逻辑缺失。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>观察行为与情境的错位。</li><li>寻找用力过猛的伪装痕迹。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>行为与情境不符是最大突破口。</span></li><li><span class='mk'>•</span><span>犯罪分子缺乏真实受害体验，伪装易失真。</span></li><li><span class='mk'>•</span><span>侦查员需找出穿帮镜头。</span></li></ul><h4>结论</h4><p class='concl'>反常细节是突破口，伪装者因缺乏真实体验而漏洞百出。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>当报案人声称家中遭遇暴力抢劫，但作为女主人的他却能精准地记住每一种面额缺失的钞票，甚至在极度悲痛中依然保持着精致的妆容，这种行为与情境的错位就是最大的突破口。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=311'>⏱ 5:11</a></footer></blockquote><blockquote><p>犯罪分子为了掩盖真相，往往会刻意制造一些符合他们认知的假象，但由于他们缺乏真实的受害体验，这种伪装往往会显得用力过猛。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=331'>⏱ 5:31</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>风险决策 · 展示反常细节作为风险信号，帮助识别伪装和谎言。</span></figcaption><div class='svg-wrap'><svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#6e6e73"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#ff3b30"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="30" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="bold" fill="#1d1d1f">反常必有妖：不和谐细节的觉察 — 风险检查表</text>
+  <line x1="80" y1="42" x2="640" y2="42" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 核心信号框 -->
+  <rect x="40" y="55" width="640" height="38" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="360" y="79" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">核心信号：行为与情境不符 → 最大突破口</text>
+
+  <!-- 左侧：误区警示区 -->
+  <rect x="40" y="108" width="300" height="270" rx="8" fill="#fff8f6" stroke="#ff3b30" stroke-width="1.5"/>
+  <text x="190" y="132" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#ff3b30">⚠ 常见伪装误区</text>
+
+  <!-- 误区1 -->
+  <rect x="58" y="148" width="264" height="52" rx="5" fill="#ffffff" stroke="#ff3b30" stroke-width="1"/>
+  <text x="68" y="166" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">误区一：伪装成入室盗窃</text>
+  <text x="68" y="186" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">但行为不符——女主人精准记住</text>
+  <text x="68" y="200" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">每种面额缺失钞票数量</text>
+
+  <!-- 误区2 -->
+  <rect x="58" y="212" width="264" height="52" rx="5" fill="#ffffff" stroke="#ff3b30" stroke-width="1"/>
+  <text x="68" y="230" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">误区二：过度表演致逻辑缺失</text>
+  <text x="68" y="250" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">极度悲痛中仍保持精致妆容</text>
+  <text x="68" y="264" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">——情绪与细节自相矛盾</text>
+
+  <!-- 误区3 -->
+  <rect x="58" y="276" width="264" height="52" rx="5" fill="#ffffff" stroke="#ff3b30" stroke-width="1"/>
+  <text x="68" y="294" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">误区三：缺乏真实受害体验</text>
+  <text x="68" y="314" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">伪装按“认知中的受害”表演</text>
+  <text x="68" y="328" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">而非真实反应，必然失真</text>
+
+  <!-- 右侧：决策树 -->
+  <rect x="360" y="108" width="320" height="270" rx="8" fill="#f0f7ff" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="520" y="132" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="15" font-weight="bold" fill="#0071e3">侦查决策树</text>
+
+  <!-- 决策起点 -->
+  <circle cx="520" cy="158" r="14" fill="#0071e3"/>
+  <text x="520" y="163" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">?</text>
+  <text x="520" y="188" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">观察行为与情境</text>
+  <text x="520" y="204" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">是否存在错位？</text>
+
+  <!-- 分支线 -->
+  <line x1="520" y1="210" x2="520" y2="228" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- 是分支 -->
+  <line x1="520" y1="228" x2="440" y2="250" stroke="#ff3b30" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+  <text x="470" y="242" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#ff3b30" font-weight="bold">是</text>
+
+  <!-- 否分支 -->
+  <line x1="520" y1="228" x2="600" y2="250" stroke="#34c759" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <text x="570" y="242" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#34c759" font-weight="bold">否</text>
+
+  <!-- 是结果 -->
+  <rect x="380" y="252" width="120" height="52" rx="5" fill="#ffffff" stroke="#ff3b30" stroke-width="1.2"/>
+  <text x="440" y="272" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#ff3b30">发现穿帮镜头</text>
+  <text x="440" y="292" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">深入追问细节</text>
+
+  <!-- 否结果 -->
+  <rect x="540" y="252" width="120" height="52" rx="5" fill="#ffffff" stroke="#34c759" stroke-width="1.2"/>
+  <text x="600" y="272" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#34c759">行为一致</text>
+  <text x="600" y="292" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">继续常规排查</text>
+
+  <!-- 底部结论 -->
+  <rect x="40" y="390" width="640" height="26" rx="4" fill="#1d1d1f"/>
+  <text x="360" y="407" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">结论：反常细节是突破口，伪装者因缺乏真实体验而漏洞百出</text>
+
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-8'>
+  <header class='ch-head'>
+    <span class='ch-no'>08</span>
+    <div class='ch-titles'>
+      <h3>谎言破绽：时间与细节的碰撞</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=351'>⏱ 5:51 – 6:38</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>如何通过细节戳破谎言？</span></li><li><span class='mk'>?</span><span>多维数据如何与供述碰撞？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>嫌疑人编造主干但无法构建细节。</span></li><li><span class='mk'>!</span><span>忽视时间差等微小矛盾。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>针对琐碎细节反复询问。</li><li>结合监控、通话记录、证人证言等交叉验证。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>嫌疑人难以精准构建所有细节。</span></li><li><span class='mk'>•</span><span>时间差是致命破绽。</span></li><li><span class='mk'>•</span><span>多维数据构成信息闭环。</span></li></ul><h4>结论</h4><p class='concl'>谎言体系在细节和多维数据面前土崩瓦解。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>警方在审讯中往往会针对一些琐碎到极点的细节反复询问，比如你那天中午吃的面条里有几个荷包蛋。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=372'>⏱ 6:12</a></footer></blockquote><blockquote><p>当警方的视频监控、通话记录和证人证言组成的多维数据网与嫌疑人的供述发生碰撞时，哪怕只是几分钟的时间差，也足以让整个虚构的谎言体系土崩瓦解。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=392'>⏱ 6:32</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>流程 · 展示审讯中如何通过细节追问和多维数据交叉验证戳破谎言。</span></figcaption><div class='svg-wrap'><svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6e6e73"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff8a3d"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="32" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="bold" fill="#1d1d1f">谎言破绽：时间与细节的碰撞</text>
+  <text x="360" y="52" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">审讯中细节追问与多维数据交叉验证流程</text>
+
+  <!-- 步骤1 方框 -->
+  <rect x="40" y="80" width="200" height="70" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="140" y="105" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">步骤一：细节追问</text>
+  <text x="140" y="125" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">针对琐碎细节反复询问</text>
+  <text x="140" y="142" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="#6e6e73">如“面条里有几个荷包蛋”</text>
+
+  <!-- 箭头 步骤1 -> 菱形 -->
+  <line x1="240" y1="115" x2="290" y2="115" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 菱形决策点 -->
+  <polygon points="340,80 400,115 340,150 280,115" fill="#fff8f0" stroke="#ff8a3d" stroke-width="2"/>
+  <text x="340" y="110" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#ff8a3d">细节</text>
+  <text x="340" y="127" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#ff8a3d">矛盾？</text>
+
+  <!-- 菱形 -> 步骤2 箭头 -->
+  <line x1="400" y1="115" x2="450" y2="115" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 步骤2 方框 -->
+  <rect x="450" y="80" width="230" height="70" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="565" y="105" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">步骤二：多维数据交叉验证</text>
+  <text x="565" y="125" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">监控 + 通话记录 + 证人证言</text>
+  <text x="565" y="142" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="#6e6e73">形成信息闭环</text>
+
+  <!-- 步骤2 -> 结论 箭头 -->
+  <line x1="565" y1="150" x2="565" y2="195" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- 结论框 -->
+  <rect x="380" y="195" width="300" height="55" rx="8" fill="#e8f4ff" stroke="#0071e3" stroke-width="2"/>
+  <text x="530" y="218" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">结论：谎言体系土崩瓦解</text>
+  <text x="530" y="238" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">时间差成为致命破绽</text>
+
+  <!-- 陷阱标注（左侧） -->
+  <rect x="40" y="200" width="200" height="80" rx="8" fill="#fff5f5" stroke="#ff3b30" stroke-width="1.5"/>
+  <text x="140" y="222" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#ff3b30">⚠ 嫌疑人陷阱</text>
+  <text x="140" y="244" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">编造主干但无法构建细节</text>
+  <text x="140" y="264" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">忽视时间差等微小矛盾</text>
+
+  <!-- 陷阱 -> 菱形 虚线 -->
+  <line x1="240" y1="240" x2="280" y2="130" stroke="#ff3b30" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+
+  <!-- 关键引用框（底部） -->
+  <rect x="40" y="300" width="640" height="105" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="60" y="322" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">📌 关键引用（t=371.58s / 391.53s）</text>
+  <text x="60" y="345" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">“警方会针对琐碎到极点的细节反复询问，比如面条里有几个荷包蛋。”</text>
+  <text x="60" y="368" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">“监控、通话记录、证人证言组成的多维数据网与供述碰撞时，</text>
+  <text x="60" y="388" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">哪怕只是几分钟的时间差，也足以让整个虚构的谎言体系土崩瓦解。”</text>
+
+  <!-- 菱形 -> 陷阱 反向虚线（可选） -->
+  <line x1="340" y1="150" x2="150" y2="200" stroke="#ff8a3d" stroke-width="1" stroke-dasharray="4,4" marker-end="url(#arrowOrange)" opacity="0.6"/>
+
+  <!-- 底部小标签 -->
+  <text x="360" y="415" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="#6e6e73">审讯策略 · 细节追问 + 多维数据交叉验证 → 戳破谎言</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-9'>
+  <header class='ch-head'>
+    <span class='ch-no'>09</span>
+    <div class='ch-titles'>
+      <h3>兔子不吃窝边草：地理分布规律</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=398'>⏱ 6:38 – 7:30</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>什么是地理分布规律？</span></li><li><span class='mk'>?</span><span>如何通过案件坐标定位罪犯？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>罪犯不会在家门口作案，也不会去完全陌生的地方。</span></li><li><span class='mk'>!</span><span>忽视中心空白区域。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>统计系列案件发生坐标。</li><li>计算中心点，空白区域即罪犯居住地。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>罪犯有心理安全距离。</span></li><li><span class='mk'>•</span><span>中心点代表居住或工作地。</span></li><li><span class='mk'>•</span><span>地理画像辅助侦查。</span></li></ul><h4>结论</h4><p class='concl'>基于数学模拟的地理画像能有效锁定流窜作案罪犯。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>对于系列案件如连环盗窃和抢劫，罪犯通常会有一个心理安全距离，他不会在自己家门口作案，也不会去完全陌生且遥远的地方。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=403'>⏱ 6:43</a></footer></blockquote><blockquote><p>通过对系列案件发生的坐标进行统计分析，侦查员往往能计算出中心点，这个点所代表的中心空白区域通常就是犯罪分子的居住地和工作地。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=409'>⏱ 6:49</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>数据 · 通过系列案件坐标统计分析，展示地理画像如何锁定罪犯居住地。</span></figcaption><div class='svg-wrap'><svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+  
+  <!-- 标题 -->
+  <text x="360" y="32" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">兔子不吃窝边草：地理分布规律</text>
+  <text x="360" y="52" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">系列案件坐标统计 → 中心点定位罪犯居住地</text>
+  
+  <!-- 左侧：案件坐标散点图 -->
+  <rect x="30" y="70" width="320" height="280" rx="8" fill="#f5f5f7"/>
+  <text x="190" y="95" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">案件坐标分布图</text>
+  
+  <!-- 地图网格线 -->
+  <line x1="60" y1="130" x2="320" y2="130" stroke="#d2d2d7" stroke-width="0.5"/>
+  <line x1="60" y1="180" x2="320" y2="180" stroke="#d2d2d7" stroke-width="0.5"/>
+  <line x1="60" y1="230" x2="320" y2="230" stroke="#d2d2d7" stroke-width="0.5"/>
+  <line x1="60" y1="280" x2="320" y2="280" stroke="#d2d2d7" stroke-width="0.5"/>
+  <line x1="60" y1="330" x2="320" y2="330" stroke="#d2d2d7" stroke-width="0.5"/>
+  
+  <!-- 案件坐标点（围绕中心空白区域分布） -->
+  <circle cx="100" cy="150" r="5" fill="#0071e3"/>
+  <circle cx="130" cy="140" r="5" fill="#0071e3"/>
+  <circle cx="160" cy="155" r="5" fill="#0071e3"/>
+  <circle cx="280" cy="145" r="5" fill="#0071e3"/>
+  <circle cx="300" cy="160" r="5" fill="#0071e3"/>
+  <circle cx="260" cy="170" r="5" fill="#0071e3"/>
+  <circle cx="90" cy="200" r="5" fill="#0071e3"/>
+  <circle cx="110" cy="215" r="5" fill="#0071e3"/>
+  <circle cx="140" cy="230" r="5" fill="#0071e3"/>
+  <circle cx="290" cy="220" r="5" fill="#0071e3"/>
+  <circle cx="310" cy="240" r="5" fill="#0071e3"/>
+  <circle cx="270" cy="250" r="5" fill="#0071e3"/>
+  <circle cx="120" cy="290" r="5" fill="#0071e3"/>
+  <circle cx="150" cy="310" r="5" fill="#0071e3"/>
+  <circle cx="180" cy="300" r="5" fill="#0071e3"/>
+  <circle cx="250" cy="305" r="5" fill="#0071e3"/>
+  <circle cx="280" cy="315" r="5" fill="#0071e3"/>
+  <circle cx="220" cy="290" r="5" fill="#0071e3"/>
+  
+  <!-- 中心空白区域（罪犯居住地） -->
+  <circle cx="190" cy="220" r="28" fill="none" stroke="#ff3b30" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="190" y="215" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#ff3b30">中心空白区</text>
+  <text x="190" y="232" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="#ff3b30">罪犯居住地</text>
+  
+  <!-- 中心点 -->
+  <circle cx="190" cy="220" r="4" fill="#ff3b30"/>
+  
+  <!-- 标注箭头：中心点 -->
+  <line x1="190" y1="220" x2="190" y2="180" stroke="#ff3b30" stroke-width="1.5" marker-end="url(#arrow)"/>
+  
+  <!-- 图例 -->
+  <circle cx="80" cy="360" r="5" fill="#0071e3"/>
+  <text x="92" y="364" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">案件坐标点</text>
+  <circle cx="200" cy="360" r="5" fill="#ff3b30"/>
+  <text x="212" y="364" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">中心点（居住地）</text>
+  
+  <!-- 右侧：分析流程 -->
+  <rect x="380" y="70" width="310" height="280" rx="8" fill="#f5f5f7"/>
+  <text x="535" y="95" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">地理画像分析流程</text>
+  
+  <!-- 步骤1 -->
+  <rect x="410" y="115" width="250" height="45" rx="6" fill="#ffffff" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="535" y="133" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#0071e3">步骤一</text>
+  <text x="535" y="151" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">统计系列案件发生坐标</text>
+  
+  <!-- 箭头 -->
+  <line x1="535" y1="160" x2="535" y2="178" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- 步骤2 -->
+  <rect x="410" y="180" width="250" height="45" rx="6" fill="#ffffff" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="535" y="198" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#0071e3">步骤二</text>
+  <text x="535" y="216" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">计算中心点（空白区域）</text>
+  
+  <!-- 箭头 -->
+  <line x1="535" y1="225" x2="535" y2="243" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- 步骤3 -->
+  <rect x="410" y="245" width="250" height="45" rx="6" fill="#ffffff" stroke="#34c759" stroke-width="1.5"/>
+  <text x="535" y="263" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#34c759">结论</text>
+  <text x="535" y="281" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">锁定罪犯居住地/工作地</text>
+  
+  <!-- 关键原理说明 -->
+  <rect x="410" y="305" width="250" height="35" rx="6" fill="#fff8e6" stroke="#ff8a3d" stroke-width="1"/>
+  <text x="535" y="327" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">心理安全距离：不在家门口作案</text>
+  
+  <!-- 底部结论 -->
+  <rect x="30" y="370" width="660" height="38" rx="6" fill="#e8f4fd"/>
+  <text x="360" y="394" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">基于数学模拟的地理画像能有效锁定流窜作案罪犯</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-10'>
+  <header class='ch-head'>
+    <span class='ch-no'>10</span>
+    <div class='ch-titles'>
+      <h3>数字时代：电子数据追踪</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=450'>⏱ 7:30 – 8:15</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>为什么说没有完全孤独的犯罪？</span></li><li><span class='mk'>?</span><span>电子数据如何帮助破案？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>认为可以切断所有数字联系。</span></li><li><span class='mk'>!</span><span>忽视数字足迹的持久性。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>收集基站定位、车载GPS、移动支付、天网监控等数据。</li><li>复原电子足迹，分析案发前后轨迹。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>电子信号构成网格，人人有数字分身。</span></li><li><span class='mk'>•</span><span>数据包括基站定位、支付记录、监控等。</span></li><li><span class='mk'>•</span><span>技术超越肉眼观察，精准定位轨迹。</span></li></ul><h4>结论</h4><p class='concl'>电子数据追踪已成为现代刑侦核心驱动力，罪犯难以完全隐藏。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>在二十一世纪，没有任何犯罪是完全孤独的，我们每个人都生活在由电子信号构成的网格中。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=450'>⏱ 7:30</a></footer></blockquote><blockquote><p>警方可以通过复原其电子足迹，精准勾画出他在案发前后的真实轨迹，这种超越肉眼观察的技术手段已经成为当今刑侦破案的核心驱动力。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1C8iFBbEB3/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=470'>⏱ 7:50</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>流程 · 展示电子数据如何构成数字分身，追踪罪犯轨迹。</span></figcaption><div class='svg-wrap'><svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6e6e73"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="32" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="bold" fill="#1d1d1f">数字时代：电子数据追踪</text>
+  <text x="360" y="52" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">电子信号网格 → 数字分身 → 轨迹复原 → 刑侦核心</text>
+
+  <!-- 顶部引言 -->
+  <rect x="40" y="68" width="640" height="36" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="360" y="91" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">“在二十一世纪，没有任何犯罪是完全孤独的——我们每个人都生活在电子信号构成的网格中”</text>
+
+  <!-- 数据源节点 -->
+  <rect x="60" y="130" width="180" height="70" rx="8" fill="#ffffff" stroke="#0071e3" stroke-width="2"/>
+  <text x="150" y="152" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">数据采集</text>
+  <text x="150" y="172" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">基站定位</text>
+  <text x="150" y="189" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">车载GPS · 移动支付 · 天网监控</text>
+
+  <!-- 箭头1 -->
+  <line x1="240" y1="165" x2="290" y2="165" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 数字分身节点 -->
+  <rect x="295" y="130" width="180" height="70" rx="8" fill="#ffffff" stroke="#00b8d9" stroke-width="2"/>
+  <text x="385" y="152" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#00b8d9">数字分身构建</text>
+  <text x="385" y="172" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">电子信号构成网格</text>
+  <text x="385" y="189" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">人人皆有数字足迹</text>
+
+  <!-- 箭头2 -->
+  <line x1="475" y1="165" x2="525" y2="165" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 轨迹复原节点 -->
+  <rect x="530" y="130" width="160" height="70" rx="8" fill="#ffffff" stroke="#ff8a3d" stroke-width="2"/>
+  <text x="610" y="152" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" font-weight="bold" fill="#ff8a3d">轨迹复原</text>
+  <text x="610" y="172" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">复原电子足迹</text>
+  <text x="610" y="189" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">分析案发前后轨迹</text>
+
+  <!-- 向下箭头 -->
+  <line x1="610" y1="200" x2="610" y2="245" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 决策菱形 -->
+  <polygon points="610,250 690,295 610,340 530,295" fill="#ffffff" stroke="#ff3b30" stroke-width="2"/>
+  <text x="610" y="290" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#ff3b30">能切断所有</text>
+  <text x="610" y="306" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#ff3b30">数字联系？</text>
+
+  <!-- 左侧分支：否 -->
+  <line x1="530" y1="295" x2="420" y2="295" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <text x="475" y="285" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#34c759">否</text>
+
+  <!-- 右侧分支：是 -->
+  <line x1="690" y1="295" x2="700" y2="295" stroke="#6e6e73" stroke-width="1.5"/>
+  <text x="698" y="285" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#ff3b30">是</text>
+  <text x="700" y="315" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="#6e6e73">陷阱</text>
+
+  <!-- 下方结论区 -->
+  <rect x="60" y="270" width="340" height="60" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="230" y="292" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">结论</text>
+  <text x="230" y="310" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">电子数据追踪已成为现代刑侦核心驱动力</text>
+  <text x="230" y="325" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">罪犯难以完全隐藏</text>
+
+  <!-- 左侧问题框 -->
+  <rect x="60" y="350" width="340" height="55" rx="8" fill="#ffffff" stroke="#00b8d9" stroke-width="1.5"/>
+  <text x="230" y="370" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#00b8d9">关键问题</text>
+  <text x="230" y="388" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">① 为什么没有完全孤独的犯罪？</text>
+  <text x="230" y="402" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">② 电子数据如何帮助破案？</text>
+
+  <!-- 右侧陷阱框 -->
+  <rect x="420" y="350" width="280" height="55" rx="8" fill="#ffffff" stroke="#ff3b30" stroke-width="1.5"/>
+  <text x="560" y="370" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="bold" fill="#ff3b30">常见陷阱</text>
+  <text x="560" y="388" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">✗ 认为可以切断所有数字联系</text>
+  <text x="560" y="402" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#1d1d1f">✗ 忽视数字足迹的持久性</text>
+
+  <!-- 底部引用 -->
+  <text x="360" y="415" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#6e6e73">“这种超越肉眼观察的技术手段已成为当今刑侦破案的核心驱动力”</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+
+<footer class='ft'>
+  
+  <p>由 vnotes 生成 · 2026-08-28 21:18 · 模型转写+大模型整理 · 图解为 AI 据章节内容动态生成</p>
+</footer>
+</div>
+<style data-vnotes-lightbox>
+.cover,.media img,.frame-item img,.svg-wrap{cursor:zoom-in}
+.vnotes-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(12,12,12,.88);padding:24px}
+.vnotes-lightbox.open{display:flex}
+.vnotes-lightbox figure{margin:0;max-width:96vw;max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:10px}
+.vnotes-lightbox img{max-width:96vw;max-height:84vh;object-fit:contain;border-radius:10px;background:#fff;box-shadow:0 24px 80px rgba(0,0,0,.45)}
+.vnotes-lightbox figcaption{max-width:min(820px,92vw);color:rgba(255,255,255,.82);font-size:13px;line-height:1.5;text-align:center}
+.vnotes-lightbox-close{position:fixed;top:18px;right:18px;width:40px;height:40px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-size:22px;line-height:1;cursor:pointer;backdrop-filter:blur(10px)}
+.vnotes-lightbox-close:hover{background:rgba(255,255,255,.2)}
+html.vnotes-lightbox-open{overflow:hidden}
+@media (max-width:640px){.vnotes-lightbox{padding:12px}.vnotes-lightbox-close{top:10px;right:10px}.vnotes-lightbox img{max-width:94vw;max-height:80vh}}
+</style>
+<script data-vnotes-lightbox>
+(function(){
+  if(window.__vnotesLightboxReady) return;
+  window.__vnotesLightboxReady = true;
+
+  function textFrom(node){
+    return node ? String(node.textContent || '').replace(/\s+/g, ' ').trim() : '';
+  }
+
+  function svgToImageSource(svg){
+    var clone = svg.cloneNode(true);
+    if(!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new XMLSerializer().serializeToString(clone));
+  }
+
+  function sourceFromTarget(target){
+    if(!target || !target.closest) return null;
+
+    var img = target.closest('img');
+    if(img && (img.classList.contains('cover') || img.closest('.hd-cover,.media,.frame-gallery,.frame-item'))){
+      var fig = img.closest('figure');
+      return {
+        src: img.currentSrc || img.src,
+        caption: textFrom(fig ? fig.querySelector('figcaption') : null) || img.alt || ''
+      };
+    }
+
+    var wrap = target.closest('.svg-wrap');
+    if(wrap){
+      var svg = wrap.querySelector('svg');
+      if(svg){
+        var figure = wrap.closest('figure');
+        return {
+          src: svgToImageSource(svg),
+          caption: textFrom(figure ? figure.querySelector('figcaption') : null)
+        };
+      }
+    }
+    return null;
+  }
+
+  var overlay = document.createElement('div');
+  overlay.className = 'vnotes-lightbox';
+  overlay.setAttribute('aria-hidden', 'true');
+  overlay.innerHTML = '<button type="button" class="vnotes-lightbox-close" aria-label="Close">&#215;</button><figure><img alt=""><figcaption></figcaption></figure>';
+  var image = overlay.querySelector('img');
+  var caption = overlay.querySelector('figcaption');
+
+  function close(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.remove('vnotes-lightbox-open');
+    image.removeAttribute('src');
+  }
+
+  function open(src, text){
+    image.src = src;
+    caption.textContent = text || '';
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('vnotes-lightbox-open');
+  }
+
+  overlay.addEventListener('click', function(event){
+    if(event.target === overlay || event.target.closest('.vnotes-lightbox-close')) close();
+  });
+  document.addEventListener('keydown', function(event){
+    if(event.key === 'Escape' && overlay.classList.contains('open')) close();
+  });
+  document.addEventListener('click', function(event){
+    if(event.defaultPrevented) return;
+    var source = sourceFromTarget(event.target);
+    if(!source || !source.src) return;
+    event.preventDefault();
+    open(source.src, source.caption);
+  });
+
+  document.addEventListener('DOMContentLoaded', function(){
+    if(!overlay.parentNode) document.body.appendChild(overlay);
+  });
+  if(document.body) document.body.appendChild(overlay);
+})();
+</script>
+</body></html>

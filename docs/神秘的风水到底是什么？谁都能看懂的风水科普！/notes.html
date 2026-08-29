@@ -1,0 +1,818 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>神秘的风水到底是什么？谁都能看懂的风水科普！ · 视频笔记</title>
+<style>
+:root{--bg:#fafafa;--card:#fff;--ink:#1a1a1a;--sub:#666;--line:#e0e0e0;--soft:#f5f5f5;
+--acc:#F5C518;--acc-dk:#1a1a1a;--acc-soft:#fff8e1;--warn:#ff6b35;--danger:#ff3b30;--ok:#2ecc71;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Segoe UI,Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;line-height:1.7;font-size:16px}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px 120px}
+/* header */
+.hd{display:flex;gap:24px;padding:40px 0 28px;border-bottom:3px solid var(--acc);flex-wrap:wrap}
+.hd-cover{flex:0 0 240px}.cover{width:100%;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:block}
+.hd-main{flex:1;min-width:280px}
+.hd-main h1{font-size:26px;line-height:1.3;margin:0 0 10px;letter-spacing:-.01em}
+.sub{display:flex;gap:14px;align-items:center;color:var(--sub);font-size:14px;flex-wrap:wrap}
+.up{font-weight:600;color:var(--ink)}
+.badges .chip{background:var(--acc-soft);border-radius:7px;padding:2px 9px;font-size:12px;margin-right:6px;color:var(--acc-dk);font-weight:500}
+.parts{margin:14px 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.parts .lbl{color:var(--sub);font-size:13px}.parts .p{font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--sub)}
+.parts .p.cur{background:var(--acc);color:var(--acc-dk);border-color:var(--acc);font-weight:600}
+.summary{margin:14px 0;padding:12px 16px;background:var(--acc-soft);border-left:4px solid var(--acc);border-radius:8px;font-size:15px;font-weight:500}
+.desc{color:var(--sub);font-size:13px;white-space:pre-wrap;margin:10px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tag-chip{font-size:12px;color:var(--acc-dk);background:var(--acc-soft);border:1px solid #f0e0a0;border-radius:7px;padding:3px 9px}
+/* toc */
+.toc{position:sticky;top:0;z-index:5;background:rgba(250,250,250,.93);backdrop-filter:saturate(180%) blur(12px);
+border-bottom:1px solid var(--line);margin:0 -20px 8px;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.toc-in{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;flex:1}
+.toc-in a{display:flex;flex-direction:column;min-width:84px;padding:6px 10px;border-radius:10px;text-decoration:none;color:var(--sub);font-size:12px;transition:.2s}
+.toc-in a:hover{background:var(--acc-soft)}
+.toc-in a b{color:var(--acc-dk);font-size:13px}.toc-in a i{font-style:normal;color:var(--sub);font-size:11px}
+.watch{font-size:13px;color:var(--acc-dk);text-decoration:none;white-space:nowrap;font-weight:600}
+.watch:hover{text-decoration:underline}
+/* chapter */
+.chapter{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;margin:18px 0;
+box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.ch-head{display:flex;gap:16px;align-items:flex-start;border-bottom:2px solid var(--acc);padding-bottom:14px;margin-bottom:16px}
+.ch-no{font-size:22px;font-weight:800;color:var(--acc-dk);flex:0 0 auto;background:var(--acc);padding:2px 10px;border-radius:8px}
+.ch-titles h3{margin:0;font-size:19px;letter-spacing:-.01em}
+.ch-meta{font-size:13px;color:var(--sub);margin-top:3px}
+.ts{color:var(--acc-dk);text-decoration:none;border-bottom:1px dotted var(--acc-dk);font-weight:500}
+.ts:hover{color:var(--warn);border-color:var(--warn)}
+.ch-body h4{font-size:14px;color:var(--sub);margin:18px 0 8px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.ch-body h4.warn{color:var(--warn)}
+.ch-body h5{font-size:15px;color:var(--ink);margin:0 0 4px;font-weight:600}
+.blk{list-style:none;padding:0;margin:0 0 6px}.blk li{display:flex;gap:10px;padding:4px 0;font-size:15px}
+.blk .mk{flex:0 0 18px;text-align:center;font-weight:700}
+.blk.q .mk{color:var(--acc-dk)}.blk.trap .mk{color:var(--warn)}.blk.kp .mk{color:var(--acc-dk)}
+.blk.trap li{background:#fff5f0;border-radius:8px;padding:6px 10px;margin-bottom:4px}
+.steps{margin:0 0 6px;padding-left:22px}.steps li{padding:4px 0;font-size:15px}
+.steps li::marker{color:var(--acc-dk);font-weight:700}
+.concl{margin:6px 0;padding:12px 16px;background:var(--acc-soft);border-radius:10px;font-weight:500;border-left:4px solid var(--acc)}
+.quotes{display:flex;flex-direction:column;gap:8px}
+.quotes blockquote{margin:0;padding:10px 16px;background:#fafafa;border-left:3px solid var(--acc);border-radius:0 8px 8px 0}
+.quotes blockquote p{margin:0;font-size:14px}.quotes blockquote footer{margin-top:4px;font-size:12px}
+/* detail sections (细致模式) */
+.detail-toggle{margin:12px 0;border:1px solid var(--line);border-radius:12px;background:#fff}
+.detail-toggle summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;font-size:14px;font-weight:700;color:var(--acc-dk);list-style:none}
+.detail-toggle summary::-webkit-details-marker{display:none}
+.detail-toggle summary::after{content:"+";width:22px;height:22px;border-radius:999px;background:var(--acc-soft);display:inline-flex;align-items:center;justify-content:center;font-weight:800}
+.detail-toggle[open] summary::after{content:"-"}
+.detail-toggle summary small{font-size:12px;font-weight:500;color:var(--sub);margin-left:auto}
+.detail-toggle .detail-block{padding:0 16px 14px}
+.detail-block{display:flex;flex-direction:column;gap:10px;margin:6px 0}
+.detail-sec{padding:12px 16px;background:var(--soft);border-radius:10px;border-left:3px solid var(--acc)}
+.detail-sec h5{font-size:14px;color:var(--acc-dk);margin:0 0 4px}
+.detail-sec p{margin:0;font-size:14px;color:var(--ink);line-height:1.6}
+/* media */
+.media{margin:18px 0 4px}.media figcaption{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.tag{font-size:11px;font-weight:700;padding:2px 9px;border-radius:6px;letter-spacing:.04em}
+.tag.svg{background:var(--acc-soft);color:var(--acc-dk);border:1px solid #f0e0a0}.tag.shot{background:#fff0e6;color:var(--warn)}
+.cap{font-size:12px;color:var(--sub)}
+.svg-wrap{background:var(--soft);border-radius:12px;padding:14px;border:1px solid var(--line)}
+.svg-wrap svg{border-radius:8px}
+.media img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+/* frame gallery (细致模式) */
+.frame-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0 4px}
+.frame-item{margin:0}.frame-item img{width:100%;border-radius:10px;border:1px solid var(--line);display:block;transition:transform .25s}
+.frame-item img:hover{transform:scale(1.02)}
+.frame-item figcaption{display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap}
+/* footer */
+.ft{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--sub);font-size:12px}
+.ft-warn{margin:0 0 10px;padding-left:18px}.ft-warn li{color:var(--warn);margin:3px 0}
+@media (max-width:640px){.hd-cover{flex:1 1 100%}.chapter{padding:18px}.hd-main h1{font-size:22px}.frame-gallery{grid-template-columns:1fr}}
+@media print{.toc{display:none}.chapter{break-inside:avoid;box-shadow:none}}
+</style></head>
+<body><div class="wrap">
+
+<header class='hd'>
+  <div class='hd-cover'><img class='cover' src='cover.jpg' alt='封面'/></div>
+  <div class='hd-main'>
+    <h1>神秘的风水到底是什么？谁都能看懂的风水科普！</h1>
+    <div class='sub'>
+      <span class='up'>UP · 浪花姜</span>
+      <span class='badges'><span class='chip '>BiliBili</span><span class='chip '>22:34</span></span>
+    </div>
+    
+    <div class='summary'>从历史故事和科学角度解释风水的本质、核心概念（龙、穴、砂、水）、两大流派（形势派、理气派）以及罗盘、鲁班尺等工具，强调风水是古人环境优化经验，应理性看待。</div>
+    <p class='desc'>到底什么是风水？几分是科学几分是迷信？
+风水先生的看家法宝罗盘、还有木匠的鲁班尺是咋看的？
+寻龙分金看缠山，一重缠是一重关，
+风水四门功课、寻龙、点穴、察砂、问水！
+一期带你了解 神秘的风水，到底是什么？</p>
+    <div class='tags'><span class='chip tag-chip'>美好出行家倍精彩</span><span class='chip tag-chip'>#易经</span><span class='chip tag-chip'>#腾势N8L大六座安全豪华SUV</span><span class='chip tag-chip'>腾势N8L闪充版</span><span class='chip tag-chip'>腾势N8L闪充版上市</span><span class='chip tag-chip'>古代风水</span><span class='chip tag-chip'>风水</span></div>
+  </div>
+</header>
+<nav class='toc'><div class='toc-in'><a href='#ch-1'><b>01</b><span>风水是什么？从历史故事说起</span><i>0:00</i></a><a href='#ch-2'><b>02</b><span>风水的理论化与科学内核</span><i>0:58</i></a><a href='#ch-3'><b>03</b><span>风水核心概念：龙、穴、砂、水</span><i>5:00</i></a><a href='#ch-4'><b>04</b><span>风水两大流派：形势派与理气派</span><i>10:00</i></a><a href='#ch-5'><b>05</b><span>风水工具：罗盘与鲁班尺</span><i>15:00</i></a><a href='#ch-6'><b>06</b><span>现代视角：风水的价值与理性看待</span><i>19:00</i></a></div><a class='watch' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=0'>原视频 ↗</a></nav>
+
+<section class='chapter' id='ch-1'>
+  <header class='ch-head'>
+    <span class='ch-no'>01</span>
+    <div class='ch-titles'>
+      <h3>风水是什么？从历史故事说起</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=0'>⏱ 0:00 – 0:58</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>什么是风水？</span></li><li><span class='mk'>?</span><span>风水几分是科学几分是迷信？</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>风水是风和水，风是流动的空气，水是生命之源。</span></li><li><span class='mk'>•</span><span>风水的核心是‘气’，一种看不见的生命力。</span></li><li><span class='mk'>•</span><span>远古人类选择背山面水、靠近水源的居住地。</span></li><li><span class='mk'>•</span><span>房屋坐北朝南是为了冬天避风、夏天迎凉。</span></li></ul><h4>结论</h4><p class='concl'>风水源于人类寻找舒适居住环境的动物本能。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>风水就是风和水，啥是风？在开阔的空间形成流动的空气。人活一口气，你不能生闷气。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=2'>⏱ 0:02</a></footer></blockquote><blockquote><p>风水的诞生就来自于人类想找个好窝的这个动物本能。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=58'>⏱ 0:58</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>时间线 · 用时间线展示从明末祖坟事件到唐代选址故事，说明风水在历史中的神秘色彩。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" fill="#0071e3">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+    <marker id="dot" markerWidth="8" markerHeight="8" refX="4" refY="4" fill="#0071e3">
+      <circle cx="4" cy="4" r="4" />
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff" />
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">风水是什么？从历史故事说起</text>
+  <text x="360" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#6e6e73">从明末祖坟事件到唐代选址故事，风水在历史中的神秘色彩</text>
+
+  <!-- 时间轴主线 -->
+  <line x1="60" y1="200" x2="680" y2="200" stroke="#d2d2d7" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- 节点1：远古人类 -->
+  <circle cx="120" cy="200" r="6" fill="#0071e3" />
+  <line x1="120" y1="200" x2="120" y2="130" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3" />
+  <rect x="70" y="80" width="100" height="50" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1" />
+  <text x="120" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">远古人类</text>
+  <text x="120" y="118" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">背山面水·近水源</text>
+  <text x="120" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#0071e3">约1万年前</text>
+
+  <!-- 节点2：唐代选址 -->
+  <circle cx="300" cy="200" r="6" fill="#00b8d9" />
+  <line x1="300" y1="200" x2="300" y2="130" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3" />
+  <rect x="245" y="80" width="110" height="50" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1" />
+  <text x="300" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">唐代选址</text>
+  <text x="300" y="118" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">铜钱银针故事</text>
+  <text x="300" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#00b8d9">约公元800年</text>
+
+  <!-- 节点3：明末祖坟 -->
+  <circle cx="500" cy="200" r="6" fill="#ff8a3d" />
+  <line x1="500" y1="200" x2="500" y2="130" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3" />
+  <rect x="445" y="80" width="110" height="50" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1" />
+  <text x="500" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">明末祖坟</text>
+  <text x="500" y="118" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">祖坟被掘事件</text>
+  <text x="500" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#ff8a3d">约1640年</text>
+
+  <!-- 节点4：现代科学 -->
+  <circle cx="640" cy="200" r="6" fill="#34c759" />
+  <line x1="640" y1="200" x2="640" y2="130" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3" />
+  <rect x="585" y="80" width="110" height="50" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1" />
+  <text x="640" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">现代科学</text>
+  <text x="640" y="118" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">动物本能·找好窝</text>
+  <text x="640" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#34c759">21世纪</text>
+
+  <!-- 底部核心概念卡片 -->
+  <rect x="60" y="260" width="600" height="130" rx="12" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1" />
+  <text x="360" y="285" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">风水的核心概念</text>
+
+  <!-- 气 -->
+  <rect x="85" y="300" width="120" height="36" rx="6" fill="#0071e3" opacity="0.9" />
+  <text x="145" y="323" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">气（生命力）</text>
+
+  <!-- 风 -->
+  <rect x="225" y="300" width="100" height="36" rx="6" fill="#00b8d9" opacity="0.9" />
+  <text x="275" y="323" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">风（空气）</text>
+
+  <!-- 水 -->
+  <rect x="345" y="300" width="100" height="36" rx="6" fill="#0071e3" opacity="0.9" />
+  <text x="395" y="323" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">水（生命源）</text>
+
+  <!-- 坐北朝南 -->
+  <rect x="465" y="300" width="170" height="36" rx="6" fill="#ff8a3d" opacity="0.9" />
+  <text x="550" y="323" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">坐北朝南·避风迎凉</text>
+
+  <!-- 底部结论 -->
+  <text x="360" y="370" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#6e6e73">结论：风水源于人类寻找舒适居住环境的动物本能</text>
+
+  <!-- 时间轴标签 -->
+  <text x="60" y="225" font-family="system-ui, sans-serif" font-size="11" fill="#6e6e73">远古</text>
+  <text x="640" y="225" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#6e6e73">现代</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-2'>
+  <header class='ch-head'>
+    <span class='ch-no'>02</span>
+    <div class='ch-titles'>
+      <h3>风水的理论化与科学内核</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=58'>⏱ 0:58 – 5:00</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>风水如何从经验变成理论？</span></li><li><span class='mk'>?</span><span>为什么风水变得玄乎？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>风水被加入太多人为因素，导致迷信成分。</span></li><li><span class='mk'>!</span><span>师傅留一手导致知识失传。</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>先秦时期风水经验开始理论化。</span></li><li><span class='mk'>•</span><span>秦汉时期加入阴阳五行八卦。</span></li><li><span class='mk'>•</span><span>魏晋郭璞《葬经》定义风水。</span></li><li><span class='mk'>•</span><span>风水被神秘化是因为知识传播中故意增加复杂性。</span></li></ul><h4>结论</h4><p class='concl'>风水本质是古人环境学，阴阳五行相当于现代化学元素周期表。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>气乘风则散，界水则止，古人聚之使不散，行之使有止，故谓之风水。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=120'>⏱ 2:00</a></footer></blockquote><blockquote><p>古人就是阴阳五行金木水火土，那就相当于现代化学的元素周期表呀。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=240'>⏱ 4:00</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 用概念图展示风水从经验到理论化的过程，以及阴阳五行八卦作为古代系统思维。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" font-family="system-ui, -apple-system, sans-serif" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrowDown" markerWidth="8" markerHeight="8" refX="4" refY="8" orient="auto">
+      <path d="M0,0 L4,8 L8,0" fill="#6e6e73"/>
+    </marker>
+    <marker id="arrowRight" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowLeft" markerWidth="8" markerHeight="8" refX="0" refY="4" orient="auto">
+      <path d="M8,0 L0,4 L8,8" fill="#ff8a3d"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-size="20" font-weight="bold" fill="#1d1d1f">风水的理论化与科学内核</text>
+  <line x1="200" y1="48" x2="520" y2="48" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- ====== 左侧：时间轴与理论化过程 ====== -->
+
+  <!-- 先秦卡片 -->
+  <rect x="30" y="70" width="200" height="60" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="130" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d1d1f">先秦时期</text>
+  <text x="130" y="115" text-anchor="middle" font-size="13" fill="#6e6e73">风水经验开始理论化</text>
+  <text x="130" y="135" text-anchor="middle" font-size="11" fill="#6e6e73">甲骨文卜宅记录</text>
+
+  <!-- 箭头：先秦 → 秦汉 -->
+  <line x1="130" y1="130" x2="130" y2="155" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- 秦汉卡片 -->
+  <rect x="30" y="158" width="200" height="60" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="130" y="183" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d1d1f">秦汉时期</text>
+  <text x="130" y="203" text-anchor="middle" font-size="13" fill="#6e6e73">加入阴阳五行八卦</text>
+
+  <!-- 箭头：秦汉 → 魏晋 -->
+  <line x1="130" y1="218" x2="130" y2="243" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- 魏晋卡片 -->
+  <rect x="30" y="246" width="200" height="60" rx="8" fill="#e8f0fe" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="130" y="271" text-anchor="middle" font-size="14" font-weight="bold" fill="#0071e3">魏晋·郭璞《葬经》</text>
+  <text x="130" y="291" text-anchor="middle" font-size="13" fill="#1d1d1f">正式定义“风水”</text>
+
+  <!-- 引用框 -->
+  <rect x="25" y="320" width="210" height="55" rx="6" fill="#fff8e5" stroke="#ff8a3d" stroke-width="1"/>
+  <text x="130" y="338" text-anchor="middle" font-size="11" fill="#ff8a3d" font-style="italic">“气乘风则散，界水则止”</text>
+  <text x="130" y="354" text-anchor="middle" font-size="11" fill="#ff8a3d" font-style="italic">“古人聚之使不散，行之使有止”</text>
+  <text x="130" y="370" text-anchor="middle" font-size="11" fill="#6e6e73">——郭璞《葬经》</text>
+
+  <!-- ====== 右侧：科学内核与神秘化 ====== -->
+
+  <!-- 科学内核标题 -->
+  <text x="480" y="75" text-anchor="middle" font-size="15" font-weight="bold" fill="#34c759">科学内核</text>
+
+  <!-- 阴阳五行卡片 -->
+  <rect x="390" y="88" width="180" height="70" rx="8" fill="#f0faf0" stroke="#34c759" stroke-width="1.5"/>
+  <text x="480" y="112" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d1d1f">阴阳五行八卦</text>
+  <text x="480" y="132" text-anchor="middle" font-size="12" fill="#6e6e73">古代系统思维</text>
+  <text x="480" y="150" text-anchor="middle" font-size="11" fill="#34c759">≈ 现代化学元素周期表</text>
+
+  <!-- 箭头：阴阳 → 环境学 -->
+  <line x1="480" y1="158" x2="480" y2="178" stroke="#34c759" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- 环境学卡片 -->
+  <rect x="390" y="182" width="180" height="50" rx="8" fill="#f0faf0" stroke="#34c759" stroke-width="1"/>
+  <text x="480" y="207" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d1d1f">古人环境学</text>
+  <text x="480" y="224" text-anchor="middle" font-size="12" fill="#6e6e73">本质是经验科学</text>
+
+  <!-- 神秘化分支 -->
+  <text x="480" y="260" text-anchor="middle" font-size="15" font-weight="bold" fill="#ff3b30">神秘化原因</text>
+
+  <!-- 两个原因卡片 -->
+  <rect x="370" y="272" width="220" height="40" rx="6" fill="#fff0f0" stroke="#ff3b30" stroke-width="1"/>
+  <text x="480" y="290" text-anchor="middle" font-size="13" fill="#1d1d1f">知识传播中故意增加复杂性</text>
+  <text x="480" y="306" text-anchor="middle" font-size="11" fill="#6e6e73">师傅留一手 → 知识失传</text>
+
+  <!-- 陷阱标签 -->
+  <rect x="370" y="320" width="220" height="36" rx="6" fill="#fff0f0" stroke="#ff8a3d" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="480" y="340" text-anchor="middle" font-size="12" fill="#ff8a3d">⚠ 人为因素导致迷信成分</text>
+
+  <!-- ====== 左右连接线 ====== -->
+  <line x1="230" y1="276" x2="370" y2="276" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrowRight)"/>
+  <text x="300" y="270" text-anchor="middle" font-size="11" fill="#6e6e73">理论化</text>
+
+  <!-- 底部结论 -->
+  <rect x="180" y="375" width="360" height="36" rx="18" fill="#1d1d1f"/>
+  <text x="360" y="398" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">结论：风水本质是古人环境学</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-3'>
+  <header class='ch-head'>
+    <span class='ch-no'>03</span>
+    <div class='ch-titles'>
+      <h3>风水核心概念：龙、穴、砂、水</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=300'>⏱ 5:00 – 10:00</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>什么是龙脉？</span></li><li><span class='mk'>?</span><span>如何点穴？</span></li><li><span class='mk'>?</span><span>什么是砂？</span></li><li><span class='mk'>?</span><span>水的好坏如何判断？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>反弓水、直冲水、割脚水都是凶水。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>寻龙：找山脉走势，龙脉发源于昆仑山，分三大干龙。</li><li>点穴：找龙脉上气场汇聚的点，要求藏风聚气。</li><li>察砂：看穴位周围的山势，理想是左青龙、右白虎、前朱雀、后玄武。</li><li>问水：看水流形态，水质清澈、蜿蜒环抱为吉。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>龙脉像大树，从昆仑山分出三大干龙。</span></li><li><span class='mk'>•</span><span>点穴口诀：寻龙容易点穴难，三年寻龙十年点穴。</span></li><li><span class='mk'>•</span><span>砂的四象：青龙、白虎、朱雀、玄武。</span></li><li><span class='mk'>•</span><span>水要环抱、弯曲、清澈，忌直冲、反弓。</span></li></ul><h4>结论</h4><p class='concl'>龙、穴、砂、水是风水四门功课，核心是找到藏风聚气的好地方。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>寻龙分金看缠山，一重缠是一重关，关门如有八重险，定有王侯居此间。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=360'>⏱ 6:00</a></footer></blockquote><blockquote><p>左边青龙要高，右边白虎要低，所以叫青龙抬头白虎驯服。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=480'>⏱ 8:00</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>流程 · 用流程图展示寻龙、点穴、察砂、问水的步骤和关系。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" font-family="'PingFang SC','Microsoft YaHei',sans-serif" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" fill="#0071e3">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" fill="#d2d2d7">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#00000010"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff" rx="8"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-size="20" font-weight="bold" fill="#1d1d1f">风水核心概念：龙、穴、砂、水</text>
+  <line x1="200" y1="48" x2="520" y2="48" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 步骤1：寻龙 -->
+  <rect x="40" y="70" width="130" height="50" rx="10" fill="#f5f5f7" stroke="#0071e3" stroke-width="2" filter="url(#shadow)"/>
+  <text x="105" y="100" text-anchor="middle" font-size="15" font-weight="bold" fill="#1d1d1f">① 寻龙</text>
+
+  <!-- 箭头1→2 -->
+  <line x1="170" y1="95" x2="220" y2="95" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 步骤2：点穴 -->
+  <rect x="225" y="70" width="130" height="50" rx="10" fill="#f5f5f7" stroke="#0071e3" stroke-width="2" filter="url(#shadow)"/>
+  <text x="290" y="100" text-anchor="middle" font-size="15" font-weight="bold" fill="#1d1d1f">② 点穴</text>
+
+  <!-- 箭头2→3 -->
+  <line x1="355" y1="95" x2="405" y2="95" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 步骤3：察砂 -->
+  <rect x="410" y="70" width="130" height="50" rx="10" fill="#f5f5f7" stroke="#0071e3" stroke-width="2" filter="url(#shadow)"/>
+  <text x="475" y="100" text-anchor="middle" font-size="15" font-weight="bold" fill="#1d1d1f">③ 察砂</text>
+
+  <!-- 箭头3→4 -->
+  <line x1="540" y1="95" x2="590" y2="95" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 步骤4：问水 -->
+  <rect x="595" y="70" width="100" height="50" rx="10" fill="#f5f5f7" stroke="#0071e3" stroke-width="2" filter="url(#shadow)"/>
+  <text x="645" y="100" text-anchor="middle" font-size="15" font-weight="bold" fill="#1d1d1f">④ 问水</text>
+
+  <!-- 说明卡片1：寻龙 -->
+  <rect x="40" y="140" width="150" height="90" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="115" y="162" text-anchor="middle" font-size="13" font-weight="bold" fill="#1d1d1f">龙脉</text>
+  <text x="115" y="182" text-anchor="middle" font-size="12" fill="#6e6e73">发源于昆仑山</text>
+  <text x="115" y="200" text-anchor="middle" font-size="12" fill="#6e6e73">分三大干龙</text>
+  <text x="115" y="218" text-anchor="middle" font-size="12" fill="#6e6e73">如大树分枝</text>
+
+  <!-- 说明卡片2：点穴 -->
+  <rect x="225" y="140" width="150" height="90" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="300" y="162" text-anchor="middle" font-size="13" font-weight="bold" fill="#1d1d1f">点穴</text>
+  <text x="300" y="182" text-anchor="middle" font-size="12" fill="#6e6e73">寻龙容易点穴难</text>
+  <text x="300" y="200" text-anchor="middle" font-size="12" fill="#6e6e73">三年寻龙</text>
+  <text x="300" y="218" text-anchor="middle" font-size="12" fill="#6e6e73">十年点穴</text>
+
+  <!-- 说明卡片3：察砂 -->
+  <rect x="410" y="140" width="150" height="90" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="485" y="162" text-anchor="middle" font-size="13" font-weight="bold" fill="#1d1d1f">砂</text>
+  <text x="485" y="182" text-anchor="middle" font-size="12" fill="#6e6e73">左青龙 右白虎</text>
+  <text x="485" y="200" text-anchor="middle" font-size="12" fill="#6e6e73">前朱雀 后玄武</text>
+  <text x="485" y="218" text-anchor="middle" font-size="12" fill="#6e6e73">青龙抬头白虎驯服</text>
+
+  <!-- 说明卡片4：问水 -->
+  <rect x="595" y="140" width="100" height="90" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="645" y="162" text-anchor="middle" font-size="13" font-weight="bold" fill="#1d1d1f">水</text>
+  <text x="645" y="182" text-anchor="middle" font-size="12" fill="#6e6e73">环抱为吉</text>
+  <text x="645" y="200" text-anchor="middle" font-size="12" fill="#6e6e73">反弓为凶</text>
+  <text x="645" y="218" text-anchor="middle" font-size="12" fill="#6e6e73">清澈为佳</text>
+
+  <!-- 分支：水的好坏判断 -->
+  <rect x="595" y="250" width="100" height="40" rx="6" fill="#fff3e0" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="645" y="275" text-anchor="middle" font-size="12" fill="#ff8a3d" font-weight="bold">水形判断</text>
+
+  <!-- 菱形决策点 -->
+  <polygon points="645,300 675,325 645,350 615,325" fill="#fff3e0" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="645" y="329" text-anchor="middle" font-size="11" fill="#ff8a3d" font-weight="bold">环抱？</text>
+
+  <!-- 吉 -->
+  <line x1="675" y1="325" x2="710" y2="325" stroke="#34c759" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="695" y="318" text-anchor="middle" font-size="11" fill="#34c759" font-weight="bold">吉</text>
+
+  <!-- 凶 -->
+  <line x1="615" y1="325" x2="40" y2="325" stroke="#ff3b30" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="300" y="318" text-anchor="middle" font-size="11" fill="#ff3b30" font-weight="bold">凶：反弓水、直冲水、割脚水</text>
+
+  <!-- 底部结论 -->
+  <rect x="40" y="355" width="640" height="50" rx="10" fill="#e8f4fd" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="360" y="378" text-anchor="middle" font-size="14" font-weight="bold" fill="#0071e3">结论：龙、穴、砂、水是风水四门功课，核心是找到藏风聚气的好地方</text>
+
+  <!-- 引用 -->
+  <text x="360" y="408" text-anchor="middle" font-size="11" fill="#6e6e73">“寻龙分金看缠山，一重缠是一重关”</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-4'>
+  <header class='ch-head'>
+    <span class='ch-no'>04</span>
+    <div class='ch-titles'>
+      <h3>风水两大流派：形势派与理气派</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=600'>⏱ 10:00 – 15:00</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>形势派和理气派有什么区别？</span></li><li><span class='mk'>?</span><span>现代风水师如何工作？</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>形势派以江西为代表，注重龙穴砂水实地勘察。</span></li><li><span class='mk'>•</span><span>理气派以福建为代表，注重阴阳五行八卦和流年运势。</span></li><li><span class='mk'>•</span><span>现代风水师普遍两派兼顾。</span></li></ul><h4>结论</h4><p class='concl'>形势派看客观环境，理气派看人与房子的匹配，两者结合使用。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>江西执法中形势，福建执法中理气。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=660'>⏱ 11:00</a></footer></blockquote><blockquote><p>形势派会让你考虑房子硬性条件，理气派更看重你跟房子的匹配程度。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=780'>⏱ 13:00</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>对比 · 用对比图展示形势派和理气派的区别：形势派重自然地理，理气派重方位命理。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#d2d2d7"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">风水两大流派对比：形势派 vs 理气派</text>
+
+  <!-- 副标题 -->
+  <text x="360" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">现代风水师普遍两派兼顾，结合使用</text>
+
+  <!-- 表头背景 -->
+  <rect x="40" y="80" width="200" height="40" rx="6" fill="#f5f5f7"/>
+  <rect x="260" y="80" width="200" height="40" rx="6" fill="#e8f4fd"/>
+  <rect x="480" y="80" width="200" height="40" rx="6" fill="#fef3e8"/>
+
+  <!-- 表头文字 -->
+  <text x="140" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">对比维度</text>
+  <text x="360" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0071e3">形势派（江西）</text>
+  <text x="580" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#ff8a3d">理气派（福建）</text>
+
+  <!-- 分隔线 -->
+  <line x1="40" y1="128" x2="680" y2="128" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 行1：核心侧重 -->
+  <rect x="40" y="135" width="200" height="50" rx="4" fill="#f5f5f7"/>
+  <text x="140" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">核心侧重</text>
+
+  <rect x="260" y="135" width="200" height="50" rx="4" fill="#f0f8ff"/>
+  <text x="360" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">自然地理</text>
+  <text x="360" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">龙穴砂水实地勘察</text>
+
+  <rect x="480" y="135" width="200" height="50" rx="4" fill="#fff8f0"/>
+  <text x="580" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">方位命理</text>
+  <text x="580" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">阴阳五行八卦流年</text>
+
+  <!-- 行2：代表地区 -->
+  <rect x="40" y="195" width="200" height="50" rx="4" fill="#f5f5f7"/>
+  <text x="140" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">代表地区</text>
+
+  <rect x="260" y="195" width="200" height="50" rx="4" fill="#f0f8ff"/>
+  <text x="360" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0071e3" font-weight="bold">江西</text>
+
+  <rect x="480" y="195" width="200" height="50" rx="4" fill="#fff8f0"/>
+  <text x="580" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ff8a3d" font-weight="bold">福建</text>
+
+  <!-- 行3：关注对象 -->
+  <rect x="40" y="255" width="200" height="50" rx="4" fill="#f5f5f7"/>
+  <text x="140" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">关注对象</text>
+
+  <rect x="260" y="255" width="200" height="50" rx="4" fill="#f0f8ff"/>
+  <text x="360" y="278" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">房子硬性条件</text>
+  <text x="360" y="296" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">环境、地形、水流</text>
+
+  <rect x="480" y="255" width="200" height="50" rx="4" fill="#fff8f0"/>
+  <text x="580" y="278" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">人与房子匹配</text>
+  <text x="580" y="296" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">命理、生肖、朝向</text>
+
+  <!-- 行4：主要工具 -->
+  <rect x="40" y="315" width="200" height="50" rx="4" fill="#f5f5f7"/>
+  <text x="140" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">主要工具</text>
+
+  <rect x="260" y="315" width="200" height="50" rx="4" fill="#f0f8ff"/>
+  <text x="360" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">罗盘、实地勘察</text>
+
+  <rect x="480" y="315" width="200" height="50" rx="4" fill="#fff8f0"/>
+  <text x="580" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">罗盘、八卦、命理</text>
+
+  <!-- 底部结论 -->
+  <rect x="40" y="380" width="640" height="30" rx="6" fill="#f5f5f7"/>
+  <text x="360" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">结论：形势派看客观环境，理气派看人与房子的匹配，两者结合使用</text>
+
+  <!-- 视觉锚点：罗盘图标（简化） -->
+  <circle cx="360" cy="130" r="4" fill="#0071e3" opacity="0.3"/>
+  <circle cx="580" cy="130" r="4" fill="#ff8a3d" opacity="0.3"/>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-5'>
+  <header class='ch-head'>
+    <span class='ch-no'>05</span>
+    <div class='ch-titles'>
+      <h3>风水工具：罗盘与鲁班尺</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=900'>⏱ 15:00 – 19:00</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>罗盘怎么用？</span></li><li><span class='mk'>?</span><span>鲁班尺上的字是什么意思？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>鲁班尺上层测阳宅，下层测阴宅，不能混用。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>罗盘：指南针（天池）+二十四山（方位），用于确定房子坐向。</li><li>鲁班尺：上层门公尺测阳宅门窗尺寸，下层丁兰尺测阴宅墓碑。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>罗盘中间是天池，周围二十四山。</span></li><li><span class='mk'>•</span><span>鲁班尺上有八个字：财、病、离、义、官、劫、害、本。</span></li><li><span class='mk'>•</span><span>尺寸落在财、义、官、本上为吉。</span></li></ul><h4>结论</h4><p class='concl'>罗盘定方位，鲁班尺定吉凶尺寸。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>罗盘主要就干一件事：确立房子坐向。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=960'>⏱ 16:00</a></footer></blockquote><blockquote><p>鲁班尺的作用很多时候就是定吉凶，尺寸要落在财、义、官、本这四个吉位上。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=1080'>⏱ 18:00</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>流程 · 用流程图展示罗盘和鲁班尺的结构与使用方法。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" fill="#6e6e73">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" fill="#0071e3">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" fill="#ff8a3d">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff" />
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">风水工具：罗盘与鲁班尺</text>
+
+  <!-- 副标题 / 结论 -->
+  <text x="360" y="62" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#6e6e73">罗盘定方位 · 鲁班尺定吉凶尺寸</text>
+
+  <!-- ========== 罗盘流程（左侧） ========== -->
+
+  <!-- 节点1：罗盘 -->
+  <rect x="40" y="90" width="280" height="50" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5" />
+  <text x="180" y="112" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">罗盘</text>
+  <text x="180" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#6e6e73">指南针（天池）+ 二十四山</text>
+
+  <!-- 箭头1 -->
+  <line x1="180" y1="140" x2="180" y2="175" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- 节点2：确定坐向 -->
+  <rect x="40" y="178" width="280" height="44" rx="8" fill="#e8f4fd" stroke="#0071e3" stroke-width="1.5" />
+  <text x="180" y="198" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">确立房子坐向</text>
+  <text x="180" y="214" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#6e6e73">天池指南针指向子午</text>
+
+  <!-- 箭头2 -->
+  <line x1="180" y1="222" x2="180" y2="257" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- 节点3：二十四山 -->
+  <rect x="40" y="260" width="280" height="44" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5" />
+  <text x="180" y="280" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">二十四山方位</text>
+  <text x="180" y="296" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#6e6e73">子、丑、寅、卯、辰、巳…</text>
+
+  <!-- 罗盘标注 -->
+  <rect x="50" y="320" width="260" height="30" rx="6" fill="#fff8f0" stroke="#ff8a3d" stroke-width="1" stroke-dasharray="4,3" />
+  <text x="180" y="340" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#ff8a3d">关键：罗盘主要干一件事——确立房子坐向</text>
+
+  <!-- ========== 鲁班尺流程（右侧） ========== -->
+
+  <!-- 节点4：鲁班尺 -->
+  <rect x="400" y="90" width="280" height="50" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5" />
+  <text x="540" y="112" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">鲁班尺</text>
+  <text x="540" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#6e6e73">上层门公尺 · 下层丁兰尺</text>
+
+  <!-- 箭头3 -->
+  <line x1="540" y1="140" x2="540" y2="175" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- 分支菱形：上下层 -->
+  <polygon points="540,178 620,215 540,252 460,215" fill="#fff8f0" stroke="#ff8a3d" stroke-width="1.5" />
+  <text x="540" y="212" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#ff8a3d">上层/下层？</text>
+
+  <!-- 左分支：上层 -->
+  <line x1="460" y1="215" x2="410" y2="215" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrowBlue)" />
+  <rect x="330" y="198" width="80" height="34" rx="6" fill="#e8f4fd" stroke="#0071e3" stroke-width="1" />
+  <text x="370" y="212" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#0071e3">上层</text>
+  <text x="370" y="226" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#6e6e73">测阳宅门窗</text>
+
+  <!-- 右分支：下层 -->
+  <line x1="620" y1="215" x2="670" y2="215" stroke="#34c759" stroke-width="1.5" marker-end="url(#arrow)" />
+  <rect x="670" y="198" width="80" height="34" rx="6" fill="#e8fcf0" stroke="#34c759" stroke-width="1" />
+  <text x="710" y="212" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#34c759">下层</text>
+  <text x="710" y="226" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#6e6e73">测阴宅墓碑</text>
+
+  <!-- 汇合箭头 -->
+  <line x1="370" y1="232" x2="370" y2="270" stroke="#6e6e73" stroke-width="1.5" />
+  <line x1="710" y1="232" x2="710" y2="270" stroke="#6e6e73" stroke-width="1.5" />
+  <line x1="370" y1="270" x2="710" y2="270" stroke="#6e6e73" stroke-width="1.5" />
+  <line x1="540" y1="252" x2="540" y2="270" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- 节点5：八个字 -->
+  <rect x="400" y="273" width="280" height="44" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5" />
+  <text x="540" y="293" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">尺上八字：财、病、离、义、官、劫、害、本</text>
+  <text x="540" y="309" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#6e6e73">尺寸落在财、义、官、本上为吉</text>
+
+  <!-- 箭头4 -->
+  <line x1="540" y1="317" x2="540" y2="352" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- 节点6：定吉凶 -->
+  <rect x="400" y="355" width="280" height="44" rx="8" fill="#fff8f0" stroke="#ff8a3d" stroke-width="1.5" />
+  <text x="540" y="375" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ff8a3d">定吉凶尺寸</text>
+  <text x="540" y="391" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#6e6e73">落在财、义、官、本四个吉位</text>
+
+  <!-- ========== 底部警示 ========== -->
+  <rect x="40" y="370" width="280" height="34" rx="6" fill="#fff0f0" stroke="#ff3b30" stroke-width="1" stroke-dasharray="4,3" />
+  <text x="180" y="385" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#ff3b30">⚠ 上下层不能混用！</text>
+
+  <!-- 分隔线 -->
+  <line x1="360" y1="85" x2="360" y2="400" stroke="#d2d2d7" stroke-width="1" stroke-dasharray="6,4" />
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-6'>
+  <header class='ch-head'>
+    <span class='ch-no'>06</span>
+    <div class='ch-titles'>
+      <h3>现代视角：风水的价值与理性看待</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=1140'>⏱ 19:00 – 22:34</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>今天如何看待风水？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>迷信风水不如相信现代科技带来的安全与确定性。</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>风水是表象，安全和至才是真正的价值内涵。</span></li><li><span class='mk'>•</span><span>现代科技如智能出行、安全技术才是最大的吉利。</span></li></ul><h4>结论</h4><p class='concl'>风水本质是中国人的人居环境优化学，现代应理性看待，追求安全与舒适。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>吉利的本质就是对于确定性的渴望。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=1200'>⏱ 20:00</a></footer></blockquote><blockquote><p>风水本质上就是中国人的人居环境优化学，如何在空间环境中舒服，这才是第一要义。</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Sr7V6YEnG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=1320'>⏱ 22:00</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 用概念图展示风水从古代到现代的演变，强调安全与确定性才是现代风水。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#d2d2d7"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">现代视角：风水的价值与理性看待</text>
+
+  <!-- 副标题 -->
+  <text x="360" y="62" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#6e6e73">风水本质是中国人的人居环境优化学，现代应理性看待，追求安全与舒适</text>
+
+  <!-- 分隔线 -->
+  <line x1="60" y1="78" x2="660" y2="78" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 中心节点：风水 -->
+  <rect x="285" y="95" width="150" height="44" rx="22" fill="#0071e3"/>
+  <text x="360" y="123" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">传统风水</text>
+
+  <!-- 左侧：古代风水 -->
+  <rect x="60" y="170" width="180" height="50" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="150" y="192" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">古代人居环境学</text>
+  <text x="150" y="210" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">选址·朝向·布局</text>
+
+  <!-- 右侧：现代解读 -->
+  <rect x="480" y="170" width="180" height="50" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="570" y="192" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">现代人居环境学</text>
+  <text x="570" y="210" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">安全·舒适·确定性</text>
+
+  <!-- 连线：中心→左侧 -->
+  <line x1="330" y1="139" x2="195" y2="170" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <!-- 连线：中心→右侧 -->
+  <line x1="390" y1="139" x2="525" y2="170" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- 左侧分支：古代具体内容 -->
+  <rect x="30" y="250" width="130" height="44" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="95" y="270" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1d1d1f">藏风聚气</text>
+  <text x="95" y="286" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#6e6e73">自然和谐</text>
+
+  <rect x="180" y="250" width="130" height="44" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="245" y="270" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1d1d1f">天人合一</text>
+  <text x="245" y="286" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#6e6e73">环境适应</text>
+
+  <line x1="120" y1="220" x2="95" y2="250" stroke="#d2d2d7" stroke-width="1" marker-end="url(#arrowGray)"/>
+  <line x1="180" y1="220" x2="245" y2="250" stroke="#d2d2d7" stroke-width="1" marker-end="url(#arrowGray)"/>
+
+  <!-- 右侧分支：现代具体内容 -->
+  <rect x="480" y="250" width="130" height="44" rx="8" fill="#e8f4fd" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="545" y="270" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#0071e3">智能出行</text>
+  <text x="545" y="286" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#6e6e73">安全技术</text>
+
+  <rect x="630" y="250" width="90" height="44" rx="8" fill="#e8f4fd" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="675" y="270" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#0071e3">确定性</text>
+  <text x="675" y="286" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#6e6e73">安全舒适</text>
+
+  <line x1="570" y1="220" x2="545" y2="250" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="570" y1="220" x2="675" y2="250" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 底部结论框 -->
+  <rect x="160" y="320" width="400" height="50" rx="12" fill="#f5f5f7" stroke="#34c759" stroke-width="2"/>
+  <text x="360" y="342" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#34c759">核心结论</text>
+  <text x="360" y="360" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1d1d1f">风水本质是追求安全与确定性，现代科技才是最大的吉利</text>
+
+  <!-- 底部箭头：从左右两侧指向结论 -->
+  <line x1="150" y1="294" x2="260" y2="320" stroke="#d2d2d7" stroke-width="1" marker-end="url(#arrowGray)"/>
+  <line x1="570" y1="294" x2="460" y2="320" stroke="#d2d2d7" stroke-width="1" marker-end="url(#arrowGray)"/>
+
+  <!-- 关键引用 -->
+  <rect x="60" y="385" width="600" height="28" rx="6" fill="#f0f0f0"/>
+  <text x="360" y="404" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">“吉利的本质就是对于确定性的渴望” · “风水本质上就是中国人的人居环境优化学”</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+
+<footer class='ft'>
+  
+  <p>由 vnotes 生成 · 2026-07-28 10:00 · 模型转写+大模型整理 · 图解为 AI 据章节内容动态生成</p>
+</footer>
+</div>
+<style data-vnotes-lightbox>
+.cover,.media img,.frame-item img,.svg-wrap{cursor:zoom-in}
+.vnotes-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(12,12,12,.88);padding:24px}
+.vnotes-lightbox.open{display:flex}
+.vnotes-lightbox figure{margin:0;max-width:96vw;max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:10px}
+.vnotes-lightbox img{max-width:96vw;max-height:84vh;object-fit:contain;border-radius:10px;background:#fff;box-shadow:0 24px 80px rgba(0,0,0,.45)}
+.vnotes-lightbox figcaption{max-width:min(820px,92vw);color:rgba(255,255,255,.82);font-size:13px;line-height:1.5;text-align:center}
+.vnotes-lightbox-close{position:fixed;top:18px;right:18px;width:40px;height:40px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-size:22px;line-height:1;cursor:pointer;backdrop-filter:blur(10px)}
+.vnotes-lightbox-close:hover{background:rgba(255,255,255,.2)}
+html.vnotes-lightbox-open{overflow:hidden}
+@media (max-width:640px){.vnotes-lightbox{padding:12px}.vnotes-lightbox-close{top:10px;right:10px}.vnotes-lightbox img{max-width:94vw;max-height:80vh}}
+</style>
+<script data-vnotes-lightbox>
+(function(){
+  if(window.__vnotesLightboxReady) return;
+  window.__vnotesLightboxReady = true;
+
+  function textFrom(node){
+    return node ? String(node.textContent || '').replace(/\s+/g, ' ').trim() : '';
+  }
+
+  function svgToImageSource(svg){
+    var clone = svg.cloneNode(true);
+    if(!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new XMLSerializer().serializeToString(clone));
+  }
+
+  function sourceFromTarget(target){
+    if(!target || !target.closest) return null;
+
+    var img = target.closest('img');
+    if(img && (img.classList.contains('cover') || img.closest('.hd-cover,.media,.frame-gallery,.frame-item'))){
+      var fig = img.closest('figure');
+      return {
+        src: img.currentSrc || img.src,
+        caption: textFrom(fig ? fig.querySelector('figcaption') : null) || img.alt || ''
+      };
+    }
+
+    var wrap = target.closest('.svg-wrap');
+    if(wrap){
+      var svg = wrap.querySelector('svg');
+      if(svg){
+        var figure = wrap.closest('figure');
+        return {
+          src: svgToImageSource(svg),
+          caption: textFrom(figure ? figure.querySelector('figcaption') : null)
+        };
+      }
+    }
+    return null;
+  }
+
+  var overlay = document.createElement('div');
+  overlay.className = 'vnotes-lightbox';
+  overlay.setAttribute('aria-hidden', 'true');
+  overlay.innerHTML = '<button type="button" class="vnotes-lightbox-close" aria-label="Close">&#215;</button><figure><img alt=""><figcaption></figcaption></figure>';
+  var image = overlay.querySelector('img');
+  var caption = overlay.querySelector('figcaption');
+
+  function close(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.remove('vnotes-lightbox-open');
+    image.removeAttribute('src');
+  }
+
+  function open(src, text){
+    image.src = src;
+    caption.textContent = text || '';
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('vnotes-lightbox-open');
+  }
+
+  overlay.addEventListener('click', function(event){
+    if(event.target === overlay || event.target.closest('.vnotes-lightbox-close')) close();
+  });
+  document.addEventListener('keydown', function(event){
+    if(event.key === 'Escape' && overlay.classList.contains('open')) close();
+  });
+  document.addEventListener('click', function(event){
+    if(event.defaultPrevented) return;
+    var source = sourceFromTarget(event.target);
+    if(!source || !source.src) return;
+    event.preventDefault();
+    open(source.src, source.caption);
+  });
+
+  document.addEventListener('DOMContentLoaded', function(){
+    if(!overlay.parentNode) document.body.appendChild(overlay);
+  });
+  if(document.body) document.body.appendChild(overlay);
+})();
+</script>
+</body></html>

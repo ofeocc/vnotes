@@ -1,0 +1,778 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>【动作电影发展史】谁改变了世界动作电影的格局？ · 视频笔记</title>
+<style>
+:root{--bg:#fafafa;--card:#fff;--ink:#1a1a1a;--sub:#666;--line:#e0e0e0;--soft:#f5f5f5;
+--acc:#F5C518;--acc-dk:#1a1a1a;--acc-soft:#fff8e1;--warn:#ff6b35;--danger:#ff3b30;--ok:#2ecc71;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Segoe UI,Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;line-height:1.7;font-size:16px}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px 120px}
+/* header */
+.hd{display:flex;gap:24px;padding:40px 0 28px;border-bottom:3px solid var(--acc);flex-wrap:wrap}
+.hd-cover{flex:0 0 240px}.cover{width:100%;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:block}
+.hd-main{flex:1;min-width:280px}
+.hd-main h1{font-size:26px;line-height:1.3;margin:0 0 10px;letter-spacing:-.01em}
+.sub{display:flex;gap:14px;align-items:center;color:var(--sub);font-size:14px;flex-wrap:wrap}
+.up{font-weight:600;color:var(--ink)}
+.badges .chip{background:var(--acc-soft);border-radius:7px;padding:2px 9px;font-size:12px;margin-right:6px;color:var(--acc-dk);font-weight:500}
+.parts{margin:14px 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.parts .lbl{color:var(--sub);font-size:13px}.parts .p{font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--sub)}
+.parts .p.cur{background:var(--acc);color:var(--acc-dk);border-color:var(--acc);font-weight:600}
+.summary{margin:14px 0;padding:12px 16px;background:var(--acc-soft);border-left:4px solid var(--acc);border-radius:8px;font-size:15px;font-weight:500}
+.desc{color:var(--sub);font-size:13px;white-space:pre-wrap;margin:10px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tag-chip{font-size:12px;color:var(--acc-dk);background:var(--acc-soft);border:1px solid #f0e0a0;border-radius:7px;padding:3px 9px}
+/* toc */
+.toc{position:sticky;top:0;z-index:5;background:rgba(250,250,250,.93);backdrop-filter:saturate(180%) blur(12px);
+border-bottom:1px solid var(--line);margin:0 -20px 8px;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.toc-in{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;flex:1}
+.toc-in a{display:flex;flex-direction:column;min-width:84px;padding:6px 10px;border-radius:10px;text-decoration:none;color:var(--sub);font-size:12px;transition:.2s}
+.toc-in a:hover{background:var(--acc-soft)}
+.toc-in a b{color:var(--acc-dk);font-size:13px}.toc-in a i{font-style:normal;color:var(--sub);font-size:11px}
+.watch{font-size:13px;color:var(--acc-dk);text-decoration:none;white-space:nowrap;font-weight:600}
+.watch:hover{text-decoration:underline}
+/* chapter */
+.chapter{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;margin:18px 0;
+box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.ch-head{display:flex;gap:16px;align-items:flex-start;border-bottom:2px solid var(--acc);padding-bottom:14px;margin-bottom:16px}
+.ch-no{font-size:22px;font-weight:800;color:var(--acc-dk);flex:0 0 auto;background:var(--acc);padding:2px 10px;border-radius:8px}
+.ch-titles h3{margin:0;font-size:19px;letter-spacing:-.01em}
+.ch-meta{font-size:13px;color:var(--sub);margin-top:3px}
+.ts{color:var(--acc-dk);text-decoration:none;border-bottom:1px dotted var(--acc-dk);font-weight:500}
+.ts:hover{color:var(--warn);border-color:var(--warn)}
+.ch-body h4{font-size:14px;color:var(--sub);margin:18px 0 8px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.ch-body h4.warn{color:var(--warn)}
+.ch-body h5{font-size:15px;color:var(--ink);margin:0 0 4px;font-weight:600}
+.blk{list-style:none;padding:0;margin:0 0 6px}.blk li{display:flex;gap:10px;padding:4px 0;font-size:15px}
+.blk .mk{flex:0 0 18px;text-align:center;font-weight:700}
+.blk.q .mk{color:var(--acc-dk)}.blk.trap .mk{color:var(--warn)}.blk.kp .mk{color:var(--acc-dk)}
+.blk.trap li{background:#fff5f0;border-radius:8px;padding:6px 10px;margin-bottom:4px}
+.steps{margin:0 0 6px;padding-left:22px}.steps li{padding:4px 0;font-size:15px}
+.steps li::marker{color:var(--acc-dk);font-weight:700}
+.concl{margin:6px 0;padding:12px 16px;background:var(--acc-soft);border-radius:10px;font-weight:500;border-left:4px solid var(--acc)}
+.quotes{display:flex;flex-direction:column;gap:8px}
+.quotes blockquote{margin:0;padding:10px 16px;background:#fafafa;border-left:3px solid var(--acc);border-radius:0 8px 8px 0}
+.quotes blockquote p{margin:0;font-size:14px}.quotes blockquote footer{margin-top:4px;font-size:12px}
+/* detail sections (细致模式) */
+.detail-toggle{margin:12px 0;border:1px solid var(--line);border-radius:12px;background:#fff}
+.detail-toggle summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;font-size:14px;font-weight:700;color:var(--acc-dk);list-style:none}
+.detail-toggle summary::-webkit-details-marker{display:none}
+.detail-toggle summary::after{content:"+";width:22px;height:22px;border-radius:999px;background:var(--acc-soft);display:inline-flex;align-items:center;justify-content:center;font-weight:800}
+.detail-toggle[open] summary::after{content:"-"}
+.detail-toggle summary small{font-size:12px;font-weight:500;color:var(--sub);margin-left:auto}
+.detail-toggle .detail-block{padding:0 16px 14px}
+.detail-block{display:flex;flex-direction:column;gap:10px;margin:6px 0}
+.detail-sec{padding:12px 16px;background:var(--soft);border-radius:10px;border-left:3px solid var(--acc)}
+.detail-sec h5{font-size:14px;color:var(--acc-dk);margin:0 0 4px}
+.detail-sec p{margin:0;font-size:14px;color:var(--ink);line-height:1.6}
+/* media */
+.media{margin:18px 0 4px}.media figcaption{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.tag{font-size:11px;font-weight:700;padding:2px 9px;border-radius:6px;letter-spacing:.04em}
+.tag.svg{background:var(--acc-soft);color:var(--acc-dk);border:1px solid #f0e0a0}.tag.shot{background:#fff0e6;color:var(--warn)}
+.cap{font-size:12px;color:var(--sub)}
+.svg-wrap{background:var(--soft);border-radius:12px;padding:14px;border:1px solid var(--line)}
+.svg-wrap svg{border-radius:8px}
+.media img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+/* frame gallery (细致模式) */
+.frame-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0 4px}
+.frame-item{margin:0}.frame-item img{width:100%;border-radius:10px;border:1px solid var(--line);display:block;transition:transform .25s}
+.frame-item img:hover{transform:scale(1.02)}
+.frame-item figcaption{display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap}
+/* footer */
+.ft{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--sub);font-size:12px}
+.ft-warn{margin:0 0 10px;padding-left:18px}.ft-warn li{color:var(--warn);margin:3px 0}
+@media (max-width:640px){.hd-cover{flex:1 1 100%}.chapter{padding:18px}.hd-main h1{font-size:22px}.frame-gallery{grid-template-columns:1fr}}
+@media print{.toc{display:none}.chapter{break-inside:avoid;box-shadow:none}}
+</style></head>
+<body><div class="wrap">
+
+<header class='hd'>
+  <div class='hd-cover'><img class='cover' src='cover.jpg' alt='封面'/></div>
+  <div class='hd-main'>
+    <h1>【动作电影发展史】谁改变了世界动作电影的格局？</h1>
+    <div class='sub'>
+      <span class='up'>UP · 老弗兰克Frank</span>
+      <span class='badges'><span class='chip '>BiliBili</span><span class='chip '>24:47</span></span>
+    </div>
+    
+    <div class='summary'>回顾香港动作电影从李小龙、成龙到甄子丹的发展历程，及其对全球动作电影工业的深远影响。</div>
+    <p class='desc'>我的挚友，我需要你的三连。
+
+bgm：
+Magic Ways
+塑料般的爱
+Flashpoint
+英雄故事
+Nothing Left to Decide - Ryan McCaffrey_Go By Ocean
+Welcome Horizons
+魔兽世界-酒馆小调
+じてんしゃで ゴー!
+Hope feat. Denise Sherwood
+
+部分参考资料：（太多了简介放不下，放置在视频结尾22 ：50 处左右的位置）</p>
+    <div class='tags'><span class='chip tag-chip'>影视未来星企划</span><span class='chip tag-chip'>功夫</span><span class='chip tag-chip'>李小龙</span><span class='chip tag-chip'>香港电影</span><span class='chip tag-chip'>成龙</span><span class='chip tag-chip'>动作电影</span><span class='chip tag-chip'>港片</span><span class='chip tag-chip'>甄子丹</span><span class='chip tag-chip'>谷垣健治</span><span class='chip tag-chip'>火遮眼</span></div>
+  </div>
+</header>
+<nav class='toc'><div class='toc-in'><a href='#ch-1'><b>01</b><span>引言：香港动作电影的黄金时代</span><i>0:00</i></a><a href='#ch-2'><b>02</b><span>李小龙：功夫浪潮的引爆者</span><i>0:59</i></a><a href='#ch-3'><b>03</b><span>成龙（上）：功夫喜剧的全球征服</span><i>7:12</i></a><a href='#ch-4'><b>04</b><span>成龙（下）：好莱坞的香港化</span><i>12:30</i></a><a href='#ch-5'><b>05</b><span>甄子丹：大器晚成的第四阶段</span><i>19:12</i></a><a href='#ch-6'><b>06</b><span>尾声：港片遗产的全球化</span><i>22:48</i></a></div><a class='watch' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=0'>原视频 ↗</a></nav>
+
+<section class='chapter' id='ch-1'>
+  <header class='ch-head'>
+    <span class='ch-no'>01</span>
+    <div class='ch-titles'>
+      <h3>引言：香港动作电影的黄金时代</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=0'>⏱ 0:00 – 0:59</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>香港电影对亚洲乃至全世界意味着什么？</span></li><li><span class='mk'>?</span><span>为什么今天的年轻观众难以理解七八十年代的香港电影？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>误以为现代电影历史完全由好莱坞书写。</span></li><li><span class='mk'>!</span><span>忽略香港电影在动作设计上的原创贡献。</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>1961年清水湾片场启用标志香港电影进入大制片厂时代。</span></li><li><span class='mk'>•</span><span>当时美国新好莱坞运动未开始，日本动漫和韩国偶像产业尚未崛起。</span></li><li><span class='mk'>•</span><span>香港电影通过体系服务创作的混合生态，实现了工业化与创作性并存。</span></li></ul><h4>结论</h4><p class='concl'>香港电影曾是全球动作电影最严厉的父亲，代表了整个亚洲的流行文化。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>其实到今天很多年轻的观众已经很难真正理解七八十年代的香港电影对于亚洲乃至全世界到底意味着什么了。</p><footer><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=46'>⏱ 0:46</a></footer></blockquote><blockquote><p>你会发现它不仅是全球动作电影最严厉的父亲，而且还代表了整个亚洲的流行文化。</p><footer><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=100'>⏱ 1:40</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>时间线 · 展示香港电影从60年代到90年代的发展时间线，突出其全球影响力。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="dot" markerWidth="8" markerHeight="8" refX="4" refY="4">
+      <circle cx="4" cy="4" r="3" fill="#0071e3"/>
+    </marker>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f5f5f7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="url(#bgGrad)" rx="8"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">引言：香港动作电影的黄金时代</text>
+  <text x="360" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">1960s – 1990s 发展时间线</text>
+
+  <!-- 时间轴主线 -->
+  <line x1="60" y1="180" x2="680" y2="180" stroke="#d2d2d7" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- 时间刻度与节点 -->
+  <!-- 1961 -->
+  <line x1="100" y1="170" x2="100" y2="190" stroke="#d2d2d7" stroke-width="2"/>
+  <circle cx="100" cy="180" r="6" fill="#0071e3" stroke="#ffffff" stroke-width="2"/>
+  <text x="100" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">1961</text>
+  <text x="100" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1d1d1f">清水湾片场启用</text>
+  <text x="100" y="226" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">大制片厂时代开启</text>
+
+  <!-- 1970 -->
+  <line x1="220" y1="170" x2="220" y2="190" stroke="#d2d2d7" stroke-width="2"/>
+  <circle cx="220" cy="180" r="5" fill="#ffffff" stroke="#0071e3" stroke-width="2"/>
+  <text x="220" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">1970</text>
+  <text x="220" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1d1d1f">新好莱坞未开始</text>
+  <text x="220" y="226" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">日本动漫·韩流未崛起</text>
+
+  <!-- 1978 -->
+  <line x1="340" y1="170" x2="340" y2="190" stroke="#d2d2d7" stroke-width="2"/>
+  <circle cx="340" cy="180" r="5" fill="#ffffff" stroke="#ff8a3d" stroke-width="2"/>
+  <text x="340" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">1978</text>
+  <text x="340" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1d1d1f">功夫喜剧崛起</text>
+  <text x="340" y="226" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">动作设计原创贡献</text>
+
+  <!-- 1985 -->
+  <line x1="460" y1="170" x2="460" y2="190" stroke="#d2d2d7" stroke-width="2"/>
+  <circle cx="460" cy="180" r="5" fill="#ffffff" stroke="#00b8d9" stroke-width="2"/>
+  <text x="460" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">1985</text>
+  <text x="460" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1d1d1f">英雄片·警匪片</text>
+  <text x="460" y="226" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">工业化与创作性并存</text>
+
+  <!-- 1992 -->
+  <line x1="580" y1="170" x2="580" y2="190" stroke="#d2d2d7" stroke-width="2"/>
+  <circle cx="580" cy="180" r="5" fill="#ffffff" stroke="#ff3b30" stroke-width="2"/>
+  <text x="580" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">1992</text>
+  <text x="580" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1d1d1f">全球影响力巅峰</text>
+  <text x="580" y="226" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">亚洲流行文化代表</text>
+
+  <!-- 结论区域 -->
+  <rect x="60" y="260" width="600" height="70" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="360" y="288" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">核心结论</text>
+  <text x="360" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">香港电影曾是全球动作电影“最严厉的父亲”</text>
+  <text x="360" y="328" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">代表了整个亚洲的流行文化</text>
+
+  <!-- 底部标注 -->
+  <text x="360" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">注：现代电影历史并非完全由好莱坞书写，香港动作设计原创贡献不可忽略</text>
+
+  <!-- 视觉锚点：香港城市夜景（左下） -->
+  <rect x="60" y="340" width="80" height="50" rx="6" fill="#1d1d1f" opacity="0.85"/>
+  <circle cx="80" cy="358" r="2" fill="#ff8a3d"/>
+  <circle cx="95" cy="352" r="1.5" fill="#ff8a3d"/>
+  <circle cx="110" cy="360" r="2" fill="#ff8a3d"/>
+  <circle cx="125" cy="355" r="1.5" fill="#ff8a3d"/>
+  <circle cx="85" cy="370" r="1.5" fill="#ff8a3d"/>
+  <circle cx="105" cy="368" r="2" fill="#ff8a3d"/>
+  <circle cx="120" cy="372" r="1.5" fill="#ff8a3d"/>
+  <circle cx="75" cy="365" r="1" fill="#ff8a3d"/>
+  <circle cx="130" cy="362" r="1" fill="#ff8a3d"/>
+  <text x="100" y="384" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#ffffff">香港夜景</text>
+
+  <!-- 视觉锚点：清水湾片场（右下） -->
+  <rect x="580" y="340" width="80" height="50" rx="6" fill="#0071e3" opacity="0.15"/>
+  <rect x="590" y="348" width="20" height="16" rx="2" fill="#0071e3" opacity="0.6"/>
+  <rect x="615" y="352" width="15" height="12" rx="2" fill="#0071e3" opacity="0.4"/>
+  <rect x="635" y="350" width="18" height="14" rx="2" fill="#0071e3" opacity="0.5"/>
+  <text x="620" y="384" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#0071e3">清水湾片场</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-2'>
+  <header class='ch-head'>
+    <span class='ch-no'>02</span>
+    <div class='ch-titles'>
+      <h3>李小龙：功夫浪潮的引爆者</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=59'>⏱ 0:59 – 7:12</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>李小龙对电影业的具体贡献和影响力有多大？</span></li><li><span class='mk'>?</span><span>为什么说李小龙的巅峰期很短？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>误以为李小龙的职业生涯很长，实际上主演电影只有四部半。</span></li><li><span class='mk'>!</span><span>低估李小龙对综合格斗（UFC）的启发作用。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>李小龙在70年代爆火，打破邵氏垄断，开启动作电影第二阶段。</li><li>1973年5月美国票房前三名全是港产功夫片。</li><li>《龙争虎斗》成本85万美元，全球票房1亿美元，经40次重映后达3亿美元。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>李小龙之前，好莱坞打斗停留在‘约翰·韦恩之拳’的舞台化表现。</span></li><li><span class='mk'>•</span><span>李小龙主演电影仅四部半：《唐山大兄》《精武门》《猛龙过江》《龙争虎斗》《死亡游戏》。</span></li><li><span class='mk'>•</span><span>UFC创始人白大拿称李小龙为‘综合格斗之父’。</span></li></ul><h4>结论</h4><p class='concl'>李小龙在短短20个月内引爆全球功夫热潮，让好莱坞开始系统性重视动作设计。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>他凭一己之力，让刚脱离邵氏成立嘉和的邹文怀迅速崛起，打破了邵氏的垄断地位。</p><footer><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=358'>⏱ 5:58</a></footer></blockquote><blockquote><p>所以从此以后，好莱坞才逐渐有了系统性的动作设计这个概念。</p><footer><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=400'>⏱ 6:40</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>因果 · 展示李小龙如何凭一己之力改变好莱坞动作设计，引发全球功夫热潮。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff8a3d"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34c759"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">李小龙：功夫浪潮的引爆者</text>
+  <text x="360" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">59.0s – 432.0s</text>
+
+  <!-- 节点1：李小龙之前 -->
+  <rect x="40" y="80" width="200" height="60" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="140" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">李小龙之前</text>
+  <text x="140" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">“约翰·韦恩之拳”舞台化打斗</text>
+
+  <!-- 箭头1：→ 节点2 -->
+  <line x1="240" y1="110" x2="310" y2="110" stroke="#0071e3" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- 节点2：四部半电影 -->
+  <rect x="320" y="80" width="200" height="60" rx="8" fill="#f5f5f7" stroke="#0071e3" stroke-width="2"/>
+  <text x="420" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">李小龙四部半电影</text>
+  <text x="420" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">《唐山大兄》《精武门》《猛龙过江》</text>
+  <text x="420" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">《龙争虎斗》《死亡游戏》</text>
+
+  <!-- 箭头2：→ 节点3 -->
+  <line x1="520" y1="110" x2="590" y2="110" stroke="#0071e3" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- 节点3：票房奇迹 -->
+  <rect x="600" y="80" width="100" height="60" rx="8" fill="#f5f5f7" stroke="#ff8a3d" stroke-width="2"/>
+  <text x="650" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ff8a3d">票房奇迹</text>
+  <text x="650" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">成本85万</text>
+  <text x="650" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">全球3亿</text>
+
+  <!-- 因果链下行箭头 -->
+  <line x1="650" y1="140" x2="650" y2="190" stroke="#ff8a3d" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+
+  <!-- 节点4：打破邵氏垄断 -->
+  <rect x="540" y="195" width="160" height="55" rx="8" fill="#f5f5f7" stroke="#ff8a3d" stroke-width="2"/>
+  <text x="620" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ff8a3d">打破邵氏垄断</text>
+  <text x="620" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">邹文怀与嘉和崛起</text>
+
+  <!-- 箭头：节点4 → 节点5 -->
+  <line x1="620" y1="250" x2="620" y2="290" stroke="#ff8a3d" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+
+  <!-- 节点5：好莱坞系统性动作设计 -->
+  <rect x="480" y="295" width="220" height="55" rx="8" fill="#f5f5f7" stroke="#34c759" stroke-width="2"/>
+  <text x="590" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#34c759">好莱坞系统性动作设计</text>
+  <text x="590" y="338" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">从此重视动作编排</text>
+
+  <!-- 左分支：UFC 启发 -->
+  <rect x="40" y="195" width="180" height="55" rx="8" fill="#f5f5f7" stroke="#34c759" stroke-width="2"/>
+  <text x="130" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#34c759">综合格斗之父</text>
+  <text x="130" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">UFC创始人白大拿评价</text>
+
+  <!-- 箭头：节点2 → 左分支 -->
+  <line x1="320" y1="130" x2="220" y2="222" stroke="#34c759" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowGreen)"/>
+
+  <!-- 箭头：左分支 → 节点5 -->
+  <line x1="220" y1="222" x2="480" y2="322" stroke="#34c759" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrowGreen)"/>
+
+  <!-- 底部结论 -->
+  <rect x="140" y="365" width="440" height="40" rx="8" fill="#0071e3" opacity="0.1"/>
+  <text x="360" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">结论：20个月内引爆全球功夫热潮，改变好莱坞动作设计</text>
+
+  <!-- 视觉锚点：电影海报文字 -->
+  <text x="70" y="310" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73" font-style="italic">视觉锚点：李小龙电影海报 / 《龙争虎斗》剧照</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-3'>
+  <header class='ch-head'>
+    <span class='ch-no'>03</span>
+    <div class='ch-titles'>
+      <h3>成龙（上）：功夫喜剧的全球征服</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=432'>⏱ 7:12 – 12:30</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>成龙如何让世界彻底爱上功夫？</span></li><li><span class='mk'>?</span><span>成龙在好莱坞的早期尝试为何失败？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>误以为成龙在好莱坞一帆风顺，实际上早期三次闯美均受挫。</span></li><li><span class='mk'>!</span><span>忽略成龙对全球流行文化的间接影响，如烂番茄网站的创立。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>1978年《蛇形刁手》让成龙找到戏路，开启动作电影第三阶段。</li><li>成龙在80年代亚洲爆红，但三次闯美均因创作权问题失败。</li><li>1996年《红番区》在北美大获成功，终于撬开好莱坞大门。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>烂番茄网站创始人因收集成龙影评而创立该网站。</span></li><li><span class='mk'>•</span><span>鸟山明创作《龙珠》时，常态孙悟空参考成龙，超级赛亚人参考李小龙。</span></li><li><span class='mk'>•</span><span>日本导演谷垣健治因成龙电影而到香港做武行30年。</span></li></ul><h4>结论</h4><p class='concl'>成龙通过功夫喜剧和搏命演出，成为全球最知名的华人演员，并迫使好莱坞尊重华人创作权。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>如果说李小龙的电影是功夫文化打出的一记迅猛直拳，那么成龙的电影就像是一套令人眼花缭乱的连招，让世界彻底爱上了功夫。</p><footer><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=432'>⏱ 7:12</a></footer></blockquote><blockquote><p>《红番区》在亚洲上映以后，主流的这几个票仓包括中国大陆全都爆了。</p><footer><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=596'>⏱ 9:56</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>流程 · 展示成龙从蛇形刁手到红番区的成功路径，以及他如何让世界爱上功夫。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#d2d2d7"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">成龙（上）：功夫喜剧的全球征服</text>
+  <text x="360" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">从《蛇形刁手》到《红番区》的成功路径</text>
+
+  <!-- 步骤1：1978年《蛇形刁手》 -->
+  <rect x="50" y="85" width="160" height="60" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="130" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">1978年《蛇形刁手》</text>
+  <text x="130" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">找到功夫喜剧戏路</text>
+  <text x="130" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#0071e3">开启动作电影第三阶段</text>
+
+  <!-- 箭头1→2 -->
+  <line x1="210" y1="115" x2="260" y2="115" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 步骤2：80年代亚洲爆红 -->
+  <rect x="265" y="85" width="160" height="60" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="345" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">80年代亚洲爆红</text>
+  <text x="345" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">三次闯美均失败</text>
+  <text x="345" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#ff3b30">因创作权问题受挫</text>
+
+  <!-- 箭头2→3 -->
+  <line x1="425" y1="115" x2="475" y2="115" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 步骤3：1996年《红番区》 -->
+  <rect x="480" y="85" width="160" height="60" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="560" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">1996年《红番区》</text>
+  <text x="560" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">北美大获成功</text>
+  <text x="560" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34c759">撬开好莱坞大门</text>
+
+  <!-- 分支箭头：从步骤2向下 -->
+  <line x1="345" y1="145" x2="345" y2="175" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+
+  <!-- 菱形决策点：间接影响 -->
+  <polygon points="345,180 395,215 345,250 295,215" fill="#fff8e1" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="345" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1d1d1f">间接影响</text>
+  <text x="345" y="228" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">全球流行文化</text>
+
+  <!-- 从菱形向左下 -->
+  <line x1="295" y1="215" x2="120" y2="260" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+
+  <!-- 左下：烂番茄 -->
+  <rect x="30" y="260" width="180" height="50" rx="6" fill="#f0f7ff" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="120" y="282" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0071e3">烂番茄网站</text>
+  <text x="120" y="299" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">创始人因收集成龙影评而创立</text>
+
+  <!-- 从菱形向右下 -->
+  <line x1="395" y1="215" x2="560" y2="260" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+
+  <!-- 右下：龙珠与谷垣健治 -->
+  <rect x="470" y="260" width="180" height="50" rx="6" fill="#f0f7ff" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="560" y="282" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0071e3">《龙珠》与谷垣健治</text>
+  <text x="560" y="299" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">鸟山明、谷垣健治受成龙影响</text>
+
+  <!-- 从步骤3向下 -->
+  <line x1="560" y1="145" x2="560" y2="175" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+
+  <!-- 底部结论 -->
+  <rect x="180" y="340" width="360" height="50" rx="8" fill="#1d1d1f" stroke="none"/>
+  <text x="360" y="362" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">结论：功夫喜剧 + 搏命演出</text>
+  <text x="360" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#d2d2d7">全球最知名华人演员，迫使好莱坞尊重华人创作权</text>
+
+  <!-- 底部箭头指向结论 -->
+  <line x1="345" y1="250" x2="345" y2="335" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+  <line x1="560" y1="310" x2="560" y2="335" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+
+  <!-- 视觉锚点标签 -->
+  <rect x="30" y="175" width="100" height="22" rx="4" fill="#ff8a3d" opacity="0.15" stroke="none"/>
+  <text x="80" y="191" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#ff8a3d">🎬 《蛇形刁手》剧照</text>
+
+  <rect x="590" y="175" width="100" height="22" rx="4" fill="#ff8a3d" opacity="0.15" stroke="none"/>
+  <text x="640" y="191" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#ff8a3d">🎬 成龙跳楼特技</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-4'>
+  <header class='ch-head'>
+    <span class='ch-no'>04</span>
+    <div class='ch-titles'>
+      <h3>成龙（下）：好莱坞的香港化</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=750'>⏱ 12:30 – 19:12</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>好莱坞如何从压制华人创作者到接受‘香港化’？</span></li><li><span class='mk'>?</span><span>吴宇森在好莱坞的首次执导经历如何？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>误以为好莱坞对华人一直开放，实际上早期创作权被严格把控。</span></li><li><span class='mk'>!</span><span>忽略《红番区》作为转折点的重要性。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>1980年《杀手壕》中成龙无话语权，导演轻视功夫设计。</li><li>1993年吴宇森执导《重装战警》，好莱坞派监工。</li><li>1996年《红番区》北美票房3239万美元，拿下周冠。</li><li>1999年《黑客帝国》雇佣华人武指，标志‘香港化’完成。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>成龙早期闯美作品《杀手壕》《炮弹飞车》《威龙猛探》均因创作权问题失败。</span></li><li><span class='mk'>•</span><span>《红番区》由华人团队主导，在北美1736家影院上映。</span></li><li><span class='mk'>•</span><span>‘Hong Kongification’指好莱坞创作思路和权重的转移。</span></li></ul><h4>结论</h4><p class='concl'>《红番区》的成功迫使好莱坞放权，华人创作者开始主导动作设计，引发‘Hong Kongification’。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>红番区虽然不是合拍片，但他的爆火让好莱坞看清了现实，逐渐才把核心的制造权放了出来。</p><footer><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=958'>⏱ 15:58</a></footer></blockquote><blockquote><p>想要动作戏出彩，就必须雇佣华人班底，已经成了行业共识。</p><footer><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=1050'>⏱ 17:30</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>对比 · 对比好莱坞早期对华人创作者的压制与《红番区》后的态度转变，展示‘香港化’过程。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d2d2d7"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">成龙（下）：好莱坞的香港化</text>
+  <text x="360" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">从创作权压制到“Hong Kongification”完成</text>
+
+  <!-- 分隔线 -->
+  <line x1="40" y1="70" x2="680" y2="70" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 表头背景 -->
+  <rect x="40" y="80" width="640" height="32" rx="4" fill="#f5f5f7"/>
+  <text x="100" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">对比维度</text>
+  <text x="280" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">早期（1980-1993）</text>
+  <text x="480" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">转折期（1996-1999）</text>
+
+  <!-- 行1：创作权 -->
+  <line x1="40" y1="122" x2="680" y2="122" stroke="#d2d2d7" stroke-width="0.5"/>
+  <rect x="40" y="122" width="640" height="50" rx="0" fill="#ffffff"/>
+  <text x="100" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">创作权</text>
+  <text x="280" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ff3b30">好莱坞严格把控</text>
+  <text x="280" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">成龙无话语权</text>
+  <text x="480" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#34c759">华人团队主导</text>
+  <text x="480" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">核心制造权释放</text>
+
+  <!-- 行2：动作设计 -->
+  <line x1="40" y1="172" x2="680" y2="172" stroke="#d2d2d7" stroke-width="0.5"/>
+  <rect x="40" y="172" width="640" height="50" rx="0" fill="#f5f5f7"/>
+  <text x="100" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">动作设计</text>
+  <text x="280" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ff3b30">被导演轻视</text>
+  <text x="280" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">功夫设计不受重视</text>
+  <text x="480" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#34c759">华人武指主导</text>
+  <text x="480" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">行业共识</text>
+
+  <!-- 行3：代表作品 -->
+  <line x1="40" y1="222" x2="680" y2="222" stroke="#d2d2d7" stroke-width="0.5"/>
+  <rect x="40" y="222" width="640" height="50" rx="0" fill="#ffffff"/>
+  <text x="100" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">代表作品</text>
+  <text x="280" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">《杀手壕》《炮弹飞车》</text>
+  <text x="280" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">《威龙猛探》均失败</text>
+  <text x="480" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">《红番区》《黑客帝国》</text>
+  <text x="480" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">北美票房成功</text>
+
+  <!-- 行4：市场表现 -->
+  <line x1="40" y1="272" x2="680" y2="272" stroke="#d2d2d7" stroke-width="0.5"/>
+  <rect x="40" y="272" width="640" height="50" rx="0" fill="#f5f5f7"/>
+  <text x="100" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">市场表现</text>
+  <text x="280" y="292" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ff3b30">票房惨淡</text>
+  <text x="280" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">北美市场不认可</text>
+  <text x="480" y="292" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#34c759">周冠3239万美元</text>
+  <text x="480" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">1736家影院上映</text>
+
+  <!-- 行5：好莱坞态度 -->
+  <line x1="40" y1="322" x2="680" y2="322" stroke="#d2d2d7" stroke-width="0.5"/>
+  <rect x="40" y="322" width="640" height="50" rx="0" fill="#ffffff"/>
+  <text x="100" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">好莱坞态度</text>
+  <text x="280" y="342" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ff3b30">压制/派监工</text>
+  <text x="280" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">不信任华人创作者</text>
+  <text x="480" y="342" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#34c759">接受“香港化”</text>
+  <text x="480" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">雇佣华人班底成共识</text>
+
+  <!-- 底部箭头与结论 -->
+  <line x1="360" y1="378" x2="360" y2="395" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="120" y="398" width="480" height="18" rx="9" fill="#0071e3"/>
+  <text x="360" y="411" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">结论：《红番区》成功 → 好莱坞放权 → Hong Kongification 完成</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-5'>
+  <header class='ch-head'>
+    <span class='ch-no'>05</span>
+    <div class='ch-titles'>
+      <h3>甄子丹：大器晚成的第四阶段</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=1152'>⏱ 19:12 – 22:48</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>甄子丹为何大器晚成？</span></li><li><span class='mk'>?</span><span>谷垣健治如何从日本武行成长为导演？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>误以为甄子丹出道即巅峰，实际上他84年出道，05年才确立商业价值。</span></li><li><span class='mk'>!</span><span>忽略谷垣健治作为日本人在香港武行的艰辛。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>甄子丹84年出道，90年代功夫片减产，他陷入无戏可拍。</li><li>1995年收编谷垣健治，1996年成立公司但票房失败。</li><li>2005年《杀破狼》立项，甄子丹终于拥有专属IP。</li><li>谷垣健治后来执导《浪客剑心》，成为日本动作片标杆。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>甄子丹经典角色包括陈真、纳兰元述、曹少钦、黄飞鸿等。</span></li><li><span class='mk'>•</span><span>《杀破狼》和《导火线》确立了甄子丹的MMA风格。</span></li><li><span class='mk'>•</span><span>谷垣健治是日本人在香港武行中唯一正式注册的会员。</span></li></ul><h4>结论</h4><p class='concl'>甄子丹在21世纪撑起华语动作电影门面，并鼓励谷垣健治独立创作，延续港片血统。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>甄子丹不同于成龙李连杰那种出道就爆红的类型，他属于相当大器晚成的演员了。</p><footer><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=1152'>⏱ 19:12</a></footer></blockquote><blockquote><p>他不仅撑起了21世纪华语动作电影的门面，还鼓励一直跟着他的谷垣健治尝试脱离自己独立创作。</p><footer><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=1308'>⏱ 21:48</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>时间线 · 展示甄子丹从84年出道到05年《杀破狼》成名的漫长历程，以及他如何推动动作电影第四阶段。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#d2d2d7"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">甄子丹：大器晚成的第四阶段</text>
+  <text x="360" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">1984年出道 → 2005年《杀破狼》确立商业价值</text>
+
+  <!-- 时间轴主线 -->
+  <line x1="60" y1="180" x2="660" y2="180" stroke="#d2d2d7" stroke-width="3" marker-end="url(#arrowGray)"/>
+
+  <!-- 时间节点：1984 出道 -->
+  <circle cx="100" cy="180" r="8" fill="#0071e3" stroke="#ffffff" stroke-width="2"/>
+  <line x1="100" y1="188" x2="100" y2="220" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="100" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">1984</text>
+  <text x="100" y="256" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">出道</text>
+
+  <!-- 时间节点：1990 功夫片减产 -->
+  <circle cx="220" cy="180" r="8" fill="#0071e3" stroke="#ffffff" stroke-width="2"/>
+  <line x1="220" y1="188" x2="220" y2="220" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="220" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">1990</text>
+  <text x="220" y="256" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">功夫片减产</text>
+  <text x="220" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#ff3b30">无戏可拍</text>
+
+  <!-- 时间节点：1995 收编谷垣健治 -->
+  <circle cx="340" cy="180" r="8" fill="#0071e3" stroke="#ffffff" stroke-width="2"/>
+  <line x1="340" y1="188" x2="340" y2="220" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="340" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">1995</text>
+  <text x="340" y="256" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">收编谷垣健治</text>
+  <text x="340" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">日本武行第一人</text>
+
+  <!-- 时间节点：1996 成立公司 -->
+  <circle cx="430" cy="180" r="8" fill="#0071e3" stroke="#ffffff" stroke-width="2"/>
+  <line x1="430" y1="188" x2="430" y2="220" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="430" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">1996</text>
+  <text x="430" y="256" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">成立公司</text>
+  <text x="430" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#ff3b30">票房失败</text>
+
+  <!-- 时间节点：2005 杀破狼 -->
+  <circle cx="560" cy="180" r="10" fill="#ff8a3d" stroke="#ffffff" stroke-width="2"/>
+  <line x1="560" y1="190" x2="560" y2="220" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="560" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">2005</text>
+  <text x="560" y="258" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ff8a3d">《杀破狼》</text>
+  <text x="560" y="276" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#34c759">专属IP确立</text>
+
+  <!-- 箭头标注：从杀破狼到导火线 -->
+  <line x1="580" y1="170" x2="640" y2="140" stroke="#0071e3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="650" y="138" font-family="Arial, sans-serif" font-size="12" fill="#0071e3">《导火线》</text>
+  <text x="650" y="154" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">MMA风格</text>
+
+  <!-- 关键角色卡片 -->
+  <rect x="60" y="300" width="180" height="100" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="150" y="322" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">经典角色</text>
+  <text x="150" y="342" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">陈真、纳兰元述</text>
+  <text x="150" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">曹少钦、黄飞鸿</text>
+
+  <!-- 谷垣健治卡片 -->
+  <rect x="280" y="300" width="180" height="100" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="370" y="322" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">谷垣健治</text>
+  <text x="370" y="342" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">香港武行唯一</text>
+  <text x="370" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">日本正式注册会员</text>
+  <text x="370" y="376" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0071e3">《浪客剑心》导演</text>
+
+  <!-- 结论卡片 -->
+  <rect x="500" y="300" width="180" height="100" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="590" y="322" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">历史地位</text>
+  <text x="590" y="342" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">撑起21世纪</text>
+  <text x="590" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">华语动作电影门面</text>
+  <text x="590" y="376" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#34c759">延续港片血统</text>
+
+  <!-- 底部引用 -->
+  <text x="360" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">“甄子丹不同于成龙李连杰那种出道就爆红的类型，他属于相当大器晚成的演员”</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-6'>
+  <header class='ch-head'>
+    <span class='ch-no'>06</span>
+    <div class='ch-titles'>
+      <h3>尾声：港片遗产的全球化</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=1368'>⏱ 22:48 – 25:00</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>香港动作电影的文化生命力如何延续至今？</span></li><li><span class='mk'>?</span><span>为什么说真正的文化输出最终归于平淡？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>误以为港片黄金时代一去不返，实际上其影响已融入全球电影工业。</span></li><li><span class='mk'>!</span><span>忽略西方媒体对港片变革的真实记载。</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>UP主翻译英文资料以摆脱地域情感，发现西方媒体对港片变革有详细记载。</span></li><li><span class='mk'>•</span><span>港片从30年代上海起步，到80年代爆发，仅持续十几年。</span></li><li><span class='mk'>•</span><span>其文化生命力已融入世界电影工业，成为行业默认标准。</span></li></ul><h4>结论</h4><p class='concl'>香港动作电影虽已落幕，但其创新已成为全球电影工业的默认标准，持续影响世界。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>真正成功的文化输出，到最后往往都会归于平淡，因为当它真正改变了某些标准之后，人们就会适应它。</p><footer><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=1410'>⏱ 23:30</a></footer></blockquote><blockquote><p>在几十年后的今天，当我们再次走进电影院的时候，还依然生活在它留下来的世界里。</p><footer><a class='ts' target='_blank' href='https://b23.tv/5jY7okt?p=1&amp;t=1470'>⏱ 24:30</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示香港动作电影如何从地方产业演变为全球行业标准，成为文化输出典范。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6e6e73"/>
+    </marker>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#d2d2d7" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#1d1d1f">尾声：港片遗产的全球化</text>
+
+  <!-- 副标题 -->
+  <text x="360" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#6e6e73">从地方产业到全球行业标准</text>
+
+  <!-- 分隔线 -->
+  <line x1="60" y1="72" x2="660" y2="72" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 核心节点：香港动作电影 -->
+  <rect x="260" y="85" width="200" height="44" rx="22" fill="#0071e3" filter="url(#shadow)"/>
+  <text x="360" y="112" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">香港动作电影</text>
+
+  <!-- 左侧：历史起源 -->
+  <rect x="50" y="155" width="180" height="50" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="140" y="176" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1d1d1f">1930年代：上海起步</text>
+  <text x="140" y="194" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">南迁香港，奠定基础</text>
+
+  <!-- 左侧箭头 -->
+  <line x1="230" y1="180" x2="258" y2="112" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- 右侧：黄金时代 -->
+  <rect x="490" y="155" width="180" height="50" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="580" y="176" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1d1d1f">1980年代：黄金爆发</text>
+  <text x="580" y="194" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">持续十余年，风靡全球</text>
+
+  <!-- 右侧箭头 -->
+  <line x1="462" y1="112" x2="488" y2="180" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- 下方：全球化影响 -->
+  <rect x="160" y="235" width="400" height="60" rx="10" fill="#e8f5fe" stroke="#0071e3" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="360" y="258" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">融入全球电影工业</text>
+  <text x="360" y="278" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#1d1d1f">成为行业默认标准，持续影响世界</text>
+
+  <!-- 向下箭头 -->
+  <line x1="360" y1="129" x2="360" y2="233" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 底部：关键引用 -->
+  <rect x="80" y="315" width="560" height="42" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="360" y="333" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6e6e73">“真正成功的文化输出，到最后往往都会归于平淡”</text>
+  <text x="360" y="350" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#8e8e93">—— 当它真正改变了某些标准之后，人们就会适应它</text>
+
+  <!-- 底部结论 -->
+  <rect x="140" y="370" width="440" height="36" rx="18" fill="#34c759" opacity="0.9"/>
+  <text x="360" y="393" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">遗产：港片创新已成全球电影工业的默认标准</text>
+
+  <!-- 视觉锚点：香港夜景与好莱坞标志对比 -->
+  <text x="50" y="100" font-family="system-ui, sans-serif" font-size="10" fill="#8e8e93">🌃 香港</text>
+  <text x="640" y="100" font-family="system-ui, sans-serif" font-size="10" fill="#8e8e93">🎬 好莱坞</text>
+
+  <!-- 装饰性连接线 -->
+  <line x1="80" y1="95" x2="258" y2="107" stroke="#d2d2d7" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <line x1="462" y1="107" x2="640" y2="95" stroke="#d2d2d7" stroke-width="0.8" stroke-dasharray="3,3"/>
+</svg></div></figure>
+    
+  </div>
+</section>
+
+<footer class='ft'>
+  
+  <p>由 vnotes 生成 · 2026-07-28 09:59 · 模型转写+大模型整理 · 图解为 AI 据章节内容动态生成</p>
+</footer>
+</div>
+<style data-vnotes-lightbox>
+.cover,.media img,.frame-item img,.svg-wrap{cursor:zoom-in}
+.vnotes-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(12,12,12,.88);padding:24px}
+.vnotes-lightbox.open{display:flex}
+.vnotes-lightbox figure{margin:0;max-width:96vw;max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:10px}
+.vnotes-lightbox img{max-width:96vw;max-height:84vh;object-fit:contain;border-radius:10px;background:#fff;box-shadow:0 24px 80px rgba(0,0,0,.45)}
+.vnotes-lightbox figcaption{max-width:min(820px,92vw);color:rgba(255,255,255,.82);font-size:13px;line-height:1.5;text-align:center}
+.vnotes-lightbox-close{position:fixed;top:18px;right:18px;width:40px;height:40px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-size:22px;line-height:1;cursor:pointer;backdrop-filter:blur(10px)}
+.vnotes-lightbox-close:hover{background:rgba(255,255,255,.2)}
+html.vnotes-lightbox-open{overflow:hidden}
+@media (max-width:640px){.vnotes-lightbox{padding:12px}.vnotes-lightbox-close{top:10px;right:10px}.vnotes-lightbox img{max-width:94vw;max-height:80vh}}
+</style>
+<script data-vnotes-lightbox>
+(function(){
+  if(window.__vnotesLightboxReady) return;
+  window.__vnotesLightboxReady = true;
+
+  function textFrom(node){
+    return node ? String(node.textContent || '').replace(/\s+/g, ' ').trim() : '';
+  }
+
+  function svgToImageSource(svg){
+    var clone = svg.cloneNode(true);
+    if(!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new XMLSerializer().serializeToString(clone));
+  }
+
+  function sourceFromTarget(target){
+    if(!target || !target.closest) return null;
+
+    var img = target.closest('img');
+    if(img && (img.classList.contains('cover') || img.closest('.hd-cover,.media,.frame-gallery,.frame-item'))){
+      var fig = img.closest('figure');
+      return {
+        src: img.currentSrc || img.src,
+        caption: textFrom(fig ? fig.querySelector('figcaption') : null) || img.alt || ''
+      };
+    }
+
+    var wrap = target.closest('.svg-wrap');
+    if(wrap){
+      var svg = wrap.querySelector('svg');
+      if(svg){
+        var figure = wrap.closest('figure');
+        return {
+          src: svgToImageSource(svg),
+          caption: textFrom(figure ? figure.querySelector('figcaption') : null)
+        };
+      }
+    }
+    return null;
+  }
+
+  var overlay = document.createElement('div');
+  overlay.className = 'vnotes-lightbox';
+  overlay.setAttribute('aria-hidden', 'true');
+  overlay.innerHTML = '<button type="button" class="vnotes-lightbox-close" aria-label="Close">&#215;</button><figure><img alt=""><figcaption></figcaption></figure>';
+  var image = overlay.querySelector('img');
+  var caption = overlay.querySelector('figcaption');
+
+  function close(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.remove('vnotes-lightbox-open');
+    image.removeAttribute('src');
+  }
+
+  function open(src, text){
+    image.src = src;
+    caption.textContent = text || '';
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('vnotes-lightbox-open');
+  }
+
+  overlay.addEventListener('click', function(event){
+    if(event.target === overlay || event.target.closest('.vnotes-lightbox-close')) close();
+  });
+  document.addEventListener('keydown', function(event){
+    if(event.key === 'Escape' && overlay.classList.contains('open')) close();
+  });
+  document.addEventListener('click', function(event){
+    if(event.defaultPrevented) return;
+    var source = sourceFromTarget(event.target);
+    if(!source || !source.src) return;
+    event.preventDefault();
+    open(source.src, source.caption);
+  });
+
+  document.addEventListener('DOMContentLoaded', function(){
+    if(!overlay.parentNode) document.body.appendChild(overlay);
+  });
+  if(document.body) document.body.appendChild(overlay);
+})();
+</script>
+</body></html>

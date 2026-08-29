@@ -1,0 +1,628 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>【Trollface】互联网最经典的一张脸，到底是怎么来的？ · 视频笔记</title>
+<style>
+:root{--bg:#fafafa;--card:#fff;--ink:#1a1a1a;--sub:#666;--line:#e0e0e0;--soft:#f5f5f5;
+--acc:#F5C518;--acc-dk:#1a1a1a;--acc-soft:#fff8e1;--warn:#ff6b35;--danger:#ff3b30;--ok:#2ecc71;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Segoe UI,Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;line-height:1.7;font-size:16px}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px 120px}
+/* header */
+.hd{display:flex;gap:24px;padding:40px 0 28px;border-bottom:3px solid var(--acc);flex-wrap:wrap}
+.hd-cover{flex:0 0 240px}.cover{width:100%;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:block}
+.hd-main{flex:1;min-width:280px}
+.hd-main h1{font-size:26px;line-height:1.3;margin:0 0 10px;letter-spacing:-.01em}
+.sub{display:flex;gap:14px;align-items:center;color:var(--sub);font-size:14px;flex-wrap:wrap}
+.up{font-weight:600;color:var(--ink)}
+.badges .chip{background:var(--acc-soft);border-radius:7px;padding:2px 9px;font-size:12px;margin-right:6px;color:var(--acc-dk);font-weight:500}
+.parts{margin:14px 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.parts .lbl{color:var(--sub);font-size:13px}.parts .p{font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--sub)}
+.parts .p.cur{background:var(--acc);color:var(--acc-dk);border-color:var(--acc);font-weight:600}
+.summary{margin:14px 0;padding:12px 16px;background:var(--acc-soft);border-left:4px solid var(--acc);border-radius:8px;font-size:15px;font-weight:500}
+.desc{color:var(--sub);font-size:13px;white-space:pre-wrap;margin:10px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tag-chip{font-size:12px;color:var(--acc-dk);background:var(--acc-soft);border:1px solid #f0e0a0;border-radius:7px;padding:3px 9px}
+/* toc */
+.toc{position:sticky;top:0;z-index:5;background:rgba(250,250,250,.93);backdrop-filter:saturate(180%) blur(12px);
+border-bottom:1px solid var(--line);margin:0 -20px 8px;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.toc-in{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;flex:1}
+.toc-in a{display:flex;flex-direction:column;min-width:84px;padding:6px 10px;border-radius:10px;text-decoration:none;color:var(--sub);font-size:12px;transition:.2s}
+.toc-in a:hover{background:var(--acc-soft)}
+.toc-in a b{color:var(--acc-dk);font-size:13px}.toc-in a i{font-style:normal;color:var(--sub);font-size:11px}
+.watch{font-size:13px;color:var(--acc-dk);text-decoration:none;white-space:nowrap;font-weight:600}
+.watch:hover{text-decoration:underline}
+/* chapter */
+.chapter{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;margin:18px 0;
+box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.ch-head{display:flex;gap:16px;align-items:flex-start;border-bottom:2px solid var(--acc);padding-bottom:14px;margin-bottom:16px}
+.ch-no{font-size:22px;font-weight:800;color:var(--acc-dk);flex:0 0 auto;background:var(--acc);padding:2px 10px;border-radius:8px}
+.ch-titles h3{margin:0;font-size:19px;letter-spacing:-.01em}
+.ch-meta{font-size:13px;color:var(--sub);margin-top:3px}
+.ts{color:var(--acc-dk);text-decoration:none;border-bottom:1px dotted var(--acc-dk);font-weight:500}
+.ts:hover{color:var(--warn);border-color:var(--warn)}
+.ch-body h4{font-size:14px;color:var(--sub);margin:18px 0 8px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.ch-body h4.warn{color:var(--warn)}
+.ch-body h5{font-size:15px;color:var(--ink);margin:0 0 4px;font-weight:600}
+.blk{list-style:none;padding:0;margin:0 0 6px}.blk li{display:flex;gap:10px;padding:4px 0;font-size:15px}
+.blk .mk{flex:0 0 18px;text-align:center;font-weight:700}
+.blk.q .mk{color:var(--acc-dk)}.blk.trap .mk{color:var(--warn)}.blk.kp .mk{color:var(--acc-dk)}
+.blk.trap li{background:#fff5f0;border-radius:8px;padding:6px 10px;margin-bottom:4px}
+.steps{margin:0 0 6px;padding-left:22px}.steps li{padding:4px 0;font-size:15px}
+.steps li::marker{color:var(--acc-dk);font-weight:700}
+.concl{margin:6px 0;padding:12px 16px;background:var(--acc-soft);border-radius:10px;font-weight:500;border-left:4px solid var(--acc)}
+.quotes{display:flex;flex-direction:column;gap:8px}
+.quotes blockquote{margin:0;padding:10px 16px;background:#fafafa;border-left:3px solid var(--acc);border-radius:0 8px 8px 0}
+.quotes blockquote p{margin:0;font-size:14px}.quotes blockquote footer{margin-top:4px;font-size:12px}
+/* detail sections (细致模式) */
+.detail-toggle{margin:12px 0;border:1px solid var(--line);border-radius:12px;background:#fff}
+.detail-toggle summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;font-size:14px;font-weight:700;color:var(--acc-dk);list-style:none}
+.detail-toggle summary::-webkit-details-marker{display:none}
+.detail-toggle summary::after{content:"+";width:22px;height:22px;border-radius:999px;background:var(--acc-soft);display:inline-flex;align-items:center;justify-content:center;font-weight:800}
+.detail-toggle[open] summary::after{content:"-"}
+.detail-toggle summary small{font-size:12px;font-weight:500;color:var(--sub);margin-left:auto}
+.detail-toggle .detail-block{padding:0 16px 14px}
+.detail-block{display:flex;flex-direction:column;gap:10px;margin:6px 0}
+.detail-sec{padding:12px 16px;background:var(--soft);border-radius:10px;border-left:3px solid var(--acc)}
+.detail-sec h5{font-size:14px;color:var(--acc-dk);margin:0 0 4px}
+.detail-sec p{margin:0;font-size:14px;color:var(--ink);line-height:1.6}
+/* media */
+.media{margin:18px 0 4px}.media figcaption{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.tag{font-size:11px;font-weight:700;padding:2px 9px;border-radius:6px;letter-spacing:.04em}
+.tag.svg{background:var(--acc-soft);color:var(--acc-dk);border:1px solid #f0e0a0}.tag.shot{background:#fff0e6;color:var(--warn)}
+.cap{font-size:12px;color:var(--sub)}
+.svg-wrap{background:var(--soft);border-radius:12px;padding:14px;border:1px solid var(--line)}
+.svg-wrap svg{border-radius:8px}
+.media img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+/* frame gallery (细致模式) */
+.frame-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0 4px}
+.frame-item{margin:0}.frame-item img{width:100%;border-radius:10px;border:1px solid var(--line);display:block;transition:transform .25s}
+.frame-item img:hover{transform:scale(1.02)}
+.frame-item figcaption{display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap}
+/* footer */
+.ft{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--sub);font-size:12px}
+.ft-warn{margin:0 0 10px;padding-left:18px}.ft-warn li{color:var(--warn);margin:3px 0}
+@media (max-width:640px){.hd-cover{flex:1 1 100%}.chapter{padding:18px}.hd-main h1{font-size:22px}.frame-gallery{grid-template-columns:1fr}}
+@media print{.toc{display:none}.chapter{break-inside:avoid;box-shadow:none}}
+</style></head>
+<body><div class="wrap">
+
+<header class='hd'>
+  <div class='hd-cover'><img class='cover' src='cover.jpg' alt='封面'/></div>
+  <div class='hd-main'>
+    <h1>【Trollface】互联网最经典的一张脸，到底是怎么来的？</h1>
+    <div class='sub'>
+      <span class='up'>UP · 单春蛋治</span>
+      <span class='badges'><span class='chip '>BiliBili</span><span class='chip '>11:45</span></span>
+    </div>
+    
+    <div class='summary'>本视频追溯了Trollface（巨魔脸）的起源、含义及其在网络文化中的演变，从2008年的讽刺漫画到成为互联网经典表情包，并衍生出游戏、恐怖怪谈等二次创作。</div>
+    <p class='desc'>嘿嘿嘿</p>
+    <div class='tags'><span class='chip tag-chip'>漫画</span><span class='chip tag-chip'>搞笑</span><span class='chip tag-chip'>网络巨魔</span><span class='chip tag-chip'>Trollge</span><span class='chip tag-chip'>巨魔脸</span><span class='chip tag-chip'>互联网</span><span class='chip tag-chip'>俚语</span><span class='chip tag-chip'>meme</span><span class='chip tag-chip'>Trollface</span><span class='chip tag-chip'>Rage Comic</span></div>
+  </div>
+</header>
+<nav class='toc'><div class='toc-in'><a href='#ch-1'><b>01</b><span>Trollface的起源：200</span><i>0:00</i></a><a href='#ch-2'><b>02</b><span>Troll的含义：从巨魔到网络钓</span><i>1:58</i></a><a href='#ch-3'><b>03</b><span>Trollface的二次创作：经</span><i>5:00</i></a><a href='#ch-4'><b>04</b><span>Trollface的恐怖复兴：T</span><i>7:40</i></a></div><a class='watch' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=0'>原视频 ↗</a></nav>
+
+<section class='chapter' id='ch-1'>
+  <header class='ch-head'>
+    <span class='ch-no'>01</span>
+    <div class='ch-titles'>
+      <h3>Trollface的起源：2008年的讽刺漫画</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=0'>⏱ 0:00 – 1:58</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <details class='detail-toggle'><summary><span>详细讲解</span><small>展开本章完整拆解</small></summary><div class='detail-block'><div class='detail-sec'><h5>漫画内容详解</h5><p>漫画描绘了网络喷子的典型行为：抛出愚蠢无知的观点博眼球，当别人回复时，他们大笑并嘲讽对方。喷子不在乎观点正确，只在乎关注和他人破防。</p></div><div class='detail-sec'><h5>走红与融入暴走漫画</h5><p>该漫画迅速在各大平台传播，很多人最初将其笼统称为暴走漫画。Trollface成为暴走漫画的常客，但暴走漫画的起源和命名另有故事。</p></div></div></details><h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>谁创作了第一张Trollface？</span></li><li><span class='mk'>?</span><span>Trollface最初是用来讽刺什么的？</span></li><li><span class='mk'>?</span><span>Trollface为什么被称为Trollface？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>误以为Trollface是暴走漫画原创角色，实际上它先于暴走漫画出现。</span></li><li><span class='mk'>!</span><span>认为Trollface的钓鱼概念起源于该漫画，实际上更早。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>2008年9月19日，用户Whynne在DeviantArt发布用系统画图工具绘制的短篇漫画。</li><li>漫画内容讽刺电子分区中毫无意义的对线钓鱼行为。</li><li>漫画描绘网络喷子刻意歪曲逻辑、偷换概念，让人破防后大笑。</li><li>网络喷子不在乎观点正确，只在乎关注和有人破防。</li><li>该简笔画迅速走红，成为暴走漫画常客。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>Trollface诞生于2008年9月19日。</span></li><li><span class='mk'>•</span><span>创作者是Whynne，在DeviantArt发布。</span></li><li><span class='mk'>•</span><span>使用系统画图工具绘制。</span></li><li><span class='mk'>•</span><span>内容讽刺网络钓鱼和喷子行为。</span></li><li><span class='mk'>•</span><span>迅速走红并融入暴走漫画。</span></li></ul><h4>结论</h4><p class='concl'>Trollface起源于2008年一张讽刺网络喷子嘴脸的漫画，由Whynne创作。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>你第一次见到这张脸是在哪里是漫画表情包还是一些恶搞的恐怖媒体</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=0'>⏱ 0:00</a></footer></blockquote><blockquote><p>二零零八年九月十九日地说平台</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=20'>⏱ 0:20</a></footer></blockquote><blockquote><p>网名为微信的用户发布了一张用系统画图工具绘制的短篇漫画</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=40'>⏱ 0:40</a></footer></blockquote><blockquote><p>网络喷怎么希望你相信他们是这样他们会刻意歪曲逻辑偷换概念</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=54'>⏱ 0:54</a></footer></blockquote><blockquote><p>让人破房子给大喊喊道你简直蠢到家了</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=65'>⏱ 1:05</a></footer></blockquote><blockquote><p>这时这些网络分怎么就会大笑哈哈我调到你啦哈哈哈哈哈哈哈哈哈哈哈</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=76'>⏱ 1:16</a></footer></blockquote><blockquote><p>网络分子并不在乎自己的观点是否正确他们更在乎别人的关注以及有没有人因子票房</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=84'>⏱ 1:24</a></footer></blockquote><blockquote><p>总之从的之后这不简笔画迅速在网络上走红</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=98'>⏱ 1:38</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>时间线 · 展示Trollface从诞生到走红的时间线，突出关键事件：2008年9月19日，Whynne在DeviantArt发布漫画。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="dot" markerWidth="8" markerHeight="8" refX="4" refY="4">
+      <circle cx="4" cy="4" r="4" fill="#0071e3"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">Trollface的起源：2008年的讽刺漫画</text>
+
+  <!-- 副标题/时间范围 -->
+  <text x="360" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6e6e73">2008年9月19日 — 迅速走红</text>
+
+  <!-- 时间轴主线 -->
+  <line x1="60" y1="200" x2="680" y2="200" stroke="#d2d2d7" stroke-width="3"/>
+  <line x1="60" y1="200" x2="680" y2="200" stroke="#0071e3" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- 时间节点1：发布 -->
+  <circle cx="120" cy="200" r="8" fill="#0071e3" stroke="#ffffff" stroke-width="2"/>
+  <text x="120" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">2008.9.19</text>
+  <text x="120" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">Whynne发布漫画</text>
+
+  <!-- 节点1说明框 -->
+  <rect x="60" y="80" width="160" height="70" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="140" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">诞生</text>
+  <text x="140" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">系统画图工具绘制</text>
+  <text x="140" y="136" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">讽刺网络钓鱼/喷子</text>
+
+  <!-- 连接线：说明框到节点 -->
+  <line x1="140" y1="150" x2="120" y2="192" stroke="#d2d2d7" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- 时间节点2：走红 -->
+  <circle cx="360" cy="200" r="8" fill="#ff8a3d" stroke="#ffffff" stroke-width="2"/>
+  <text x="360" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">2008年末</text>
+  <text x="360" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">迅速走红</text>
+
+  <!-- 节点2说明框 -->
+  <rect x="280" y="80" width="160" height="70" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="360" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">走红</text>
+  <text x="360" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">融入暴走漫画</text>
+  <text x="360" y="136" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">成为经典表情包</text>
+
+  <!-- 连接线 -->
+  <line x1="360" y1="150" x2="360" y2="192" stroke="#d2d2d7" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- 时间节点3：文化影响 -->
+  <circle cx="580" cy="200" r="8" fill="#34c759" stroke="#ffffff" stroke-width="2"/>
+  <text x="580" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">至今</text>
+  <text x="580" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">网络文化符号</text>
+
+  <!-- 节点3说明框 -->
+  <rect x="500" y="80" width="160" height="70" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="580" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d1d1f">影响</text>
+  <text x="580" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">讽刺网络喷子文化</text>
+  <text x="580" y="136" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">钓鱼/歪曲逻辑</text>
+
+  <!-- 连接线 -->
+  <line x1="580" y1="150" x2="580" y2="192" stroke="#d2d2d7" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- 底部关键信息区 -->
+  <rect x="60" y="270" width="600" height="120" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 关键信息标题 -->
+  <text x="360" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">关键事实</text>
+
+  <!-- 关键信息列表 -->
+  <circle cx="85" cy="318" r="4" fill="#0071e3"/>
+  <text x="98" y="322" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">创作者：Whynne（DeviantArt用户）</text>
+
+  <circle cx="85" cy="342" r="4" fill="#0071e3"/>
+  <text x="98" y="346" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">工具：Windows系统画图工具</text>
+
+  <circle cx="85" cy="366" r="4" fill="#0071e3"/>
+  <text x="98" y="370" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">讽刺对象：网络喷子歪曲逻辑、钓鱼破防行为</text>
+
+  <!-- 视觉锚点：小图标 -->
+  <!-- 画图工具图标 -->
+  <rect x="560" y="285" width="40" height="40" rx="6" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <rect x="568" y="293" width="24" height="24" rx="3" fill="#00b8d9"/>
+  <circle cx="580" cy="305" r="6" fill="#ffffff"/>
+  <line x1="575" y1="310" x2="585" y2="300" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- 暴走漫画图标 -->
+  <rect x="610" y="285" width="40" height="40" rx="6" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <circle cx="630" cy="305" r="12" fill="#ff8a3d"/>
+  <circle cx="625" cy="300" r="3" fill="#ffffff"/>
+  <circle cx="635" cy="300" r="3" fill="#ffffff"/>
+  <path d="M622 312 Q630 318 638 312" stroke="#ffffff" stroke-width="2" fill="none"/>
+
+  <!-- 底部标签 -->
+  <text x="580" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">画图工具</text>
+  <text x="630" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">暴走漫画</text>
+
+  <!-- 时间轴刻度标记 -->
+  <line x1="120" y1="195" x2="120" y2="205" stroke="#0071e3" stroke-width="2"/>
+  <line x1="360" y1="195" x2="360" y2="205" stroke="#ff8a3d" stroke-width="2"/>
+  <line x1="580" y1="195" x2="580" y2="205" stroke="#34c759" stroke-width="2"/>
+
+  <!-- 时间轴中间刻度 -->
+  <line x1="240" y1="197" x2="240" y2="203" stroke="#d2d2d7" stroke-width="1"/>
+  <line x1="470" y1="197" x2="470" y2="203" stroke="#d2d2d7" stroke-width="1"/>
+</svg></div></figure>
+    <div class='frame-gallery'><figure class='frame-item'><img loading='lazy' src='frames/01_01_Trollface的起源：200_000038.jpg' alt='Trollface的起源：2008年的讽刺漫画 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=38'>⏱ 0:38</a> · 展示Whynne发布的漫画截图</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/01_02_Trollface的起源：200_000056.jpg' alt='Trollface的起源：2008年的讽刺漫画 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=56'>⏱ 0:56</a> · 漫画中喷子歪曲逻辑的对话气泡</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/01_03_Trollface的起源：200_000118.jpg' alt='Trollface的起源：2008年的讽刺漫画 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=78'>⏱ 1:18</a> · 喷子大笑的夸张表情</span></figcaption></figure></div>
+  </div>
+</section>
+<section class='chapter' id='ch-2'>
+  <header class='ch-head'>
+    <span class='ch-no'>02</span>
+    <div class='ch-titles'>
+      <h3>Troll的含义：从巨魔到网络钓鱼</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=118'>⏱ 1:58 – 5:00</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <details class='detail-toggle'><summary><span>详细讲解</span><small>展开本章完整拆解</small></summary><div class='detail-block'><div class='detail-sec'><h5>Troll的词源</h5><p>Troll作为名词指神话中的巨魔，如电影、游戏中的形象。动词troll源自法语狩猎术语，指无目的游荡或钓鱼技巧。</p></div><div class='detail-sec'><h5>网络钓鱼的早期历史</h5><p>1992年Usenet用户解释了网络钓鱼行为：抛出浅显问题调戏新手。1997年漫画《Troll》将桥下巨魔与网络引战结合，描绘巨魔在聊天室写下“三洋好吃”引发争吵。</p></div></div></details><h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>Troll在俚语中是什么意思？</span></li><li><span class='mk'>?</span><span>网络钓鱼（trolling）的起源是什么？</span></li><li><span class='mk'>?</span><span>Trollface与网络钓鱼有何关系？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>误以为网络钓鱼概念起源于Trollface漫画，实际上可追溯到1990年代初。</span></li><li><span class='mk'>!</span><span>混淆神话巨魔与网络巨魔的含义。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>Troll作为名词指神话中的巨魔，如居住在山脉、洞穴的巨型生物。</li><li>Troll在古法语狩猎术语中指无目的游荡寻找猎物。</li><li>在英语中，动词troll指从移动船只上缓慢拖鱼饵钓鱼。</li><li>网络钓鱼（trolling）最早可追溯到1990年代初的Usenet新闻组。</li><li>1992年4月9日，用户解释了网络钓鱼：抛出浅显问题调戏新手。</li><li>1997年网络漫画《Troll》将桥下巨魔与网络巨魔结合。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>Troll原意是神话巨魔。</span></li><li><span class='mk'>•</span><span>动词troll指钓鱼技巧。</span></li><li><span class='mk'>•</span><span>网络钓鱼起源于1990年代初的Usenet。</span></li><li><span class='mk'>•</span><span>1997年漫画《Troll》首次将巨魔与网络引战结合。</span></li><li><span class='mk'>•</span><span>Trollface是网络巨魔的视觉象征。</span></li></ul><h4>结论</h4><p class='concl'>Troll在网络语境中指故意引战制造矛盾的网络钓鱼者，Trollface代表这一行为。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>收费究竟是什么意思呢</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=118'>⏱ 1:58</a></footer></blockquote><blockquote><p>要想了解收费首先要知道什么是受了</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=141'>⏱ 2:21</a></footer></blockquote><blockquote><p>时候在网络语境中的钓鱼起源于刚才提到的着痱子漫画其实不然</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=161'>⏱ 2:41</a></footer></blockquote><blockquote><p>一九九二年四月九日就用户在熬不了而本社群中解释了什么是网络钓鱼</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=181'>⏱ 3:01</a></footer></blockquote><blockquote><p>一九九七年的网络漫画本案给有种就记录了这种大引号的钓鱼行为</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=214'>⏱ 3:34</a></footer></blockquote><blockquote><p>这个巨魔没有像童话故事中那样拦截路人收取过路费或是吞食山羊反而跑就食草动物聊天室里写下三洋好吃</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=254'>⏱ 4:14</a></footer></blockquote><blockquote><p>现在的时候我的名词解释除了巨魔之外还有了一层新的反应也就是互联网上可引战制造矛盾的网络掉愚者</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=280'>⏱ 4:40</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 解释Troll一词的多重含义：神话巨魔、钓鱼术语、网络引战者，展示词义演变。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6e6e73"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff8a3d"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">Troll的含义：从巨魔到网络钓鱼</text>
+
+  <!-- 时间标注 -->
+  <text x="360" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">118.0s – 300.0s</text>
+
+  <!-- ===== 三层卡片（从左到右） ===== -->
+
+  <!-- 卡片1：神话巨魔 -->
+  <rect x="30" y="80" width="200" height="130" rx="10" ry="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="130" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">神话巨魔</text>
+  <text x="130" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">名词：神话中的巨型生物</text>
+  <text x="130" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">居住在山脉、洞穴</text>
+  <text x="130" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">古法语狩猎术语：</text>
+  <text x="130" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">无目的游荡寻找猎物</text>
+
+  <!-- 卡片2：钓鱼术语 -->
+  <rect x="260" y="80" width="200" height="130" rx="10" ry="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="360" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">钓鱼术语</text>
+  <text x="360" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">动词troll：</text>
+  <text x="360" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">从移动船只上</text>
+  <text x="360" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">缓慢拖鱼饵钓鱼</text>
+  <text x="360" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">英语钓鱼技巧</text>
+
+  <!-- 卡片3：网络钓鱼 -->
+  <rect x="490" y="80" width="200" height="130" rx="10" ry="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="590" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">网络钓鱼</text>
+  <text x="590" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">1990年代初 Usenet</text>
+  <text x="590" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">抛出浅显问题调戏新手</text>
+  <text x="590" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">1997年漫画《Troll》</text>
+  <text x="590" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">桥下巨魔→网络巨魔</text>
+
+  <!-- 卡片间箭头 -->
+  <line x1="230" y1="145" x2="255" y2="145" stroke="#6e6e73" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="460" y1="145" x2="485" y2="145" stroke="#6e6e73" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 关系标签 -->
+  <rect x="232" y="130" width="22" height="18" rx="4" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="243" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">词义</text>
+  <text x="243" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">演变</text>
+
+  <rect x="462" y="130" width="22" height="18" rx="4" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="473" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">网络</text>
+  <text x="473" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">引申</text>
+
+  <!-- ===== 时间线（底部） ===== -->
+  <line x1="60" y1="280" x2="660" y2="280" stroke="#d2d2d7" stroke-width="2"/>
+
+  <!-- 时间节点1：1992 -->
+  <circle cx="160" cy="280" r="6" fill="#0071e3"/>
+  <text x="160" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0071e3">1992</text>
+  <text x="160" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1d1d1f">Usenet用户解释</text>
+  <text x="160" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1d1d1f">网络钓鱼概念</text>
+
+  <!-- 时间节点2：1997 -->
+  <circle cx="360" cy="280" r="6" fill="#ff8a3d"/>
+  <text x="360" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ff8a3d">1997</text>
+  <text x="360" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1d1d1f">漫画《Troll》</text>
+  <text x="360" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1d1d1f">巨魔→网络引战</text>
+
+  <!-- 时间节点3：Trollface -->
+  <circle cx="560" cy="280" r="6" fill="#34c759"/>
+  <text x="560" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#34c759">2000s</text>
+  <text x="560" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1d1d1f">Trollface</text>
+  <text x="560" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1d1d1f">网络巨魔视觉象征</text>
+
+  <!-- 结论框 -->
+  <rect x="130" y="355" width="460" height="50" rx="10" ry="10" fill="#f5f5f7" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="360" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">结论</text>
+  <text x="360" y="396" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">Troll = 故意引战制造矛盾的网络钓鱼者，Trollface代表这一行为</text>
+
+  <!-- 从时间线到结论的连线 -->
+  <line x1="360" y1="326" x2="360" y2="350" stroke="#0071e3" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowBlue)"/>
+
+  <!-- 从卡片到时间线的连线 -->
+  <line x1="130" y1="210" x2="160" y2="274" stroke="#0071e3" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="360" y1="210" x2="360" y2="274" stroke="#ff8a3d" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="590" y1="210" x2="560" y2="274" stroke="#34c759" stroke-width="1" stroke-dasharray="3,3"/>
+</svg></div></figure>
+    <div class='frame-gallery'><figure class='frame-item'><img loading='lazy' src='frames/02_00_Troll的含义：从巨魔到网络钓_000159.jpg' alt='Troll的含义：从巨魔到网络钓鱼 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=119'>⏱ 1:59</a> · Trollface特写，问号环绕</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/02_01_Troll的含义：从巨魔到网络钓_000220.jpg' alt='Troll的含义：从巨魔到网络钓鱼 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=140'>⏱ 2:20</a> · 展示神话巨魔的图片</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/02_02_Troll的含义：从巨魔到网络钓_000301.jpg' alt='Troll的含义：从巨魔到网络钓鱼 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=181'>⏱ 3:01</a> · Usenet新闻组帖子截图</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/02_03_Troll的含义：从巨魔到网络钓_000336.jpg' alt='Troll的含义：从巨魔到网络钓鱼 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=216'>⏱ 3:36</a> · 1997年漫画《Troll》的截图</span></figcaption></figure></div>
+  </div>
+</section>
+<section class='chapter' id='ch-3'>
+  <header class='ch-head'>
+    <span class='ch-no'>03</span>
+    <div class='ch-titles'>
+      <h3>Trollface的二次创作：经典迷因与游戏</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=300'>⏱ 5:00 – 7:40</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <details class='detail-toggle'><summary><span>详细讲解</span><small>展开本章完整拆解</small></summary><div class='detail-block'><div class='detail-sec'><h5>‘Problem?’迷因</h5><p>2010年9月14日，用户发布帖子，内容是用两块磁铁相互吸引拉动卡车，标题为‘Problem?’。这是该迷因的最早记录。</p></div><div class='detail-sec'><h5>‘Troll Physics’迷因</h5><p>2020年2月13日，用户发布四格漫画，声称涂油后利用密度原理可在雨天飞起来，并警告不要尝试。</p></div><div class='detail-sec'><h5>Trollface游戏</h5><p>以Trollface为主角的游戏如‘Trollface Quest’（史上最贱小游戏），玩家需要逆向思维和非常规逻辑解谜。</p></div></div></details><h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>Trollface有哪些著名的二次创作？</span></li><li><span class='mk'>?</span><span>‘Problem?’迷因是什么？</span></li><li><span class='mk'>?</span><span>‘Troll Physics’迷因是什么？</span></li><li><span class='mk'>?</span><span>Trollface游戏有哪些？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>误以为‘Problem?’迷因出现时间很早，实际上诞生于2010年。</span></li><li><span class='mk'>!</span><span>认为‘Troll Physics’迷因更早，实际上诞生于2020年。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>2010年9月14日，用户发布标题为‘Problem?’的帖子，内容是用两块磁铁拉动卡车。</li><li>这是最早可查的‘Problem?’迷因。</li><li>2020年2月13日，用户发布四格漫画‘Troll Physics’，内容为涂油后下雨天飞起来。</li><li>Trollface游戏如‘Trollface Quest’（史上最贱小游戏），需要逆向思维解谜。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>‘Problem?’迷因诞生于2010年9月14日。</span></li><li><span class='mk'>•</span><span>‘Troll Physics’迷因诞生于2020年2月13日。</span></li><li><span class='mk'>•</span><span>Trollface游戏以逆向思维解谜为特色。</span></li><li><span class='mk'>•</span><span>这些二次创作进一步推广了Trollface形象。</span></li></ul><h4>结论</h4><p class='concl'>Trollface衍生出大量经典迷因和游戏，如‘Problem?’和‘Troll Physics’。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>德语筹备的超高人气大量以此形象为核心的经典二作品应运而生</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=300'>⏱ 5:00</a></footer></blockquote><blockquote><p>二零一零年九月是四在专利平台的暴走漫画板块儿哎飞吻右腿上落下的一边标题为</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=329'>⏱ 5:29</a></footer></blockquote><blockquote><p>说飞贼的帖子内容当然是那个经典的依靠两块磁铁相互吸引就能持续拉动卡车</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=343'>⏱ 5:43</a></footer></blockquote><blockquote><p>二零二零年二月十三日娱乐网站来干啥一位名为败不馁的用户发布了一篇四个漫画</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=383'>⏱ 6:23</a></footer></blockquote><blockquote><p>漫画内容是如果你把由涂满全身然后介入由的密度小于水这一原理就能在下雨天飞起来</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=403'>⏱ 6:43</a></footer></blockquote><blockquote><p>当然收费的出全民梗并不止这些脑洞大开的幽默漫画还有许多一瞅痱子为主角的游戏同样家喻户晓</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=421'>⏱ 7:01</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>流程 · 展示Trollface衍生出的经典迷因和游戏，如‘Problem?’、‘Troll Physics’、‘史上最贱小游戏’。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d2d2d7"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">Trollface的二次创作：经典迷因与游戏</text>
+  <line x1="200" y1="50" x2="520" y2="50" stroke="#d2d2d7" stroke-width="1.5"/>
+
+  <!-- 节点1：2010年 Problem? 迷因 -->
+  <rect x="40" y="75" width="280" height="80" rx="10" ry="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="180" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">2010年9月14日</text>
+  <text x="180" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">用户发布标题为“Problem?”的帖子</text>
+  <text x="180" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">内容：两块磁铁拉动卡车</text>
+
+  <!-- 箭头1 -->
+  <line x1="320" y1="115" x2="390" y2="115" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 节点2：Problem? 迷因确认 -->
+  <rect x="400" y="75" width="280" height="80" rx="10" ry="10" fill="#e8f4fd" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="540" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">“Problem?”迷因诞生</text>
+  <text x="540" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">最早可查的“Problem?”迷因</text>
+  <text x="540" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">经典Trollface二次创作</text>
+
+  <!-- 箭头2：向下分支 -->
+  <line x1="540" y1="155" x2="540" y2="195" stroke="#d2d2d7" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <!-- 节点3：2020年 Troll Physics -->
+  <rect x="40" y="205" width="280" height="80" rx="10" ry="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="180" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">2020年2月13日</text>
+  <text x="180" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">用户发布四格漫画“Troll Physics”</text>
+  <text x="180" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">内容：涂油后下雨天飞起来</text>
+
+  <!-- 箭头3 -->
+  <line x1="320" y1="245" x2="390" y2="245" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 节点4：Troll Physics 迷因确认 -->
+  <rect x="400" y="205" width="280" height="80" rx="10" ry="10" fill="#e8f4fd" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="540" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0071e3">“Troll Physics”迷因诞生</text>
+  <text x="540" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">基于密度原理的幽默漫画</text>
+  <text x="540" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">进一步推广Trollface形象</text>
+
+  <!-- 箭头4：向下 -->
+  <line x1="180" y1="285" x2="180" y2="325" stroke="#d2d2d7" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <!-- 节点5：Trollface游戏 -->
+  <rect x="40" y="335" width="280" height="70" rx="10" ry="10" fill="#fff4e5" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="180" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ff8a3d">Trollface游戏</text>
+  <text x="180" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">“Trollface Quest”等逆向思维解谜游戏</text>
+
+  <!-- 箭头5：从节点4向下到游戏 -->
+  <line x1="540" y1="285" x2="540" y2="325" stroke="#d2d2d7" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <!-- 节点6：游戏详情 -->
+  <rect x="400" y="335" width="280" height="70" rx="10" ry="10" fill="#fff4e5" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="540" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ff8a3d">“史上最贱小游戏”</text>
+  <text x="540" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">以逆向思维解谜为特色</text>
+
+  <!-- 底部结论 -->
+  <rect x="160" y="390" width="400" height="24" rx="12" ry="12" fill="#0071e3"/>
+  <text x="360" y="407" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">Trollface衍生出大量经典迷因和游戏</text>
+
+  <!-- 视觉装饰：小图标 -->
+  <!-- 磁铁图标 -->
+  <circle cx="80" cy="95" r="8" fill="#0071e3" opacity="0.15"/>
+  <text x="80" y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#0071e3">🧲</text>
+
+  <!-- 雨滴图标 -->
+  <circle cx="80" cy="225" r="8" fill="#00b8d9" opacity="0.15"/>
+  <text x="80" y="229" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#00b8d9">☔</text>
+
+  <!-- 游戏手柄图标 -->
+  <circle cx="80" cy="355" r="8" fill="#ff8a3d" opacity="0.15"/>
+  <text x="80" y="359" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ff8a3d">🎮</text>
+</svg></div></figure>
+    <div class='frame-gallery'><figure class='frame-item'><img loading='lazy' src='frames/03_00_Trollface的二次创作：经_000530.jpg' alt='Trollface的二次创作：经典迷因与游戏 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=330'>⏱ 5:30</a> · ‘Problem?’漫画截图，显示两块磁铁和卡车</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/03_01_Trollface的二次创作：经_000623.jpg' alt='Trollface的二次创作：经典迷因与游戏 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=383'>⏱ 6:23</a> · ‘Troll Physics’四格漫画截图</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/03_02_Trollface的二次创作：经_000700.jpg' alt='Trollface的二次创作：经典迷因与游戏 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=420'>⏱ 7:00</a> · Trollface游戏‘史上最贱小游戏’的界面</span></figcaption></figure></div>
+  </div>
+</section>
+<section class='chapter' id='ch-4'>
+  <header class='ch-head'>
+    <span class='ch-no'>04</span>
+    <div class='ch-titles'>
+      <h3>Trollface的恐怖复兴：Trollge与怪谈</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=460'>⏱ 7:40 – 11:35</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <details class='detail-toggle'><summary><span>详细讲解</span><small>展开本章完整拆解</small></summary><div class='detail-block'><div class='detail-sec'><h5>恐怖化开端</h5><p>2020年7月，用户转发被遮挡的Trollface视频，改编自冻土。8月，诡异笑容截图配文‘商品海藻包给某物已然苏醒’，开始小范围传播。</p></div><div class='detail-sec'><h5>Trollge系列诞生</h5><p>2020年10月，用户发布Trollge系列预告，围绕‘Trollge’降临。10月22日发布长视频记录降临瞬间，随后衍生出大量怪谈漫画，采用日期加事件名称格式。</p></div><div class='detail-sec'><h5>著名事件</h5><p>2020年10月28日，用户预言2021年5月纽约天国阶梯事件。后续还有‘极光森林’、‘黑山基地’等。视频最后提到的‘俚语猴子事件’是虚构。</p></div></div></details><h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>Trollface如何从搞笑形象转变为恐怖怪谈？</span></li><li><span class='mk'>?</span><span>什么是Trollge？</span></li><li><span class='mk'>?</span><span>Trollge系列有哪些著名事件？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>误以为Trollge是独立形象，实际上源自Trollface的恐怖化。</span></li><li><span class='mk'>!</span><span>认为所有Trollge事件都是真实预言，实际是虚构创作。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>2020年7月1日，用户转发被遮挡的Trollface视频，改编自冻土。</li><li>2020年8月6日，用户截取诡异笑容并配文‘商品海藻包给某物已然苏醒’。</li><li>2020年10月18日，用户发布Trollge系列预告，围绕‘Trollge’降临。</li><li>2020年10月22日，发布长视频记录降临瞬间。</li><li>2020年10月28日，用户发布怪谈漫画，预言2021年5月纽约事件。</li><li>衍生出‘极光森林’、‘黑山基地’等事件。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>恐怖化始于2020年7月的视频。</span></li><li><span class='mk'>•</span><span>Trollge系列由多个用户创作。</span></li><li><span class='mk'>•</span><span>采用日期加事件名称的格式。</span></li><li><span class='mk'>•</span><span>最著名预言是2021年5月纽约事件。</span></li><li><span class='mk'>•</span><span>视频中提到的‘俚语猴子事件’是虚构。</span></li></ul><h4>结论</h4><p class='concl'>2020年Trollface被恐怖化，衍生出Trollge怪谈系列，成为新的网络迷因。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>来到二零二零年你都是怪谈开始在各大网络平台中流转</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=460'>⏱ 7:40</a></footer></blockquote><blockquote><p>二零二零年七月一日哎返利平台的一位用户转发了一段被遮挡的逐渐转变表层的着痱子视频</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=466'>⏱ 7:46</a></footer></blockquote><blockquote><p>二零二零年八月六日有用户将这段视频的诡异笑容截取下来并配上文字商品海藻包给某物已然苏醒</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=487'>⏱ 8:07</a></footer></blockquote><blockquote><p>在这之后的十月十八日原理的用户案犯里面关注苏芮开解的关于着费系列的恐怖短片的连载故事</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=495'>⏱ 8:15</a></footer></blockquote><blockquote><p>二零二零年十月二十二这个用户发布了系列的长视频中记录了初二将的瞬间</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=515'>⏱ 8:35</a></footer></blockquote><blockquote><p>之后这些关于扯我只的短篇开始被大量转发传播扩散</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=560'>⏱ 9:20</a></footer></blockquote><blockquote><p>二零二零年十月二十八日的用户你包了滚动了发布了一则怪谈风格的漫画</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=600'>⏱ 10:00</a></footer></blockquote><blockquote><p>真正有意思的应该是二零二五年十月十五日的了</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=631'>⏱ 10:31</a></footer></blockquote><blockquote><p>俚语猴子事件</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=637'>⏱ 10:37</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>时间线 · 展示Trollface在2020年恐怖化复兴的时间线，从视频到Trollge系列。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#d2d2d7"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1d1d1f">Trollface的恐怖复兴：Trollge与怪谈时间线</text>
+  <text x="360" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">2020年7月 — 2021年5月</text>
+
+  <!-- 时间轴主线 -->
+  <line x1="60" y1="200" x2="680" y2="200" stroke="#d2d2d7" stroke-width="3" marker-end="url(#arrowGray)"/>
+
+  <!-- 节点1：2020年7月1日 -->
+  <circle cx="100" cy="200" r="8" fill="#0071e3"/>
+  <line x1="100" y1="200" x2="100" y2="140" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="40" y="95" width="120" height="45" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="100" y="113" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1d1d1f">2020.07.01</text>
+  <text x="100" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6e6e73">恐怖化Trollface视频</text>
+
+  <!-- 节点2：2020年8月6日 -->
+  <circle cx="200" cy="200" r="8" fill="#0071e3"/>
+  <line x1="200" y1="200" x2="200" y2="260" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="140" y="260" width="120" height="45" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="200" y="278" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1d1d1f">2020.08.06</text>
+  <text x="200" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6e6e73">诡异笑容截图配文</text>
+
+  <!-- 节点3：2020年10月18日 -->
+  <circle cx="320" cy="200" r="8" fill="#ff8a3d"/>
+  <line x1="320" y1="200" x2="320" y2="130" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="260" y="85" width="120" height="45" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="320" y="103" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1d1d1f">2020.10.18</text>
+  <text x="320" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6e6e73">Trollge系列预告</text>
+
+  <!-- 节点4：2020年10月22日 -->
+  <circle cx="420" cy="200" r="8" fill="#ff8a3d"/>
+  <line x1="420" y1="200" x2="420" y2="270" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="360" y="270" width="120" height="45" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="420" y="288" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1d1d1f">2020.10.22</text>
+  <text x="420" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6e6e73">长视频记录降临</text>
+
+  <!-- 节点5：2020年10月28日 -->
+  <circle cx="530" cy="200" r="8" fill="#ff3b30"/>
+  <line x1="530" y1="200" x2="530" y2="120" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="470" y="75" width="120" height="45" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="530" y="93" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1d1d1f">2020.10.28</text>
+  <text x="530" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6e6e73">怪谈漫画发布</text>
+
+  <!-- 节点6：2021年5月（预言事件） -->
+  <circle cx="640" cy="200" r="8" fill="#ff3b30"/>
+  <line x1="640" y1="200" x2="640" y2="280" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="580" y="280" width="120" height="45" rx="6" fill="#fff0f0" stroke="#ff3b30" stroke-width="1.5"/>
+  <text x="640" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ff3b30">2021.05</text>
+  <text x="640" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6e6e73">纽约事件（预言）</text>
+
+  <!-- 时间轴标签 -->
+  <text x="60" y="185" font-family="Arial, sans-serif" font-size="10" fill="#6e6e73">7月</text>
+  <text x="190" y="185" font-family="Arial, sans-serif" font-size="10" fill="#6e6e73">8月</text>
+  <text x="370" y="185" font-family="Arial, sans-serif" font-size="10" fill="#6e6e73">10月</text>
+  <text x="600" y="185" font-family="Arial, sans-serif" font-size="10" fill="#6e6e73">2021年</text>
+
+  <!-- 底部说明 -->
+  <rect x="40" y="355" width="640" height="50" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="360" y="373" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1d1d1f">关键说明</text>
+  <text x="360" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">Trollge并非独立形象，而是Trollface的恐怖化衍生；所有预言事件均为虚构创作</text>
+
+  <!-- 图例 -->
+  <circle cx="80" cy="340" r="5" fill="#0071e3"/>
+  <text x="92" y="344" font-family="Arial, sans-serif" font-size="10" fill="#6e6e73">早期视频</text>
+  <circle cx="180" cy="340" r="5" fill="#ff8a3d"/>
+  <text x="192" y="344" font-family="Arial, sans-serif" font-size="10" fill="#6e6e73">Trollge系列</text>
+  <circle cx="290" cy="340" r="5" fill="#ff3b30"/>
+  <text x="302" y="344" font-family="Arial, sans-serif" font-size="10" fill="#6e6e73">怪谈/预言</text>
+</svg></div></figure>
+    <div class='frame-gallery'><figure class='frame-item'><img loading='lazy' src='frames/04_00_Trollface的恐怖复兴：T_000748.jpg' alt='Trollface的恐怖复兴：Trollge与怪谈 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=468'>⏱ 7:48</a> · 被遮挡的Trollface视频截图</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/04_01_Trollface的恐怖复兴：T_000808.jpg' alt='Trollface的恐怖复兴：Trollge与怪谈 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=488'>⏱ 8:08</a> · 诡异笑容截图，配文‘商品海藻包给某物已然苏醒’</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/04_02_Trollface的恐怖复兴：T_000816.jpg' alt='Trollface的恐怖复兴：Trollge与怪谈 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=496'>⏱ 8:16</a> · Trollge系列预告图，显示‘Trollge’字样</span></figcaption></figure><figure class='frame-item'><img loading='lazy' src='frames/04_03_Trollface的恐怖复兴：T_000836.jpg' alt='Trollface的恐怖复兴：Trollge与怪谈 截图'/><figcaption><span class='tag shot'>视频帧</span><span class='cap'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV1Uiga6PEuG/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1&amp;t=516'>⏱ 8:36</a> · 长视频中Trollge降临的瞬间</span></figcaption></figure></div>
+  </div>
+</section>
+
+<footer class='ft'>
+  
+  <p>由 vnotes 生成 · 2026-07-28 10:00 · 模型转写+大模型整理 · 图解为 AI 据章节内容动态生成</p>
+</footer>
+</div>
+<style data-vnotes-lightbox>
+.cover,.media img,.frame-item img,.svg-wrap{cursor:zoom-in}
+.vnotes-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(12,12,12,.88);padding:24px}
+.vnotes-lightbox.open{display:flex}
+.vnotes-lightbox figure{margin:0;max-width:96vw;max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:10px}
+.vnotes-lightbox img{max-width:96vw;max-height:84vh;object-fit:contain;border-radius:10px;background:#fff;box-shadow:0 24px 80px rgba(0,0,0,.45)}
+.vnotes-lightbox figcaption{max-width:min(820px,92vw);color:rgba(255,255,255,.82);font-size:13px;line-height:1.5;text-align:center}
+.vnotes-lightbox-close{position:fixed;top:18px;right:18px;width:40px;height:40px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-size:22px;line-height:1;cursor:pointer;backdrop-filter:blur(10px)}
+.vnotes-lightbox-close:hover{background:rgba(255,255,255,.2)}
+html.vnotes-lightbox-open{overflow:hidden}
+@media (max-width:640px){.vnotes-lightbox{padding:12px}.vnotes-lightbox-close{top:10px;right:10px}.vnotes-lightbox img{max-width:94vw;max-height:80vh}}
+</style>
+<script data-vnotes-lightbox>
+(function(){
+  if(window.__vnotesLightboxReady) return;
+  window.__vnotesLightboxReady = true;
+
+  function textFrom(node){
+    return node ? String(node.textContent || '').replace(/\s+/g, ' ').trim() : '';
+  }
+
+  function svgToImageSource(svg){
+    var clone = svg.cloneNode(true);
+    if(!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new XMLSerializer().serializeToString(clone));
+  }
+
+  function sourceFromTarget(target){
+    if(!target || !target.closest) return null;
+
+    var img = target.closest('img');
+    if(img && (img.classList.contains('cover') || img.closest('.hd-cover,.media,.frame-gallery,.frame-item'))){
+      var fig = img.closest('figure');
+      return {
+        src: img.currentSrc || img.src,
+        caption: textFrom(fig ? fig.querySelector('figcaption') : null) || img.alt || ''
+      };
+    }
+
+    var wrap = target.closest('.svg-wrap');
+    if(wrap){
+      var svg = wrap.querySelector('svg');
+      if(svg){
+        var figure = wrap.closest('figure');
+        return {
+          src: svgToImageSource(svg),
+          caption: textFrom(figure ? figure.querySelector('figcaption') : null)
+        };
+      }
+    }
+    return null;
+  }
+
+  var overlay = document.createElement('div');
+  overlay.className = 'vnotes-lightbox';
+  overlay.setAttribute('aria-hidden', 'true');
+  overlay.innerHTML = '<button type="button" class="vnotes-lightbox-close" aria-label="Close">&#215;</button><figure><img alt=""><figcaption></figcaption></figure>';
+  var image = overlay.querySelector('img');
+  var caption = overlay.querySelector('figcaption');
+
+  function close(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.remove('vnotes-lightbox-open');
+    image.removeAttribute('src');
+  }
+
+  function open(src, text){
+    image.src = src;
+    caption.textContent = text || '';
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('vnotes-lightbox-open');
+  }
+
+  overlay.addEventListener('click', function(event){
+    if(event.target === overlay || event.target.closest('.vnotes-lightbox-close')) close();
+  });
+  document.addEventListener('keydown', function(event){
+    if(event.key === 'Escape' && overlay.classList.contains('open')) close();
+  });
+  document.addEventListener('click', function(event){
+    if(event.defaultPrevented) return;
+    var source = sourceFromTarget(event.target);
+    if(!source || !source.src) return;
+    event.preventDefault();
+    open(source.src, source.caption);
+  });
+
+  document.addEventListener('DOMContentLoaded', function(){
+    if(!overlay.parentNode) document.body.appendChild(overlay);
+  });
+  if(document.body) document.body.appendChild(overlay);
+})();
+</script>
+</body></html>

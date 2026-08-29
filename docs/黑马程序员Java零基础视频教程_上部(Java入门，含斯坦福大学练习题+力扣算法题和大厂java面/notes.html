@@ -1,0 +1,1339 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>黑马程序员Java零基础视频教程_上部(Java入门，含斯坦福大学练习题+力扣算法题和大厂java面试题） p22 Java基础概念-07-计算机中的数据存储 · 视频笔记</title>
+<style>
+:root{--bg:#fafafa;--card:#fff;--ink:#1a1a1a;--sub:#666;--line:#e0e0e0;--soft:#f5f5f5;
+--acc:#F5C518;--acc-dk:#1a1a1a;--acc-soft:#fff8e1;--warn:#ff6b35;--danger:#ff3b30;--ok:#2ecc71;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Segoe UI,Roboto,sans-serif;
+-webkit-font-smoothing:antialiased;line-height:1.7;font-size:16px}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px 120px}
+/* header */
+.hd{display:flex;gap:24px;padding:40px 0 28px;border-bottom:3px solid var(--acc);flex-wrap:wrap}
+.hd-cover{flex:0 0 240px}.cover{width:100%;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:block}
+.hd-main{flex:1;min-width:280px}
+.hd-main h1{font-size:26px;line-height:1.3;margin:0 0 10px;letter-spacing:-.01em}
+.sub{display:flex;gap:14px;align-items:center;color:var(--sub);font-size:14px;flex-wrap:wrap}
+.up{font-weight:600;color:var(--ink)}
+.badges .chip{background:var(--acc-soft);border-radius:7px;padding:2px 9px;font-size:12px;margin-right:6px;color:var(--acc-dk);font-weight:500}
+.parts{margin:14px 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.parts .lbl{color:var(--sub);font-size:13px}.parts .p{font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--sub)}
+.parts .p.cur{background:var(--acc);color:var(--acc-dk);border-color:var(--acc);font-weight:600}
+.summary{margin:14px 0;padding:12px 16px;background:var(--acc-soft);border-left:4px solid var(--acc);border-radius:8px;font-size:15px;font-weight:500}
+.desc{color:var(--sub);font-size:13px;white-space:pre-wrap;margin:10px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tag-chip{font-size:12px;color:var(--acc-dk);background:var(--acc-soft);border:1px solid #f0e0a0;border-radius:7px;padding:3px 9px}
+/* toc */
+.toc{position:sticky;top:0;z-index:5;background:rgba(250,250,250,.93);backdrop-filter:saturate(180%) blur(12px);
+border-bottom:1px solid var(--line);margin:0 -20px 8px;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.toc-in{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;flex:1}
+.toc-in a{display:flex;flex-direction:column;min-width:84px;padding:6px 10px;border-radius:10px;text-decoration:none;color:var(--sub);font-size:12px;transition:.2s}
+.toc-in a:hover{background:var(--acc-soft)}
+.toc-in a b{color:var(--acc-dk);font-size:13px}.toc-in a i{font-style:normal;color:var(--sub);font-size:11px}
+.watch{font-size:13px;color:var(--acc-dk);text-decoration:none;white-space:nowrap;font-weight:600}
+.watch:hover{text-decoration:underline}
+/* chapter */
+.chapter{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;margin:18px 0;
+box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.ch-head{display:flex;gap:16px;align-items:flex-start;border-bottom:2px solid var(--acc);padding-bottom:14px;margin-bottom:16px}
+.ch-no{font-size:22px;font-weight:800;color:var(--acc-dk);flex:0 0 auto;background:var(--acc);padding:2px 10px;border-radius:8px}
+.ch-titles h3{margin:0;font-size:19px;letter-spacing:-.01em}
+.ch-meta{font-size:13px;color:var(--sub);margin-top:3px}
+.ts{color:var(--acc-dk);text-decoration:none;border-bottom:1px dotted var(--acc-dk);font-weight:500}
+.ts:hover{color:var(--warn);border-color:var(--warn)}
+.ch-body h4{font-size:14px;color:var(--sub);margin:18px 0 8px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.ch-body h4.warn{color:var(--warn)}
+.ch-body h5{font-size:15px;color:var(--ink);margin:0 0 4px;font-weight:600}
+.blk{list-style:none;padding:0;margin:0 0 6px}.blk li{display:flex;gap:10px;padding:4px 0;font-size:15px}
+.blk .mk{flex:0 0 18px;text-align:center;font-weight:700}
+.blk.q .mk{color:var(--acc-dk)}.blk.trap .mk{color:var(--warn)}.blk.kp .mk{color:var(--acc-dk)}
+.blk.trap li{background:#fff5f0;border-radius:8px;padding:6px 10px;margin-bottom:4px}
+.steps{margin:0 0 6px;padding-left:22px}.steps li{padding:4px 0;font-size:15px}
+.steps li::marker{color:var(--acc-dk);font-weight:700}
+.concl{margin:6px 0;padding:12px 16px;background:var(--acc-soft);border-radius:10px;font-weight:500;border-left:4px solid var(--acc)}
+.quotes{display:flex;flex-direction:column;gap:8px}
+.quotes blockquote{margin:0;padding:10px 16px;background:#fafafa;border-left:3px solid var(--acc);border-radius:0 8px 8px 0}
+.quotes blockquote p{margin:0;font-size:14px}.quotes blockquote footer{margin-top:4px;font-size:12px}
+/* detail sections (细致模式) */
+.detail-toggle{margin:12px 0;border:1px solid var(--line);border-radius:12px;background:#fff}
+.detail-toggle summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;font-size:14px;font-weight:700;color:var(--acc-dk);list-style:none}
+.detail-toggle summary::-webkit-details-marker{display:none}
+.detail-toggle summary::after{content:"+";width:22px;height:22px;border-radius:999px;background:var(--acc-soft);display:inline-flex;align-items:center;justify-content:center;font-weight:800}
+.detail-toggle[open] summary::after{content:"-"}
+.detail-toggle summary small{font-size:12px;font-weight:500;color:var(--sub);margin-left:auto}
+.detail-toggle .detail-block{padding:0 16px 14px}
+.detail-block{display:flex;flex-direction:column;gap:10px;margin:6px 0}
+.detail-sec{padding:12px 16px;background:var(--soft);border-radius:10px;border-left:3px solid var(--acc)}
+.detail-sec h5{font-size:14px;color:var(--acc-dk);margin:0 0 4px}
+.detail-sec p{margin:0;font-size:14px;color:var(--ink);line-height:1.6}
+/* media */
+.media{margin:18px 0 4px}.media figcaption{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.tag{font-size:11px;font-weight:700;padding:2px 9px;border-radius:6px;letter-spacing:.04em}
+.tag.svg{background:var(--acc-soft);color:var(--acc-dk);border:1px solid #f0e0a0}.tag.shot{background:#fff0e6;color:var(--warn)}
+.cap{font-size:12px;color:var(--sub)}
+.svg-wrap{background:var(--soft);border-radius:12px;padding:14px;border:1px solid var(--line)}
+.svg-wrap svg{border-radius:8px}
+.media img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+/* frame gallery (细致模式) */
+.frame-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0 4px}
+.frame-item{margin:0}.frame-item img{width:100%;border-radius:10px;border:1px solid var(--line);display:block;transition:transform .25s}
+.frame-item img:hover{transform:scale(1.02)}
+.frame-item figcaption{display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap}
+/* footer */
+.ft{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--sub);font-size:12px}
+.ft-warn{margin:0 0 10px;padding-left:18px}.ft-warn li{color:var(--warn);margin:3px 0}
+@media (max-width:640px){.hd-cover{flex:1 1 100%}.chapter{padding:18px}.hd-main h1{font-size:22px}.frame-gallery{grid-template-columns:1fr}}
+@media print{.toc{display:none}.chapter{break-inside:avoid;box-shadow:none}}
+</style></head>
+<body><div class="wrap">
+
+<header class='hd'>
+  <div class='hd-cover'><img class='cover' src='cover.jpg' alt='封面'/></div>
+  <div class='hd-main'>
+    <h1>黑马程序员Java零基础视频教程_上部(Java入门，含斯坦福大学练习题+力扣算法题和大厂java面试题） p22 Java基础概念-07-计算机中的数据存储</h1>
+    <div class='sub'>
+      <span class='up'>UP · 黑马程序员</span>
+      <span class='badges'><span class='chip '>BiliBili</span><span class='chip '>55:52</span><span class='chip '>当前 P22</span></span>
+    </div>
+    <div class='parts'><span class='lbl'>分P</span><a class='p' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=1'>P1 P1</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=2'>P2 P2</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=3'>P3 P3</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=4'>P4 P4</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=5'>P5 P5</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=6'>P6 P6</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=7'>P7 P7</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=8'>P8 P8</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=9'>P9 P9</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=10'>P10 P10</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=11'>P11 P11</a><a class='p' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=12'>P12 P12</a></div>
+    <div class='summary'>讲解计算机中数据存储的二进制原理，包括进制概念、进制转换、文本与图片的存储方式。</div>
+    <p class='desc'>全部配套资源领取方式：关注黑马程序员公众号，回复关键词:领取资源02
+Java入门到起飞（下）BV1yW4y1Y7Ms
+【Java学习路线图】展开查看更多内容
+https://www.bilibili.com/read/cv9965357
+如何下载资料：
+https://www.bilibili.com/read/cv11763184
+学习集Q结Q地群：625260577
+
+Java最高效学习路线图（依次向下顺序学习即可）
+Java+AI：BV1TJxCzSEEZ
+Python+AI：BV1sHU9BmEne
+Javaweb+AI：BV1yGydYEE3H
+苍穹外卖：BV1TP411v7v6
+AI天机学堂：BV1MFokBkEzC
+AI+若依框架：BV1pf421B71v
+微服务全套：BV1S142197x7
+学成在线项目：BV1j8411N7Bm
+黑马头条项目：BV1Qs4y1v7x4
+23年Java大厂面试：BV1yT411H7YK
+
+解决99%自学编程难题，黑马官方知识星球社群来了！
+https://www.bilibili.com/read/cv37115015/
+名师答疑、独享项目、面试指导等更多助学服务~
+
+工作后进阶提升，点击下方技术点详细学习
+
+MySQL：BV1Kr4y1i7ru
+JVM：BV1r94y1b7eS
+数据结构与算法上部：BV1Lv4y1e7HL
+数据…</p>
+    <div class='tags'><span class='chip tag-chip'>科技猎手</span><span class='chip tag-chip'>程序员的书单</span><span class='chip tag-chip'>java真题</span><span class='chip tag-chip'>JAVA基础</span><span class='chip tag-chip'>java</span><span class='chip tag-chip'>java编程</span><span class='chip tag-chip'>java教程</span><span class='chip tag-chip'>java项目</span><span class='chip tag-chip'>java面试</span></div>
+  </div>
+</header>
+<nav class='toc'><div class='toc-in'><a href='#ch-1'><b>01</b><span>引言：计算机中的数据分类与存储概</span><i>0:02</i></a><a href='#ch-2'><b>02</b><span>什么是二进制？十进制与二进制的对</span><i>1:41</i></a><a href='#ch-3'><b>03</b><span>计算机中的其他进制与进制前缀</span><i>10:11</i></a><a href='#ch-4'><b>04</b><span>计算机为什么用二进制？历史与物理</span><i>14:36</i></a><a href='#ch-5'><b>05</b><span>任意进制转十进制：系数乘基数的权</span><i>20:22</i></a><a href='#ch-6'><b>06</b><span>十进制转任意进制：除基取余法</span><i>30:10</i></a><a href='#ch-7'><b>07</b><span>数字存储小结与计算器演示</span><i>34:27</i></a><a href='#ch-8'><b>08</b><span>文本存储：ASCII码与汉字编码</span><i>36:32</i></a><a href='#ch-9'><b>09</b><span>图片存储：像素、分辨率与三原色</span><i>41:48</i></a><a href='#ch-10'><b>10</b><span>声音的存储：采样与还原</span><i>52:21</i></a><a href='#ch-11'><b>11</b><span>总结：计算机中三类数据的存储规则</span><i>54:18</i></a></div><a class='watch' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=0'>原视频 ↗</a></nav>
+
+<section class='chapter' id='ch-1'>
+  <header class='ch-head'>
+    <span class='ch-no'>01</span>
+    <div class='ch-titles'>
+      <h3>引言：计算机中的数据分类与存储概览</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=2'>⏱ 0:02 – 1:20</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>计算机中数据分为文本、图片、声音三类。</span></li><li><span class='mk'>•</span><span>视频是图片和声音的组合。</span></li><li><span class='mk'>•</span><span>文本包含数字、字母、汉字。</span></li><li><span class='mk'>•</span><span>所有数据最终以二进制存储。</span></li></ul><h4>结论</h4><p class='concl'>计算机中所有数据（文本、图片、声音）都以二进制形式存储。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>在计算机当中啊任你的数据都是以二进制的形式来存储的</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=81'>⏱ 1:21</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示计算机中三类数据（文本、图片、声音）及其子类，以及它们最终都以二进制存储的结论。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" fill="#6e6e73">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" fill="#0071e3">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff" />
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">计算机中数据的分类与存储</text>
+  <line x1="180" y1="48" x2="540" y2="48" stroke="#d2d2d7" stroke-width="1.5" />
+
+  <!-- 顶层：数据 -->
+  <rect x="290" y="68" width="140" height="40" rx="20" ry="20" fill="#0071e3" />
+  <text x="360" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">计算机中的数据</text>
+
+  <!-- 连线：数据 → 三类 -->
+  <line x1="320" y1="108" x2="140" y2="148" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="360" y1="108" x2="360" y2="148" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="400" y1="108" x2="580" y2="148" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- 第二层：三类 -->
+  <!-- 文本 -->
+  <rect x="60" y="150" width="160" height="44" rx="8" ry="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5" />
+  <text x="140" y="177" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d1d1f">文本</text>
+
+  <!-- 图片 -->
+  <rect x="280" y="150" width="160" height="44" rx="8" ry="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5" />
+  <text x="360" y="177" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d1d1f">图片</text>
+
+  <!-- 声音 -->
+  <rect x="500" y="150" width="160" height="44" rx="8" ry="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5" />
+  <text x="580" y="177" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d1d1f">声音</text>
+
+  <!-- 文本子类连线 -->
+  <line x1="100" y1="194" x2="80" y2="228" stroke="#d2d2d7" stroke-width="1.2" marker-end="url(#arrow)" />
+  <line x1="140" y1="194" x2="140" y2="228" stroke="#d2d2d7" stroke-width="1.2" marker-end="url(#arrow)" />
+  <line x1="180" y1="194" x2="200" y2="228" stroke="#d2d2d7" stroke-width="1.2" marker-end="url(#arrow)" />
+
+  <!-- 文本子类 -->
+  <rect x="40" y="230" width="80" height="34" rx="6" ry="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1" />
+  <text x="80" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">数字</text>
+
+  <rect x="100" y="230" width="80" height="34" rx="6" ry="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1" />
+  <text x="140" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">字母</text>
+
+  <rect x="160" y="230" width="80" height="34" rx="6" ry="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1" />
+  <text x="200" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">汉字</text>
+
+  <!-- 视频标注（图片+声音组合） -->
+  <rect x="310" y="210" width="100" height="28" rx="14" ry="14" fill="#00b8d9" opacity="0.9" />
+  <text x="360" y="229" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">视频</text>
+
+  <!-- 视频指向图片和声音的虚线 -->
+  <line x1="340" y1="210" x2="340" y2="194" stroke="#00b8d9" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowBlue)" />
+  <line x1="380" y1="210" x2="380" y2="194" stroke="#00b8d9" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowBlue)" />
+
+  <!-- 视频标签文字 -->
+  <text x="360" y="258" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">（图片 + 声音 组合）</text>
+
+  <!-- 向下汇聚箭头 -->
+  <line x1="140" y1="264" x2="140" y2="300" stroke="#d2d2d7" stroke-width="1.2" />
+  <line x1="360" y1="264" x2="360" y2="300" stroke="#d2d2d7" stroke-width="1.2" />
+  <line x1="580" y1="194" x2="580" y2="300" stroke="#d2d2d7" stroke-width="1.2" />
+  <line x1="140" y1="300" x2="580" y2="300" stroke="#d2d2d7" stroke-width="1.5" />
+  <line x1="360" y1="300" x2="360" y2="320" stroke="#6e6e73" stroke-width="1.8" marker-end="url(#arrow)" />
+
+  <!-- 底部结论：二进制存储 -->
+  <rect x="230" y="325" width="260" height="50" rx="25" ry="25" fill="#34c759" />
+  <text x="360" y="348" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">以二进制形式存储</text>
+  <text x="360" y="368" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" opacity="0.85">所有数据最终 → 0 和 1</text>
+
+  <!-- 底部说明 -->
+  <text x="360" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">计算机中所有数据（文本、图片、声音）都以二进制形式存储</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-2'>
+  <header class='ch-head'>
+    <span class='ch-no'>02</span>
+    <div class='ch-titles'>
+      <h3>什么是二进制？十进制与二进制的对比</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=101'>⏱ 1:41 – 10:11</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>什么是二进制？</span></li><li><span class='mk'>?</span><span>计算机为什么要用二进制存储数据？</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>十进制由0-9组成，逢十进一，借一当十。</li><li>二进制由0和1组成，逢二进一，借一当二。</li><li>通过加法示例（1+1=10）理解二进制进位。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>十进制：0-9，逢十进一。</span></li><li><span class='mk'>•</span><span>二进制：0-1，逢二进一。</span></li><li><span class='mk'>•</span><span>二进制中1+1=10。</span></li><li><span class='mk'>•</span><span>二进制中2表示为10，3为11，4为100。</span></li></ul><h4>结论</h4><p class='concl'>二进制是计算机存储的基础，由0和1组成，逢二进一。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>二进制他就是由零和一这两个数字来组成的他的基本规则的是缝二进呢借一当二</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=384'>⏱ 6:24</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>对比 · 对比十进制和二进制，展示各自的组成数字、进位规则和计算示例。</span></figcaption><div class='svg-wrap'><svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#6e6e73"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">十进制 vs 二进制 对比</text>
+  <line x1="180" y1="48" x2="540" y2="48" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 表头背景 -->
+  <rect x="40" y="60" width="160" height="36" rx="4" fill="#0071e3"/>
+  <rect x="200" y="60" width="240" height="36" rx="4" fill="#f5f5f7"/>
+  <rect x="440" y="60" width="240" height="36" rx="4" fill="#f5f5f7"/>
+
+  <!-- 表头文字 -->
+  <text x="120" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">对比维度</text>
+  <text x="320" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">十进制</text>
+  <text x="560" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">二进制</text>
+
+  <!-- 分隔线 -->
+  <line x1="40" y1="96" x2="680" y2="96" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 行1：组成数字 -->
+  <rect x="40" y="100" width="160" height="50" rx="0" fill="#f5f5f7"/>
+  <rect x="200" y="100" width="240" height="50" rx="0" fill="#ffffff"/>
+  <rect x="440" y="100" width="240" height="50" rx="0" fill="#ffffff"/>
+  <text x="120" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">组成数字</text>
+  <text x="320" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">0, 1, 2, 3, 4, 5, 6, 7, 8, 9</text>
+  <text x="560" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0071e3">0 和 1</text>
+
+  <!-- 行2：进位规则 -->
+  <rect x="40" y="150" width="160" height="50" rx="0" fill="#f5f5f7"/>
+  <rect x="200" y="150" width="240" height="50" rx="0" fill="#ffffff"/>
+  <rect x="440" y="150" width="240" height="50" rx="0" fill="#ffffff"/>
+  <text x="120" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">进位规则</text>
+  <text x="320" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">逢十进一，借一当十</text>
+  <text x="560" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0071e3">逢二进一，借一当二</text>
+
+  <!-- 行3：加法示例 -->
+  <rect x="40" y="200" width="160" height="50" rx="0" fill="#f5f5f7"/>
+  <rect x="200" y="200" width="240" height="50" rx="0" fill="#ffffff"/>
+  <rect x="440" y="200" width="240" height="50" rx="0" fill="#ffffff"/>
+  <text x="120" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">加法示例</text>
+  <text x="320" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">9 + 1 = 10</text>
+  <text x="560" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ff3b30">1 + 1 = 10</text>
+
+  <!-- 行4：数字表示 -->
+  <rect x="40" y="250" width="160" height="50" rx="0" fill="#f5f5f7"/>
+  <rect x="200" y="250" width="240" height="50" rx="0" fill="#ffffff"/>
+  <rect x="440" y="250" width="240" height="50" rx="0" fill="#ffffff"/>
+  <text x="120" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1d1d1f">数字表示</text>
+  <text x="320" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">2 → 2, 3 → 3, 4 → 4</text>
+  <text x="560" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0071e3">2 → 10, 3 → 11, 4 → 100</text>
+
+  <!-- 底部边框 -->
+  <line x1="40" y1="300" x2="680" y2="300" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 竖式示例区 -->
+  <text x="360" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">竖式对比</text>
+
+  <!-- 十进制竖式 9+1=10 -->
+  <rect x="120" y="338" width="140" height="70" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="190" y="360" text-anchor="middle" font-family="monospace" font-size="16" fill="#1d1d1f">   9</text>
+  <text x="190" y="378" text-anchor="middle" font-family="monospace" font-size="16" fill="#1d1d1f">+  1</text>
+  <line x1="140" y1="382" x2="260" y2="382" stroke="#1d1d1f" stroke-width="1"/>
+  <text x="190" y="398" text-anchor="middle" font-family="monospace" font-size="16" fill="#0071e3">  10</text>
+
+  <!-- 箭头 -->
+  <line x1="270" y1="370" x2="310" y2="370" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+
+  <!-- 二进制竖式 1+1=10 -->
+  <rect x="320" y="338" width="140" height="70" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="390" y="360" text-anchor="middle" font-family="monospace" font-size="16" fill="#1d1d1f">   1</text>
+  <text x="390" y="378" text-anchor="middle" font-family="monospace" font-size="16" fill="#1d1d1f">+  1</text>
+  <line x1="340" y1="382" x2="460" y2="382" stroke="#1d1d1f" stroke-width="1"/>
+  <text x="390" y="398" text-anchor="middle" font-family="monospace" font-size="16" fill="#ff3b30">  10</text>
+
+  <!-- 底部结论 -->
+  <rect x="40" y="415" width="640" height="1" fill="#d2d2d7"/>
+  <text x="360" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">结论：二进制由0和1组成，逢二进一，是计算机存储的基础</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-3'>
+  <header class='ch-head'>
+    <span class='ch-no'>03</span>
+    <div class='ch-titles'>
+      <h3>计算机中的其他进制与进制前缀</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=611'>⏱ 10:11 – 14:36</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>在代码中书写数字时，不加前缀默认是十进制，但可能被误认为其他进制。</span></li><li><span class='mk'>!</span><span>二进制中不能出现2及以上的数字，否则语法错误。</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>二进制：0b开头，由0和1组成。</span></li><li><span class='mk'>•</span><span>八进制：0开头，由0-7组成。</span></li><li><span class='mk'>•</span><span>十进制：默认，无前缀，由0-9组成。</span></li><li><span class='mk'>•</span><span>十六进制：0x开头，由0-9和A-F组成。</span></li></ul><h4>结论</h4><p class='concl'>计算机中常见四种进制：二进制、八进制、十进制、十六进制，各有特定前缀。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>骄傲规定了呀二进制在书写的时候前面的需要加令必作为开头</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=706'>⏱ 11:46</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示四种常见进制（二进制、八进制、十进制、十六进制）的组成和书写前缀。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" font-family="system-ui, -apple-system, sans-serif" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#6e6e73"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-size="20" font-weight="bold" fill="#1d1d1f">计算机中的其他进制与进制前缀</text>
+
+  <!-- 副标题/说明 -->
+  <text x="360" y="62" text-anchor="middle" font-size="13" fill="#6e6e73">四种常见进制：二进制 · 八进制 · 十进制 · 十六进制</text>
+
+  <!-- 分隔线 -->
+  <line x1="60" y1="78" x2="660" y2="78" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 四个进制卡片 -->
+  <!-- 二进制卡片 -->
+  <rect x="40" y="95" width="145" height="175" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <rect x="40" y="95" width="145" height="40" rx="10" fill="#0071e3"/>
+  <rect x="40" y="125" width="145" height="10" fill="#0071e3"/>
+  <text x="112" y="120" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">二进制</text>
+
+  <text x="55" y="155" font-size="13" fill="#1d1d1f" font-weight="bold">前缀：</text>
+  <text x="55" y="175" font-size="14" fill="#0071e3" font-family="monospace">0b</text>
+  <text x="55" y="200" font-size="13" fill="#1d1d1f" font-weight="bold">组成：</text>
+  <text x="55" y="220" font-size="14" fill="#1d1d1f" font-family="monospace">0, 1</text>
+  <text x="55" y="245" font-size="12" fill="#6e6e73" font-family="monospace">示例：0b101</text>
+
+  <!-- 八进制卡片 -->
+  <rect x="205" y="95" width="145" height="175" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <rect x="205" y="95" width="145" height="40" rx="10" fill="#00b8d9"/>
+  <rect x="205" y="125" width="145" height="10" fill="#00b8d9"/>
+  <text x="277" y="120" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">八进制</text>
+
+  <text x="220" y="155" font-size="13" fill="#1d1d1f" font-weight="bold">前缀：</text>
+  <text x="220" y="175" font-size="14" fill="#00b8d9" font-family="monospace">0</text>
+  <text x="220" y="200" font-size="13" fill="#1d1d1f" font-weight="bold">组成：</text>
+  <text x="220" y="220" font-size="14" fill="#1d1d1f" font-family="monospace">0 ~ 7</text>
+  <text x="220" y="245" font-size="12" fill="#6e6e73" font-family="monospace">示例：0123</text>
+
+  <!-- 十进制卡片 -->
+  <rect x="370" y="95" width="145" height="175" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <rect x="370" y="95" width="145" height="40" rx="10" fill="#34c759"/>
+  <rect x="370" y="125" width="145" height="10" fill="#34c759"/>
+  <text x="442" y="120" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">十进制</text>
+
+  <text x="385" y="155" font-size="13" fill="#1d1d1f" font-weight="bold">前缀：</text>
+  <text x="385" y="175" font-size="14" fill="#34c759" font-family="monospace">无</text>
+  <text x="385" y="200" font-size="13" fill="#1d1d1f" font-weight="bold">组成：</text>
+  <text x="385" y="220" font-size="14" fill="#1d1d1f" font-family="monospace">0 ~ 9</text>
+  <text x="385" y="245" font-size="12" fill="#6e6e73" font-family="monospace">默认进制</text>
+
+  <!-- 十六进制卡片 -->
+  <rect x="535" y="95" width="145" height="175" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <rect x="535" y="95" width="145" height="40" rx="10" fill="#ff8a3d"/>
+  <rect x="535" y="125" width="145" height="10" fill="#ff8a3d"/>
+  <text x="607" y="120" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">十六进制</text>
+
+  <text x="550" y="155" font-size="13" fill="#1d1d1f" font-weight="bold">前缀：</text>
+  <text x="550" y="175" font-size="14" fill="#ff8a3d" font-family="monospace">0x</text>
+  <text x="550" y="200" font-size="13" fill="#1d1d1f" font-weight="bold">组成：</text>
+  <text x="550" y="220" font-size="14" fill="#1d1d1f" font-family="monospace">0~9, A~F</text>
+  <text x="550" y="245" font-size="12" fill="#6e6e73" font-family="monospace">示例：0x1A</text>
+
+  <!-- 连接线：从标题到四个卡片 -->
+  <line x1="112" y1="78" x2="112" y2="95" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="277" y1="78" x2="277" y2="95" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="442" y1="78" x2="442" y2="95" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="607" y1="78" x2="607" y2="95" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 陷阱提示区域 -->
+  <rect x="40" y="290" width="640" height="110" rx="10" fill="#fff8f0" stroke="#ff8a3d" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="60" y="315" font-size="14" font-weight="bold" fill="#ff3b30">⚠ 常见陷阱</text>
+
+  <text x="60" y="342" font-size="13" fill="#1d1d1f">• 在代码中书写数字时，不加前缀默认是十进制，但可能被误认为其他进制。</text>
+  <text x="60" y="367" font-size="13" fill="#1d1d1f">• 二进制中不能出现 2 及以上的数字，否则语法错误。</text>
+  <text x="60" y="392" font-size="12" fill="#6e6e73" font-style="italic">关键引用：骄傲规定了呀二进制在书写的时候前面的需要加 0b 作为开头</text>
+
+  <!-- 底部装饰线 -->
+  <line x1="60" y1="410" x2="660" y2="410" stroke="#d2d2d7" stroke-width="0.5"/>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-4'>
+  <header class='ch-head'>
+    <span class='ch-no'>04</span>
+    <div class='ch-titles'>
+      <h3>计算机为什么用二进制？历史与物理原因</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=876'>⏱ 14:36 – 20:22</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>计算机为什么要用二进制存储数据？</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>早期计算机用打孔纸带，有孔表示1，无孔表示0。</span></li><li><span class='mk'>•</span><span>现代计算机用电路板，高电压（&gt;3.3V）表示1，低电压（&lt;3.3V）表示0。</span></li><li><span class='mk'>•</span><span>若用十进制，需要十种不同状态，实现复杂。</span></li></ul><h4>结论</h4><p class='concl'>因为物理器件只能区分两种状态（有孔/无孔、高电压/低电压），二进制正好对应。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>他只能区分狗狗和美好这两个状态</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=1153'>⏱ 19:13</a></footer></blockquote><blockquote><p>计算机的为什么使用二进制据存储数据就是因为只要两种状态就可以表示二进制了</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=1181'>⏱ 19:41</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>因果 · 展示从打孔纸带到电路板，二进制如何因物理限制（只有两种状态）而被采用。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff8a3d"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">计算机为什么用二进制？历史与物理原因</text>
+
+  <!-- 因果链路：打孔纸带 → 物理限制 → 二进制采用 -->
+  
+  <!-- 节点1：打孔纸带 -->
+  <rect x="40" y="90" width="200" height="100" rx="12" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="140" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">打孔纸带</text>
+  <text x="140" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">有孔 → 1</text>
+  <text x="140" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">无孔 → 0</text>
+  <text x="140" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0071e3">（早期计算机）</text>
+
+  <!-- 箭头1 -->
+  <line x1="240" y1="140" x2="310" y2="140" stroke="#0071e3" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="275" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0071e3">物理限制</text>
+
+  <!-- 节点2：物理器件只能区分两种状态 -->
+  <rect x="320" y="90" width="200" height="100" rx="12" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="420" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">物理器件</text>
+  <text x="420" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">只能区分两种状态</text>
+  <text x="420" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ff8a3d">（有孔/无孔）</text>
+  <text x="420" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">若用十进制需十种状态</text>
+
+  <!-- 箭头2 -->
+  <line x1="520" y1="140" x2="590" y2="140" stroke="#ff8a3d" stroke-width="2.5" marker-end="url(#arrow-orange)"/>
+  <text x="555" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ff8a3d">对应</text>
+
+  <!-- 节点3：二进制被采用 -->
+  <rect x="600" y="90" width="100" height="100" rx="12" fill="#0071e3" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="650" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">二进制</text>
+  <text x="650" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#ffffff">0 和 1</text>
+  <text x="650" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#ffffff">被采用</text>
+
+  <!-- 现代电路板补充 -->
+  <rect x="40" y="240" width="200" height="100" rx="12" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="140" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1d1d1f">现代电路板</text>
+  <text x="140" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">高电压（&gt;3.3V）→ 1</text>
+  <text x="140" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">低电压（&lt;3.3V）→ 0</text>
+  <text x="140" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0071e3">（现代计算机）</text>
+
+  <!-- 虚线箭头：纸带 → 电路板（历史演进） -->
+  <line x1="140" y1="190" x2="140" y2="240" stroke="#d2d2d7" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+  <text x="160" y="218" font-family="Arial, sans-serif" font-size="11" fill="#6e6e73">历史演进</text>
+
+  <!-- 结论框 -->
+  <rect x="320" y="240" width="380" height="100" rx="12" fill="#34c759" stroke="#34c759" stroke-width="1.5"/>
+  <text x="510" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">结论</text>
+  <text x="510" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">物理器件只能区分两种状态</text>
+  <text x="510" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">二进制正好对应，实现简单可靠</text>
+
+  <!-- 从物理器件到结论的箭头 -->
+  <line x1="420" y1="190" x2="420" y2="240" stroke="#34c759" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="440" y="218" font-family="Arial, sans-serif" font-size="11" fill="#34c759">推导</text>
+
+  <!-- 底部时间戳 -->
+  <text x="360" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#d2d2d7">时间段：876.27s - 1221.54s</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-5'>
+  <header class='ch-head'>
+    <span class='ch-no'>05</span>
+    <div class='ch-titles'>
+      <h3>任意进制转十进制：系数乘基数的权次幂</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=1222'>⏱ 20:22 – 30:10</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>进制之间能互相转化吗？</span></li><li><span class='mk'>?</span><span>如何将任意进制转为十进制？</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>确定系数（每一位上的数字）、基数（当前进制）、权（从右往左从0开始递增）。</li><li>计算每一位：系数 × 基数^权。</li><li>将所有结果相加得到十进制数。</li><li>记住二进制每一位对应的十进制值：从右往左依次为1,2,4,8,16,32,64,128,...。</li><li>将二进制中为1的位对应的值相加。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>系数：每一位上的数字。</span></li><li><span class='mk'>•</span><span>基数：当前进制数。</span></li><li><span class='mk'>•</span><span>权：从右往左依次为0,1,2,...。</span></li><li><span class='mk'>•</span><span>二进制101转十进制：1×2^2 + 0×2^1 + 1×2^0 = 5。</span></li><li><span class='mk'>•</span><span>八进制101转十进制：1×8^2 + 0×8^1 + 1×8^0 = 65。</span></li><li><span class='mk'>•</span><span>十六进制ABC转十进制：10×16^2 + 11×16^1 + 12×16^0 = 2748。</span></li><li><span class='mk'>•</span><span>二进制位值：1,2,4,8,16,32,64,128,...。</span></li><li><span class='mk'>•</span><span>二进制1101转十进制：8+4+1=13。</span></li></ul><h4>结论</h4><p class='concl'>任意进制转十进制使用公式：系数×基数^权，再求和。 8421法可快速将二进制转为十进制，只需将1对应的位值相加。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>任意精致转型时禁止这个该等转只的会用到一个公司叫做系数曾以基数的全是呢</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=1250'>⏱ 20:50</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>流程 · 展示任意进制转十进制的公式和步骤，以二进制、八进制、十六进制为例。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6e6e73"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#1d1d1f">任意进制转十进制：系数 × 基数^权</text>
+
+  <!-- 步骤1：确定系数、基数、权 -->
+  <rect x="40" y="55" width="200" height="50" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="140" y="75" text-anchor="middle" font-size="13" fill="#1d1d1f" font-weight="bold">步骤1</text>
+  <text x="140" y="93" text-anchor="middle" font-size="12" fill="#6e6e73">确定系数、基数、权</text>
+
+  <!-- 箭头1 -->
+  <line x1="240" y1="80" x2="290" y2="80" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 步骤2：计算每一位 -->
+  <rect x="295" y="55" width="200" height="50" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="395" y="75" text-anchor="middle" font-size="13" fill="#1d1d1f" font-weight="bold">步骤2</text>
+  <text x="395" y="93" text-anchor="middle" font-size="12" fill="#6e6e73">计算每一位：系数×基数^权</text>
+
+  <!-- 箭头2 -->
+  <line x1="495" y1="80" x2="545" y2="80" stroke="#6e6e73" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 步骤3：求和 -->
+  <rect x="550" y="55" width="130" height="50" rx="8" fill="#0071e3" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="615" y="75" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="bold">步骤3</text>
+  <text x="615" y="93" text-anchor="middle" font-size="12" fill="#ffffff">所有结果相加</text>
+
+  <!-- 公式展示 -->
+  <rect x="40" y="125" width="640" height="35" rx="6" fill="#e8f4fd" stroke="#0071e3" stroke-width="1"/>
+  <text x="360" y="148" text-anchor="middle" font-size="15" fill="#0071e3" font-weight="bold">核心公式：十进制数 = Σ (系数 × 基数^权)</text>
+
+  <!-- 示例区域标题 -->
+  <text x="60" y="190" font-size="14" font-weight="bold" fill="#1d1d1f">示例：</text>
+
+  <!-- 二进制101示例 -->
+  <rect x="40" y="200" width="200" height="90" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="140" y="220" text-anchor="middle" font-size="13" fill="#1d1d1f" font-weight="bold">二进制 101 → 十进制</text>
+  <text x="140" y="240" text-anchor="middle" font-size="12" fill="#6e6e73">1×2² + 0×2¹ + 1×2⁰</text>
+  <text x="140" y="258" text-anchor="middle" font-size="12" fill="#6e6e73">= 4 + 0 + 1</text>
+  <text x="140" y="278" text-anchor="middle" font-size="14" fill="#34c759" font-weight="bold">= 5</text>
+
+  <!-- 八进制101示例 -->
+  <rect x="260" y="200" width="200" height="90" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="360" y="220" text-anchor="middle" font-size="13" fill="#1d1d1f" font-weight="bold">八进制 101 → 十进制</text>
+  <text x="360" y="240" text-anchor="middle" font-size="12" fill="#6e6e73">1×8² + 0×8¹ + 1×8⁰</text>
+  <text x="360" y="258" text-anchor="middle" font-size="12" fill="#6e6e73">= 64 + 0 + 1</text>
+  <text x="360" y="278" text-anchor="middle" font-size="14" fill="#34c759" font-weight="bold">= 65</text>
+
+  <!-- 十六进制ABC示例 -->
+  <rect x="480" y="200" width="200" height="90" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="580" y="220" text-anchor="middle" font-size="13" fill="#1d1d1f" font-weight="bold">十六进制 ABC → 十进制</text>
+  <text x="580" y="240" text-anchor="middle" font-size="12" fill="#6e6e73">10×16² + 11×16¹ + 12×16⁰</text>
+  <text x="580" y="258" text-anchor="middle" font-size="12" fill="#6e6e73">= 2560 + 176 + 12</text>
+  <text x="580" y="278" text-anchor="middle" font-size="14" fill="#34c759" font-weight="bold">= 2748</text>
+
+  <!-- 8421位值表 -->
+  <rect x="40" y="305" width="640" height="45" rx="6" fill="#fff8e8" stroke="#ff8a3d" stroke-width="1"/>
+  <text x="60" y="325" font-size="13" fill="#ff8a3d" font-weight="bold">8421位值表（二进制）：</text>
+  <text x="60" y="342" font-size="12" fill="#6e6e73">从右往左：1, 2, 4, 8, 16, 32, 64, 128, ...</text>
+
+  <!-- 二进制1101示例 -->
+  <rect x="40" y="360" width="640" height="45" rx="6" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="60" y="380" font-size="13" fill="#1d1d1f" font-weight="bold">二进制 1101 → 十进制（8421法）：</text>
+  <text x="60" y="397" font-size="12" fill="#6e6e73">位值：8, 4, 2, 1 → 取1对应的位值：8 + 4 + 1</text>
+  <text x="520" y="392" font-size="14" fill="#34c759" font-weight="bold">= 13</text>
+
+  <!-- 结论标注 -->
+  <line x1="360" y1="130" x2="360" y2="125" stroke="#0071e3" stroke-width="1.5" stroke-dasharray="3,3"/>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-6'>
+  <header class='ch-head'>
+    <span class='ch-no'>06</span>
+    <div class='ch-titles'>
+      <h3>十进制转任意进制：除基取余法</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=1810'>⏱ 30:10 – 34:26</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>如何将十进制转为其他进制？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>有些资料除到商为1就停止，但正统解法应除到商为0。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>用十进制数不断除以目标进制数（如2），记录余数。</li><li>重复直到商为0。</li><li>将所有余数从下往上拼接得到结果。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>十进制11转二进制：11÷2=5余1，5÷2=2余1，2÷2=1余0，1÷2=0余1，结果1011。</span></li><li><span class='mk'>•</span><span>十进制7转二进制：7÷2=3余1，3÷2=1余1，1÷2=0余1，结果111。</span></li></ul><h4>结论</h4><p class='concl'>十进制转其他进制使用除基取余法，直到商为0，余数倒序拼接。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>不断的除以激素几丁质基数就自己去得到榆树一只出一只除一只处直到方为零在将榆树抱着拼接起来</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=1819'>⏱ 30:19</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>流程 · 展示十进制转二进制的除2取余法步骤，并推广到其他进制。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" font-family="Arial, Helvetica, sans-serif" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" fill="#0071e3">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+    <marker id="arrowDown" markerWidth="10" markerHeight="7" refX="5" refY="7" orient="auto" fill="#0071e3">
+      <polygon points="0 0, 10 0, 5 7" />
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff" rx="8" />
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-size="20" font-weight="bold" fill="#1d1d1f">十进制转任意进制：除基取余法</text>
+
+  <!-- 步骤1：除基取余 -->
+  <rect x="60" y="65" width="180" height="52" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5" />
+  <text x="150" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d1d1f">步骤1：除基取余</text>
+  <text x="150" y="106" text-anchor="middle" font-size="12" fill="#6e6e73">除以目标进制，记录余数</text>
+
+  <!-- 箭头 1→2 -->
+  <line x1="240" y1="91" x2="300" y2="91" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- 步骤2：重复直到商为0 -->
+  <rect x="310" y="65" width="180" height="52" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5" />
+  <text x="400" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d1d1f">步骤2：重复</text>
+  <text x="400" y="106" text-anchor="middle" font-size="12" fill="#6e6e73">直到商为0</text>
+
+  <!-- 箭头 2→3 -->
+  <line x1="490" y1="91" x2="550" y2="91" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- 步骤3：倒序拼接 -->
+  <rect x="560" y="65" width="140" height="52" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5" />
+  <text x="630" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d1d1f">步骤3：倒序拼接</text>
+  <text x="630" y="106" text-anchor="middle" font-size="12" fill="#6e6e73">余数从下往上拼接</text>
+
+  <!-- 分隔线 -->
+  <line x1="40" y1="140" x2="680" y2="140" stroke="#d2d2d7" stroke-width="1" stroke-dasharray="4,4" />
+
+  <!-- 示例1：十进制11转二进制 -->
+  <text x="120" y="168" text-anchor="middle" font-size="15" font-weight="bold" fill="#1d1d1f">示例1：十进制11 → 二进制</text>
+
+  <!-- 竖式计算框 -->
+  <rect x="40" y="180" width="160" height="130" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1" />
+  
+  <!-- 竖式内容 -->
+  <text x="55" y="202" font-size="13" fill="#1d1d1f">11 ÷ 2 = 5 … 1</text>
+  <text x="55" y="222" font-size="13" fill="#1d1d1f"> 5 ÷ 2 = 2 … 1</text>
+  <text x="55" y="242" font-size="13" fill="#1d1d1f"> 2 ÷ 2 = 1 … 0</text>
+  <text x="55" y="262" font-size="13" fill="#1d1d1f"> 1 ÷ 2 = 0 … 1</text>
+  
+  <!-- 结果箭头 -->
+  <line x1="200" y1="245" x2="240" y2="245" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- 结果框 -->
+  <rect x="250" y="220" width="100" height="50" rx="8" fill="#e8f5e9" stroke="#34c759" stroke-width="1.5" />
+  <text x="300" y="240" text-anchor="middle" font-size="14" font-weight="bold" fill="#34c759">结果</text>
+  <text x="300" y="258" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1f">1011₂</text>
+
+  <!-- 示例2：十进制7转二进制 -->
+  <text x="480" y="168" text-anchor="middle" font-size="15" font-weight="bold" fill="#1d1d1f">示例2：十进制7 → 二进制</text>
+
+  <!-- 竖式计算框 -->
+  <rect x="400" y="180" width="160" height="110" rx="8" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1" />
+  
+  <!-- 竖式内容 -->
+  <text x="415" y="202" font-size="13" fill="#1d1d1f">7 ÷ 2 = 3 … 1</text>
+  <text x="415" y="222" font-size="13" fill="#1d1d1f">3 ÷ 2 = 1 … 1</text>
+  <text x="415" y="242" font-size="13" fill="#1d1d1f">1 ÷ 2 = 0 … 1</text>
+  
+  <!-- 结果箭头 -->
+  <line x1="560" y1="225" x2="600" y2="225" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- 结果框 -->
+  <rect x="610" y="200" width="90" height="50" rx="8" fill="#e8f5e9" stroke="#34c759" stroke-width="1.5" />
+  <text x="655" y="220" text-anchor="middle" font-size="14" font-weight="bold" fill="#34c759">结果</text>
+  <text x="655" y="238" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1f">111₂</text>
+
+  <!-- 分隔线 -->
+  <line x1="40" y1="330" x2="680" y2="330" stroke="#d2d2d7" stroke-width="1" stroke-dasharray="4,4" />
+
+  <!-- 结论 -->
+  <rect x="100" y="345" width="520" height="55" rx="10" fill="#f0f7ff" stroke="#0071e3" stroke-width="1.5" />
+  <text x="360" y="368" text-anchor="middle" font-size="14" font-weight="bold" fill="#0071e3">结论：十进制转其他进制使用除基取余法</text>
+  <text x="360" y="388" text-anchor="middle" font-size="13" fill="#1d1d1f">不断除以目标进制直到商为0，余数倒序拼接得到结果</text>
+
+  <!-- 陷阱提示 -->
+  <rect x="40" y="345" width="55" height="55" rx="10" fill="#ff3b30" />
+  <text x="67" y="378" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">⚠</text>
+
+  <!-- 陷阱说明 -->
+  <text x="100" y="415" font-size="11" fill="#ff3b30">陷阱：有些资料除到商为1就停止，正统解法应除到商为0</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-7'>
+  <header class='ch-head'>
+    <span class='ch-no'>07</span>
+    <div class='ch-titles'>
+      <h3>数字存储小结与计算器演示</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=2067'>⏱ 34:27 – 36:32</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>步骤</h4><ol class='blk steps'><li>打开电脑计算器，切换到程序员模式。</li><li>输入十进制数，点击二进制即可看到转换结果。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>数字99转二进制为1100011。</span></li><li><span class='mk'>•</span><span>计算器可方便进行进制转换。</span></li></ul><h4>结论</h4><p class='concl'>数字在计算机中通过转二进制存储，可用计算器快速转换。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>简单一句话就是转成二进制在进行存储的</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=2077'>⏱ 34:37</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>数据 · 展示数字存储的结论：数字转二进制存储，并用计算器演示进制转换。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" font-family="Arial, Helvetica, sans-serif" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6e6e73"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-size="20" font-weight="bold" fill="#1d1d1f">数字存储小结与计算器演示</text>
+  <line x1="200" y1="48" x2="520" y2="48" stroke="#d2d2d7" stroke-width="1.5"/>
+
+  <!-- 左侧：数字存储原理 -->
+  <rect x="30" y="65" width="310" height="150" rx="10" fill="#f5f5f7"/>
+  <text x="185" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#1d1d1f">数字存储原理</text>
+  <text x="50" y="118" font-size="14" fill="#1d1d1f">数字在计算机中通过</text>
+  <text x="50" y="140" font-size="14" fill="#1d1d1f">转二进制进行存储</text>
+
+  <!-- 十进制99 -->
+  <rect x="60" y="155" width="80" height="40" rx="6" fill="#0071e3"/>
+  <text x="100" y="181" text-anchor="middle" font-size="15" font-weight="bold" fill="#ffffff">十进制 99</text>
+
+  <!-- 箭头 -->
+  <line x1="140" y1="175" x2="195" y2="175" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 二进制1100011 -->
+  <rect x="195" y="155" width="120" height="40" rx="6" fill="#34c759"/>
+  <text x="255" y="181" text-anchor="middle" font-size="15" font-weight="bold" fill="#ffffff">二进制 1100011</text>
+
+  <!-- 底部说明 -->
+  <text x="185" y="225" text-anchor="middle" font-size="13" fill="#6e6e73">99 → 1100011</text>
+
+  <!-- 右侧：计算器演示 -->
+  <rect x="370" y="65" width="320" height="150" rx="10" fill="#f5f5f7"/>
+  <text x="530" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#1d1d1f">计算器进制转换演示</text>
+
+  <!-- 计算器界面示意 -->
+  <rect x="400" y="105" width="260" height="95" rx="8" fill="#ffffff" stroke="#d2d2d7" stroke-width="1.5"/>
+
+  <!-- 计算器标题栏 -->
+  <rect x="400" y="105" width="260" height="24" rx="8" fill="#e8e8ed"/>
+  <rect x="400" y="117" width="260" height="12" fill="#e8e8ed"/>
+  <text x="530" y="121" text-anchor="middle" font-size="12" fill="#6e6e73">程序员模式</text>
+
+  <!-- 进制切换按钮 -->
+  <rect x="412" y="135" width="36" height="20" rx="4" fill="#0071e3"/>
+  <text x="430" y="149" text-anchor="middle" font-size="11" fill="#ffffff">HEX</text>
+  <rect x="452" y="135" width="36" height="20" rx="4" fill="#0071e3"/>
+  <text x="470" y="149" text-anchor="middle" font-size="11" fill="#ffffff">DEC</text>
+  <rect x="492" y="135" width="36" height="20" rx="4" fill="#34c759"/>
+  <text x="510" y="149" text-anchor="middle" font-size="11" fill="#ffffff">BIN</text>
+  <rect x="532" y="135" width="36" height="20" rx="4" fill="#0071e3"/>
+  <text x="550" y="149" text-anchor="middle" font-size="11" fill="#ffffff">OCT</text>
+
+  <!-- 数字显示区 -->
+  <rect x="412" y="160" width="236" height="30" rx="4" fill="#f0f0f5" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="420" y="180" font-size="14" fill="#1d1d1f">99</text>
+  <text x="620" y="180" text-anchor="end" font-size="12" fill="#6e6e73">DEC</text>
+
+  <!-- 转换结果 -->
+  <line x1="412" y1="195" x2="648" y2="195" stroke="#d2d2d7" stroke-width="0.5"/>
+  <text x="420" y="188" font-size="11" fill="#6e6e73">BIN:</text>
+  <text x="460" y="188" font-size="13" font-weight="bold" fill="#34c759">1100011</text>
+
+  <!-- 底部步骤 -->
+  <rect x="30" y="235" width="660" height="80" rx="10" fill="#f5f5f7"/>
+  <text x="50" y="262" font-size="14" font-weight="bold" fill="#1d1d1f">操作步骤：</text>
+  <text x="50" y="285" font-size="13" fill="#1d1d1f">① 打开电脑计算器，切换到程序员模式</text>
+  <text x="50" y="305" font-size="13" fill="#1d1d1f">② 输入十进制数 99，点击二进制即可看到转换结果 1100011</text>
+
+  <!-- 结论 -->
+  <rect x="30" y="330" width="660" height="55" rx="10" fill="#e8f4f8" stroke="#00b8d9" stroke-width="1.5"/>
+  <text x="360" y="355" text-anchor="middle" font-size="15" font-weight="bold" fill="#0071e3">结论</text>
+  <text x="360" y="375" text-anchor="middle" font-size="13" fill="#1d1d1f">数字在计算机中通过转二进制存储，可用计算器快速转换</text>
+
+  <!-- 时间戳 -->
+  <text x="710" y="410" text-anchor="end" font-size="11" fill="#6e6e73">2066.83s - 2192.16s</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-8'>
+  <header class='ch-head'>
+    <span class='ch-no'>08</span>
+    <div class='ch-titles'>
+      <h3>文本存储：ASCII码与汉字编码</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=2192'>⏱ 36:32 – 41:48</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>字母和汉字在计算机中如何存储？</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>ASCII码：美国信息交换标准码，每个字母对应一个数字（如A对应65）。</span></li><li><span class='mk'>•</span><span>汉字编码：GB2312（1981年）、BIG5（台湾繁体）、GBK（2000年）、Unicode（万国码）。</span></li><li><span class='mk'>•</span><span>Unicode包含世界上大多数国家的文字。</span></li></ul><h4>结论</h4><p class='concl'>字母和汉字通过查询编码表得到对应数字，再转二进制存储。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>在二次马表当中啊每一个字母跟一个唯一的数字产生一个对应关系</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=2230'>⏱ 37:10</a></footer></blockquote><blockquote><p>为了解决汉字在计算机当中的存储问题在上个世纪八十年代我们国家的自己推出了一张马表叫做既必二三一二</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=2352'>⏱ 39:12</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示字母和汉字的存储方式：通过编码表（ASCII、GB2312、GBK、Unicode）映射为数字再转二进制。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#6e6e73"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">文本存储：ASCII码与汉字编码</text>
+
+  <!-- 顶部说明线 -->
+  <text x="360" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">字符 → 查询编码表 → 对应数字 → 转二进制 → 存储</text>
+
+  <!-- ====== 左侧：ASCII码 ====== -->
+  <rect x="30" y="80" width="310" height="300" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="185" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d1d1f">ASCII码（美国信息交换标准码）</text>
+
+  <!-- ASCII 示例卡片 -->
+  <rect x="50" y="125" width="270" height="50" rx="6" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="65" y="148" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">字母</text>
+  <text x="140" y="148" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">→</text>
+  <text x="165" y="148" font-family="Arial, sans-serif" font-size="14" fill="#0071e3" font-weight="bold">数字</text>
+  <text x="230" y="148" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">→</text>
+  <text x="255" y="148" font-family="Arial, sans-serif" font-size="14" fill="#6e6e73">二进制</text>
+
+  <!-- 具体例子 -->
+  <rect x="50" y="185" width="270" height="80" rx="6" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="65" y="210" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">A → 65 → 01000001</text>
+  <text x="65" y="232" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">B → 66 → 01000010</text>
+  <text x="65" y="254" font-family="Arial, sans-serif" font-size="14" fill="#1d1d1f">a → 97 → 01100001</text>
+
+  <!-- 特点 -->
+  <text x="65" y="290" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">• 每个字母对应唯一数字（0-127）</text>
+  <text x="65" y="312" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">• 只能表示英文字母和符号</text>
+  <text x="65" y="334" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">• 无法表示汉字</text>
+
+  <!-- 时间戳 -->
+  <text x="185" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">⏱ 2230s</text>
+
+  <!-- ====== 右侧：汉字编码 ====== -->
+  <rect x="380" y="80" width="310" height="300" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="535" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d1d1f">汉字编码方案</text>
+
+  <!-- 编码表节点 -->
+  <!-- GB2312 -->
+  <rect x="400" y="125" width="270" height="40" rx="6" fill="#ffffff" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="535" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0071e3" font-weight="bold">GB2312（1981年，中国大陆）</text>
+
+  <!-- BIG5 -->
+  <rect x="400" y="175" width="270" height="40" rx="6" fill="#ffffff" stroke="#00b8d9" stroke-width="1.5"/>
+  <text x="535" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#00b8d9" font-weight="bold">BIG5（台湾繁体）</text>
+
+  <!-- GBK -->
+  <rect x="400" y="225" width="270" height="40" rx="6" fill="#ffffff" stroke="#ff8a3d" stroke-width="1.5"/>
+  <text x="535" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ff8a3d" font-weight="bold">GBK（2000年，扩展）</text>
+
+  <!-- Unicode -->
+  <rect x="400" y="275" width="270" height="40" rx="6" fill="#ffffff" stroke="#34c759" stroke-width="1.5"/>
+  <text x="535" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#34c759" font-weight="bold">Unicode（万国码，包含全球文字）</text>
+
+  <!-- 连接箭头 -->
+  <line x1="535" y1="165" x2="535" y2="175" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+  <line x1="535" y1="215" x2="535" y2="225" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+  <line x1="535" y1="265" x2="535" y2="275" stroke="#d2d2d7" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+
+  <!-- 特点 -->
+  <text x="415" y="335" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">• 汉字通过编码表映射为数字</text>
+  <text x="415" y="355" font-family="Arial, sans-serif" font-size="13" fill="#6e6e73">• Unicode 统一全球文字编码</text>
+
+  <!-- 时间戳 -->
+  <text x="535" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6e6e73">⏱ 2352s</text>
+
+  <!-- 底部结论 -->
+  <rect x="180" y="388" width="360" height="24" rx="12" fill="#0071e3" opacity="0.1"/>
+  <text x="360" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#0071e3" font-weight="bold">结论：字符查询编码表 → 对应数字 → 二进制存储</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-9'>
+  <header class='ch-head'>
+    <span class='ch-no'>09</span>
+    <div class='ch-titles'>
+      <h3>图片存储：像素、分辨率与三原色</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=2508'>⏱ 41:48 – 51:42</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>图片在计算机中如何存储？</span></li></ul><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>分辨率：如1920×1080，表示宽1920个像素，高1080个像素。</span></li><li><span class='mk'>•</span><span>像素：显示器的最小显示单元。</span></li><li><span class='mk'>•</span><span>黑白图：每个像素用1位表示（0黑1白）。</span></li><li><span class='mk'>•</span><span>灰度图：每个像素用8位表示（0-255灰度等级）。</span></li><li><span class='mk'>•</span><span>彩色图：每个像素用RGB三通道表示，每个通道0-255。</span></li><li><span class='mk'>•</span><span>RGB：红绿蓝光学三原色，组合成各种颜色。</span></li><li><span class='mk'>•</span><span>颜色也可用十六进制表示，如#FF0000表示红色。</span></li></ul><h4>结论</h4><p class='concl'>图片由像素组成，每个像素通过RGB三原色（0-255）组合成颜色，最终以二进制存储。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>每一个小方可我们称之为叫做一个像素</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=2649'>⏱ 44:09</a></footer></blockquote><blockquote><p>在计算机里面每一个像素点的内部其实的就是由红绿蓝来组成的</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=2886'>⏱ 48:06</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 展示图片存储的三个概念：分辨率、像素、三原色，以及黑白图、灰度图、彩色图的存储方式。</span></figcaption><div class='svg-wrap'><svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6e6e73"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-size="20" font-weight="bold" fill="#1d1d1f">图片存储：像素、分辨率与三原色</text>
+
+  <!-- 顶部概念卡片：分辨率 -->
+  <rect x="30" y="60" width="200" height="70" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="130" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#1d1d1f">分辨率</text>
+  <text x="130" y="108" text-anchor="middle" font-size="13" fill="#6e6e73">1920×1080</text>
+  <text x="130" y="124" text-anchor="middle" font-size="12" fill="#6e6e73">宽1920像素，高1080像素</text>
+
+  <!-- 顶部概念卡片：像素 -->
+  <rect x="260" y="60" width="200" height="70" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="360" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#1d1d1f">像素</text>
+  <text x="360" y="108" text-anchor="middle" font-size="13" fill="#6e6e73">最小显示单元</text>
+  <text x="360" y="124" text-anchor="middle" font-size="12" fill="#6e6e73">每个像素包含RGB三通道</text>
+
+  <!-- 顶部概念卡片：三原色 -->
+  <rect x="490" y="60" width="200" height="70" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="590" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#1d1d1f">三原色 (RGB)</text>
+  <text x="590" y="108" text-anchor="middle" font-size="13" fill="#6e6e73">红绿蓝光学三原色</text>
+  <text x="590" y="124" text-anchor="middle" font-size="12" fill="#6e6e73">组合成各种颜色</text>
+
+  <!-- 连线：分辨率 → 像素 -->
+  <line x1="230" y1="95" x2="258" y2="95" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- 连线：像素 → 三原色 -->
+  <line x1="460" y1="95" x2="488" y2="95" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 关系标签 -->
+  <text x="244" y="88" text-anchor="middle" font-size="11" fill="#0071e3">包含</text>
+  <text x="474" y="88" text-anchor="middle" font-size="11" fill="#0071e3">由…组成</text>
+
+  <!-- 分隔线 -->
+  <line x1="30" y1="150" x2="690" y2="150" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- 存储方式标题 -->
+  <text x="360" y="175" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1f">图片存储方式</text>
+
+  <!-- 黑白图卡片 -->
+  <rect x="30" y="195" width="200" height="100" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="130" y="218" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d1d1f">黑白图</text>
+  <text x="130" y="238" text-anchor="middle" font-size="12" fill="#6e6e73">每像素1位</text>
+  <text x="130" y="256" text-anchor="middle" font-size="12" fill="#6e6e73">0=黑，1=白</text>
+  <!-- 笑脸示意 -->
+  <circle cx="100" cy="278" r="12" fill="none" stroke="#1d1d1f" stroke-width="1.5"/>
+  <circle cx="95" cy="275" r="1.5" fill="#1d1d1f"/>
+  <circle cx="105" cy="275" r="1.5" fill="#1d1d1f"/>
+  <path d="M95 282 Q100 287 105 282" fill="none" stroke="#1d1d1f" stroke-width="1.5"/>
+  <text x="160" y="282" text-anchor="middle" font-size="11" fill="#6e6e73">笑脸示例</text>
+
+  <!-- 灰度图卡片 -->
+  <rect x="260" y="195" width="200" height="100" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="360" y="218" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d1d1f">灰度图</text>
+  <text x="360" y="238" text-anchor="middle" font-size="12" fill="#6e6e73">每像素8位</text>
+  <text x="360" y="256" text-anchor="middle" font-size="12" fill="#6e6e73">0-255灰度等级</text>
+  <!-- 灰度条 -->
+  <rect x="290" y="268" width="140" height="16" rx="3" fill="url(#grayGrad)"/>
+  <defs>
+    <linearGradient id="grayGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="25%" stop-color="#404040"/>
+      <stop offset="50%" stop-color="#808080"/>
+      <stop offset="75%" stop-color="#bfbfbf"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <text x="290" y="298" font-size="10" fill="#6e6e73">0</text>
+  <text x="420" y="298" text-anchor="end" font-size="10" fill="#6e6e73">255</text>
+
+  <!-- 彩色图卡片 -->
+  <rect x="490" y="195" width="200" height="100" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="590" y="218" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d1d1f">彩色图</text>
+  <text x="590" y="238" text-anchor="middle" font-size="12" fill="#6e6e73">每像素24位</text>
+  <text x="590" y="256" text-anchor="middle" font-size="12" fill="#6e6e73">RGB三通道×8位</text>
+  <!-- RGB三色点 -->
+  <circle cx="550" cy="278" r="6" fill="#ff3b30"/>
+  <circle cx="570" cy="278" r="6" fill="#34c759"/>
+  <circle cx="590" cy="278" r="6" fill="#0071e3"/>
+  <text x="620" y="282" font-size="11" fill="#6e6e73">R G B</text>
+
+  <!-- 底部：RGB混合与十六进制 -->
+  <rect x="30" y="315" width="660" height="85" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1.5"/>
+  <text x="360" y="340" text-anchor="middle" font-size="15" font-weight="bold" fill="#1d1d1f">RGB颜色混合与十六进制表示</text>
+
+  <!-- RGB混合圆 -->
+  <circle cx="180" cy="370" r="25" fill="#ff3b30" opacity="0.6"/>
+  <circle cx="210" cy="370" r="25" fill="#34c759" opacity="0.6"/>
+  <circle cx="195" cy="350" r="25" fill="#0071e3" opacity="0.6"/>
+  <text x="195" y="395" text-anchor="middle" font-size="11" fill="#1d1d1f">混合成各种颜色</text>
+
+  <!-- 十六进制示例 -->
+  <rect x="320" y="350" width="120" height="30" rx="5" fill="#ff3b30"/>
+  <text x="380" y="370" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">#FF0000</text>
+  <text x="380" y="395" text-anchor="middle" font-size="11" fill="#6e6e73">红色</text>
+
+  <rect x="460" y="350" width="120" height="30" rx="5" fill="#34c759"/>
+  <text x="520" y="370" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">#00FF00</text>
+  <text x="520" y="395" text-anchor="middle" font-size="11" fill="#6e6e73">绿色</text>
+
+  <rect x="600" y="350" width="80" height="30" rx="5" fill="#0071e3"/>
+  <text x="640" y="370" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">#0000FF</text>
+  <text x="640" y="395" text-anchor="middle" font-size="11" fill="#6e6e73">蓝色</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-10'>
+  <header class='ch-head'>
+    <span class='ch-no'>10</span>
+    <div class='ch-titles'>
+      <h3>声音的存储：采样与还原</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=3141'>⏱ 52:21 – 54:17</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>声音是如何存储的？</span></li><li><span class='mk'>?</span><span>为什么高音质和低音质有区别？</span></li></ul><h4 class='warn'>陷阱 / 误区</h4><ul class='blk trap'><li><span class='mk'>!</span><span>不要以为声音直接存储，而是通过采样点记录。</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>对声音波形图进行采样，每个采样点对应一个数字。</li><li>采样点越多，记录的数据越多，还原度越高（高音质）。</li><li>采样点少，还原度低（低音质）。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>声音波形图上的每个点都有数字对应。</span></li><li><span class='mk'>•</span><span>高音质=更多采样点，低音质=更少采样点。</span></li></ul><h4>结论</h4><p class='concl'>声音通过采样波形图并记录数字来存储，采样密度决定音质。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>我们在重组声音的昨晚会对声波进行采样每一个点都会有对应的数字</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=3173'>⏱ 52:53</a></footer></blockquote><blockquote><p>那是不是采样的点就会变得非常的走啊那他再听说的时候就是泉水音乐</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=3201'>⏱ 53:21</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>时间线 · 展示声音波形图，通过采样点记录数据，采样点越多还原度越高。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#d2d2d7"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-size="20" font-weight="bold" fill="#1d1d1f">声音的存储：采样与还原</text>
+
+  <!-- 副标题 -->
+  <text x="360" y="60" text-anchor="middle" font-size="13" fill="#6e6e73">时间轴：3141.36s – 3256.98s</text>
+
+  <!-- 时间轴主线 -->
+  <line x1="60" y1="100" x2="660" y2="100" stroke="#d2d2d7" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <!-- 时间刻度 -->
+  <line x1="60" y1="95" x2="60" y2="105" stroke="#d2d2d7" stroke-width="2"/>
+  <text x="60" y="120" text-anchor="middle" font-size="12" fill="#6e6e73">3141s</text>
+
+  <line x1="260" y1="95" x2="260" y2="105" stroke="#d2d2d7" stroke-width="2"/>
+  <text x="260" y="120" text-anchor="middle" font-size="12" fill="#6e6e73">3173s</text>
+
+  <line x1="460" y1="95" x2="460" y2="105" stroke="#d2d2d7" stroke-width="2"/>
+  <text x="460" y="120" text-anchor="middle" font-size="12" fill="#6e6e73">3201s</text>
+
+  <line x1="660" y1="95" x2="660" y2="105" stroke="#d2d2d7" stroke-width="2"/>
+  <text x="660" y="120" text-anchor="middle" font-size="12" fill="#6e6e73">3257s</text>
+
+  <!-- 事件节点：采样 -->
+  <circle cx="260" cy="100" r="8" fill="#0071e3"/>
+  <text x="260" y="145" text-anchor="middle" font-size="13" fill="#1d1d1f" font-weight="bold">采样开始</text>
+  <text x="260" y="163" text-anchor="middle" font-size="12" fill="#6e6e73">每个点对应一个数字</text>
+
+  <!-- 事件节点：高音质 -->
+  <circle cx="460" cy="100" r="8" fill="#34c759"/>
+  <text x="460" y="145" text-anchor="middle" font-size="13" fill="#1d1d1f" font-weight="bold">高音质</text>
+  <text x="460" y="163" text-anchor="middle" font-size="12" fill="#6e6e73">更多采样点 → 高还原度</text>
+
+  <!-- 波形图区域：高采样点 -->
+  <rect x="50" y="190" width="300" height="100" rx="8" fill="#f5f5f7"/>
+  <text x="200" y="210" text-anchor="middle" font-size="13" fill="#1d1d1f" font-weight="bold">高采样点（高音质）</text>
+
+  <!-- 高采样波形 -->
+  <path d="M70,240 Q80,210 90,240 Q100,270 110,240 Q120,210 130,240 Q140,270 150,240 Q160,210 170,240 Q180,270 190,240 Q200,210 210,240 Q220,270 230,240 Q240,210 250,240 Q260,270 270,240 Q280,210 290,240 Q300,270 310,240 Q320,210 330,240" fill="none" stroke="#0071e3" stroke-width="2"/>
+
+  <!-- 采样点标记 -->
+  <circle cx="70" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="90" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="110" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="130" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="150" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="170" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="190" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="210" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="230" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="250" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="270" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="290" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="310" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="330" cy="240" r="3" fill="#ff3b30"/>
+
+  <!-- 数字标注 -->
+  <text x="70" y="280" text-anchor="middle" font-size="11" fill="#6e6e73">128</text>
+  <text x="110" y="280" text-anchor="middle" font-size="11" fill="#6e6e73">64</text>
+  <text x="150" y="280" text-anchor="middle" font-size="11" fill="#6e6e73">192</text>
+  <text x="190" y="280" text-anchor="middle" font-size="11" fill="#6e6e73">32</text>
+  <text x="230" y="280" text-anchor="middle" font-size="11" fill="#6e6e73">160</text>
+  <text x="270" y="280" text-anchor="middle" font-size="11" fill="#6e6e73">96</text>
+  <text x="310" y="280" text-anchor="middle" font-size="11" fill="#6e6e73">224</text>
+
+  <!-- 波形图区域：低采样点 -->
+  <rect x="370" y="190" width="300" height="100" rx="8" fill="#f5f5f7"/>
+  <text x="520" y="210" text-anchor="middle" font-size="13" fill="#1d1d1f" font-weight="bold">低采样点（低音质）</text>
+
+  <!-- 低采样波形 -->
+  <path d="M390,240 Q410,210 430,240 Q450,270 470,240 Q490,210 510,240 Q530,270 550,240 Q570,210 590,240 Q610,270 630,240 Q650,210 660,240" fill="none" stroke="#ff8a3d" stroke-width="2"/>
+
+  <!-- 采样点标记 -->
+  <circle cx="390" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="430" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="470" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="510" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="550" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="590" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="630" cy="240" r="3" fill="#ff3b30"/>
+  <circle cx="660" cy="240" r="3" fill="#ff3b30"/>
+
+  <!-- 数字标注 -->
+  <text x="390" y="280" text-anchor="middle" font-size="11" fill="#6e6e73">128</text>
+  <text x="470" y="280" text-anchor="middle" font-size="11" fill="#6e6e73">64</text>
+  <text x="550" y="280" text-anchor="middle" font-size="11" fill="#6e6e73">192</text>
+  <text x="630" y="280" text-anchor="middle" font-size="11" fill="#6e6e73">32</text>
+
+  <!-- 结论区域 -->
+  <rect x="50" y="320" width="620" height="80" rx="10" fill="#f5f5f7"/>
+  <text x="360" y="345" text-anchor="middle" font-size="14" fill="#1d1d1f" font-weight="bold">结论</text>
+  <text x="360" y="368" text-anchor="middle" font-size="13" fill="#6e6e73">声音通过采样波形图并记录数字来存储，采样密度决定音质。</text>
+  <text x="360" y="388" text-anchor="middle" font-size="12" fill="#ff3b30">陷阱：不要以为声音直接存储，而是通过采样点记录。</text>
+</svg></div></figure>
+    
+  </div>
+</section>
+<section class='chapter' id='ch-11'>
+  <header class='ch-head'>
+    <span class='ch-no'>11</span>
+    <div class='ch-titles'>
+      <h3>总结：计算机中三类数据的存储规则</h3>
+      <div class='ch-meta'><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=3258'>⏱ 54:18 – 55:50</a></div>
+    </div>
+  </header>
+  <div class='ch-body'>
+    <h4>问题</h4><ul class='blk q'><li><span class='mk'>?</span><span>计算机中数据存储的总体规则是什么？</span></li></ul><h4>步骤</h4><ol class='blk steps'><li>文本：数字直接转二进制；字母和汉字先查码表转数字，再转二进制。</li><li>图片：每个像素点用RGB三原色数值存储。</li><li>声音：对波形采样，每个采样点转二进制存储。</li></ol><h4>要点</h4><ul class='blk kp'><li><span class='mk'>•</span><span>数字直接转二进制。</span></li><li><span class='mk'>•</span><span>字母和汉字依赖码表。</span></li><li><span class='mk'>•</span><span>图片依赖RGB。</span></li><li><span class='mk'>•</span><span>声音依赖采样。</span></li></ul><h4>结论</h4><p class='concl'>计算机中所有数据（文本、图片、声音）最终都以二进制形式存储。</p><h4>关键引用</h4><div class='quotes'><blockquote><p>在计算机当中会有以下的三类数据分别是文本图片还有第三个声音</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=3273'>⏱ 54:33</a></footer></blockquote><blockquote><p>那么到目前为止关于计算机的存储规则我们就学习完毕了</p><footer><a class='ts' target='_blank' href='https://www.bilibili.com/video/BV17F411T7Ao/?share_source=copy_web&amp;vd_source=a43fda8ac445f50c20a5a4e8ec040af5?p=22&amp;t=3320'>⏱ 55:20</a></footer></blockquote></div>
+    <figure class='media'><figcaption><span class='tag svg'>图解</span><span class='cap'>概念 · 总结文本、图片、声音三种数据的存储方式，强调最终都是二进制。</span></figcaption><div class='svg-wrap'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" style="width:100%;height:auto;display:block">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0071e3"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6e6e73"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 标题 -->
+  <text x="360" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1d1d1f">计算机中三类数据的存储规则</text>
+
+  <!-- 副标题 -->
+  <text x="360" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6e6e73">文本 · 图片 · 声音 → 最终都是二进制</text>
+
+  <!-- 分隔线 -->
+  <line x1="60" y1="78" x2="660" y2="78" stroke="#d2d2d7" stroke-width="1"/>
+
+  <!-- ===== 三个数据大类卡片 ===== -->
+
+  <!-- 文本卡片 -->
+  <rect x="40" y="100" width="190" height="260" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="135" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d1d1f">📄 文本</text>
+
+  <!-- 文本子项 -->
+  <rect x="55" y="150" width="160" height="36" rx="6" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="135" y="173" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">数字 → 直接转二进制</text>
+
+  <rect x="55" y="196" width="160" height="52" rx="6" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="135" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">字母/汉字</text>
+  <text x="135" y="236" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">查码表 → 数字 → 二进制</text>
+
+  <!-- 文本内部箭头 -->
+  <line x1="135" y1="186" x2="135" y2="194" stroke="#6e6e73" stroke-width="1" marker-end="url(#arrowGray)"/>
+
+  <!-- 图片卡片 -->
+  <rect x="265" y="100" width="190" height="260" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="360" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d1d1f">🖼️ 图片</text>
+
+  <rect x="280" y="150" width="160" height="80" rx="6" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="360" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">每个像素点</text>
+  <text x="360" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#0071e3" font-weight="bold">R G B</text>
+  <text x="360" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">三原色数值存储</text>
+
+  <!-- 声音卡片 -->
+  <rect x="490" y="100" width="190" height="260" rx="10" fill="#f5f5f7" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="585" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d1d1f">🔊 声音</text>
+
+  <rect x="505" y="150" width="160" height="80" rx="6" fill="#ffffff" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="585" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">对波形采样</text>
+  <text x="585" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1d1d1f">每个采样点</text>
+  <text x="585" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#0071e3" font-weight="bold">转二进制存储</text>
+
+  <!-- ===== 汇聚箭头 ===== -->
+
+  <!-- 文本 → 二进制 -->
+  <line x1="135" y1="360" x2="360" y2="390" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 图片 → 二进制 -->
+  <line x1="360" y1="360" x2="360" y2="390" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 声音 → 二进制 -->
+  <line x1="585" y1="360" x2="360" y2="390" stroke="#0071e3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ===== 底部结论框 ===== -->
+  <rect x="180" y="385" width="360" height="30" rx="15" fill="#0071e3"/>
+  <text x="360" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">所有数据最终以二进制形式存储</text>
+
+</svg></div></figure>
+    
+  </div>
+</section>
+
+<footer class='ft'>
+  
+  <p>由 vnotes 生成 · 2026-07-29 01:21 · 模型转写+大模型整理 · 图解为 AI 据章节内容动态生成</p>
+</footer>
+</div>
+<style data-vnotes-lightbox>
+.cover,.media img,.frame-item img,.svg-wrap{cursor:zoom-in}
+.vnotes-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(12,12,12,.88);padding:24px}
+.vnotes-lightbox.open{display:flex}
+.vnotes-lightbox figure{margin:0;max-width:96vw;max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:10px}
+.vnotes-lightbox img{max-width:96vw;max-height:84vh;object-fit:contain;border-radius:10px;background:#fff;box-shadow:0 24px 80px rgba(0,0,0,.45)}
+.vnotes-lightbox figcaption{max-width:min(820px,92vw);color:rgba(255,255,255,.82);font-size:13px;line-height:1.5;text-align:center}
+.vnotes-lightbox-close{position:fixed;top:18px;right:18px;width:40px;height:40px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-size:22px;line-height:1;cursor:pointer;backdrop-filter:blur(10px)}
+.vnotes-lightbox-close:hover{background:rgba(255,255,255,.2)}
+html.vnotes-lightbox-open{overflow:hidden}
+@media (max-width:640px){.vnotes-lightbox{padding:12px}.vnotes-lightbox-close{top:10px;right:10px}.vnotes-lightbox img{max-width:94vw;max-height:80vh}}
+</style>
+<script data-vnotes-lightbox>
+(function(){
+  if(window.__vnotesLightboxReady) return;
+  window.__vnotesLightboxReady = true;
+
+  function textFrom(node){
+    return node ? String(node.textContent || '').replace(/\s+/g, ' ').trim() : '';
+  }
+
+  function svgToImageSource(svg){
+    var clone = svg.cloneNode(true);
+    if(!clone.getAttribute('xmlns')) clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new XMLSerializer().serializeToString(clone));
+  }
+
+  function sourceFromTarget(target){
+    if(!target || !target.closest) return null;
+
+    var img = target.closest('img');
+    if(img && (img.classList.contains('cover') || img.closest('.hd-cover,.media,.frame-gallery,.frame-item'))){
+      var fig = img.closest('figure');
+      return {
+        src: img.currentSrc || img.src,
+        caption: textFrom(fig ? fig.querySelector('figcaption') : null) || img.alt || ''
+      };
+    }
+
+    var wrap = target.closest('.svg-wrap');
+    if(wrap){
+      var svg = wrap.querySelector('svg');
+      if(svg){
+        var figure = wrap.closest('figure');
+        return {
+          src: svgToImageSource(svg),
+          caption: textFrom(figure ? figure.querySelector('figcaption') : null)
+        };
+      }
+    }
+    return null;
+  }
+
+  var overlay = document.createElement('div');
+  overlay.className = 'vnotes-lightbox';
+  overlay.setAttribute('aria-hidden', 'true');
+  overlay.innerHTML = '<button type="button" class="vnotes-lightbox-close" aria-label="Close">&#215;</button><figure><img alt=""><figcaption></figcaption></figure>';
+  var image = overlay.querySelector('img');
+  var caption = overlay.querySelector('figcaption');
+
+  function close(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.remove('vnotes-lightbox-open');
+    image.removeAttribute('src');
+  }
+
+  function open(src, text){
+    image.src = src;
+    caption.textContent = text || '';
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('vnotes-lightbox-open');
+  }
+
+  overlay.addEventListener('click', function(event){
+    if(event.target === overlay || event.target.closest('.vnotes-lightbox-close')) close();
+  });
+  document.addEventListener('keydown', function(event){
+    if(event.key === 'Escape' && overlay.classList.contains('open')) close();
+  });
+  document.addEventListener('click', function(event){
+    if(event.defaultPrevented) return;
+    var source = sourceFromTarget(event.target);
+    if(!source || !source.src) return;
+    event.preventDefault();
+    open(source.src, source.caption);
+  });
+
+  document.addEventListener('DOMContentLoaded', function(){
+    if(!overlay.parentNode) document.body.appendChild(overlay);
+  });
+  if(document.body) document.body.appendChild(overlay);
+})();
+</script>
+</body></html>
