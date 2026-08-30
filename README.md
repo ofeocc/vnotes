@@ -10,6 +10,17 @@
 
 ---
 
+## 🖼 在线演示 · 笔记展示
+
+点开下面的链接, 看用 vnotes 自动生成的**示例笔记画廊**（GitHub Pages 静态托管, 可直接分享给任何人）:
+
+### [🚀 打开演示 · vnotes 笔记画廊](https://ofeocc.github.io/vnotes/)
+
+> 里面是导入真实视频后自动生成的笔记: **AI 拆章(问题/陷阱/步骤/结论/关键引用) · 动态 SVG 图解 · 界面关键帧 · 时间戳跳转原视频 · 整页长图与竖屏切片**。
+> 纯静态、可离线打开、无后端依赖, 适合把成果公开分享或自己长期存档回看。
+
+---
+
 ## ✨ 它能帮你做什么
 
 看教学/干货视频时，你想做笔记却不想反复暂停、截图、整理。vnotes 把整条流程自动化：
@@ -124,6 +135,7 @@ python run.py "<URL>" --mode detailed
 
 > ⚠️ 部署到服务器时**不要默认假设 Groq 可用**（受出口、地区、风控影响，可能 403/超时）。更稳的选择是国内能直连的 `paraformer`（DashScope），或回到本地 `faster-whisper`。
 > 自己用优先推荐 Windows 本地运行：B 站 Cookie、浏览器登录态、GPU/模型缓存都在本机，排错成本最低。
+> 🚀 **GPU 加速**：本机有 NVIDIA GPU 时，`faster-whisper` 配 `VNOTES_WHISPER_DEVICE=cuda` 可达 **~20× 实时**（如 RTX 4060 上 300s 音频约 15s 完成）；需先 `pip install nvidia-cublas-cu12 nvidia-cudnn-cu12`，工具会自动把 CUDA 库挂到 CTranslate2 加载路径（`vnotes/transcribe.py` 的 `_ensure_gpu_libs()`），无需手动配 PATH。
 
 ## ⚙️ 配置
 
@@ -161,6 +173,20 @@ output/<视频标题>/
   cover.jpg         ← 视频封面
   notes_data.json   ← 结构化数据
 ```
+
+## 🚀 把笔记发布到 GitHub Pages
+
+生成的笔记是**纯静态文件**（单页 HTML + 图片），可直接公开分享。仓库自带 `build_pages.py`，一键把 `output/` 导出为 GitHub Pages 友好的站点（**画廊 + 单篇笔记 + 灯箱**）：
+
+```bash
+python build_pages.py          # 把 output/ 导出到 docs/
+git add docs && git commit -m "update notes" && git push
+```
+
+然后在仓库 **Settings → Pages**，Source 选 **`Deploy from a branch`**，分支 `main`、目录 `/docs`，保存即可。站点地址形如：
+`https://<用户名>.github.io/<仓库>/`
+
+> 每次新增笔记后重跑 `python build_pages.py` 再推送，Pages 会自动更新。`docs/` 已在 `.gitignore` 用 `!docs/**` 放行图片提交，单文件 ≤100MB、站点 ≈1GB 内没问题。
 
 ## 📄 平台支持
 
@@ -204,6 +230,7 @@ vnotes/
 ├── lightbox.py            灯箱预览组件
 ├── util.py                工具函数
 ├── server.py              Web UI（FastAPI）
+├── build_pages.py         静态导出为 GitHub Pages 站点（docs/）
 └── download_model.py      模型下载脚本
 ```
 
